@@ -23,8 +23,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Livraison Suivie Offerte",
-            "content": "<p>Livraison gratuite partout en France.</p>"
+            "title": "Livraison Offerte",
+            "content": "<p>Profitez de la livraison suivie gratuite partout en France.</p>"
           }
         },
         "customer-support": {
@@ -36,8 +36,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Support Client 7j/7",
-            "content": "<p>Une question ? Réponse en moins de 24h.</p>"
+            "title": "Paiement Sécurisé",
+            "content": "<p>Transactions 100% cryptées via SSL (Stripe & PayPal).</p>"
           }
         },
         "discount": {
@@ -49,8 +49,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Paiement 100% Sécurisé",
-            "content": "<p>Cryptage SSL pour vos transactions.</p>"
+            "title": "Garantie satisfaction",
+            "content": "<p>Satisfait ou remboursé — testez-le sans risque pendant 30 jours.</p>"
           }
         },
         "payment": {
@@ -62,8 +62,8 @@
             "icon_background_type": "none",
             "icon_background": "",
             "icon_color": "",
-            "title": "Satisfait ou Remboursé",
-            "content": "<p>30 jours pour changer d'avis.</p>"
+            "title": "Service client disponible",
+            "content": "<p>Une équipe à votre écoute 7j/7 par e-mail.</p>"
           }
         }
       },
