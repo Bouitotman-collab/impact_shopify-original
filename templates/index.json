@@ -70,7 +70,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": false,
-        "liquid": "<div style=\"\n  width: 100vw; \n  position: relative; \n  left: 50%; \n  right: 50%; \n  margin-left: -50vw; \n  margin-right: -50vw;\n  background-color: #ffffff; \n  border-top: 1px solid #eeeeee;\n  border-bottom: 1px solid #eeeeee;\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  min-height: 40px; \n  padding: 15px 0;\n  text-align: center;\n\">\n  <p style=\"\n    margin: 0; \n    font-family: inherit; \n    font-size: 13px; \n    letter-spacing: 0.5px; \n    font-weight: 500; \n    color: #333333; \n    line-height: 1.5;\n    max-width: 90%;\n  \">\n    PACK COMPLET POUR 1 AN — <span style=\"color: #005ad2;\">SOIT SEULEMENT 2,33 € / MOIS</span> POUR PROTÉGER VOTRE MACHINE.\n  </p>\n</div>",
+        "liquid": "<div style=\"\n  width: 100vw; \n  position: relative; \n  left: 50%; \n  right: 50%; \n  margin-left: -50vw; \n  margin-right: -50vw;\n  background-color: #f7f7f7; \n  border-top: 1px solid #eeeeee;\n  border-bottom: 1px solid #eeeeee;\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  min-height: 45px; \n  padding: 12px 0;\n  text-align: center;\n\">\n  <p style=\"\n    margin: 0; \n    font-family: inherit; \n    font-size: 12px; \n    letter-spacing: 0.8px; \n    font-weight: 600; \n    color: #444444; \n    line-height: 1.4;\n    max-width: 90%;\n  \">\n    PACK ÉCONOMIQUE — <span style=\"color: #005ad2;\">SEULEMENT 2,33 € / MOIS</span> POUR UNE MACHINE COMME NEUVE\n  </p>\n</div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
