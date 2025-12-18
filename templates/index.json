@@ -53,17 +53,6 @@
     },
     "rich_text_ibxYFt": {
       "type": "rich-text",
-      "blocks": {
-        "richtext_bXzw34": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p><br/>Votre pack complet pour 1 an de tranquillité — Soit seulement <strong>2,33 € par mois</strong> pour protéger votre linge et votre machine.<br/><br/></p>"
-          }
-        }
-      },
-      "block_order": [
-        "richtext_bXzw34"
-      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -81,7 +70,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": false,
-        "liquid": "Votre pack complet pour 1 an de tranquillité — Soit seulement 2,33 € par mois pour protéger votre linge et votre machine.",
+        "liquid": "<div style=\"text-align: center; padding: 10px 0; font-size: 14px; font-weight: 500; color: #1a1a1a;\">\n  Votre pack complet pour 1 an de tranquillité — Soit seulement 2,33 € par mois pour protéger votre linge et votre machine.\n</div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
