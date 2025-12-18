@@ -14,13 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter": {
-          "type": "newsletter",
+        "text": {
+          "type": "text",
           "settings": {
-            "image_width": 150,
-            "heading_size": "h3",
-            "title": "Sign up for new stories and personal offers",
-            "content": ""
+            "title": "About",
+            "content": "<p><strong>PurePaw</strong> est une marque française dédiée au soin du linge et à la longévité de vos appareils. Nous concevons des solutions simples, écologiques et durables pour faciliter votre quotidien.</p>",
+            "enable_follow_on_shop": true
           }
         },
         "links": {
@@ -31,19 +30,29 @@
             "menu_title": ""
           }
         },
-        "text": {
+        "text_tmzbbj": {
           "type": "text",
           "settings": {
-            "title": "About",
-            "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
+            "title": "Besoin d'aide ?",
+            "content": "<p>Notre support vous répond 7j/7 sous 24h. Email : contact@purepaw.fr</p>",
             "enable_follow_on_shop": true
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "image_width": 150,
+            "heading_size": "h6",
+            "title": "Rejoignez le club PurePaw : Profitez de nos conseils d'entretien et de nos offres exclusives.",
+            "content": ""
           }
         }
       },
       "block_order": [
-        "newsletter",
+        "text",
         "links",
-        "text"
+        "text_tmzbbj",
+        "newsletter"
       ],
       "settings": {
         "show_social_media": true,
