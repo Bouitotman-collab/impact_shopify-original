@@ -40,9 +40,21 @@
             "size_chart_page": ""
           }
         },
+        "liquid_L9Bxpk": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"\n  width: 100vw; \n  position: relative; \n  left: 50%; \n  right: 50%; \n  margin-left: -50vw; \n  margin-right: -50vw;\n  background-color: #f7f7f7; \n  border-top: 1px solid #eeeeee;\n  border-bottom: 1px solid #eeeeee;\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  min-height: 45px; \n  padding: 12px 0;\n  text-align: center;\n\">\n  <p style=\"\n    margin: 0; \n    font-family: inherit; \n    font-size: 12px; \n    letter-spacing: 0.8px; \n    font-weight: 600; \n    color: #444444; \n    line-height: 1.4;\n    max-width: 90%;\n  \">\n    ⭐ OFFRE DE LANCEMENT : <span style=\"color: #005ad2;\">VOTRE PACK POUR 1 AN À 2,33€/MOIS</span> — STOCK LIMITÉ\n  </p>\n</div>"
+          }
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
+        },
+        "text_RHfCgR": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✅ <strong>Linge impeccable</strong></p><p>✅ <strong>Économique</strong></p><p>✅ <strong>Rapide</strong></p>"
+          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -91,7 +103,9 @@
         "title",
         "price",
         "variant_picker",
+        "liquid_L9Bxpk",
         "quantity_selector",
+        "text_RHfCgR",
         "buy_buttons",
         "description",
         "payment_terms",
