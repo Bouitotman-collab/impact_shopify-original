@@ -743,10 +743,115 @@
         "accordion_background": "",
         "accordion_text_color": ""
       }
+    },
+    "featured_product_VC7cxb": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_BDdxm8": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_AzL3rU": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges_6ie9iz": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_dEV4hE": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_NXfq9w": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator_DALdUX": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_ABmq9F": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        },
+        "variant_picker_KUL3ii": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_FrGgmX": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_yRVpEC": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_WdXRU7": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_BDdxm8",
+        "title_AzL3rU",
+        "badges_6ie9iz",
+        "price_dEV4hE",
+        "rating_NXfq9w",
+        "separator_DALdUX",
+        "description_ABmq9F",
+        "variant_picker_KUL3ii",
+        "quantity_selector_FrGgmX",
+        "buy_buttons_yRVpEC",
+        "pickup_availability_WdXRU7"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "full_width": true,
+        "product": "waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
     }
   },
   "order": [
     "slideshow",
+    "featured_product_VC7cxb",
     "image-link-blocks",
     "scrolling-text",
     "collection-list",
