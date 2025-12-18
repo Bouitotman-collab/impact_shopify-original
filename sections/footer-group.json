@@ -22,14 +22,6 @@
             "enable_follow_on_shop": true
           }
         },
-        "links": {
-          "type": "links",
-          "settings": {
-            "menu": "footer",
-            "show_menu_title": true,
-            "menu_title": ""
-          }
-        },
         "text_tmzbbj": {
           "type": "text",
           "settings": {
@@ -50,14 +42,13 @@
       },
       "block_order": [
         "text",
-        "links",
         "text_tmzbbj",
         "newsletter"
       ],
       "settings": {
         "show_social_media": true,
         "show_payment_icons": true,
-        "show_policy_links": false,
+        "show_policy_links": true,
         "show_country_selector": true,
         "show_country_flag": true,
         "show_country_name": true,
