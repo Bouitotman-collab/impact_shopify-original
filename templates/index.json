@@ -70,7 +70,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": false,
-        "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; min-height: 50px; padding: 10px 20px; text-align: center;\">\n  <p style=\"margin: 0; font-size: 14px; font-weight: 500; color: #1a1a1a; line-height: 1.4;\">\n    Votre pack complet pour 1 an de tranquillité — Soit seulement 2,33 € par mois pour protéger votre linge et votre machine.\n  </p>\n</div>",
+        "liquid": "<div style=\"\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  min-height: 40px; \n  padding: 15px 10px; \n  background-color: #f9f9f9; \n  border-top: 1px solid #eeeeee;\n  border-bottom: 1px solid #eeeeee;\n  text-align: center;\n\">\n  <p style=\"\n    margin: 0; \n    font-family: inherit; \n    font-size: 13px; \n    letter-spacing: 0.5px; \n    font-weight: 500; \n    color: #333333; \n    line-height: 1.5;\n    max-width: 90%;\n  \">\n    PACK COMPLET POUR 1 AN — <span style=\"color: #005ad2;\">SOIT SEULEMENT 2,33 € / MOIS</span> POUR PROTÉGER VOTRE MACHINE.\n  </p>\n</div>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
