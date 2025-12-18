@@ -149,6 +149,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "text_eCxiMK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✅ <strong>Linge impeccable :</strong> Fini les poils et résidus.</p><p>✅ <strong>Économique :</strong> Protège votre machine.</p><p>✅ <strong>Rapide :</strong> Efficace dès le premier lavage.</p>"
+          }
+        },
         "buy_buttons_yRVpEC": {
           "type": "buy_buttons",
           "settings": {
@@ -175,6 +181,7 @@
         "description_ABmq9F",
         "variant_picker_KUL3ii",
         "quantity_selector_FrGgmX",
+        "text_eCxiMK",
         "buy_buttons_yRVpEC",
         "pickup_availability_WdXRU7"
       ],
