@@ -46,11 +46,11 @@
         "image_size": "auto",
         "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
+        "mobile_text_position": "place-self-end-center text-center",
+        "desktop_text_position": "sm:place-self-end-center sm:text-center",
+        "text_color": "#f8f7f2",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "main": {
