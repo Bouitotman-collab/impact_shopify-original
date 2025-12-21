@@ -26,11 +26,11 @@
         "message"
       ],
       "settings": {
-        "enable_sticky": false,
-        "autoplay": false,
-        "cycle_speed": 6,
-        "text_size": "text-xs",
-        "navigation_mode": "scrolling",
+        "enable_sticky": true,
+        "autoplay": true,
+        "cycle_speed": 5,
+        "text_size": "text-xxs",
+        "navigation_mode": "arrows",
         "scrolling_speed": 10,
         "background": "#005ad2",
         "background_gradient": "",
