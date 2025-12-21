@@ -35,7 +35,7 @@
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
-        "enable_parallax": false,
+        "enable_parallax": true,
         "image_size": "sm",
         "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
