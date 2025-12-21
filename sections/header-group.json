@@ -58,7 +58,7 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": true,
-        "logo": "shopify://shop_images/logo_280_x_80_px_1.png",
+        "logo": "shopify://shop_images/Photoroom_20251221_205137.png",
         "logo_max_width": 240,
         "logo_mobile_max_width": 100,
         "menu": "main-menu",
@@ -73,7 +73,7 @@
         "show_country_flag": true,
         "show_country_name": false,
         "transparent_header_text_color": "#f8f7f2",
-        "transparent_logo": "shopify://shop_images/logo_280_x_80_px_1.png",
+        "transparent_logo": "shopify://shop_images/Photoroom_20251221_205137.png",
         "reduce_padding": true,
         "background_opacity": 100,
         "background_blur_radius": 0
