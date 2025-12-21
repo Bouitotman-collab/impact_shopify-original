@@ -37,9 +37,7 @@
         "heading_6RtrYN",
         "richtext_z8NpQx"
       ],
-      "custom_css": [
-        ".image-with-text-overlay [class*=\"subheading\"],.image-with-text-overlay [class*=\"heading\"],.image-with-text-overlay [class*=\"richtext\"] {margin-bottom: 2px;}"
-      ],
+      "custom_css": [],
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
