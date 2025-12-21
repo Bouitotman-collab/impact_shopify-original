@@ -14,6 +14,20 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_qqzQGk": {
+          "type": "message",
+          "settings": {
+            "text": "Livraison Suivie Gratuite",
+            "url": ""
+          }
+        },
+        "message_WPUUzG": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
+            "url": ""
+          }
+        },
         "message": {
           "type": "message",
           "settings": {
@@ -23,6 +37,8 @@
         }
       },
       "block_order": [
+        "message_qqzQGk",
+        "message_WPUUzG",
         "message"
       ],
       "settings": {
