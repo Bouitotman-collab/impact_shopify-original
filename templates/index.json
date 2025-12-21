@@ -15,13 +15,11 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/je_veux_que_tu_me_cr_er_la_1_1.jpg",
-            "mobile_image": "shopify://shop_images/je_veux_que_tu_me_cr_er_la_1_1.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "subheading": "La solution n°1 pour une machine saine et un linge frais, même avec des animaux.",
-            "title": "Fini les poils et les odeurs.",
+            "title": "Éliminez les odeurs et poils d’animaux cachés dans votre machine à laver",
             "heading_tag": "h4",
             "button_text": "COMMANDER MON PACK",
             "button_link": "shopify://products/waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement",
@@ -100,6 +98,12 @@
           "disabled": true,
           "settings": {}
         },
+        "text_eCxiMK": {
+          "type": "text",
+          "settings": {
+            "text": "<p>✅ <strong>Linge impeccable :</strong> Fini les poils et résidus.</p><p>✅ <strong>Économique :</strong> Protège votre machine.</p><p>✅ <strong>Rapide :</strong> Efficace dès le premier lavage.</p>"
+          }
+        },
         "title_AzL3rU": {
           "type": "title",
           "settings": {
@@ -148,12 +152,6 @@
         "quantity_selector_FrGgmX": {
           "type": "quantity_selector",
           "settings": {}
-        },
-        "text_eCxiMK": {
-          "type": "text",
-          "settings": {
-            "text": "<p>✅ <strong>Linge impeccable :</strong> Fini les poils et résidus.</p><p>✅ <strong>Économique :</strong> Protège votre machine.</p><p>✅ <strong>Rapide :</strong> Efficace dès le premier lavage.</p>"
-          }
         },
         "buy_buttons_yRVpEC": {
           "type": "buy_buttons",
@@ -213,6 +211,7 @@
       },
       "block_order": [
         "vendor_BDdxm8",
+        "text_eCxiMK",
         "title_AzL3rU",
         "badges_6ie9iz",
         "price_dEV4hE",
@@ -221,7 +220,6 @@
         "description_ABmq9F",
         "variant_picker_KUL3ii",
         "quantity_selector_FrGgmX",
-        "text_eCxiMK",
         "buy_buttons_yRVpEC",
         "collapsible_text_bbitHe",
         "collapsible_text_U9BLxr",
