@@ -22,20 +22,13 @@
           "type": "heading",
           "settings": {
             "text": "UNE MACHINE NEUVE. UN LINGE SAIN.",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_z8NpQx": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Éliminez poils et odeurs en un cycle.</p>"
+            "heading_tag": "h5"
           }
         }
       },
       "block_order": [
         "subheading_Yp3EtH",
-        "heading_6RtrYN",
-        "richtext_z8NpQx"
+        "heading_6RtrYN"
       ],
       "custom_css": [],
       "name": "Image with text overlay",
