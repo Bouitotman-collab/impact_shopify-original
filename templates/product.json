@@ -41,7 +41,7 @@
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
-        "allow_transparent_header": true,
+        "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
         "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
@@ -97,7 +97,7 @@
         "text_RHfCgR": {
           "type": "text",
           "settings": {
-            "text": "<p>✅ <strong>Linge impeccable</strong></p><p>✅ <strong>Économique</strong></p><p>✅ <strong>Rapide</strong></p>"
+            "text": "<p>✅ <strong>Linge impeccable</strong></p><p>✅ <strong>Économique</strong></p><p>✅ <strong>Rapide</strong></p><p>✨ <strong>Spécial \"Pet Parents\"</strong> (Chiens, Chats, Chevaux)</p><p>🧼 <strong>Nettoyage en profondeur des zones invisibles</strong></p><p>🌱 <strong>Formule protectrice : préserve les joints et le tambour</strong></p>"
           }
         },
         "buy_buttons": {
