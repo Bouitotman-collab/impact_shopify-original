@@ -17,7 +17,7 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "🚚 LIVRAISON GRATUITE OFFERTE SUR TOUTES COMMANDES (Délai estimé : 10 à 14 jours, voir conditions)",
+            "text": "🚚 Livraison suivie 8–10 jours ouvrés 🐾 Sans danger pour chiens & chats 🧪 Formule sûre & testée 🛡️ Satisfait ou remboursé 30 jours",
             "url": "shopify://pages/livraison-suivi-delais-10-14-jours"
           }
         }
@@ -32,7 +32,7 @@
         "text_size": "text-xs",
         "navigation_mode": "scrolling",
         "scrolling_speed": 10,
-        "background": "#1a1a1a",
+        "background": "#000d8c",
         "background_gradient": "",
         "text_color": "#ffffff"
       }
