@@ -81,17 +81,6 @@
     },
     "176635618679dcdcb0": {
       "type": "apps",
-      "blocks": {
-        "logo_carousel_logo_carousel_ezBgXk": {
-          "type": "shopify://apps/logo-carousel/blocks/logo-carousel/df1cffbd-7229-4737-973c-518f6d09d947",
-          "settings": {
-            "carousel_nickname": "auto"
-          }
-        }
-      },
-      "block_order": [
-        "logo_carousel_logo_carousel_ezBgXk"
-      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
