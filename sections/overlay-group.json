@@ -18,9 +18,9 @@
         "show_only_on_index": false,
         "show_only_for_visitors": false,
         "show_only_once": true,
-        "title": "Signup for our newsletter",
+        "title": "-10% de bienvenue !",
         "button_text": "Subscribe",
-        "subtext": "Describe what your customers will receive when subscribing to your newsletter."
+        "subtext": "Inscrivez-vous et recevez -10% sur votre première commande avec le code <strong>BIENVENUE10</strong>"
       }
     },
     "privacy-banner": {
