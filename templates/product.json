@@ -9,6 +9,19 @@
  */
 {
   "sections": {
+    "custom_liquid_nXgXAQ": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div style=\"display: flex; justify-content: center; align-items: center; gap: 40px; padding: 30px; background: #f5f5f5;\">\n  <img src=\"https://logos.fandom.com/wiki/Le_Chat?file=Le_Chat_logo.png\" alt=\"Livraison gratuite\" style=\"height: 60px;\">\n  <img src=\"https://www.facebook.com/photo/?fbid=629914359161078&set=a.629914342494413&locale=fr_FR\" alt=\"Paiement sécurisé\" style=\"height: 60px;\">\n  <img src=\"https://fr.wikipedia.org/wiki/France_Inter#/media/Fichier:France_Inter_logo_2021.svg\" alt=\"Fabriqué en France\" style=\"height: 60px;\">\n  <img src=\"https://www.facebook.com/photo/?fbid=634634405373384&set=a.634634362040055\" alt=\"Satisfait ou remboursé\" style=\"height: 60px;\">\n</div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "image_with_text_overlay_gUiBHz": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -236,6 +249,7 @@
     }
   },
   "order": [
+    "custom_liquid_nXgXAQ",
     "image_with_text_overlay_gUiBHz",
     "main",
     "related-products"
