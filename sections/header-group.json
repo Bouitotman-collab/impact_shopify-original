@@ -31,8 +31,8 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "🚚 Livraison suivie 8–10 jours ouvrés 🐾 Sans danger pour chiens & chats 🧪 Formule sûre & testée 🛡️ Satisfait ou remboursé 30 jours",
-            "url": "shopify://pages/livraison-suivi-delais-10-14-jours"
+            "text": "",
+            "url": ""
           }
         }
       },
