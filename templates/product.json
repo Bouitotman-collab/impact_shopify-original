@@ -48,11 +48,7 @@
     },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
-      "custom_css": [
-        "selector{margin:0!important;padding:0!important}",
-        ".scrolling-text{height:35px!important;min-height:0!important;padding:0!important;display:flex!important;align-items:center!important}",
-        ".scrolling-text__item{padding:0!important;line-height:1!important}"
-      ],
+      "custom_css": [],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
