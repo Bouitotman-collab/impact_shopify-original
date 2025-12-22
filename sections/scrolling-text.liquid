@@ -20,6 +20,15 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      color: inherit; /* le texte prendra la couleur définie dans la section */
+    }
+
+    /* Petits "v" héritent de la couleur du texte et style regular */
+    #shopify-section-{{ section.id }} .scrolling-text__text .v-icon,
+    #shopify-section-{{ section.id }} .scrolling-text__text span::before {
+      color: inherit;
+      fill: currentColor;
+      font-weight: 400;
     }
 
     /* Réduction des bords / marges verticales */
