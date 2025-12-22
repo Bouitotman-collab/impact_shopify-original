@@ -4,6 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
+      /* Taille du texte ajustable */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -13,24 +14,25 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical */
+    /* Texte : Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
       font-weight: 400;
       line-height: 1;
-      display: inline-block;
-      vertical-align: middle;
-      color: {{ section.settings.text_color }};
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
     }
 
-    /* Séparateur spacing */
-    #shopify-section-{{ section.id }} .scrolling-text__text.separator {
-      margin: 0 0.5rem;
-    }
-
-    /* Réduction des bords / marges verticales */
+    /* Réduction des marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+    }
+
+    /* Séparateur automatique */
+    #shopify-section-{{ section.id }} .scrolling-text__separator {
+      margin: 0 0.5rem; /* espace avant et après le séparateur */
+      color: inherit; /* même couleur que le texte */
     }
   </style>
 
@@ -39,15 +41,15 @@
   {%- endif -%}
 
   <div {% render 'section-properties', tight: is_tight %}>
+    {%- assign lines = section.settings.text | split: '\n' -%}
     {%- capture section_content -%}
-      {%- assign phrases = section.settings.text | split: "•" -%}
-      {%- for phrase in phrases -%}
-        <span class="scrolling-text__text heading" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
-          {{ phrase | strip }}
+      {%- for line in lines -%}
+        <span class="scrolling-text__text heading">
+          {{ line }}
         </span>
-        {% unless forloop.last %}
-          <span class="scrolling-text__text separator" aria-hidden="true">•</span>
-        {% endunless %}
+        {%- unless forloop.last -%}
+          <span class="scrolling-text__separator">•</span>
+        {%- endunless -%}
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -84,7 +86,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "Promotion text"
+      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX\nÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS\nNETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT\nEFFICACE DÈS LE PREMIER LAVAGE\nPROTÈGE VOTRE MACHINE\nCOMPATIBLE TOUTES MACHINES\nFORMULE CERTIFIÉE ÉCOLOGIQUE"
     },
     {
       "type": "select",
