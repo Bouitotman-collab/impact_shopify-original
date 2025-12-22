@@ -4,7 +4,6 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -36,17 +35,14 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- for i in (1..10) -%}
+      {%- assign words = section.settings.text | split: ' ' -%}
+      {%- for word in words -%}
         <span
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- assign text_with_separator = section.settings.text | replace: "v", "•" -%}
-          {%- render 'styled-text',
-            content: text_with_separator,
-            gradient: section.settings.text_gradient,
-            style: section.settings.text_style
-          -%}
+          {{ word }}
+          {%- unless forloop.last -%} • {% endunless -%}
         </span>
       {%- endfor -%}
     {%- endcapture -%}
