@@ -21,11 +21,11 @@
             "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/11153380.png?v=1766336815"
           }
         },
-        "message_WPUUzG": {
+        "message_eGh7Y4": {
           "type": "message",
           "settings": {
-            "text": "Produits naturels pour vos animaux",
-            "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/7461709.png?v=1766337325"
+            "text": "Garantie Satisfait ou Remboursé 30 jours",
+            "url": ""
           }
         },
         "message": {
@@ -34,23 +34,31 @@
             "text": "-10% avec BIENVENUE10",
             "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/5009570.png?v=1766338050"
           }
+        },
+        "message_WPUUzG": {
+          "type": "message",
+          "settings": {
+            "text": "Produits naturels pour vos animaux",
+            "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/7461709.png?v=1766337325"
+          }
         }
       },
       "block_order": [
         "message_qqzQGk",
-        "message_WPUUzG",
-        "message"
+        "message_eGh7Y4",
+        "message",
+        "message_WPUUzG"
       ],
       "settings": {
         "enable_sticky": true,
         "autoplay": true,
         "cycle_speed": 4,
         "text_size": "text-xs",
-        "navigation_mode": "scrolling",
+        "navigation_mode": "arrows",
         "scrolling_speed": 10,
-        "background": "#f8f7f2",
+        "background": "#017e51",
         "background_gradient": "",
-        "text_color": "#1a1a1a"
+        "text_color": "#f8f7f2"
       }
     },
     "header": {

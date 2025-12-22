@@ -9,19 +9,6 @@
  */
 {
   "sections": {
-    "custom_liquid_nXgXAQ": {
-      "type": "custom-liquid",
-      "name": "Custom Liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "<div style=\"display: flex; justify-content: center; align-items: center; gap: 40px; padding: 30px; background: #f5f5f5;\">\n  <img src=\"https://logos.fandom.com/wiki/Le_Chat?file=Le_Chat_logo.png\" alt=\"Livraison gratuite\" style=\"height: 60px;\">\n  <img src=\"https://www.facebook.com/photo/?fbid=629914359161078&set=a.629914342494413&locale=fr_FR\" alt=\"Paiement sécurisé\" style=\"height: 60px;\">\n  <img src=\"https://fr.wikipedia.org/wiki/France_Inter#/media/Fichier:France_Inter_logo_2021.svg\" alt=\"Fabriqué en France\" style=\"height: 60px;\">\n  <img src=\"https://www.facebook.com/photo/?fbid=634634405373384&set=a.634634362040055\" alt=\"Satisfait ou remboursé\" style=\"height: 60px;\">\n</div>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "image_with_text_overlay_gUiBHz": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -57,6 +44,22 @@
         "text_color": "#f8f7f2",
         "overlay_color": "#000000",
         "overlay_opacity": 30
+      }
+    },
+    "scrolling_text_Jfmn46": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "✔ SPÉCIAL PROPRIÉTAIRES DE CHIENS & CHATS          ✔ ÉLIMINE POILS ET RÉSIDUS INCRUSTÉS          ✔ NETTOYAGE EN PROFONDEUR — 1 CYCLE SUFFIT          ✔ EFFICACE DÈS LE PREMIER LAVAGE          ✔ PROTÈGE VOTRE MACHINE DANS LE TEMPS          ✔ COMPATIBLE TOUTES MACHINES (HUBLOT & TOP)          ✔ FORMULE CERTIFIÉE ÉCOLOGIQUE",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#017e51",
+        "background_gradient": "",
+        "text_color": "#f8f7f2",
+        "text_gradient": ""
       }
     },
     "main": {
@@ -249,8 +252,8 @@
     }
   },
   "order": [
-    "custom_liquid_nXgXAQ",
     "image_with_text_overlay_gUiBHz",
+    "scrolling_text_Jfmn46",
     "main",
     "related-products"
   ]
