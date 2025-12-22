@@ -34,7 +34,7 @@
       "name": "Image with text overlay",
       "settings": {
         "full_width": true,
-        "allow_transparent_header": true,
+        "allow_transparent_header": false,
         "enable_parallax": true,
         "image_size": "sm",
         "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
@@ -56,7 +56,7 @@
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
-        "scrolling_speed": 10,
+        "scrolling_speed": 13,
         "background": "#017e51",
         "background_gradient": "",
         "text_color": "#f8f7f2",
