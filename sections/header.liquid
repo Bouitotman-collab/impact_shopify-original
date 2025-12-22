@@ -79,7 +79,9 @@ the underlying logic of the menu.
   <store-header class="header" {% if section.settings.hide_on_scroll %}hide-on-scroll="100"{% endif %} {% if section.settings.enable_sticky %}sticky{% endif %}>
     <div class="header__wrapper">
       {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
       MAIN NAV AREA
+      --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       <div class="header__main-nav">
@@ -118,6 +120,12 @@ the underlying logic of the menu.
                       <a href="{{ link.url }}" class="bold link-faded-reverse" {% if link.current %}aria-current="page"{% endif %}>{{- link.title -}}</a>
                     {%- else -%}
                       {%- if mega_menu_block != '' -%}
+                        {%- comment -%}
+                        Implementation note: the designers had the desire to show a lot of different kind of menus in Impact: one standard
+                        mega menu but also a kind of "sidebar" mode when the mega-menu appears in a drawer. Unfortunately, this comes with
+                        a lot of extra complexity as we have to go through two different code path: a "details" element for the standard
+                        menu, and a full drawer for the other one.
+                        {%- endcomment -%}
                         {%- unless mega_menu_block.settings.layout == 'drawer' -%}
                           <details is="mega-menu-disclosure" trigger="{{ section.settings.menu_open_trigger | escape }}" {{ mega_menu_block.shopify_attributes }}>
                             <summary class="text-with-icon gap-2.5 bold link-faded-reverse" {% if link.url != '#' %}data-url="{{ link.url | escape }}"{% endif %}>
@@ -185,7 +193,9 @@ the underlying logic of the menu.
       </div>
 
       {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
       LOGO AREA
+      --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       {%- capture logo_content -%}
@@ -212,7 +222,9 @@ the underlying logic of the menu.
       {% endif %}
 
       {%- comment -%}
+      --------------------------------------------------------------------------------------------------------------------
       SECONDARY NAV AREA
+      --------------------------------------------------------------------------------------------------------------------
       {%- endcomment -%}
 
       <div class="header__secondary-nav">
@@ -277,7 +289,9 @@ the underlying logic of the menu.
 </height-observer>
 
 {%- comment -%}
+  --------------------------------------------------------------------------------------------------------------------
   NAVIGATION MENU DRAWER
+  --------------------------------------------------------------------------------------------------------------------
 {%- endcomment -%}
 
 {%- assign main_menu = section.settings.sidebar_menu | default: section.settings.menu -%}
@@ -356,17 +370,377 @@ the underlying logic of the menu.
       "default": 100
     },
     {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "link_list",
+      "id": "sidebar_menu",
+      "label": "Drawer menu"
+    },
+    {
+      "type": "link_list",
+      "id": "secondary_menu",
+      "label": "Secondary menu",
+      "info": "This menu won't show dropdown items. For best results, limit the number of links to 1 or 2."
+    },
+    {
+      "type": "select",
+      "id": "menu_open_trigger",
+      "label": "Open dropdown items on...",
+      "info": "Click mode is forced on touch devices.",
+      "options": [
+        {
+          "value": "hover",
+          "label": "Hover"
+        },
+        {
+          "value": "click",
+          "label": "Click"
+        }
+      ],
+      "default": "click"
+    },
+    {
+      "type": "header",
+      "content": "Mobile navigation"
+    },
+    {
+      "type": "select",
+      "id": "opening_from",
+      "label": "Opening from",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "header",
+      "content": "Desktop"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "info": "When centering navigation, you should limit your links to 5.",
+      "options": [
+        {
+          "value": "logo_left_navigation_inline",
+          "label": "Logo left, navigation inline"
+        },
+        {
+          "value": "logo_left_navigation_center",
+          "label": "Logo left, navigation center"
+        },
+        {
+          "value": "logo_center_navigation_inline",
+          "label": "Logo center, navigation inline"
+        },
+        {
+          "value": "drawer",
+          "label": "Drawer"
+        }
+      ],
+      "default": "logo_left_navigation_inline"
+    },
+    {
+      "type": "header",
+      "content": "Social media",
+      "info": "This will only show in the drawer navigation."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_media",
+      "label": "Show social media",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Language selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Country/region selector",
+      "info": "To add a country/region, go to your [markets settings.](/admin/settings/markets). For best user experience, we recommend to keep this setting off and to use the free [Shopify Geolocation app](https://apps.shopify.com/geolocation)."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country_selector",
+      "label": "Show country/region selector",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country_flag",
+      "label": "Show country flag",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country_name",
+      "label": "Show country name",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Transparent header",
+      "info": "Add a section on first position which allows transparent header such as slideshow or image with text overlay."
+    },
+    {
+      "type": "color",
+      "id": "transparent_header_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "transparent_logo",
+      "label": "Logo image",
+      "info": "Use the same dimensions as main logo."
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
       "type": "checkbox",
       "id": "reduce_padding",
       "label": "Reduce padding",
       "default": false
+    },
+    {
+      "type": "range",
+      "id": "background_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Background opacity",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "background_blur_radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Background blur radius",
+      "default": 4
     }
   ],
-  "blocks": [],
-  "presets": [
+  "blocks": [
     {
-      "name": "Header",
-      "category": "Header"
+      "type": "mega_menu",
+      "name": "Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "Menu item",
+          "info": "Enter menu item to apply a mega menu dropdown. [Learn more](https://support.maestrooo.com/article/180-navigation-enabling-and-configuring-mega-navigation)."
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "horizontal",
+              "label": "Horizontal"
+            },
+            {
+              "value": "horizontal_center",
+              "label": "Horizontal (centered)"
+            },
+            {
+              "value": "drawer",
+              "label": "Drawer"
+            }
+          ],
+          "default": "horizontal"
+        },
+        {
+          "type": "select",
+          "id": "submenu_style",
+          "label": "Submenu",
+          "options": [
+            {
+              "value": "bold_text",
+              "label": "Bold - text only"
+            },
+            {
+              "value": "bold_heading",
+              "label": "Bold - headings only"
+            }
+          ],
+          "default": "bold_heading"
+        },
+        {
+          "type": "header",
+          "content": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image",
+          "info": "1200 x 1200px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "image_heading_1",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "image_link_1",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "image_text_color_1",
+          "label": "Heading",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image",
+          "info": "1200 x 1200px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "image_heading_2",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "image_link_2",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "image_text_color_2",
+          "label": "Heading",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image",
+          "info": "1200 x 1200px .jpg recommended"
+        },
+        {
+          "type": "text",
+          "id": "image_heading_3",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "image_link_3",
+          "label": "Link"
+        },
+        {
+          "type": "color",
+          "id": "image_text_color_3",
+          "label": "Heading",
+          "default": "#ffffff"
+        },
+        {
+          "type": "header",
+          "content": "Featured product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "color",
+          "id": "product_card_background",
+          "label": "Card background"
+        },
+        {
+          "type": "color",
+          "id": "product_card_text_color",
+          "label": "Card text"
+        },
+        {
+          "type": "header",
+          "content": "Appearance"
+        },
+        {
+          "type": "select",
+          "id": "promo_content_layout",
+          "label": "Promotional content layout",
+          "info": "To improve readability, layout can be changed automatically depending on the screen size, menu column count and promotional content. [Learn more](https://support.maestrooo.com/article/296-navigation-understanding-impact-mega-menu-strategy)",
+          "options": [
+            {
+              "value": "grid",
+              "label": "Grid"
+            },
+            {
+              "value": "collage",
+              "label": "Collage"
+            },
+            {
+              "value": "carousel",
+              "label": "Carousel"
+            }
+          ],
+          "default": "grid"
+        },
+        {
+          "type": "checkbox",
+          "id": "stretch_promo",
+          "label": "Stretch to fill",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "drawer_link_image",
+          "label": "Drawer link image",
+          "options": [
+            {
+              "value": "hide",
+              "label": "Hide"
+            },
+            {
+              "value": "show",
+              "label": "Show product image"
+            }
+          ],
+          "default": "hide"
+        }
+      ]
     }
   ]
 }
