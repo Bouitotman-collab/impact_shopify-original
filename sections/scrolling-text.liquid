@@ -20,13 +20,12 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      color: {{ section.settings.text_color | default: '#F8F7F2' }};
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
     }
   </style>
 
@@ -41,9 +40,8 @@
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- assign text_with_separator = section.settings.text | replace: "v", "|" -%}
           {%- render 'styled-text',
-            content: text_with_separator,
+            content: section.settings.text,
             gradient: section.settings.text_gradient,
             style: section.settings.text_style
           -%}
@@ -64,3 +62,83 @@
     </div>
   </div>
 {%- endif -%}
+
+{% schema %}
+{
+  "name": "Scrolling text",
+  "class": "shopify-section--scrolling-text",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Promotion text"
+    },
+    {
+      "type": "select",
+      "id": "text_size",
+      "label": "Text size",
+      "options": [
+        { "value": "xsmall", "label": "X-Small" },
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" },
+        { "value": "xlarge", "label": "X-Large" }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "select",
+      "id": "text_style",
+      "label": "Text style",
+      "options": [
+        { "value": "outline", "label": "Outline" },
+        { "value": "fill", "label": "Fill" }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "select",
+      "id": "scrolling_mode",
+      "label": "Scrolling mode",
+      "options": [
+        { "value": "auto", "label": "Automatic" },
+        { "value": "scroll", "label": "On scroll" }
+      ],
+      "default": "auto"
+    },
+    {
+      "type": "range",
+      "id": "scrolling_speed",
+      "min": 3,
+      "max": 20,
+      "step": 1,
+      "unit": "s",
+      "label": "Automatic scrolling speed",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Colors",
+      "info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined."
+    },
+    { "type": "color", "id": "background", "label": "Background" },
+    { "type": "color_background", "id": "background_gradient", "label": "Background gradient" },
+    { "type": "color", "id": "text_color", "label": "Text" },
+    { "type": "color_background", "id": "text_gradient", "label": "Text gradient" }
+  ],
+  "presets": [
+    { "name": "Scrolling text" }
+  ]
+}
+{% endschema %}
