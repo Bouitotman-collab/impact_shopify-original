@@ -20,7 +20,12 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      white-space: nowrap; /* important pour que tout reste sur une seule ligne */
+    }
+
+    /* ESPACEMENT DES POINTS */
+    #shopify-section-{{ section.id }} .scrolling-text__text span {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     /* Réduction des bords / marges verticales */
@@ -36,16 +41,13 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- for i in (1..10) -%}
+      {%- assign phrases = section.settings.text | split: "•" -%}
+      {%- for phrase in phrases -%}
         <span
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- render 'styled-text',
-            content: section.settings.text,
-            gradient: section.settings.text_gradient,
-            style: section.settings.text_style
-          -%}
+          {{ phrase | strip }}
         </span>
       {%- endfor -%}
     {%- endcapture -%}
