@@ -13,22 +13,15 @@
       }
     }
 
-    /* TEXTE : taille proche de l'original, Regular, centrage vertical */
+    /* TEXTE : taille initiale + Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-size: 2rem;      /* mobile */
+      font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      font-weight: 400;     /* Regular */
     }
 
-    @media screen and (min-width: 700px) {
-      #shopify-section-{{ section.id }} .scrolling-text__text {
-        font-size: 3rem;    /* desktop */
-      }
-    }
-
-    /* BORDS / MARGES */
+    /* RÉDUCTION DES BORDS / MARGES VERTICALES */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.8rem;
       padding-bottom: 0.8rem;
