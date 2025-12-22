@@ -18,7 +18,7 @@
     {%- assign is_tight = true -%}
   {%- endif -%}
 
-  <!-- Ajout de la classe unique pour centrage CSS -->
+  <!-- Classe unique pour centrage et style -->
   <div class="scrolling-text-section-{{ section.id }}" {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
       {%- for i in (1..10) -%}
