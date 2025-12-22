@@ -52,11 +52,11 @@
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE ODEURS          •          NETTOIE EN PROFONDEUR          •          EFFICACE DÈS LE PREMIER LAVAGE          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •          FORMULE CERTIFIÉE ÉCOLOGIQUE          •          ",
+        "text": "FORMULE SPÉCIAL PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS        •          NETTOIE EN PROFONDEUR          •          EFFICACE DÈS LE PREMIER LAVAGE          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •          SANS DANGER POUR LES FOSSES SEPTIQUES          •",
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
-        "scrolling_speed": 13,
+        "scrolling_speed": 8,
         "background": "#017e51",
         "background_gradient": "",
         "text_color": "#f8f7f2",
