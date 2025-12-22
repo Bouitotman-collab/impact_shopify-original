@@ -20,17 +20,18 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      color: #F8F7F2; /* Couleur texte + SVG */
+    }
+
+    /* Forcer les SVG (les petits "v") à utiliser la couleur du texte */
+    #shopify-section-{{ section.id }} .scrolling-text__text svg {
+      fill: currentColor !important;
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
-    }
-
-    /* ✅ Forcer la couleur des petits v (SVG ou pseudo-éléments) */
-    #shopify-section-{{ section.id }} svg {
-      fill: #F8F7F2 !important;
     }
   </style>
 
