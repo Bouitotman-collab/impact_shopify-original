@@ -49,8 +49,9 @@
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
       "custom_css": [
-        ".scrolling-text {margin-top: -30px !important; margin-bottom: -30px !important; padding-top: 5px !important; padding-bottom: 5px !important; min-height: 0 !important;}",
-        ".scrolling-text__item {padding: 0 !important;}"
+        "selector{margin:0!important;padding:0!important}",
+        ".scrolling-text{height:35px!important;min-height:0!important;padding:0!important;display:flex!important;align-items:center!important}",
+        ".scrolling-text__item{padding:0!important;line-height:1!important}"
       ],
       "name": "Scrolling text",
       "settings": {
