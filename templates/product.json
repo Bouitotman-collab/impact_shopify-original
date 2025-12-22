@@ -48,10 +48,14 @@
     },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
+      "custom_css": [
+        "/* Force le texte en normal (pas de gras) */div,p,span,h1,h2,h3,h4 {font-weight: 400 !important;}",
+        " /* Réduit la hauteur de la bande */selector {padding-top: 10px !important; padding-bottom: 10px !important;}"
+      ],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "✔ SPÉCIAL PROPRIÉTAIRES DE CHIENS & CHATS          ✔ ÉLIMINE POILS ET RÉSIDUS INCRUSTÉS          ✔ NETTOYAGE EN PROFONDEUR — 1 CYCLE SUFFIT          ✔ EFFICACE DÈS LE PREMIER LAVAGE          ✔ PROTÈGE VOTRE MACHINE DANS LE TEMPS          ✔ COMPATIBLE TOUTES MACHINES (HUBLOT & TOP)          ✔ FORMULE CERTIFIÉE ÉCOLOGIQUE",
+        "text": "✔ SPÉCIAL PROPRIÉTAIRES DE CHIENS & CHATS　　　✔ ÉLIMINE POILS ET RÉSIDUS INCRUSTÉS　　　✔ NETTOYAGE EN PROFONDEUR — 1 CYCLE SUFFIT　　　✔ EFFICACE DÈS LE PREMIER LAVAGE　　　✔ PROTÈGE VOTRE MACHINE DANS LE TEMPS　　　✔ COMPATIBLE TOUTES MACHINES (HUBLOT & TOP)　　　✔ FORMULE CERTIFIÉE ÉCOLOGIQUE",
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
