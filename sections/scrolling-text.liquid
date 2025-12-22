@@ -4,7 +4,8 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.125rem{% elsif section.settings.text_size == 'small' %}2.5rem{% elsif section.settings.text_size == 'medium' %}3.75rem{% elsif section.settings.text_size == 'large' %}5rem{% else %}7.5rem{% endif %};
+      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.4rem{% elsif section.settings.text_size == 'medium' %}1.8rem{% elsif section.settings.text_size == 'large' %}2.2rem{% else %}2.6rem{% endif %};
+
     }
 
     @media screen and (min-width: 700px) {
