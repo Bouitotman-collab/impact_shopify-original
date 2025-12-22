@@ -4,12 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      height: 3rem; /* Hauteur identique à l'annonce bar */
-      line-height: 3rem; /* Centre verticalement le texte */
-    }
-
-    #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400; /* Texte regular au lieu de bold */
+      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.125rem{% elsif section.settings.text_size == 'small' %}2.5rem{% elsif section.settings.text_size == 'medium' %}3.75rem{% elsif section.settings.text_size == 'large' %}5rem{% else %}7.5rem{% endif %};
     }
 
     @media screen and (min-width: 700px) {
@@ -23,7 +18,8 @@
     {%- assign is_tight = true -%}
   {%- endif -%}
 
-  <div {% render 'section-properties', tight: is_tight %}>
+  <!-- Ajout de la classe unique pour centrage CSS -->
+  <div class="scrolling-text-section-{{ section.id }}" {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
       {%- for i in (1..10) -%}
         <span class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
