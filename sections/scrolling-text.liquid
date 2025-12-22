@@ -4,7 +4,6 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -14,17 +13,19 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical */
+    /* TEXTE : Regular + centrage vertical + phrases séparées */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400; /* Regular */
+      display: inline-block;       /* chaque phrase est un bloc séparé */
+      font-weight: 400;            /* Regular */
       line-height: 1;
-      display: inline-flex;
-      align-items: center;
+      vertical-align: middle;      /* centrage vertical */
+      margin-right: 2rem;          /* espace entre phrases */
     }
 
-    /* Points avec espace spécifique avant/après */
-    #shopify-section-{{ section.id }} .dot-separator {
-      margin: 0 0.5rem; /* espace avant et après le point */
+    /* POINTS : espace avant/après uniquement pour les points */
+    #shopify-section-{{ section.id }} .scrolling-text__text .dot-separator {
+      margin: 0 0.5rem;            /* espace avant et après le point */
+      display: inline-block;
     }
 
     /* Réduction des bords / marges verticales */
@@ -40,17 +41,14 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- assign phrases = section.settings.text | split: " • " -%}
+      {%- assign phrases = section.settings.text | split: '•' -%}
       {%- for phrase in phrases -%}
-        <span
-          class="scrolling-text__text heading" {% unless forloop.first %}aria-hidden="true"{% endunless %}
-          style="margin-right: 1rem;" <!-- espace après chaque phrase -->
-        >
-          {{ phrase }}
+        <span class="scrolling-text__text">
+          {{ phrase | strip }}
+          {% unless forloop.last %}
+            <span class="dot-separator">•</span>
+          {% endunless %}
         </span>
-        {%- unless forloop.last -%}
-          <span class="dot-separator">•</span>
-        {%- endunless -%}
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -77,22 +75,9 @@
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "Full width",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Promotion text"
-    },
-    {
-      "type": "select",
-      "id": "text_size",
-      "label": "Text size",
+    { "type": "checkbox", "id": "full_width", "label": "Full width", "default": true },
+    { "type": "text", "id": "text", "label": "Text", "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE" },
+    { "type": "select", "id": "text_size", "label": "Text size",
       "options": [
         { "value": "xsmall", "label": "X-Small" },
         { "value": "small", "label": "Small" },
@@ -102,48 +87,21 @@
       ],
       "default": "large"
     },
-    {
-      "type": "select",
-      "id": "text_style",
-      "label": "Text style",
-      "options": [
-        { "value": "outline", "label": "Outline" },
-        { "value": "fill", "label": "Fill" }
-      ],
+    { "type": "select", "id": "text_style", "label": "Text style",
+      "options": [ { "value": "outline", "label": "Outline" }, { "value": "fill", "label": "Fill" } ],
       "default": "fill"
     },
-    {
-      "type": "select",
-      "id": "scrolling_mode",
-      "label": "Scrolling mode",
-      "options": [
-        { "value": "auto", "label": "Automatic" },
-        { "value": "scroll", "label": "On scroll" }
-      ],
+    { "type": "select", "id": "scrolling_mode", "label": "Scrolling mode",
+      "options": [ { "value": "auto", "label": "Automatic" }, { "value": "scroll", "label": "On scroll" } ],
       "default": "auto"
     },
-    {
-      "type": "range",
-      "id": "scrolling_speed",
-      "min": 3,
-      "max": 20,
-      "step": 1,
-      "unit": "s",
-      "label": "Automatic scrolling speed",
-      "default": 10
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined."
-    },
+    { "type": "range", "id": "scrolling_speed", "min": 3, "max": 20, "step": 1, "unit": "s", "label": "Automatic scrolling speed", "default": 10 },
+    { "type": "header", "content": "Colors", "info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined." },
     { "type": "color", "id": "background", "label": "Background" },
     { "type": "color_background", "id": "background_gradient", "label": "Background gradient" },
     { "type": "color", "id": "text_color", "label": "Text" },
     { "type": "color_background", "id": "text_gradient", "label": "Text gradient" }
   ],
-  "presets": [
-    { "name": "Scrolling text" }
-  ]
+  "presets": [ { "name": "Scrolling text" } ]
 }
 {% endschema %}
