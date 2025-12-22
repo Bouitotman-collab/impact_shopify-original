@@ -49,7 +49,7 @@
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
       "custom_css": [
-        ".scrolling-text__wrapper .dot-separator {margin: 0 0.5rem; /* espace avant et après le point uniquement */}"
+        ".scrolling-text__text span.phrase {display: inline-block; /* pour que margin-right soit pris en compte */ margin-right: 1rem; /* espace entre les phrases */}"
       ],
       "name": "Scrolling text",
       "settings": {
