@@ -35,7 +35,7 @@
       "settings": {
         "full_width": true,
         "allow_transparent_header": false,
-        "enable_parallax": true,
+        "enable_parallax": false,
         "image_size": "sm",
         "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
@@ -43,7 +43,7 @@
         "desktop_text_position": "sm:place-self-end-center sm:text-center",
         "text_color": "#f8f7f2",
         "overlay_color": "#000000",
-        "overlay_opacity": 30
+        "overlay_opacity": 0
       }
     },
     "scrolling_text_Jfmn46": {
