@@ -4,6 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
+      /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -15,7 +16,7 @@
 
     /* TEXTE : Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400;
+      font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
@@ -25,6 +26,12 @@
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+    }
+
+    /* Espacement automatique autour des séparateurs • */
+    #shopify-section-{{ section.id }} .scrolling-text__text span.separator {
+      margin: 0 0.5rem; /* espace avant et après */
+      color: inherit; /* même couleur que le texte */
     }
   </style>
 
@@ -39,15 +46,9 @@
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- render 'styled-text',
-            content: section.settings.text,
-            gradient: section.settings.text_gradient,
-            style: section.settings.text_style
-          -%}
+          {%- assign text_with_separators = section.settings.text | replace: "•", "<span class='separator'>•</span>" -%}
+          {{ text_with_separators }}
         </span>
-        {%- unless forloop.last -%}
-          <span class="scrolling-text__separator">•</span>
-        {%- endunless -%}
       {%- endfor -%}
     {%- endcapture -%}
 
