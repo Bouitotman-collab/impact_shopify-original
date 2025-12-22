@@ -2,17 +2,14 @@
   {%- render 'section-spacing-collapsing' -%}
 
   <style>
-    /* Ajuste la hauteur de la section comme l'annonce bar */
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      display: flex;        /* active flexbox */
-      align-items: center;  /* centre verticalement le texte */
-      height: 3rem;         /* hauteur identique à l'annonce bar */
+      height: 3rem; /* Hauteur identique à l'annonce bar */
+      line-height: 3rem; /* Centre verticalement le texte */
     }
 
-    /* Texte regular */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400;
+      font-weight: 400; /* Texte regular au lieu de bold */
     }
 
     @media screen and (min-width: 700px) {
