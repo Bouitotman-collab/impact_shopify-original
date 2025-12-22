@@ -14,18 +14,13 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical */
+    /* TEXTE : Regular + centrage vertical + conserver les espaces */
     #shopify-section-{{ section.id }} .scrolling-text__text {
       font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
-    }
-
-    /* ESPACEMENT DES POINTS */
-    #shopify-section-{{ section.id }} .scrolling-text__text span {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
+      white-space: pre; /* conserve les espaces et points exactement comme dans le texte */
     }
 
     /* Réduction des bords / marges verticales */
@@ -41,15 +36,9 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- assign phrases = section.settings.text | split: "•" -%}
-      {%- for phrase in phrases -%}
-        <span
-          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
-          {% unless forloop.first %}aria-hidden="true"{% endunless %}
-        >
-          {{ phrase | strip }}
-        </span>
-      {%- endfor -%}
+      <span class="scrolling-text__text heading">
+        {{ section.settings.text }}
+      </span>
     {%- endcapture -%}
 
     <div class="scrolling-text {% if section.settings.scrolling_mode == 'scroll' %}scrolling-text--scroll{% else %}scrolling-text--auto{% endif %}">
@@ -85,7 +74,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE"
+      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX  •  ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS  •  NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT  •  EFFICACE DÈS LE PREMIER LAVAGE  •  PROTÈGE VOTRE MACHINE  •  COMPATIBLE TOUTES MACHINES  •  FORMULE CERTIFIÉE ÉCOLOGIQUE"
     },
     {
       "type": "select",
