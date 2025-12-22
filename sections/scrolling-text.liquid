@@ -14,12 +14,14 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical */
-    #shopify-section-{{ section.id }} .scrolling-text__text {
+    /* TEXTE : Regular + centrage vertical + couleur texte fixe */
+    #shopify-section-{{ section.id }} .scrolling-text__text,
+    #shopify-section-{{ section.id }} .scrolling-text__text * {
       font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      color: #F8F7F2 !important; /* Force la couleur sur mobile et desktop */
     }
 
     /* Réduction des bords / marges verticales */
