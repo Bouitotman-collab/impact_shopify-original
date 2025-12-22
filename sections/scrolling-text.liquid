@@ -4,7 +4,6 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -16,7 +15,7 @@
 
     /* TEXTE : Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400; /* Regular */
+      font-weight: 400;
       line-height: 1;
       display: inline-flex;
       align-items: center;
@@ -41,11 +40,14 @@
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
           {%- render 'styled-text',
-            content: section.settings.text | append: ' • ',  /* Ajout du séparateur • */
+            content: section.settings.text,
             gradient: section.settings.text_gradient,
             style: section.settings.text_style
           -%}
         </span>
+        {%- unless forloop.last -%}
+          <span class="scrolling-text__separator">•</span>
+        {%- endunless -%}
       {%- endfor -%}
     {%- endcapture -%}
 
