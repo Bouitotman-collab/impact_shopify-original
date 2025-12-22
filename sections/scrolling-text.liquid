@@ -20,18 +20,27 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      color: #F8F7F2; /* Couleur du texte */
-    }
-
-    /* FORCER LA COULEUR DES SVG (petits V) */
-    #shopify-section-{{ section.id }} svg {
-      fill: #F8F7F2 !important;
+      color: #F8F7F2; /* couleur texte */
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+    }
+
+    /* Forcer tous les V / icônes à prendre la couleur du texte */
+    #shopify-section-{{ section.id }} .scrolling-text__text,
+    #shopify-section-{{ section.id }} .scrolling-text__text * {
+      color: #F8F7F2 !important;  /* texte et icônes inline */
+      fill: #F8F7F2 !important;   /* SVG */
+    }
+
+    #shopify-section-{{ section.id }} .scrolling-text__text::before,
+    #shopify-section-{{ section.id }} .scrolling-text__text::after,
+    #shopify-section-{{ section.id }} .scrolling-text__text *::before,
+    #shopify-section-{{ section.id }} .scrolling-text__text *::after {
+      color: #F8F7F2 !important;
     }
   </style>
 
