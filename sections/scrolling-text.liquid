@@ -1,16 +1,46 @@
 {%- if section.settings.text != blank -%}
-  <!-- CSS spécifique à cette section pour hauteur comme announcement bar -->
+
+  <!-- CSS spécifique à cette section -->
   <style>
+    /* Section full-width, texte centré, hauteur comme announcement bar */
     #shopify-section-{{ section.id }} {
-      --section-spacing-block: 0.25rem; /* padding vertical identique à l'annonce */
-      --section-spacing-inline: 0;      /* pas de padding horizontal */
-      --scrolling-text-font-size: 0.875rem; /* taille texte mobile */
-      line-height: 1.25; /* hauteur de ligne identique à l'annonce */
+      --section-spacing-block: 0.25rem; /* padding vertical */
+      --section-spacing-inline: 0;      /* padding horizontal */
+      --scrolling-text-font-size: 0.875rem; /* texte mobile */
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+
+      /* Full width */
+      width: 100vw !important;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding-left: 0;
+      padding-right: 0;
+
+      /* Forcer couleur du texte et bullets */
+      color: white !important;
+      font-weight: 400 !important; /* texte regular */
+    }
+
+    /* Texte scrolling */
+    #shopify-section-{{ section.id }} .scrolling-text {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Chaque élément de texte (y compris les petits v / bullets) */
+    #shopify-section-{{ section.id }} .scrolling-text__text {
+      color: white !important;   /* force blanc */
+      font-weight: 400 !important; /* force regular */
     }
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
-        --scrolling-text-font-size: 1rem; /* taille texte desktop */
+        --scrolling-text-font-size: 1rem; /* texte desktop */
       }
     }
   </style>
