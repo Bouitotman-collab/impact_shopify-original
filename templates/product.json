@@ -48,9 +48,7 @@
     },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
-      "custom_css": [
-        ".scrolling-text__text span.phrase {display: inline-block; /* pour que margin-right soit pris en compte */ margin-right: 1rem; /* espace entre les phrases */}"
-      ],
+      "custom_css": [],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,

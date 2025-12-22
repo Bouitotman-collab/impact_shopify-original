@@ -22,12 +22,6 @@
       align-items: center;
     }
 
-    /* Chaque phrase isolée avec espace fixe après le point */
-    #shopify-section-{{ section.id }} .scrolling-text__text .phrase {
-      display: inline-block;
-      margin-right: 1rem; /* Ajuste cet espace selon ton besoin */
-    }
-
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
@@ -41,10 +35,16 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- assign phrases = "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX •,ÉLIMINE ODEURS •,NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT •,EFFICACE DÈS LE PREMIER LAVAGE •,PROTÈGE VOTRE MACHINE •,COMPATIBLE TOUTES MACHINES •,FORMULE CERTIFIÉE ÉCOLOGIQUE" | split: "," -%}
-      {%- for phrase in phrases -%}
-        <span class="scrolling-text__text heading phrase" aria-hidden="true">
-          {{ phrase }}
+      {%- for i in (1..10) -%}
+        <span
+          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
+          {% unless forloop.first %}aria-hidden="true"{% endunless %}
+        >
+          {%- render 'styled-text',
+            content: section.settings.text | append: ' • ',  /* Ajout du séparateur • */
+            gradient: section.settings.text_gradient,
+            style: section.settings.text_style
+          -%}
         </span>
       {%- endfor -%}
     {%- endcapture -%}
