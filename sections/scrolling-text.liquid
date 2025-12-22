@@ -2,16 +2,10 @@
 
   <!-- CSS spécifique à cette section -->
   <style>
-    /* Section full-width, texte centré, hauteur comme announcement bar */
     #shopify-section-{{ section.id }} {
-      --section-spacing-block: 0.25rem; /* padding vertical */
-      --section-spacing-inline: 0;      /* padding horizontal */
-      --scrolling-text-font-size: 0.875rem; /* texte mobile */
-      line-height: 1.25;
+      /* Full-width et texte centré */
       display: flex;
       align-items: center;
-
-      /* Full width */
       width: 100vw !important;
       position: relative;
       left: 50%;
@@ -20,27 +14,30 @@
       padding-left: 0;
       padding-right: 0;
 
-      /* Forcer couleur du texte et bullets */
-      color: white !important;
-      font-weight: 400 !important; /* texte regular */
+      /* Couleur et texte */
+      color: #F8F7F2 !important;
+      font-weight: 400 !important;
+
+      /* Hauteur identique à l'annonce bar */
+      height: 3rem;
+      min-height: 3rem;
+      line-height: 3rem;
     }
 
-    /* Texte scrolling */
     #shopify-section-{{ section.id }} .scrolling-text {
       width: 100%;
       display: flex;
       align-items: center;
     }
 
-    /* Chaque élément de texte (y compris les petits v / bullets) */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      color: white !important;   /* force blanc */
-      font-weight: 400 !important; /* force regular */
+      color: #F8F7F2 !important;
+      font-weight: 400 !important;
     }
 
     @media screen and (min-width: 700px) {
       #shopify-section-{{ section.id }} {
-        --scrolling-text-font-size: 1rem; /* texte desktop */
+        --scrolling-text-font-size: 1rem;
       }
     }
   </style>
@@ -56,11 +53,11 @@
 
     <div class="scrolling-text {% if section.settings.scrolling_mode == 'scroll' %}scrolling-text--scroll{% else %}scrolling-text--auto{% endif %}">
       {%- if section.settings.scrolling_mode == 'scroll' -%}
-        <scrolling-text class="scrolling-text__wrapper">
+        <scrolling-text class="scrolling-text__wrapper" scrolling-speed="10">
           {{- section_content -}}
         </scrolling-text>
       {%- else -%}
-        <marquee-text scrolling-speed="{{ section.settings.scrolling_speed }}" class="scrolling-text__wrapper">
+        <marquee-text scrolling-speed="10" class="scrolling-text__wrapper">
           {{- section_content -}}
         </marquee-text>
       {%- endif -%}
@@ -94,7 +91,7 @@
         {"value": "auto","label": "Automatic"},
         {"value": "scroll","label": "On scroll"}
       ],"default": "auto"},
-    {"type": "range","id": "scrolling_speed","min": 3,"max": 20,"step": 1,"unit": "s","label": "Automatic scrolling speed","default": 10},
+    {"type": "range","id": "scrolling_speed","min": 3,"max": 30,"step": 1,"unit": "s","label": "Automatic scrolling speed","default": 10},
     {"type": "header","content": "Colors","info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined."},
     {"type": "color","id": "background","label": "Background"},
     {"type": "color_background","id": "background_gradient","label": "Background gradient"},
