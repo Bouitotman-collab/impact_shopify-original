@@ -11,8 +11,7 @@
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      padding-left: 0;
-      padding-right: 0;
+      padding: 0;           /* supprime padding haut/bas */
 
       /* Couleur et texte */
       color: #F8F7F2 !important;
@@ -20,8 +19,7 @@
 
       /* Hauteur identique à l'annonce bar */
       height: 3rem;
-      min-height: 3rem;
-      line-height: 3rem;
+      line-height: 3rem;    /* centre verticalement le texte */
     }
 
     #shopify-section-{{ section.id }} .scrolling-text {
@@ -53,11 +51,11 @@
 
     <div class="scrolling-text {% if section.settings.scrolling_mode == 'scroll' %}scrolling-text--scroll{% else %}scrolling-text--auto{% endif %}">
       {%- if section.settings.scrolling_mode == 'scroll' -%}
-        <scrolling-text class="scrolling-text__wrapper" scrolling-speed="10">
+        <scrolling-text class="scrolling-text__wrapper">
           {{- section_content -}}
         </scrolling-text>
       {%- else -%}
-        <marquee-text scrolling-speed="10" class="scrolling-text__wrapper">
+        <marquee-text class="scrolling-text__wrapper">
           {{- section_content -}}
         </marquee-text>
       {%- endif -%}
