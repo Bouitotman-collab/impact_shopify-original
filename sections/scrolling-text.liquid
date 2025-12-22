@@ -5,7 +5,9 @@
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
       height: 3rem; /* Hauteur identique à l'annonce bar */
-      line-height: 3rem; /* Centre verticalement le texte */
+      line-height: 3rem;
+      display: flex;         /* Centre le texte verticalement */
+      align-items: center;   /* Centre le texte verticalement */
     }
 
     #shopify-section-{{ section.id }} .scrolling-text__text {
