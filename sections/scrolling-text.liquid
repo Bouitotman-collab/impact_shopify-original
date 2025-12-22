@@ -14,13 +14,19 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical + conserver les espaces */
+    /* TEXTE : Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
       font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      white-space: pre; /* conserve les espaces et points exactement comme dans le texte */
+      color: #F8F7F2; /* Couleur texte */
+    }
+
+    /* Espacement autour des points */
+    #shopify-section-{{ section.id }} .scrolling-text__text span {
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
     }
 
     /* Réduction des bords / marges verticales */
@@ -36,9 +42,18 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      <span class="scrolling-text__text heading">
-        {{ section.settings.text }}
-      </span>
+      {%- for i in (1..10) -%}
+        <span
+          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
+          {% unless forloop.first %}aria-hidden="true"{% endunless %}
+        >
+          {%- render 'styled-text',
+            content: section.settings.text,
+            gradient: section.settings.text_gradient,
+            style: section.settings.text_style
+          -%}
+        </span>
+      {%- endfor -%}
     {%- endcapture -%}
 
     <div class="scrolling-text {% if section.settings.scrolling_mode == 'scroll' %}scrolling-text--scroll{% else %}scrolling-text--auto{% endif %}">
@@ -74,7 +89,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX  •  ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS  •  NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT  •  EFFICACE DÈS LE PREMIER LAVAGE  •  PROTÈGE VOTRE MACHINE  •  COMPATIBLE TOUTES MACHINES  •  FORMULE CERTIFIÉE ÉCOLOGIQUE"
+      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE"
     },
     {
       "type": "select",
