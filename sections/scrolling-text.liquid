@@ -20,19 +20,17 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      color: #F8F7F2; /* Couleur texte */
-    }
-
-    /* Espacement autour des points */
-    #shopify-section-{{ section.id }} .scrolling-text__text span {
-      margin-left: 0.5rem;
-      margin-right: 0.5rem;
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
+    }
+
+    /* Espacement autour du point */
+    .scrolling-text__wrapper .dot-separator {
+      margin: 0 0.5rem; /* espace avant et après le point uniquement */
     }
   </style>
 
@@ -42,17 +40,16 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- for i in (1..10) -%}
+      {%- assign phrases = section.settings.text | split: " • " -%}
+      {%- for phrase in phrases -%}
         <span
-          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
-          {% unless forloop.first %}aria-hidden="true"{% endunless %}
+          class="scrolling-text__text heading" {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- render 'styled-text',
-            content: section.settings.text,
-            gradient: section.settings.text_gradient,
-            style: section.settings.text_style
-          -%}
+          {{ phrase }}
         </span>
+        {%- unless forloop.last -%}
+          <span class="dot-separator">•</span>
+        {%- endunless -%}
       {%- endfor -%}
     {%- endcapture -%}
 
