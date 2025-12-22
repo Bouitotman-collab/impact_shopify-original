@@ -4,8 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.7rem{% elsif section.settings.text_size == 'small' %}0.9rem{% elsif section.settings.text_size == 'medium' %}1.05rem{% elsif section.settings.text_size == 'large' %}1.2rem{% else %}1.4rem{% endif %};
-
+      --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}1.125rem{% elsif section.settings.text_size == 'small' %}2.5rem{% elsif section.settings.text_size == 'medium' %}3.75rem{% elsif section.settings.text_size == 'large' %}5rem{% else %}7.5rem{% endif %};
     }
 
     @media screen and (min-width: 700px) {
@@ -24,8 +23,8 @@
 
     /* ✅ RÉDUCTION DES BORDS / MARGES VERTICALES */
     #shopify-section-{{ section.id }} .section {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
   </style>
 
