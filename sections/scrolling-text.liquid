@@ -4,7 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Taille texte adaptée */
+      /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -16,22 +16,17 @@
 
     /* TEXTE : Regular + centrage vertical */
     #shopify-section-{{ section.id }} .scrolling-text__text {
-      font-weight: 400;
+      font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      white-space: nowrap; /* éviter retour à la ligne */
+      white-space: nowrap; /* important pour que tout reste sur une seule ligne */
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
-    }
-
-    /* Ajout d'espaces autour des points "•" */
-    #shopify-section-{{ section.id }} .scrolling-text__text::after {
-      content: "  •  "; /* 2 espaces avant et après le point */
     }
   </style>
 
@@ -88,7 +83,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT EFFICACE DÈS LE PREMIER LAVAGE PROTÈGE VOTRE MACHINE COMPATIBLE TOUTES MACHINES FORMULE CERTIFIÉE ÉCOLOGIQUE"
+      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE"
     },
     {
       "type": "select",
