@@ -4,7 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Texte plus petit que le code initial pour lisibilité */
+      /* Taille du texte ajustable selon la sélection */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -14,20 +14,26 @@
       }
     }
 
-    /* TEXTE : Regular + centrage vertical + couleur texte fixe */
-    #shopify-section-{{ section.id }} .scrolling-text__text,
-    #shopify-section-{{ section.id }} .scrolling-text__text * {
+    /* TEXTE : Regular + centrage vertical */
+    #shopify-section-{{ section.id }} .scrolling-text__text {
       font-weight: 400; /* Regular */
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      color: #F8F7F2 !important; /* Force la couleur sur mobile et desktop */
+      color: #F8F7F2;
+      fill: #F8F7F2;
+    }
+
+    /* Assurer que tous les enfants héritent la couleur (fix pour les petits v noirs) */
+    #shopify-section-{{ section.id }} .scrolling-text__text * {
+      color: #F8F7F2 !important;
+      fill: #F8F7F2 !important;
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
     }
   </style>
 
