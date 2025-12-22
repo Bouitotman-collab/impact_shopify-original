@@ -13,11 +13,18 @@
       }
     }
 
-    /* === SEULE MODIFICATION AUTORISÉE === */
+    /* TEXTE : regular + centrage visuel OK */
     #shopify-section-{{ section.id }} .scrolling-text__text {
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      font-weight: 400;
+    }
+
+    /* ✅ RÉDUCTION DES BORDS / MARGES VERTICALES */
+    #shopify-section-{{ section.id }} .section {
+      padding-top: 0.25rem;
+      padding-bottom: 0.25rem;
     }
   </style>
 
@@ -28,8 +35,15 @@
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
       {%- for i in (1..10) -%}
-        <span class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
-          {%- render 'styled-text', content: section.settings.text, gradient: section.settings.text_gradient, style: section.settings.text_style -%}
+        <span
+          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
+          {% unless forloop.first %}aria-hidden="true"{% endunless %}
+        >
+          {%- render 'styled-text',
+            content: section.settings.text,
+            gradient: section.settings.text_gradient,
+            style: section.settings.text_style
+          -%}
         </span>
       {%- endfor -%}
     {%- endcapture -%}
