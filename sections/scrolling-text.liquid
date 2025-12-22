@@ -3,23 +3,20 @@
   <!-- CSS spécifique à cette section -->
   <style>
     #shopify-section-{{ section.id }} {
-      /* Full-width et texte centré */
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       width: 100vw !important;
       position: relative;
       left: 50%;
       margin-left: -50vw;
       margin-right: -50vw;
-      padding: 0;           /* supprime padding haut/bas */
-
-      /* Couleur et texte */
+      padding: 0;
+      height: 3rem;         /* hauteur fixe identique à l’annonce bar */
+      line-height: 3rem;    /* centre verticalement le texte */
+      overflow: hidden;     /* empêche le texte de dépasser */
       color: #F8F7F2 !important;
       font-weight: 400 !important;
-
-      /* Hauteur identique à l'annonce bar */
-      height: 3rem;
-      line-height: 3rem;    /* centre verticalement le texte */
     }
 
     #shopify-section-{{ section.id }} .scrolling-text {
@@ -31,6 +28,12 @@
     #shopify-section-{{ section.id }} .scrolling-text__text {
       color: #F8F7F2 !important;
       font-weight: 400 !important;
+      white-space: nowrap;
+    }
+
+    /* Ralentir le défilement */
+    #shopify-section-{{ section.id }} .scrolling-text--scroll .scrolling-text__wrapper {
+      animation-duration: 20s !important; /* ajuste cette valeur pour vitesse */
     }
 
     @media screen and (min-width: 700px) {
