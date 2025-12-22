@@ -2,25 +2,22 @@
   {%- render 'section-spacing-collapsing' -%}
 
   <style>
-    /* NE TOUCHE PAS au comportement du scrolling */
+    /* SECTION : même logique que announcement bar */
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-    }
-
-    /* CENTRAGE VERTICAL CORRECT */
-    #shopify-section-{{ section.id }} .scrolling-text__wrapper {
-      display: flex;
+      min-height: 3rem;
+      display: grid;
       align-items: center;
-      height: 100%;
     }
 
-    /* TEXTE REGULAR + COULEUR */
+    /* TEXTE : regular + couleur */
     #shopify-section-{{ section.id }} .scrolling-text__text {
       font-weight: 400;
       color: #F8F7F2;
+      white-space: nowrap;
     }
 
-    /* TAILLES DE TEXTE — STRICTEMENT IDENTIQUES À L’ORIGINAL */
+    /* TAILLE TEXTE — 100 % IDENTIQUE AU CODE D’ORIGINE */
     #shopify-section-{{ section.id }} {
       --scrolling-text-font-size:
         {% if section.settings.text_size == 'xsmall' %}1.125rem
@@ -90,18 +87,8 @@
     "groups": ["header", "custom.overlay"]
   },
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "Full width",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Promotion text"
-    },
+    { "type": "checkbox", "id": "full_width", "label": "Full width", "default": true },
+    { "type": "text", "id": "text", "label": "Text", "default": "Promotion text" },
     {
       "type": "select",
       "id": "text_size",
@@ -145,18 +132,12 @@
       "label": "Automatic scrolling speed",
       "default": 10
     },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set. Gradient text outline and gradient background cannot be combined."
-    },
+    { "type": "header", "content": "Colors" },
     { "type": "color", "id": "background", "label": "Background" },
     { "type": "color_background", "id": "background_gradient", "label": "Background gradient" },
     { "type": "color", "id": "text_color", "label": "Text" },
     { "type": "color_background", "id": "text_gradient", "label": "Text gradient" }
   ],
-  "presets": [
-    { "name": "Scrolling text" }
-  ]
+  "presets": [{ "name": "Scrolling text" }]
 }
 {% endschema %}
