@@ -22,15 +22,15 @@
       align-items: center;
     }
 
+    /* Points avec espace spécifique avant/après */
+    #shopify-section-{{ section.id }} .dot-separator {
+      margin: 0 0.5rem; /* espace avant et après le point */
+    }
+
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
-    }
-
-    /* Espacement autour du point */
-    .scrolling-text__wrapper .dot-separator {
-      margin: 0 0.5rem; /* espace avant et après le point uniquement */
     }
   </style>
 
@@ -44,6 +44,7 @@
       {%- for phrase in phrases -%}
         <span
           class="scrolling-text__text heading" {% unless forloop.first %}aria-hidden="true"{% endunless %}
+          style="margin-right: 1rem;" <!-- espace après chaque phrase -->
         >
           {{ phrase }}
         </span>
@@ -86,7 +87,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE"
+      "default": "Promotion text"
     },
     {
       "type": "select",
