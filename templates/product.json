@@ -48,11 +48,15 @@
     },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
-      "custom_css": [],
+      "custom_css": [
+        "/* TEXTE REGULAR + CENTRÉ VERTICALEMENT */.scrolling-text__text {font-weight: 400; /* Regular */ line-height: 1; display: inline-flex; align-items: center; color: #f8f7f2; /* couleur texte */}",
+        "/* ESPACEMENT AUTOUR DES POINTS • */.scrolling-text__text {/* espace entre mots et séparateurs */ word-spacing: 0.5rem;}",
+        "/* Si tu veux cibler uniquement les séparateurs • et ajouter un peu plus d'espace */.scrolling-text__text span.separator {margin-left: 0.5rem; margin-right: 0.5rem; color: #f8f7f2; /* couleur identique au texte */}"
+      ],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE",
+        "text": "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX • ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS • NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT • EFFICACE DÈS LE PREMIER LAVAGE • PROTÈGE VOTRE MACHINE • COMPATIBLE TOUTES MACHINES • FORMULE CERTIFIÉE ÉCOLOGIQUE",
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
