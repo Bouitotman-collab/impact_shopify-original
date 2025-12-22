@@ -49,8 +49,8 @@
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
       "custom_css": [
-        "/* Force le texte en normal (pas de gras) */div,p,span,h1,h2,h3,h4 {font-weight: 400 !important;}",
-        " /* Réduit la hauteur de la bande */selector {padding-top: 10px !important; padding-bottom: 10px !important;}"
+        ".scrolling-text {margin-top: -30px !important; margin-bottom: -30px !important; padding-top: 5px !important; padding-bottom: 5px !important; min-height: 0 !important;}",
+        ".scrolling-text__item {padding: 0 !important;}"
       ],
       "name": "Scrolling text",
       "settings": {
