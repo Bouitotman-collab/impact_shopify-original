@@ -20,12 +20,13 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      color: {{ section.settings.text_color | default: '#F8F7F2' }};
     }
 
     /* Réduction des bords / marges verticales */
     #shopify-section-{{ section.id }} .section {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
   </style>
 
@@ -40,8 +41,9 @@
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
+          {%- assign text_with_separator = section.settings.text | replace: "v", "•" -%}
           {%- render 'styled-text',
-            content: section.settings.text,
+            content: text_with_separator,
             gradient: section.settings.text_gradient,
             style: section.settings.text_style
           -%}
