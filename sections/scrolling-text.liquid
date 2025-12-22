@@ -6,6 +6,7 @@
       --section-spacing-inline: 0;
       /* Texte plus petit que le code initial pour lisibilité */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
+      background: {{ section.settings.background | default: '#ffffff' }};
     }
 
     @media screen and (min-width: 700px) {
@@ -20,6 +21,7 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      color: {{ section.settings.text_color | default: '#F8F7F2' }};
     }
 
     /* Réduction des bords / marges verticales */
@@ -28,10 +30,9 @@
       padding-bottom: 0.5rem;
     }
 
-    /* Espacement automatique autour des séparateurs • */
+    /* Espaces autour des séparateurs */
     #shopify-section-{{ section.id }} .scrolling-text__text span.separator {
-      margin: 0 0.5rem; /* espace avant et après */
-      color: inherit; /* même couleur que le texte */
+      margin: 0 0.5rem;
     }
   </style>
 
@@ -41,13 +42,13 @@
 
   <div {% render 'section-properties', tight: is_tight %}>
     {%- capture section_content -%}
-      {%- for i in (1..10) -%}
-        <span
-          class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
-          {% unless forloop.first %}aria-hidden="true"{% endunless %}
-        >
-          {%- assign text_with_separators = section.settings.text | replace: "•", "<span class='separator'>•</span>" -%}
-          {{ text_with_separators }}
+      {%- assign items = "SPÉCIAL PROPRIÉTAIRES D'ANIMAUX|ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS|NETTOIE EN PROFONDEUR — 1 CYCLE SUFFIT|EFFICACE DÈS LE PREMIER LAVAGE|PROTÈGE VOTRE MACHINE|COMPATIBLE TOUTES MACHINES|FORMULE CERTIFIÉE ÉCOLOGIQUE" | split: "|" -%}
+      {%- for item in items -%}
+        <span class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}" {% unless forloop.first %}aria-hidden="true"{% endunless %}>
+          <span>{{ item }}</span>
+          {%- unless forloop.last -%}
+            <span class="separator">•</span>
+          {%- endunless -%}
         </span>
       {%- endfor -%}
     {%- endcapture -%}
