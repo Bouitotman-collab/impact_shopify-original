@@ -10178,7 +10178,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   
   /* Icônes très fines */
   .header__icon-list svg {
-    stroke-width: 1,5 !important;
+    stroke-width: 1,2 !important;
   }
   
   /* EUR € reste en gras */
