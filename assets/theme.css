@@ -10298,6 +10298,32 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Bloquer complètement tout changement au scroll sur desktop */
+@media screen and (min-width: 990px) {
+  /* Désactiver toutes les animations et transformations */
+  .shopify-section-group-header-group,
+  .shopify-section-group-header-group *,
+  .header,
+  .header * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  
+  /* Forcer position statique */
+  .shopify-section-group-header-group {
+    position: relative !important;
+    top: 0 !important;
+  }
+  
+  /* Cacher le sélecteur de devise qui apparaît */
+  .header localization-form:not(:first-of-type),
+  .header .localization-selector:nth-of-type(2) {
+    display: none !important;
+  }
+}
+
+
 
 
 
