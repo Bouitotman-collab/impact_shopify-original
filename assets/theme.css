@@ -10153,26 +10153,26 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Header compact - 40px */
+/* Header compact - 42px */
 @media screen and (min-width: 750px) {
   .shopify-section-group-header-group .header {
     padding: 0 !important;
-    min-height: 40px !important;
-    height: 40px !important;
+    min-height: 42px !important;
+    height: 42px !important;
   }
   
   .header__heading,
   .header__heading-logo {
     padding: 0 !important;
     margin: 0 !important;
-    height: 40px !important;
+    height: 42px !important;
     display: flex !important;
     align-items: center !important;
   }
   
   .header__heading-logo img {
-    max-height: 28px !important;
-    height: 28px !important;
+    max-height: 30px !important;
+    height: 30px !important;
   }
   
   /* Menu Globo */
@@ -10180,7 +10180,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   .globo-menu-wrapper {
     padding: 0 !important;
     margin: 0 !important;
-    height: 40px !important;
+    height: 42px !important;
     display: flex !important;
     align-items: center !important;
   }
@@ -10191,7 +10191,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   #globo-mega-menu ul li a {
-    padding: 3px 8px !important;
+    padding: 4px 8px !important;
     font-size: 12px !important;
     line-height: 1.2 !important;
   }
@@ -10204,9 +10204,10 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .header__heading-logo img {
-    max-height: 26px !important;
+    max-height: 27px !important;
   }
 }
+
 
 
 
