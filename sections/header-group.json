@@ -41,21 +41,13 @@
             "text": "Satisfait ou remboursé",
             "url": ""
           }
-        },
-        "message_WPUUzG": {
-          "type": "message",
-          "settings": {
-            "text": "Produits naturels pour vos animaux",
-            "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/7461709.png?v=1766337325"
-          }
         }
       },
       "block_order": [
         "message_qqzQGk",
         "message",
         "message_fFimPU",
-        "message_eGh7Y4",
-        "message_WPUUzG"
+        "message_eGh7Y4"
       ],
       "settings": {
         "enable_sticky": true,
