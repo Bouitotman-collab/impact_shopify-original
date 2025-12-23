@@ -10181,10 +10181,12 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   padding: 0 !important;
   min-height: 0 !important;
   height: auto !important;
-  max-height: 60px !important;        ← Augmente à 60px
-  /* overflow: hidden !important; */  ← ENLÈVE cette ligne (mets-la en commentaire)
-  margin-top: -5px !important;        ← Réduis à -5px
+  max-height: 55px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
+
 
 
 
