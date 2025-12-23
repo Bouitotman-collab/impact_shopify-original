@@ -10317,3 +10317,43 @@ p, a, span, div, button, input, textarea, select {
   font-family: 'Epilogue', sans-serif !important;
 }
 
+
+/* Logos sur fond transparent et défilement */
+.logo-list {
+  background: transparent !important;
+}
+
+.logo-list__item,
+.logo-list__logo {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Animation de défilement */
+@media screen and (min-width: 990px) {
+  .logo-list__wrapper {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .logo-list__items {
+    display: flex;
+    animation: scroll-logos 20s linear infinite;
+  }
+  
+  @keyframes scroll-logos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Dupliquer les logos pour un défilement infini */
+  .logo-list__items::after {
+    content: '';
+    display: flex;
+  }
+}
