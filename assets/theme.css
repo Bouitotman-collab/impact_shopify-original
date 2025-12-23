@@ -10131,7 +10131,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-/* Desktop : header blanc opaque avec texte foncé */
+/* Desktop : header blanc opaque avec menu visible */
 @media screen and (min-width: 750px) {
   .shopify-section-group-header-group {
     background-color: #ffffff !important;
@@ -10150,29 +10150,27 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     color: #1a1a1a !important;
     fill: #1a1a1a !important;
   }
-}
-
-
-/* Forcer l'affichage du menu complet sur desktop (pas de hamburger) */
-@media screen and (min-width: 750px) {
-  /* Cacher le bouton hamburger sur desktop */
-  .header__icon--menu {
+  
+  /* FORCER l'affichage du menu inline sur desktop */
+  .header__icon--menu,
+  button[aria-controls="header-drawer"] {
     display: none !important;
   }
   
-  /* Afficher le menu de navigation sur desktop */
-  .header__inline-menu {
+  nav.header__inline-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .header__inline-menu .list-menu {
+    display: flex !important;
+    gap: 2rem;
+  }
+  
+  .header__inline-menu .list-menu__item {
     display: block !important;
   }
-  
-  details[open] > .header__submenu,
-  .header__menu {
-    display: flex !important;
-  }
-  
-  /* S'assurer que le menu est visible */
-  .header__menu-item {
-    display: inline-block !important;
-  }
 }
+
 
