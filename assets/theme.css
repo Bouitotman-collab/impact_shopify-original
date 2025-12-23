@@ -10169,6 +10169,15 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 /* Desktop : header blanc opaque */
 @media screen and (min-width: 750px) {
+  /* Cacher TOUS les headers sauf le premier */
+  body > .shopify-section-group-header-group ~ .shopify-section-group-header-group,
+  .shopify-section-header:not(:first-of-type) {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+  
   .shopify-section-group-header-group {
     background-color: #ffffff !important;
     opacity: 1 !important;
@@ -10243,23 +10252,8 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     margin-left: auto !important;
     flex-shrink: 0 !important;
   }
-  
-  /* SUPPRIMER LE DOUBLON DU HEADER */
-  .shopify-section-group-header-group:nth-of-type(2) {
-    display: none !important;
-  }
-  
-  .header--mobile-center {
-    display: none !important;
-  }
 }
 
-/* Mobile en mode paysage */
-@media screen and (max-width: 989px) and (orientation: landscape) {
-  .shopify-section-group-header-group:nth-of-type(2) {
-    display: none !important;
-  }
-}
 
 
 
