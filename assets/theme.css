@@ -10251,24 +10251,39 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Désactiver le sticky header */
+/* Empêcher le doublement du header au scroll */
 @media screen and (min-width: 750px) {
+  /* Cacher tout clone ou doublon du header */
+  .shopify-section-group-header-group.shopify-section-header-hidden,
+  .shopify-section-group-header-group[aria-hidden="true"],
+  .header-wrapper.header-wrapper--border-bottom {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+  
+  /* Forcer le header à rester fixe sans animation */
   .shopify-section-group-header-group {
-    position: relative !important;    /* Au lieu de sticky */
-    top: auto !important;
-  }
-  
-  .shopify-section-group-header-group.shopify-section-header-sticky {
     position: relative !important;
-    box-shadow: none !important;
+    transform: none !important;
+    animation: none !important;
   }
   
-  /* Ou si tu veux garder le sticky mais sans doublon */
+  /* Désactiver complètement le sticky */
+  .shopify-section-header-sticky {
+    position: relative !important;
+  }
+  
+  /* Supprimer les pseudo-éléments qui peuvent créer des doublons */
   .shopify-section-group-header-group::before,
-  .shopify-section-group-header-group::after {
+  .shopify-section-group-header-group::after,
+  .header::before,
+  .header::after {
+    content: none !important;
     display: none !important;
   }
 }
+
 
 
 
