@@ -10161,23 +10161,35 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Tout en extra-léger (extra-light) SAUF EUR € */
+/* Tout en Montserrat très fin (Thin) SAUF EUR € */
 @media screen and (min-width: 990px) {
-  /* Tout le header en extra-léger par défaut */
-  .shopify-section-group-header-group a,
-  .shopify-section-group-header-group button,
-  .shopify-section-group-header-group span,
-  .shopify-section-group-header-group div,
-  .header__link-list *,
-  .header__secondary-nav * {
-    font-weight: 300 !important;
+  /* Tout le header en Montserrat Thin */
+  .shopify-section-group-header-group,
+  .shopify-section-group-header-group *,
+  .header,
+  .header *,
+  .header a,
+  .header button,
+  .header span,
+  .header div {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 200 !important;
   }
   
-  /* Icônes en extra-léger (stroke très fin) */
+  /* Icônes très fines */
   .header__icon-list svg {
-    stroke-width: 1 !important;
+    stroke-width: 0.8 !important;
+  }
+  
+  /* EUR € reste en gras */
+  .header__icon-list localization-form summary,
+  .header__icon-list localization-form summary *,
+  .header__icon-list li:has(localization-form) summary,
+  .header__icon-list li:has(localization-form) button {
+    font-weight: 700 !important;
   }
 }
+
 
 
 
