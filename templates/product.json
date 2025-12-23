@@ -63,6 +63,74 @@
         "text_gradient": ""
       }
     },
+    "logo_list_iABB6c": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_exhtPN": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/8949AA69-DE9A-4BED-9C37-53A9CDD8E100.png",
+            "logo_width": 300,
+            "link": ""
+          }
+        },
+        "logo_zYR7RC": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/955CA019-8CDA-4EBB-B223-A5355AAD9671.png",
+            "logo_width": 130,
+            "link": ""
+          }
+        },
+        "logo_tzgEF3": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1.png",
+            "logo_width": 300,
+            "link": ""
+          }
+        },
+        "logo_pDRkQi": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/D5B32CF4-B425-4A7B-9433-4504598FE777.png",
+            "logo_width": 300,
+            "link": ""
+          }
+        },
+        "logo_LDBRqN": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify://shop_images/F75C729A-BB03-4B74-9CB3-E44FB02237A0.png",
+            "logo_width": 300,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_exhtPN",
+        "logo_zYR7RC",
+        "logo_tzgEF3",
+        "logo_pDRkQi",
+        "logo_LDBRqN"
+      ],
+      "name": "Logo list",
+      "settings": {
+        "full_width": true,
+        "stack_mobile": true,
+        "title": "",
+        "content": "",
+        "text_alignment": "center",
+        "items_per_row": 5,
+        "background": "rgba(0,0,0,0)",
+        "background_gradient": "",
+        "text_color": "#1a1a1a",
+        "heading_color": "",
+        "heading_gradient": "",
+        "logo_item_background": "",
+        "logo_item_border": ""
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -255,6 +323,7 @@
   "order": [
     "image_with_text_overlay_gUiBHz",
     "scrolling_text_Jfmn46",
+    "logo_list_iABB6c",
     "main",
     "related-products"
   ]
