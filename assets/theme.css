@@ -10176,13 +10176,16 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     z-index: 100 !important;
   }
   
-  .shopify-section-group-header-group {
+  .shopify-section-group-header-group .header {
   background-color: #ffffff !important;
-  opacity: 1 !important;
-  position: relative !important;
-  z-index: 100 !important;
-  margin-top: 2px !important;        ← Ajoute 2px d'espace
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: 60px !important;        ← Augmente à 60px
+  /* overflow: hidden !important; */  ← ENLÈVE cette ligne (mets-la en commentaire)
+  margin-top: -5px !important;        ← Réduis à -5px
 }
+
 
 
 
