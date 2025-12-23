@@ -10151,36 +10151,6 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-/* Forcer le texte et icônes en noir sur desktop */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group .header *,
-  .shopify-section-group-header-group a,
-  .shopify-section-group-header-group button,
-  .shopify-section-group-header-group svg {
-    color: #000000 !important;
-    fill: #000000 !important;
-  }
-}
-
-
-/* Enlever le gras */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group *,
-  .header * {
-    font-weight: 400 !important;
-  }
-}
-
-
-
-/* Enlever le gras des icônes SVG */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group svg,
-  .header svg,
-  .header__icon-list svg {
-    stroke-width: 1 !important;
-  }
-}
 
 
 
