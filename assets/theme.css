@@ -10177,16 +10177,14 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .shopify-section-group-header-group .header {
-  background-color: #ffffff !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: 75px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
+    background-color: #ffffff !important;
+    padding: 0 !important;
+    min-height: 44px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
   
   /* Texte et icônes en noir sur desktop */
   .shopify-section-group-header-group .header__icon,
@@ -10245,57 +10243,24 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     margin-left: auto !important;
     flex-shrink: 0 !important;
   }
-}
-
-
-/* Corriger le header sticky au scroll sur desktop */
-@media screen and (min-width: 750px) {
-  /* Empêcher le header de devenir sticky */
-  .shopify-section-group-header-group.shopify-section-header-sticky {
-    position: relative !important;
-    top: auto !important;
-  }
   
-  /* Cacher le header quand il a la classe "sticky" ou "scrolled" */
-  .header.header--top-center.header--mobile-center.page-width.header--has-menu.header--has-social.header--has-account {
-    position: relative !important;
-  }
-  
-  /* Supprimer l'espace blanc qui apparaît */
-  .shopify-section-group-header-group.animate {
-    animation: none !important;
-    transform: none !important;
-  }
-  
-  /* Forcer le header à ne jamais être en position fixed */
-  .shopify-section-group-header-group,
-  .shopify-section-group-header-group .header {
-    position: relative !important;
-    top: 0 !important;
-  }
-}
-
-
-/* Supprimer le doublon du header sur mobile paysage et desktop */
-@media screen and (min-width: 750px) {
-  /* Cacher le deuxième header s'il y en a deux */
+  /* SUPPRIMER LE DOUBLON DU HEADER */
   .shopify-section-group-header-group:nth-of-type(2) {
     display: none !important;
   }
   
-  /* Ou cacher le header avec menu burger sur desktop */
   .header--mobile-center {
     display: none !important;
   }
 }
 
-/* Spécifiquement pour mobile en mode paysage */
+/* Mobile en mode paysage */
 @media screen and (max-width: 989px) and (orientation: landscape) {
-  .shopify-section-group-header-group:nth-of-type(2),
-  .header--mobile-center:not(:first-child) {
+  .shopify-section-group-header-group:nth-of-type(2) {
     display: none !important;
   }
 }
+
 
 
 
