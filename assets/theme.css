@@ -10292,6 +10292,15 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Barre d'annonce en Montserrat Semi-Bold */
+.announcement-bar,
+.announcement-bar *,
+.announcement-bar a,
+.announcement-bar span,
+.announcement-bar p {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+}
 
 
 
