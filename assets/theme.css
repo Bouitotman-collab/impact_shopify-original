@@ -10161,23 +10161,24 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Tout en léger (light) SAUF EUR € */
+/* Tout en extra-léger (extra-light) SAUF EUR € */
 @media screen and (min-width: 990px) {
-  /* Tout le header en léger par défaut */
+  /* Tout le header en extra-léger par défaut */
   .shopify-section-group-header-group a,
   .shopify-section-group-header-group button,
   .shopify-section-group-header-group span,
   .shopify-section-group-header-group div,
   .header__link-list *,
   .header__secondary-nav * {
-    font-weight: 300 !important;
+    font-weight: 200 !important;
   }
   
-  /* Icônes en léger (stroke fin) */
+  /* Icônes en extra-léger (stroke très fin) */
   .header__icon-list svg {
-    stroke-width: 1.2 !important;
+    stroke-width: 1 !important;
   }
 }
+
 
 
 
