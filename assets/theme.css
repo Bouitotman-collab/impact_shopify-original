@@ -10190,6 +10190,20 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Forcer UNIQUEMENT EUR € en gras */
+@media screen and (min-width: 990px) {
+  .header__icon-list localization-form summary,
+  .header__icon-list localization-form .disclosure__button,
+  .header__icon-list li:has(localization-form) summary,
+  .header__icon-list li:has(localization-form) button {
+    font-weight: 700 !important;
+  }
+  
+  .header__icon-list localization-form summary *,
+  .header__icon-list localization-form .disclosure__button * {
+    font-weight: 700 !important;
+  }
+}
 
 
 
