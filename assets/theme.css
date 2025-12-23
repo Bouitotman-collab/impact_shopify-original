@@ -10190,6 +10190,22 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
+/* Forcer EUR € en gras (plus spécifique) */
+@media screen and (min-width: 990px) {
+  .header__icon-list localization-form,
+  .header__icon-list localization-form *,
+  .header__icon-list localization-form summary,
+  .header__icon-list localization-form summary *,
+  .header__icon-list localization-form button,
+  .header__icon-list localization-form button *,
+  .header__icon-list localization-form .disclosure__button,
+  .header__icon-list localization-form .disclosure__button *,
+  localization-form summary,
+  localization-form summary * {
+    font-weight: 700 !important;
+    font-family: 'Montserrat', sans-serif !important;
+  }
+}
 
 
 
