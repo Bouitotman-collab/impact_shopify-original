@@ -15,36 +15,59 @@
         "slide-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
+            "mobile_image": "shopify://shop_images/ChatGPT_Image_21_dec._2025_15_32_44.jpg",
             "content_max_width": 780,
-            "mobile_text_position": "place-self-end-center text-center",
+            "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
-            "subheading": "La solution n°1 pour une machine saine et un linge frais, même avec des animaux.",
-            "title": "Éliminez les odeurs et poils d’animaux cachés dans votre machine à laver",
-            "heading_tag": "h4",
-            "button_text": "COMMANDER MON PACK",
+            "subheading": "",
+            "title": "NETTOIE.  DÉSODORISE.  PROTÈGE.",
+            "heading_tag": "h0",
+            "button_text": "",
             "button_link": "shopify://products/waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement",
             "text_color": "#ffffff",
-            "button_background": "#005ad2",
-            "button_text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 33,
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
+        "image_GLUEgD": {
+          "type": "image",
+          "settings": {
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide title",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
             "background": "",
             "background_gradient": ""
           }
         }
       },
       "block_order": [
-        "slide-1"
+        "slide-1",
+        "image_GLUEgD"
       ],
       "settings": {
         "full_width": true,
         "allow_transparent_header": true,
         "show_initial_transition": false,
-        "image_size": "auto",
+        "image_size": "fill",
         "controls_type": "numbers",
         "transition_type": "fade_with_text",
         "autoplay": true,
-        "cycle_speed": 6,
+        "cycle_speed": 4,
         "background": "#f2f2f2",
         "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
       }
@@ -113,12 +136,6 @@
           "type": "vendor",
           "disabled": true,
           "settings": {}
-        },
-        "text_eCxiMK": {
-          "type": "text",
-          "settings": {
-            "text": "<p>✅ <strong>Linge impeccable :</strong> Fini les poils et résidus.</p><p>✅ <strong>Économique :</strong> Protège votre machine.</p><p>✅ <strong>Rapide :</strong> Efficace dès le premier lavage.</p>"
-          }
         },
         "title_AzL3rU": {
           "type": "title",
@@ -227,7 +244,6 @@
       },
       "block_order": [
         "vendor_BDdxm8",
-        "text_eCxiMK",
         "title_AzL3rU",
         "badges_6ie9iz",
         "price_dEV4hE",
