@@ -10280,6 +10280,25 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Empêcher le deuxième header d'apparaître au scroll sur desktop */
+@media screen and (min-width: 990px) {
+  /* Forcer un seul header visible */
+  .shopify-section-group-header-group.animate,
+  .shopify-section-group-header-group.shopify-section-header-sticky {
+    position: relative !important;
+  }
+  
+  /* Cacher tout header qui apparaît au scroll */
+  body.scroll-down .shopify-section-group-header-group:nth-of-type(2),
+  body.scroll-up .shopify-section-group-header-group:nth-of-type(2) {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}
+
+
+
 
 
 
