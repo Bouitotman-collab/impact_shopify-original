@@ -10163,6 +10163,13 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Enlever le gras */
+@media screen and (min-width: 990px) {
+  .shopify-section-group-header-group *,
+  .header * {
+    font-weight: 400 !important;
+  }
+}
 
 
 
