@@ -10271,6 +10271,13 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Menu principal en majuscules */
+@media screen and (min-width: 990px) {
+  .header__link-list a,
+  .header__link-list .link-faded-reverse {
+    text-transform: uppercase !important;
+  }
+}
 
 
 
