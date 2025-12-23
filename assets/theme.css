@@ -10285,6 +10285,31 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Forcer la suppression de TOUS les doublons de header */
+.shopify-section-group-header-group ~ .shopify-section-group-header-group,
+.shopify-section--header ~ .shopify-section--header,
+header.header ~ header.header,
+.header-wrapper ~ .header-wrapper {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Cacher les éléments de placeholder du header */
+.header-placeholder,
+.shopify-section-header-placeholder {
+  display: none !important;
+}
+
+/* S'assurer qu'il n'y a qu'un seul groupe de header */
+body > div:has(.shopify-section-group-header-group):not(:first-of-type) {
+  display: none !important;
+}
+
+
+
 
 
 
