@@ -10193,6 +10193,29 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Texte en noir sur desktop */
+@media screen and (min-width: 990px) {
+  .shopify-section-group-header-group .header *,
+  .shopify-section-group-header-group a,
+  .shopify-section-group-header-group button,
+  .shopify-section-group-header-group svg,
+  .shopify-section-group-header-group .header__icon,
+  .shopify-section-group-header-group .header__menu-item {
+    color: #000000 !important;
+    fill: #000000 !important;
+  }
+  
+  /* Cacher complètement le EUR qui apparaît au scroll */
+  .header__icon-list localization-form {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  
+  body.scrolled .header__icon-list li:nth-child(1),
+  body.scroll-down .header__icon-list li:nth-child(1) {
+    display: none !important;
+  }
+}
 
 
 
