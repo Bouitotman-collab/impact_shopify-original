@@ -10188,7 +10188,19 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
- 
+ /* Réduire la hauteur du header sur desktop */
+@media screen and (min-width: 990px) {
+  .header {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  
+  .header__wrapper {
+    padding: 0 !important;
+    min-height: 44px !important;
+  }
+}
+
 
 
 
