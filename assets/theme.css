@@ -10318,31 +10318,37 @@ p, a, span, div, button, input, textarea, select {
 }
 
 
-/* Logos sur fond transparent et défilement */
+/* Défilement infini des logos - Barre d'autorité */
 .logo-list {
   background: transparent !important;
+  overflow: hidden;
+  padding: 30px 0;
 }
 
-.logo-list__item,
-.logo-list__logo {
+.logo-list__item {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
 }
 
-/* Animation de défilement */
+/* Animation de défilement sur desktop */
 @media screen and (min-width: 990px) {
   .logo-list__wrapper {
     overflow: hidden;
-    position: relative;
   }
   
   .logo-list__items {
-    display: flex;
-    animation: scroll-logos 20s linear infinite;
+    display: flex !important;
+    animation: scroll-infinite 25s linear infinite;
+    width: max-content;
   }
   
-  @keyframes scroll-logos {
+  .logo-list__item {
+    flex-shrink: 0;
+    margin: 0 40px;
+  }
+  
+  @keyframes scroll-infinite {
     0% {
       transform: translateX(0);
     }
@@ -10350,10 +10356,15 @@ p, a, span, div, button, input, textarea, select {
       transform: translateX(-50%);
     }
   }
-  
-  /* Dupliquer les logos pour un défilement infini */
-  .logo-list__items::after {
-    content: '';
+}
+
+/* Mobile : logos statiques centrés */
+@media screen and (max-width: 989px) {
+  .logo-list__items {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 }
+
