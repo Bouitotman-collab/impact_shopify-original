@@ -10161,6 +10161,21 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Tout en regular sauf EUR € */
+@media screen and (min-width: 990px) {
+  .shopify-section-group-header-group *,
+  .header * {
+    font-weight: 400 !important;
+  }
+  
+  /* Garder EUR € et sa flèche en gras */
+  .header__icon-list localization-form summary,
+  .header__icon-list localization-form summary *,
+  .header__icon-list localization-form button,
+  .header__icon-list localization-form button * {
+    font-weight: 700 !important;
+  }
+}
 
 
 
