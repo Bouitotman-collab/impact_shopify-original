@@ -10176,20 +10176,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     stroke-width: 0.8 !important;
   }
 }
-/* Tout en Montserrat très fin (Thin) SAUF EUR € */
-@media screen and (min-width: 990px) {
-  /* Tout le header en Montserrat Thin */
-  .shopify-section-group-header-group,
-  .shopify-section-group-header-group *,
-  .header,
-  .header *,
-  .header a,
-  .header button,
-  .header span,
-  .header div {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 200 !important;
-  }
+
 
 
 
