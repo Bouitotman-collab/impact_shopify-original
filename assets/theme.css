@@ -10181,7 +10181,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   padding: 0 !important;
   min-height: 0 !important;
   height: auto !important;
-  max-height: 65px !important;
+  max-height: 75px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
