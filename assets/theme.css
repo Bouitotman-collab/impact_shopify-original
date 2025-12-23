@@ -10216,6 +10216,13 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Ajouter des marges gauche et droite au header */
+@media screen and (min-width: 990px) {
+  .header__wrapper {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
 
 
 
