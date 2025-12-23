@@ -10115,3 +10115,30 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   display: -webkit-box;
   overflow: hidden;
 }
+
+
+/* Header transparent sur mobile, blanc sur desktop */
+
+/* Mobile : header transparent */
+@media screen and (max-width: 749px) {
+  .shopify-section-group-header-group {
+    background-color: transparent !important;
+    opacity: 1 !important;
+  }
+  
+  .shopify-section-group-header-group .header {
+    background-color: transparent !important;
+  }
+}
+
+/* Desktop : header blanc opaque */
+@media screen and (min-width: 750px) {
+  .shopify-section-group-header-group {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+  }
+  
+  .shopify-section-group-header-group .header {
+    background-color: #ffffff !important;
+  }
+}
