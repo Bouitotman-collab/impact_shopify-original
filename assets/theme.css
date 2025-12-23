@@ -10149,86 +10149,8 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     animation: none !important;
     transform: none !important;
   }
-  
-  /* Forcer une seule instance du sélecteur de pays visible */
-  .header__icon-list li:has(localization-form) {
-    position: relative !important;
-  }
-  
-  .header__icon-list li:has(localization-form) localization-form:not(:first-child) {
-    display: none !important;
-  }
 }
 
-
-/* Mobile (portrait ET paysage) : transparent */
-@media screen and (max-width: 989px) {
-  .shopify-section-group-header-group {
-    background-color: transparent !important;
-  }
-  
-  .shopify-section-group-header-group .header {
-    background-color: transparent !important;
-  }
-}
-
-/* Desktop : blanc compact */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group {
-    background-color: #ffffff !important;
-  }
-  
-  .header {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
-  }
-  
-  .shopify-section-group-header-group,
-  .header,
-  .header__wrapper {
-    transition: none !important;
-    animation: none !important;
-    transform: none !important;
-  }
-}
-
-
-/* Texte en noir sur desktop */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group .header *,
-  .shopify-section-group-header-group a,
-  .shopify-section-group-header-group button,
-  .shopify-section-group-header-group svg,
-  .shopify-section-group-header-group .header__icon,
-  .shopify-section-group-header-group .header__menu-item {
-    color: #000000 !important;
-    fill: #000000 !important;
-  }
-  
-  /* Cacher complètement le EUR qui apparaît au scroll */
-  .header__icon-list localization-form {
-    opacity: 1 !important;
-    pointer-events: auto !important;
-  }
-  
-  body.scrolled .header__icon-list li:nth-child(1),
-  body.scroll-down .header__icon-list li:nth-child(1) {
-    display: none !important;
-  }
-}
-
-
-/* Enlever le gras de TOUT le header */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group *,
-  .header *,
-  .header a,
-  .header button,
-  .header span,
-  .header div {
-    font-weight: 400 !important;
-  }
-}
 
 
 
