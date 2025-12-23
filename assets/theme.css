@@ -10149,63 +10149,34 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     animation: none !important;
     transform: none !important;
   }
-}
-
-/* Texte en noir sur desktop (sans toucher aux icônes) */
-@media screen and (min-width: 990px) {
+  
+  /* Texte en noir */
   .shopify-section-group-header-group a,
   .shopify-section-group-header-group button,
   .shopify-section-group-header-group span:not(.icon) {
     color: #000000 !important;
   }
-}
-
-
-/* Tout en Montserrat très fin (Thin) SAUF EUR € */
-@media screen and (min-width: 990px) {
-  /* Tout le header en Montserrat Thin */
-  .shopify-section-group-header-group,
-  .shopify-section-group-header-group *,
-  .header,
-  .header *,
-  .header a,
-  .header button,
-  .header span,
-  .header div {
+  
+  /* Tout en Montserrat très fin SAUF les éléments .bold */
+  .shopify-section-group-header-group *:not(.bold):not(.bold *),
+  .header *:not(.bold):not(.bold *) {
     font-family: 'Montserrat', sans-serif !important;
-    font-weight: 100 !important;
+    font-weight: 200 !important;
+  }
+  
+  /* Garder .bold en gras (pour EUR €) */
+  .bold,
+  .bold * {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700 !important;
   }
   
   /* Icônes très fines */
   .header__icon-list svg {
-    stroke-width: 1 !important;
-  }
-  
-  /* EUR € reste en gras */
-  .header__icon-list localization-form summary,
-  .header__icon-list localization-form summary *,
-  .header__icon-list li:has(localization-form) summary,
-  .header__icon-list li:has(localization-form) button {
-    font-weight: 700 !important;
+    stroke-width: 0.8 !important;
   }
 }
 
-/* Forcer EUR € en gras (plus spécifique) */
-@media screen and (min-width: 990px) {
-  .header__icon-list localization-form,
-  .header__icon-list localization-form *,
-  .header__icon-list localization-form summary,
-  .header__icon-list localization-form summary *,
-  .header__icon-list localization-form button,
-  .header__icon-list localization-form button *,
-  .header__icon-list localization-form .disclosure__button,
-  .header__icon-list localization-form .disclosure__button *,
-  localization-form summary,
-  localization-form summary * {
-    font-weight: 1 !important;
-    font-family: 'Montserrat', sans-serif !important;
-  }
-}
 
 
 
