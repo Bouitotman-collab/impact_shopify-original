@@ -10276,6 +10276,28 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Supprimer le doublon du header sur mobile paysage et desktop */
+@media screen and (min-width: 750px) {
+  /* Cacher le deuxième header s'il y en a deux */
+  .shopify-section-group-header-group:nth-of-type(2) {
+    display: none !important;
+  }
+  
+  /* Ou cacher le header avec menu burger sur desktop */
+  .header--mobile-center {
+    display: none !important;
+  }
+}
+
+/* Spécifiquement pour mobile en mode paysage */
+@media screen and (max-width: 989px) and (orientation: landscape) {
+  .shopify-section-group-header-group:nth-of-type(2),
+  .header--mobile-center:not(:first-child) {
+    display: none !important;
+  }
+}
+
+
 
 
 
