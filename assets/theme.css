@@ -10177,18 +10177,13 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .shopify-section-group-header-group .header {
-  background-color: #ffffff !important;
-  padding: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-  max-height: 85px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-}
-
-
-
+    background-color: #ffffff !important;
+    padding: 0 !important;
+    min-height: 44px !important;
+    height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
   
   /* Texte et icônes en noir sur desktop */
@@ -10211,7 +10206,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .header__heading-logo img {
-    max-height: 30px !important;
+    max-height: 32px !important;
     height: auto !important;
   }
   
@@ -10240,7 +10235,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     line-height: 1.3 !important;
   }
   
-  /* Icônes (drapeau, recherche, compte, panier) à droite */
+  /* Icônes à droite */
   .header__icons {
     display: flex !important;
     align-items: center !important;
@@ -10250,63 +10245,6 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-
-/* Empêcher le doublement du header au scroll */
-@media screen and (min-width: 750px) {
-  /* Cacher tout clone ou doublon du header */
-  .shopify-section-group-header-group.shopify-section-header-hidden,
-  .shopify-section-group-header-group[aria-hidden="true"],
-  .header-wrapper.header-wrapper--border-bottom {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-  
-  /* Forcer le header à rester fixe sans animation */
-  .shopify-section-group-header-group {
-    position: relative !important;
-    transform: none !important;
-    animation: none !important;
-  }
-  
-  /* Désactiver complètement le sticky */
-  .shopify-section-header-sticky {
-    position: relative !important;
-  }
-  
-  /* Supprimer les pseudo-éléments qui peuvent créer des doublons */
-  .shopify-section-group-header-group::before,
-  .shopify-section-group-header-group::after,
-  .header::before,
-  .header::after {
-    content: none !important;
-    display: none !important;
-  }
-}
-
-
-/* Forcer la suppression de TOUS les doublons de header */
-.shopify-section-group-header-group ~ .shopify-section-group-header-group,
-.shopify-section--header ~ .shopify-section--header,
-header.header ~ header.header,
-.header-wrapper ~ .header-wrapper {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
-
-/* Cacher les éléments de placeholder du header */
-.header-placeholder,
-.shopify-section-header-placeholder {
-  display: none !important;
-}
-
-/* S'assurer qu'il n'y a qu'un seul groupe de header */
-body > div:has(.shopify-section-group-header-group):not(:first-of-type) {
-  display: none !important;
-}
 
 
 
