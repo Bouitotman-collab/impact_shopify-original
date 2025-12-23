@@ -10153,5 +10153,26 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Réduire la hauteur du header */
+@media screen and (min-width: 750px) {
+  .shopify-section-group-header-group .header {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  
+  .header__heading-logo {
+    padding: 5px 0 !important;
+  }
+}
+
+/* Sur mobile aussi si besoin */
+@media screen and (max-width: 749px) {
+  .shopify-section-group-header-group .header {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
+
+
 
 
