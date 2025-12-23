@@ -10161,21 +10161,34 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Tout en regular sauf EUR € */
+/* Tout en regular SAUF EUR € et sa flèche */
 @media screen and (min-width: 990px) {
-  .shopify-section-group-header-group *,
-  .header * {
+  /* Tout le header en regular par défaut */
+  .shopify-section-group-header-group a,
+  .shopify-section-group-header-group button,
+  .shopify-section-group-header-group span,
+  .shopify-section-group-header-group div,
+  .header__link-list *,
+  .header__secondary-nav * {
     font-weight: 400 !important;
   }
   
-  /* Garder EUR € et sa flèche en gras */
-  .header__icon-list localization-form summary,
-  .header__icon-list localization-form summary *,
-  .header__icon-list localization-form button,
-  .header__icon-list localization-form button * {
+  /* Icônes en regular (stroke fin) */
+  .header__icon-list svg {
+    stroke-width: 1.5 !important;
+  }
+  
+  /* FORCER EUR € et sa flèche en gras */
+  .header__icon-list li:has(localization-form) *,
+  localization-form *,
+  localization-form summary,
+  localization-form summary *,
+  localization-form button,
+  localization-form button * {
     font-weight: 700 !important;
   }
 }
+
 
 
 
