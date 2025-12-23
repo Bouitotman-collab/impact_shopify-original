@@ -10280,6 +10280,16 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Texte de la barre d'annonce en blanc sur desktop */
+@media screen and (min-width: 990px) {
+  .announcement-bar,
+  .announcement-bar *,
+  .announcement-bar a,
+  .announcement-bar span,
+  .announcement-bar p {
+    color: #F8F7F2 !important;
+  }
+}
 
 
 
