@@ -10151,6 +10151,16 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
+/* Forcer le texte et icônes en noir sur desktop */
+@media screen and (min-width: 990px) {
+  .shopify-section-group-header-group .header *,
+  .shopify-section-group-header-group a,
+  .shopify-section-group-header-group button,
+  .shopify-section-group-header-group svg {
+    color: #000000 !important;
+    fill: #000000 !important;
+  }
+}
 
 
 
