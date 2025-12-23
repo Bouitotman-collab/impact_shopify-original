@@ -10178,7 +10178,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   
   .shopify-section-group-header-group .header {
     background-color: #ffffff !important;
-    padding: 2px 0 !important;
+    padding: 1px 0 !important;
     min-height: 44px !important;
     height: auto !important;
     display: flex !important;
