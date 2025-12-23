@@ -10189,12 +10189,6 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 
 
-
-
-
-
-
-
   }
   
   /* Texte et icônes en noir sur desktop */
@@ -10255,6 +10249,18 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     flex-shrink: 0 !important;
   }
 }
+
+
+@media screen and (min-width: 750px) {
+  .shopify-section-group-header-group {
+    transition: none !important;
+  }
+  
+  .shopify-section-group-header-group .header {
+    transition: none !important;
+  }
+}
+
 
 
 
