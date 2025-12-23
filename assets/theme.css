@@ -10153,25 +10153,43 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Réduire la hauteur du header */
+/* Réduire drastiquement la hauteur du header */
 @media screen and (min-width: 750px) {
   .shopify-section-group-header-group .header {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    min-height: auto !important;
+    height: auto !important;
   }
   
+  .header__heading,
   .header__heading-logo {
+    padding: 0 !important;
+    margin: 5px 0 !important;
+  }
+  
+  .header__heading-logo img {
+    max-height: 40px !important;
+  }
+  
+  /* Réduire l'espace du menu Globo */
+  #globo-mega-menu {
     padding: 5px 0 !important;
   }
 }
 
-/* Sur mobile aussi si besoin */
+/* Sur mobile */
 @media screen and (max-width: 749px) {
   .shopify-section-group-header-group .header {
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  
+  .header__heading-logo img {
+    max-height: 35px !important;
   }
 }
+
 
 
 
