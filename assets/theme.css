@@ -10251,6 +10251,31 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
+/* Supprimer la ligne blanche sur mobile */
+@media screen and (max-width: 989px) {
+  /* Supprimer tous les bordures et ombres possibles */
+  .shopify-section-group-header-group,
+  .shopify-section-group-header-group *,
+  .header,
+  .header *,
+  .announcement-bar,
+  .shopify-section--announcement-bar {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+  
+  /* Supprimer l'espace entre les sections */
+  .shopify-section {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Coller les sections ensemble */
+  body, main {
+    padding-top: 0 !important;
+  }
+}
 
 
 
