@@ -10170,7 +10170,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   .shopify-section-group-header-group div,
   .header__link-list *,
   .header__secondary-nav * {
-    font-weight: 50 !important;
+    font-weight: 300 !important;
   }
   
   /* Icônes en extra-léger (stroke très fin) */
