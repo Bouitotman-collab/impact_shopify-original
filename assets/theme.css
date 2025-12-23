@@ -10119,11 +10119,10 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 /* Header transparent sur mobile, blanc sur desktop */
 
-/* Mobile : header transparent */
-@media screen and (max-width: 749px) {
+/* Mobile (portrait ET paysage) : transparent */
+@media screen and (max-width: 989px) {
   .shopify-section-group-header-group {
     background-color: transparent !important;
-    opacity: 1 !important;
   }
   
   .shopify-section-group-header-group .header {
@@ -10131,24 +10130,33 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-/* Desktop : header blanc opaque */
-@media screen and (min-width: 750px) {
+/* Desktop : blanc compact */
+@media screen and (min-width: 990px) {
   .shopify-section-group-header-group {
     background-color: #ffffff !important;
-    opacity: 1 !important;
   }
   
-  .shopify-section-group-header-group .header {
-    background-color: #ffffff !important;
+  .header {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
   
-  /* Texte et icônes en noir sur desktop */
-  .shopify-section-group-header-group .header__icon,
-  .shopify-section-group-header-group .header__menu-item,
-  .shopify-section-group-header-group a,
-  .shopify-section-group-header-group svg {
-    color: #1a1a1a !important;
-    fill: #1a1a1a !important;
+  /* Bloquer tout changement du header au scroll */
+  .shopify-section-group-header-group,
+  .header,
+  .header__wrapper {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  /* Forcer une seule instance du sélecteur de pays visible */
+  .header__icon-list li:has(localization-form) {
+    position: relative !important;
+  }
+  
+  .header__icon-list li:has(localization-form) localization-form:not(:first-child) {
+    display: none !important;
   }
 }
 
@@ -10174,8 +10182,15 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     padding-top: 8px !important;
     padding-bottom: 8px !important;
   }
+  
+  .shopify-section-group-header-group,
+  .header,
+  .header__wrapper {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
 }
-
 
 
 
