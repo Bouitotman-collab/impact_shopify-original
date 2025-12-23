@@ -49,6 +49,22 @@
         "background_gradient": "linear-gradient(60deg, rgba(60, 65, 68, 1), rgba(23, 29, 33, 1) 98%)"
       }
     },
+    "scrolling_text_8tLFGn": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "FORMULE SPÉCIAL PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOIE EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#305ad0",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
+      }
+    },
     "rich_text_ibxYFt": {
       "type": "rich-text",
       "name": "Rich text",
@@ -335,6 +351,19 @@
         "text_color": "",
         "heading_color": "",
         "heading_gradient": ""
+      }
+    },
+    "custom_liquid_i9a8Le": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div class=\"trust-bar-scroll\">\n  <div class=\"trust-bar-track\">\n    <img src=\"https://shopify-staged-uploads.storage.googleapis.com/tmp/97818739035/files/b1db911d-f804-4f59-9d4f-fd8c82112063/955CA019-8CDA-4EBB-B223-A5355AAD9671.png\" alt=\"30 Millions d'Amis\">\n    <img src=\"https://shopify-staged-uploads.storage.googleapis.com/tmp/97818739035/files/872202e8-9657-4a75-9335-2d4cf9d434e8/8949AA69-DE9A-4BED-9C37-53A9CDD8E100.png\" alt=\"Wamiz\">\n    <img src=\"https://shopify-staged-uploads.storage.googleapis.com/tmp/97818739035/files/ac31d938-1139-4f62-84fd-b8665d70e392/AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1.png\" alt=\"Zoomalia\">\n    <img src=\"https://shopify-staged-uploads.storage.googleapis.com/tmp/97818739035/files/81bef643-3065-4736-bacb-2db8084ef7f0/D5B32CF4-B425-4A7B-9433-4504598FE777.png\" alt=\"Woopets\">\n    <img src=\"https://shopify-staged-uploads.storage.googleapis.com/tmp/97818739035/files/65ec4da0-b0d9-4de0-9728-8851cdc63767/F75C729A-BB03-4B74-9CB3-E44FB02237A0.png\" alt=\"SantéVet\">\n  </div>\n</div>\n\n<style>\n.trust-bar-scroll {\n  overflow: hidden;\n  padding: 40px 0;\n  background: transparent;\n}\n.trust-bar-track {\n  display: flex;\n  gap: 80px;\n  animation: scroll 10s linear infinite;\n}\n.trust-bar-track img {\n  height: 60px;\n  width: auto;\n  flex-shrink: 0;\n}\n@keyframes scroll {\n  0% { transform: translateX(0); }\n  100% { transform: translateX(-50%); }\n}\n</style>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "scrolling-text": {
@@ -954,11 +983,13 @@
   },
   "order": [
     "slideshow",
+    "scrolling_text_8tLFGn",
     "rich_text_ibxYFt",
     "custom_liquid_cqh7MH",
     "slideshow_m9iTJe",
     "featured_product_VC7cxb",
     "image-link-blocks",
+    "custom_liquid_i9a8Le",
     "scrolling-text",
     "collection-list",
     "featured-collection",
