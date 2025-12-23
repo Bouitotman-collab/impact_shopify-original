@@ -10202,7 +10202,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   .header__icon-list localization-form .disclosure__button *,
   localization-form summary,
   localization-form summary * {
-    font-weight: 700 !important;
+    font-weight: 1 !important;
     font-family: 'Montserrat', sans-serif !important;
   }
 }
