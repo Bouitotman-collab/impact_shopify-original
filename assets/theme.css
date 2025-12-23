@@ -10177,13 +10177,14 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .shopify-section-group-header-group .header {
-    background-color: #ffffff !important;
-    padding: 0px 0 !important;
-    min-height: 0px !important;
-    height: auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
+  background-color: #ffffff !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: 40px !important;        ← AJOUTE cette ligne
+  overflow: hidden !important;        ← AJOUTE cette ligne
+}
+
   }
   
   /* Texte et icônes en noir sur desktop */
