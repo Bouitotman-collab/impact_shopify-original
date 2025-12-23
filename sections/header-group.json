@@ -64,7 +64,7 @@
     "header": {
       "type": "header",
       "settings": {
-        "enable_sticky": true,
+        "enable_sticky": false,
         "hide_on_scroll": true,
         "logo": "shopify://shop_images/Photoroom_20251223_002316.png",
         "logo_max_width": 180,
