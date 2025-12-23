@@ -10251,15 +10251,25 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Désactiver le sticky header */
 @media screen and (min-width: 750px) {
   .shopify-section-group-header-group {
-    transition: none !important;
+    position: relative !important;    /* Au lieu de sticky */
+    top: auto !important;
   }
   
-  .shopify-section-group-header-group .header {
-    transition: none !important;
+  .shopify-section-group-header-group.shopify-section-header-sticky {
+    position: relative !important;
+    box-shadow: none !important;
+  }
+  
+  /* Ou si tu veux garder le sticky mais sans doublon */
+  .shopify-section-group-header-group::before,
+  .shopify-section-group-header-group::after {
+    display: none !important;
   }
 }
+
 
 
 
