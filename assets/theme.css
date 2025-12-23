@@ -10131,7 +10131,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-/* Desktop : header blanc opaque */
+/* Desktop : header blanc opaque avec texte foncé */
 @media screen and (min-width: 750px) {
   .shopify-section-group-header-group {
     background-color: #ffffff !important;
@@ -10141,4 +10141,14 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   .shopify-section-group-header-group .header {
     background-color: #ffffff !important;
   }
+  
+  /* Texte et icônes en noir sur desktop */
+  .shopify-section-group-header-group .header__icon,
+  .shopify-section-group-header-group .header__menu-item,
+  .shopify-section-group-header-group a,
+  .shopify-section-group-header-group svg {
+    color: #1a1a1a !important;
+    fill: #1a1a1a !important;
+  }
 }
+
