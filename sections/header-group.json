@@ -17,15 +17,8 @@
         "message_qqzQGk": {
           "type": "message",
           "settings": {
-            "text": "Livraison suivie gratuite",
+            "text": "Livraison offerte",
             "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/11153380.png?v=1766336815"
-          }
-        },
-        "message_eGh7Y4": {
-          "type": "message",
-          "settings": {
-            "text": "Garantie Satisfait ou Remboursé 30 jours",
-            "url": ""
           }
         },
         "message": {
@@ -33,6 +26,20 @@
           "settings": {
             "text": "-10% avec BIENVENUE10",
             "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/5009570.png?v=1766338050"
+          }
+        },
+        "message_fFimPU": {
+          "type": "message",
+          "settings": {
+            "text": "Paiement 100% sécurisé",
+            "url": ""
+          }
+        },
+        "message_eGh7Y4": {
+          "type": "message",
+          "settings": {
+            "text": "Satisfait ou remboursé",
+            "url": ""
           }
         },
         "message_WPUUzG": {
@@ -45,8 +52,9 @@
       },
       "block_order": [
         "message_qqzQGk",
-        "message_eGh7Y4",
         "message",
+        "message_fFimPU",
+        "message_eGh7Y4",
         "message_WPUUzG"
       ],
       "settings": {
