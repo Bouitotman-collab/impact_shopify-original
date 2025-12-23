@@ -10161,49 +10161,24 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Tout en regular SAUF EUR € et sa flèche */
+/* Tout en léger (light) SAUF EUR € */
 @media screen and (min-width: 990px) {
-  /* Tout le header en regular par défaut */
+  /* Tout le header en léger par défaut */
   .shopify-section-group-header-group a,
   .shopify-section-group-header-group button,
   .shopify-section-group-header-group span,
   .shopify-section-group-header-group div,
   .header__link-list *,
   .header__secondary-nav * {
-    font-weight: 400 !important;
+    font-weight: 300 !important;
   }
   
-  /* Icônes en regular (stroke fin) */
+  /* Icônes en léger (stroke fin) */
   .header__icon-list svg {
-    stroke-width: 1.5 !important;
-  }
-  
-  /* FORCER EUR € et sa flèche en gras */
-  .header__icon-list li:has(localization-form) *,
-  localization-form *,
-  localization-form summary,
-  localization-form summary *,
-  localization-form button,
-  localization-form button * {
-    font-weight: 700 !important;
+    stroke-width: 1.2 !important;
   }
 }
 
-
-/* Forcer UNIQUEMENT EUR € en gras */
-@media screen and (min-width: 990px) {
-  .header__icon-list localization-form summary,
-  .header__icon-list localization-form .disclosure__button,
-  .header__icon-list li:has(localization-form) summary,
-  .header__icon-list li:has(localization-form) button {
-    font-weight: 700 !important;
-  }
-  
-  .header__icon-list localization-form summary *,
-  .header__icon-list localization-form .disclosure__button * {
-    font-weight: 700 !important;
-  }
-}
 
 
 
