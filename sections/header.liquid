@@ -76,7 +76,8 @@ the underlying logic of the menu.
 </style>
 
 <height-observer variable="header">
-  <store-header class="header" {% if section.settings.hide_on_scroll %}hide-on-scroll="100"{% endif %} {% if section.settings.enable_sticky %}sticky{% endif %}>
+    <store-header class="header">
+
     <div class="header__wrapper">
       {%- comment -%}
       --------------------------------------------------------------------------------------------------------------------
