@@ -10176,14 +10176,14 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     z-index: 100 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin-top: -5px !important;
-    margin-bottom: -5px !important;
+    margin-top: -10px !important;
+    margin-bottom: -10px !important;
   }
   
   .shopify-section-group-header-group .header {
     background-color: #ffffff !important;
     padding: 0 !important;
-    min-height: 34px !important;
+    min-height: 24px !important;
     height: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -10210,7 +10210,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .header__heading-logo img {
-    max-height: 28px !important;
+    max-height: 22px !important;
     height: auto !important;
   }
   
@@ -10234,20 +10234,21 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   #globo-mega-menu ul li a {
-    padding: 3px 10px !important;
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
   }
   
   /* Icônes (drapeau, recherche, compte, panier) à droite */
   .header__icons {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
     margin-left: auto !important;
     flex-shrink: 0 !important;
   }
 }
+
 
 
 
