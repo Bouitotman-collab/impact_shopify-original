@@ -10153,14 +10153,49 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Header compact - 44px */
-@media screen and (min-width: 750px) {
+/* Header transparent sur mobile, blanc sur desktop */
+
+/* Mobile : header transparent */
+@media screen and (max-width: 749px) {
+  .shopify-section-group-header-group {
+    background-color: transparent !important;
+    opacity: 1 !important;
+  }
+  
   .shopify-section-group-header-group .header {
+    background-color: transparent !important;
+  }
+}
+
+/* Desktop : header blanc opaque */
+@media screen and (min-width: 750px) {
+  .shopify-section-group-header-group {
+    background-color: #ffffff !important;
+    opacity: 1 !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+  
+  .shopify-section-group-header-group .header {
+    background-color: #ffffff !important;
     padding: 0 !important;
     min-height: 44px !important;
     height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
   
+  /* Texte et icônes en noir sur desktop */
+  .shopify-section-group-header-group .header__icon,
+  .shopify-section-group-header-group .header__menu-item,
+  .shopify-section-group-header-group a,
+  .shopify-section-group-header-group svg {
+    color: #1a1a1a !important;
+    fill: #1a1a1a !important;
+  }
+  
+  /* Logo */
   .header__heading,
   .header__heading-logo {
     padding: 0 !important;
@@ -10175,9 +10210,10 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
     height: 32px !important;
   }
   
-  /* Menu Globo */
+  /* FORCER le menu Globo à rester dans le header */
   #globo-mega-menu,
   .globo-menu-wrapper {
+    position: static !important;
     padding: 0 !important;
     margin: 0 !important;
     height: 44px !important;
@@ -10188,25 +10224,17 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   #globo-mega-menu ul {
     margin: 0 !important;
     padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
   }
   
   #globo-mega-menu ul li a {
-    padding: 4px 8px !important;
-    font-size: 12px !important;
+    padding: 4px 10px !important;
+    font-size: 13px !important;
     line-height: 1.3 !important;
   }
 }
 
-/* Sur mobile */
-@media screen and (max-width: 749px) {
-  .shopify-section-group-header-group .header {
-    padding: 4px 0 !important;
-  }
-  
-  .header__heading-logo img {
-    max-height: 28px !important;
-  }
-}
 
 
 
