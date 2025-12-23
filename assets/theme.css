@@ -10183,7 +10183,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   height: auto !important;
   max-height: 50px !important;
   overflow: hidden !important;
-  margin-top: -10px !important;        ← AJOUTE cette ligne pour remonter
+  transform: translateY(-5px) !important;    ← OU cette ligne
 }
 
 
