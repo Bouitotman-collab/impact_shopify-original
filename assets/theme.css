@@ -10206,7 +10206,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
   
   .header__heading-logo img {
-    max-height: 12px !important;
+    max-height: 30px !important;
     height: auto !important;
   }
   
