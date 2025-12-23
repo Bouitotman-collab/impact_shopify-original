@@ -10218,29 +10218,18 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
-/* Enlever le gras du texte du menu */
+/* Enlever le gras de TOUT le header */
 @media screen and (min-width: 990px) {
-  .shopify-section-group-header-group .header a,
-  .shopify-section-group-header-group .header__menu-item,
-  .shopify-section-group-header-group .header__link-list a,
-  #globo-mega-menu a,
-  #globo-mega-menu li a {
-    font-weight: normal !important;
+  .shopify-section-group-header-group *,
+  .header *,
+  .header a,
+  .header button,
+  .header span,
+  .header div {
+    font-weight: 400 !important;
   }
 }
 
-
-/* Enlever le gras de toute la partie droite (icônes et texte) */
-@media screen and (min-width: 990px) {
-  .shopify-section-group-header-group .header__secondary-nav,
-  .shopify-section-group-header-group .header__secondary-nav *,
-  .shopify-section-group-header-group .header__icon-list,
-  .shopify-section-group-header-group .header__icon-list *,
-  .shopify-section-group-header-group localization-form,
-  .shopify-section-group-header-group localization-form * {
-    font-weight: normal !important;
-  }
-}
 
 
 
