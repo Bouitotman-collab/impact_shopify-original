@@ -10262,6 +10262,24 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Forcer le header transparent sur mobile même en mode paysage */
+@media screen and (max-width: 989px) {
+  .shopify-section-group-header-group {
+    background-color: transparent !important;
+  }
+  
+  .shopify-section-group-header-group .header {
+    background-color: transparent !important;
+  }
+  
+  /* Cacher le deuxième header en mode paysage */
+  .shopify-section-group-header-group:nth-of-type(2),
+  .header--mobile-center:not(:first-child) {
+    display: none !important;
+  }
+}
+
+
 
 
 
