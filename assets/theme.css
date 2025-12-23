@@ -10248,6 +10248,35 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Corriger le header sticky au scroll sur desktop */
+@media screen and (min-width: 750px) {
+  /* Empêcher le header de devenir sticky */
+  .shopify-section-group-header-group.shopify-section-header-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+  
+  /* Cacher le header quand il a la classe "sticky" ou "scrolled" */
+  .header.header--top-center.header--mobile-center.page-width.header--has-menu.header--has-social.header--has-account {
+    position: relative !important;
+  }
+  
+  /* Supprimer l'espace blanc qui apparaît */
+  .shopify-section-group-header-group.animate {
+    animation: none !important;
+    transform: none !important;
+  }
+  
+  /* Forcer le header à ne jamais être en position fixed */
+  .shopify-section-group-header-group,
+  .shopify-section-group-header-group .header {
+    position: relative !important;
+    top: 0 !important;
+  }
+}
+
+
+
 
 
 
