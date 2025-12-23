@@ -10203,6 +10203,17 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 
 
+/* Réduire encore plus la hauteur */
+@media screen and (min-width: 990px) {
+  .header {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+  
+  .header__wrapper {
+    min-height: 40px !important;
+  }
+}
 
 
 
