@@ -10123,7 +10123,6 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 @media screen and (max-width: 749px) {
   .shopify-section-group-header-group {
     background-color: transparent !important;
-    opacity: 1 !important;
   }
   
   .shopify-section-group-header-group .header {
@@ -10131,46 +10130,53 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
   }
 }
 
-/* Desktop : header blanc opaque avec menu visible */
-@media screen and (min-width: 750px) {
+/* Desktop : header blanc avec menu forcé visible */
+@media screen and (min-width: 990px) {
   .shopify-section-group-header-group {
     background-color: #ffffff !important;
-    opacity: 1 !important;
   }
   
   .shopify-section-group-header-group .header {
     background-color: #ffffff !important;
   }
   
-  /* Texte et icônes en noir sur desktop */
-  .shopify-section-group-header-group .header__icon,
-  .shopify-section-group-header-group .header__menu-item,
-  .shopify-section-group-header-group a,
-  .shopify-section-group-header-group svg {
+  /* Texte et icônes en noir */
+  .header__icon,
+  .header__menu-item,
+  .header a,
+  .header svg {
     color: #1a1a1a !important;
     fill: #1a1a1a !important;
   }
   
-  /* FORCER l'affichage du menu inline sur desktop */
+  /* CACHER le hamburger complètement */
   .header__icon--menu,
-  button[aria-controls="header-drawer"] {
+  .header [aria-controls="header-drawer"],
+  header-drawer {
     display: none !important;
+    visibility: hidden !important;
   }
   
-  nav.header__inline-menu {
+  /* FORCER le menu inline visible */
+  .header__inline-menu,
+  nav[role="navigation"] {
     display: block !important;
     visibility: visible !important;
-    opacity: 1 !important;
+    position: static !important;
   }
   
-  .header__inline-menu .list-menu {
+  .header__inline-menu ul,
+  .list-menu--inline {
     display: flex !important;
-    gap: 2rem;
+    flex-direction: row !important;
+    gap: 1.5rem !important;
   }
   
-  .header__inline-menu .list-menu__item {
-    display: block !important;
+  .header__menu-item,
+  .list-menu__item {
+    display: inline-block !important;
   }
 }
+
 
 
