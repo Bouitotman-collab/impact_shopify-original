@@ -10218,6 +10218,16 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 }
 
 
+/* Enlever le gras du texte du menu */
+@media screen and (min-width: 990px) {
+  .shopify-section-group-header-group .header a,
+  .shopify-section-group-header-group .header__menu-item,
+  .shopify-section-group-header-group .header__link-list a,
+  #globo-mega-menu a,
+  #globo-mega-menu li a {
+    font-weight: normal !important;
+  }
+}
 
 
 
