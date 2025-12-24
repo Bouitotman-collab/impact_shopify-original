@@ -49,6 +49,11 @@
         "message_fFimPU",
         "message_eGh7Y4"
       ],
+      "custom_css": [
+        ".announcement-bar__item::after,.announcement-bar__item::before {color: #FFFFFF !important; background-color: #FFFFFF !important;}",
+        ".announcement-bar svg,.announcement-bar__item svg {fill: #FFFFFF !important;}",
+        ".announcement-bar * {color: #FFFFFF !important;}"
+      ],
       "settings": {
         "enable_sticky": true,
         "autoplay": true,
