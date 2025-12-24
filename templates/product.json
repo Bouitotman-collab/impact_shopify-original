@@ -75,19 +75,6 @@
         "background_gradient": ""
       }
     },
-    "custom_liquid_iJgjt7": {
-      "type": "custom-liquid",
-      "name": "Custom Liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "<style>\n#shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow {\n  min-height: 350px !important;\n  max-height: 350px !important;\n}\n\n#shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow__media,\n#shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow__media img {\n  height: 350px !important;\n  max-height: 350px !important;\n  object-fit: cover !important;\n}\n\n@media screen and (min-width: 750px) {\n  #shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow {\n    min-height: 600px !important;\n    max-height: 600px !important;\n  }\n  \n  #shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow__media,\n  #shopify-section-template--27446692249947__slideshow_9eGzHG .slideshow__media img {\n    height: 600px !important;\n    max-height: 600px !important;\n  }\n}\n</style>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
       "custom_css": [],
@@ -371,7 +358,6 @@
   },
   "order": [
     "slideshow_9eGzHG",
-    "custom_liquid_iJgjt7",
     "scrolling_text_Jfmn46",
     "custom_liquid_RjxkYf",
     "main",
