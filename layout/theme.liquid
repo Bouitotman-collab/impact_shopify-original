@@ -76,11 +76,15 @@ NOTE TO DEVELOPERS: welcome to Impact theme! We hope that you will enjoy editing
   </head>
 
 <style>
-.announcement-bar__message::after {
+/* Points séparateurs de la barre d'annonce */
+.announcement-bar .icon-separator,
+.announcement-bar__message::after,
+.announcement-bar__message::before {
   color: #ffffff !important;
+  fill: #ffffff !important;
 }
 </style>
-</head>
+
 
   <body class="{% if settings.zoom_image_on_hover %}zoom-image--enabled{% endif %}">
     {%- render 'shadow-dom-templates' -%}
