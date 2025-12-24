@@ -50,9 +50,9 @@
         "message_eGh7Y4"
       ],
       "custom_css": [
-        ".announcement-bar__item::after,.announcement-bar__item::before {color: #FFFFFF !important; background-color: #FFFFFF !important;}",
-        ".announcement-bar svg,.announcement-bar__item svg {fill: #FFFFFF !important;}",
-        ".announcement-bar * {color: #FFFFFF !important;}"
+        ".announcement-bar__item::after,.announcement-bar__item::before {color: #ffffff !important; background-color: #ffffff !important;}",
+        ".announcement-bar svg,.announcement-bar__item svg {fill: #ffffff !important;}",
+        ".announcement-bar * {color: #ffffff !important;}"
       ],
       "settings": {
         "enable_sticky": true,
@@ -60,7 +60,7 @@
         "cycle_speed": 4,
         "text_size": "text-xs",
         "navigation_mode": "scrolling",
-        "scrolling_speed": 30,
+        "scrolling_speed": 10,
         "background": "#305ad0",
         "background_gradient": "",
         "text_color": "#ffffff"
