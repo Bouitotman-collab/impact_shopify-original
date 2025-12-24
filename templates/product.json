@@ -15,6 +15,8 @@
         "image_63p7te": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_2__1_11zon.jpg",
+            "mobile_image": "shopify://shop_images/Design_sans_titre_2__1_11zon.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -27,7 +29,7 @@
             "button_background": "#ffffff",
             "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "background": "",
             "background_gradient": ""
           }
@@ -35,6 +37,8 @@
         "image_nhcfAd": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_1__2_11zon.jpg",
+            "mobile_image": "shopify://shop_images/Design_sans_titre_1__2_11zon.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
@@ -63,7 +67,7 @@
         "allow_transparent_header": true,
         "show_initial_transition": true,
         "image_size": "auto",
-        "controls_type": "dots",
+        "controls_type": "numbers",
         "transition_type": "fade_with_text",
         "autoplay": true,
         "cycle_speed": 4,
