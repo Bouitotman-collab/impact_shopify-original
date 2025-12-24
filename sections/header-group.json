@@ -17,7 +17,7 @@
         "message_qqzQGk": {
           "type": "message",
           "settings": {
-            "text": "Livraison offerte",
+            "text": "Livraison gratuite",
             "url": "https://cdn.shopify.com/s/files/1/0978/1873/9035/files/11153380.png?v=1766336815"
           }
         },
@@ -54,7 +54,7 @@
         "autoplay": true,
         "cycle_speed": 4,
         "text_size": "text-xs",
-        "navigation_mode": "arrows",
+        "navigation_mode": "scrolling",
         "scrolling_speed": 10,
         "background": "#305ad0",
         "background_gradient": "",
@@ -66,7 +66,6 @@
       "settings": {
         "enable_sticky": false,
         "hide_on_scroll": true,
-        "logo": "shopify://shop_images/Photoroom_20251223_002316.png",
         "logo_max_width": 120,
         "logo_mobile_max_width": 100,
         "menu": "main-menu",
@@ -81,7 +80,6 @@
         "show_country_flag": true,
         "show_country_name": false,
         "transparent_header_text_color": "#ffffff",
-        "transparent_logo": "shopify://shop_images/Photoroom_20251223_002316.png",
         "reduce_padding": true,
         "background_opacity": 100,
         "background_blur_radius": 0
