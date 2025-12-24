@@ -29,7 +29,7 @@
             "button_background": "#ffffff",
             "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 14,
+            "overlay_opacity": 10,
             "background": "",
             "background_gradient": ""
           }
@@ -37,8 +37,8 @@
         "image_GLUEgD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Gemini_Generated_Image_gigbdcgigbdcgigb.png",
-            "mobile_image": "shopify://shop_images/Gemini_Generated_Image_gigbdcgigbdcgigb.png",
+            "image": "shopify://shop_images/retirer_le_logo_artguru_1_1_1_1__1_11zon.jpg",
+            "mobile_image": "shopify://shop_images/retirer_le_logo_artguru_1_1_1_1__1_11zon.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-start text-start",
             "desktop_text_position": "sm:place-self-start sm:text-start",
@@ -51,7 +51,7 @@
             "button_background": "#ffffff",
             "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 30,
+            "overlay_opacity": 0,
             "background": "",
             "background_gradient": ""
           }
