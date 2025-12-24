@@ -71,7 +71,7 @@
         "transition_type": "fade_with_text",
         "autoplay": true,
         "cycle_speed": 4,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
     },
@@ -100,6 +100,84 @@
         "remove_vertical_spacing": false,
         "remove_horizontal_spacing": false,
         "liquid": "<div class=\"logo-band-wrapper\">\n  <picture>\n    <source media=\"(max-width: 749px)\" srcset=\"https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Design_sans_titre_8.webp?v=1766596253\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Design_sans_titre_7.webp?v=1766596254\" alt=\"Logos partenaires\" class=\"logo-band-image\">\n  </picture>\n</div>\n\n<style>\n.logo-band-wrapper {\n  width: 100%;\n  margin: 0;\n  padding: 10px 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  line-height: 0;\n}\n\n.logo-band-image {\n  width: 100%;\n  max-width: 1600px;\n  height: 80px;\n  object-fit: contain;\n  display: block;\n  margin: 0 auto;\n}\n\n@media screen and (max-width: 749px) {\n  .logo-band-image {\n    height: 25px;\n  }\n}\n</style>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "multi_column_n83Ttc": {
+      "type": "multi-column",
+      "blocks": {
+        "item_rXYDVW": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "Zéro Poils Recollés sur le Linge Noir",
+            "heading_tag": "h4",
+            "content": "<p>Notre formule dissout activement les agglomérats de poils cachés dans le tambour et les filtres. Fini les vêtements \"propres\" encore pleins de poils.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_8FKFiX": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "Élimination Radicale des Odeurs \"Animales\"",
+            "heading_tag": "h4",
+            "content": "<p>Ne masquez plus les odeurs, détruisez-les. PurePaw neutralise les bactéries responsables de l'odeur de \"chien mouillé\" et de moisi à la source.<br/><br/></p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_4rkchc": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/new-enhance-photo-v2-1_2.webp",
+            "column_size": "2",
+            "title": "Une Hygiène Profonde, Là Où Vous Ne Voyez Pas",
+            "heading_tag": "h4",
+            "content": "<p>Décolle le sébum, la boue et les résidus organiques incrustés dans les zones inaccessibles de votre machine pour un environnement de lavage 100% sain.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_WyRxpC": {
+          "type": "item",
+          "settings": {
+            "column_size": "2",
+            "title": "Protège Votre Machine et Allonge Sa Durée de Vie",
+            "heading_tag": "h4",
+            "content": "<p>Élimine le calcaire et les résidus de lessive qui encrassent la mécanique. Une machine saine pour des années de lavages efficaces.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_rXYDVW",
+        "item_8FKFiX",
+        "item_4rkchc",
+        "item_WyRxpC"
+      ],
+      "custom_css": [
+        "h2 {font-size: 1.5rem !important; line-height: 1.2 !important;}",
+        ".multicolumn__title {font-size: 1.5rem !important; line-height: 1.2 !important;}",
+        "@media screen and (max-width: 749px) {h2, .multicolumn__title {font-size: 1.3rem !important; }}"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": true,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "La Puissance 4-en-1 pour un Foyer Sain et Sans Odeurs",
+        "content": "<p>Là où votre lessive échoue, PurePaw agit</p>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -329,7 +407,7 @@
         "transition_type": "fade_with_text",
         "autoplay": true,
         "cycle_speed": 4,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
     },
@@ -360,6 +438,7 @@
     "slideshow_9eGzHG",
     "scrolling_text_Jfmn46",
     "custom_liquid_RjxkYf",
+    "multi_column_n83Ttc",
     "main",
     "slideshow_n3Re4i",
     "related-products"
