@@ -146,6 +146,49 @@
         "text_color": ""
       }
     },
+    "slideshow_YdmTCA": {
+      "type": "slideshow",
+      "blocks": {
+        "image_bJ3Dd6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/new-enhance-photo-v2-1.webp",
+            "mobile_image": "shopify://shop_images/new-enhance-photo-v2-1.webp",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide 2",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_bJ3Dd6"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#F2F2F2",
+        "background_gradient": ""
+      }
+    },
     "multi_column_n83Ttc": {
       "type": "multi-column",
       "blocks": {
@@ -461,6 +504,7 @@
     "scrolling_text_Jfmn46",
     "custom_liquid_RjxkYf",
     "rich_text_ane766",
+    "slideshow_YdmTCA",
     "multi_column_n83Ttc",
     "multi_column_4HV87L",
     "main",
