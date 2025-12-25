@@ -55,7 +55,7 @@
         ".announcement-bar * {color: #ffffff !important;}"
       ],
       "settings": {
-        "enable_sticky": false,
+        "enable_sticky": true,
         "autoplay": true,
         "cycle_speed": 4,
         "text_size": "text-base",
