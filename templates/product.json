@@ -75,23 +75,6 @@
         "background_gradient": ""
       }
     },
-    "scrolling_text_Jfmn46": {
-      "type": "scrolling-text",
-      "custom_css": [],
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "FORMULE SPÉCIAL PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOI EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 8,
-        "background": "#305ad0",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
-      }
-    },
     "custom_liquid_RjxkYf": {
       "type": "custom-liquid",
       "name": "Custom Liquid",
@@ -260,6 +243,23 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "scrolling_text_Jfmn46": {
+      "type": "scrolling-text",
+      "custom_css": [],
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "FORMULE SPÉCIAL PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOI EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 8,
+        "background": "#305ad0",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
       }
     },
     "multi_column_4HV87L": {
@@ -501,11 +501,11 @@
   },
   "order": [
     "slideshow_9eGzHG",
-    "scrolling_text_Jfmn46",
     "custom_liquid_RjxkYf",
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "multi_column_n83Ttc",
+    "scrolling_text_Jfmn46",
     "multi_column_4HV87L",
     "main",
     "slideshow_n3Re4i",
