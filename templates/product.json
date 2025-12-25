@@ -117,8 +117,8 @@
         "heading_aCMbaP": {
           "type": "heading",
           "settings": {
-            "text": "La Puissance 4-en-1 pour un Foyer Sain et Sans Odeurs",
-            "heading_tag": "h4",
+            "text": "La Puissance 4-en-1 pour un Foyer Sain",
+            "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
           }
@@ -126,7 +126,7 @@
         "richtext_43wHFQ": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Là où votre lessive échoue, PurePaw agit</p>"
+            "content": "<h5>Là où votre lessive échoue, PurePaw agit</h5>"
           }
         }
       },
