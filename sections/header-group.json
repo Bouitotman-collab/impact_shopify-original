@@ -55,13 +55,13 @@
         ".announcement-bar * {color: #ffffff !important;}"
       ],
       "settings": {
-        "enable_sticky": true,
+        "enable_sticky": false,
         "autoplay": true,
         "cycle_speed": 4,
         "text_size": "text-base",
         "navigation_mode": "scrolling",
         "scrolling_speed": 10,
-        "background": "#8cc2e6",
+        "background": "#305ad0",
         "background_gradient": "",
         "text_color": "#ffffff"
       }
