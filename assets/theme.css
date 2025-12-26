@@ -10383,5 +10383,107 @@ p, a, span, div, button, input, textarea, select {
   }
 }
 
+/* Barre d'annonce rotation - Force le texte blanc */
+.announcement-bar-rotating {
+  background: #305AD0 !important;
+  color: #FFFFFF !important;
+  font-family: 'Epilogue', sans-serif !important;
+  padding: 12px 20px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 
+.announcement-bar-rotating *,
+.announcement-bar-rotating span,
+.announcement-bar-rotating p,
+.announcement-bar-rotating div {
+  color: #FFFFFF !important;
+}
+
+.announcement-bar-rotating__messages {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.announcement-bar-rotating__message {
+  position: absolute !important;
+  width: 100% !important;
+  opacity: 0 !important;
+  transition: opacity 0.5s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  color: #FFFFFF !important;
+}
+
+.announcement-bar-rotating__message.active {
+  opacity: 1 !important;
+  position: relative !important;
+}
+
+.announcement-bar-rotating__icon {
+  width: 22px !important;
+  height: 22px !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+  flex-shrink: 0 !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.announcement-bar-rotating__icon img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.announcement-bar-rotating__text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+}
+
+.announcement-bar-rotating__code {
+  font-weight: 700 !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  padding: 3px 10px !important;
+  border-radius: 4px !important;
+  color: #FFFFFF !important;
+}
+
+.announcement-bar-rotating__separator {
+  margin: 0 4px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar-rotating {
+    font-size: 12px !important;
+    padding: 10px 15px !important;
+    min-height: 40px !important;
+  }
+  
+  .announcement-bar-rotating__icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  .announcement-bar-rotating__text {
+    gap: 8px !important;
+  }
+}
 
