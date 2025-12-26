@@ -1,0 +1,176 @@
+<style>
+.announcement-bar-rotating {
+  background: #305AD0;
+  color: #FFFFFF;
+  font-family: 'Epilogue', sans-serif;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bar-rotating__messages {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.announcement-bar-rotating__message {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.announcement-bar-rotating__message.active {
+  opacity: 1;
+  position: relative;
+}
+
+.announcement-bar-rotating__icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.announcement-bar-rotating__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #FFFFFF;
+}
+
+.announcement-bar-rotating__text {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.announcement-bar-rotating__code {
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.announcement-bar-rotating__separator {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 4px;
+}
+
+@media screen and (max-width: 749px) {
+  .announcement-bar-rotating {
+    font-size: 12px;
+    padding: 10px 15px;
+    min-height: 40px;
+  }
+  
+  .announcement-bar-rotating__icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .announcement-bar-rotating__text {
+    gap: 8px;
+  }
+}
+</style>
+
+<div class="announcement-bar-rotating">
+  <div class="announcement-bar-rotating__messages">
+    <div class="announcement-bar-rotating__message active" data-message="1">
+      <span class="announcement-bar-rotating__icon">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M190.4 74.1c5.6-16.8 23.7-25.8 40.5-20.2s25.8 23.7 20.2 40.5c-11 33-45 49.5-78.2 37.4c-3.1-.7-6.2-1.4-9.4-2.1C142.2 123.3 120 98.3 120 68c0-33.1 26.9-60 60-60h4c26.5 0 48 21.5 48 48v8h5.6c35.4 0 64 28.7 64 64c0 25.4-11.4 49.1-31.4 64.9c4.9 10.5 7.8 22.1 7.8 34.3v33.7c0 4.2-.9 8.2-2.4 11.9C352.6 264.6 416 321.3 416 392v48c0 22.1-17.9 40-40 40H136c-22.1 0-40-17.9-40-40V392c0-70.7 63.4-127.4 140.4-119.2c-1.3-3.7-2.4-7.6-2.4-11.9V227.2c0-12.2 2.9-23.8 7.8-34.3c-20-15.8-31.4-39.5-31.4-64.9c0-29.3 19.8-54 46.8-61.5C252.5 50.2 236 34.2 216 34.2h-4c-6.6 0-12 5.4-12 12c0 8.7 7.3 15.8 16 15.8c8.8 0 16 7.2 16 16s-7.2 16-16 16c-26.5 0-48-21.5-48-48c0-11.1 3.7-21.4 9.9-29.6C166.8 33 144.1 50.3 136.3 76c11.3 3.4 22.4 8.2 33.2 14.3c-8.2 11-13.5 24.9-13.5 40.6c0 3.5.3 6.9.8 10.3c-.7-.1-1.4-.2-2.1-.3C121.8 133.1 88 104.4 88 68c0-50.6 41-91.7 91.6-92C203 24.7 232.6 0 268 0h4c48.6 0 88 39.4 88 88s-39.4 88-88 88h-5.6c0 .1 0 .2 0 .3c13.3 9.2 24 22.2 30.9 37.3c16.2-5.1 33.6-7.6 51.5-7.6c44.1 0 80 35.9 80 80v48c0 44.1-35.9 80-80 80H136c-44.1 0-80-35.9-80-80V296c0-44.1 35.9-80 80-80c17.9 0 35.3 2.5 51.5 7.6c6.9-15.1 17.6-28.1 30.9-37.3c0-.1 0-.2 0-.3c-35.4 0-64-28.7-64-64c0-14.5 4.8-27.8 12.9-38.6c-.8-3.7-1.3-7.5-1.3-11.5c0-26.5 21.5-48 48-48c8.8 0 16 7.2 16 16s-7.2 16-16 16c-8.8 0-16 7.2-16 16s7.2 16 16 16c26.5 0 48-21.5 48-48c0-8.8-7.2-16-16-16s-16-7.2-16-16c0-26.5 21.5-48 48-48h4c33.1 0 60 26.9 60 60c0 30.3-22.2 55.3-51.6 59.7c-3.2.7-6.3 1.4-9.4 2.1c-33.2 12.1-67.2-4.4-78.2-37.4c-5.6-16.8 3.5-34.9 20.2-40.5s34.9 3.5 40.5 20.2c3.2 9.6 13.1 14.8 22.3 11.7c9.2-3.1 14.1-13.3 10.9-22.9C389.7 34.2 364 10.2 332 10.2h-4c-19.9 0-36.5 16-41.2 37.3C313.8 54 328 68 328 86.2c0 29.3-19.8 54-46.8 61.5c4.7 16.3-4.3 33.6-20.2 39.2c-15.9 5.6-33.6-3.5-39.2-20.2c-5.6-16.8 3.5-34.9 20.2-40.5zM136 248c-22.1 0-40 17.9-40 40v48c0 22.1 17.9 40 40 40h240c22.1 0 40-17.9 40-40V288c0-22.1-17.9-40-40-40H272V227.2c0-17.7-14.3-32-32-32s-32 14.3-32 32V248H136z"/>
+        </svg>
+      </span>
+      <span class="announcement-bar-rotating__text">
+        -10% sur votre 1ère commande avec le code <span class="announcement-bar-rotating__code">BIENVENUE10</span>
+      </span>
+    </div>
+
+    <div class="announcement-bar-rotating__message" data-message="2">
+      <span class="announcement-bar-rotating__text">
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+          <span class="announcement-bar-rotating__icon">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M48 0C21.5 0 0 21.5 0 48V256H144c8.8 0 16 7.2 16 16s-7.2 16-16 16H0v96c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V336H368c-8.8 0-16-7.2-16-16s7.2-16 16-16H512V48c0-26.5-21.5-48-48-48H48zM16 309.8V202.2l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0l73.4-73.4 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0l73.4-73.4 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0L496 202.2v107.6l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0l-73.4 73.4-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0l-73.4 73.4-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0L16 309.8zM160 80a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+            </svg>
+          </span>
+          Livraison gratuite
+        </span>
+        <span class="announcement-bar-rotating__separator">•</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+          <span class="announcement-bar-rotating__icon">
+            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM385 215c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-119 119-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L385 215z"/>
+            </svg>
+          </span>
+          Satisfait ou remboursé
+        </span>
+        <span class="announcement-bar-rotating__separator">•</span>
+        <span style="display: inline-flex; align-items: center; gap: 5px;">
+          <span class="announcement-bar-rotating__icon">
+            <svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
+              <path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"/>
+            </svg>
+          </span>
+          Paiement 100% sécurisé
+        </span>
+      </span>
+    </div>
+
+    <div class="announcement-bar-rotating__message" data-message="3">
+      <span class="announcement-bar-rotating__icon">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/>
+        </svg>
+      </span>
+      <span class="announcement-bar-rotating__text">
+        Plus de 800 personnes satisfaites
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const messages = document.querySelectorAll('.announcement-bar-rotating__message');
+  let currentIndex = 0;
+
+  function rotateMessages() {
+    messages[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % messages.length;
+    messages[currentIndex].classList.add('active');
+  }
+
+  setInterval(rotateMessages, 4000);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Barre annonce rotation",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Barre annonce rotation"
+    }
+  ]
+}
+{% endschema %}
