@@ -49,11 +49,8 @@
         "message_fFimPU",
         "message_eGh7Y4"
       ],
-      "custom_css": [
-        ".announcement-bar__item::after,.announcement-bar__item::before {color: #ffffff !important; background-color: #ffffff !important;}",
-        ".announcement-bar svg,.announcement-bar__item svg {fill: #ffffff !important;}",
-        ".announcement-bar * {color: #ffffff !important;}"
-      ],
+      "disabled": true,
+      "custom_css": [],
       "settings": {
         "enable_sticky": true,
         "autoplay": true,
@@ -100,9 +97,15 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "barre_annonce_rotation_hnxyXh": {
+      "type": "barre-annonce-rotation",
+      "name": "Barre annonce rotation",
+      "settings": {}
     }
   },
   "order": [
+    "barre_annonce_rotation_hnxyXh",
     "announcement-bar",
     "header",
     "176635618679dcdcb0"
