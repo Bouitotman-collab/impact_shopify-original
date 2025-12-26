@@ -190,7 +190,9 @@
         "heading_aCMbaP",
         "richtext_43wHFQ"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "[src*=\"Photorgo\"] {height: 100px !important; min-height: 100px !important;}"
+      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
