@@ -17,6 +17,8 @@
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
             {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -31,6 +33,8 @@
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
             {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -45,6 +49,8 @@
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
             {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -114,6 +120,12 @@
     max-width: 280px;
   }
 
+  /* Style spécifique pour le logo 2 */
+  .logo-carousel-slide img.logo-2 {
+    height: 90px;
+    max-width: 220px;
+  }
+
   .logo-carousel-slide img:hover {
     opacity: 1;
   }
@@ -144,8 +156,13 @@
     }
 
     .logo-carousel-slide img.logo-photoroom {
-      height: 120px;
-      max-width: 210px;
+      height: 100px;
+      max-width: 180px;
+    }
+
+    .logo-carousel-slide img.logo-2 {
+      height: 60px;
+      max-width: 150px;
     }
     
     .logo-carousel-slide {
