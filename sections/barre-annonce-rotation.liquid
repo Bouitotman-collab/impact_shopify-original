@@ -1,7 +1,7 @@
 <style>
 .announcement-bar-rotating {
-  background: #305AD0;
-  color: #FFFFFF;
+  background: #305AD0 !important;
+  color: #FFFFFF !important;
   font-family: 'Epilogue', sans-serif;
   padding: 12px 20px;
   text-align: center;
@@ -13,6 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.announcement-bar-rotating * {
+  color: #FFFFFF !important;
 }
 
 .announcement-bar-rotating__messages {
@@ -32,7 +36,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #FFFFFF;
 }
 
 .announcement-bar-rotating__message.active {
@@ -61,19 +64,16 @@
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
-  color: #FFFFFF;
 }
 
 .announcement-bar-rotating__code {
-  font-weight: 700;
+  font-weight: 700 !important;
   background: rgba(255, 255, 255, 0.25);
   padding: 3px 10px;
   border-radius: 4px;
-  color: #FFFFFF;
 }
 
 .announcement-bar-rotating__separator {
-  color: #FFFFFF;
   margin: 0 4px;
   font-weight: 700;
 }
@@ -113,21 +113,21 @@
           <span class="announcement-bar-rotating__icon">
             <img src="https://cdn.shopify.com/s/files/1/[VOTRE-ID-BOUTIQUE]/files/livraison-gratuite.png" alt="Livraison" loading="lazy">
           </span>
-          <span style="color: #FFFFFF;">Livraison gratuite</span>
+          Livraison gratuite
         </span>
         <span class="announcement-bar-rotating__separator">•</span>
         <span style="display: inline-flex; align-items: center; gap: 5px;">
           <span class="announcement-bar-rotating__icon">
             <img src="https://cdn.shopify.com/s/files/1/[VOTRE-ID-BOUTIQUE]/files/rembourser.png" alt="Remboursé" loading="lazy">
           </span>
-          <span style="color: #FFFFFF;">Satisfait ou remboursé</span>
+          Satisfait ou remboursé
         </span>
         <span class="announcement-bar-rotating__separator">•</span>
         <span style="display: inline-flex; align-items: center; gap: 5px;">
           <span class="announcement-bar-rotating__icon">
             <img src="https://cdn.shopify.com/s/files/1/[VOTRE-ID-BOUTIQUE]/files/paiement-securise.png" alt="Paiement" loading="lazy">
           </span>
-          <span style="color: #FFFFFF;">Paiement 100% sécurisé</span>
+          Paiement 100% sécurisé
         </span>
       </span>
     </div>
@@ -136,7 +136,7 @@
       <span class="announcement-bar-rotating__icon">
         <img src="https://cdn.shopify.com/s/files/1/[VOTRE-ID-BOUTIQUE]/files/client-satisfait.png" alt="Client satisfait" loading="lazy">
       </span>
-      <span class="announcement-bar-rotating__text" style="color: #FFFFFF;">
+      <span class="announcement-bar-rotating__text">
         Plus de 800 personnes satisfaites
       </span>
     </div>
