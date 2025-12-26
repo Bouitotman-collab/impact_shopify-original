@@ -190,7 +190,9 @@
         "heading_aCMbaP",
         "richtext_43wHFQ"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".logo-carousel-slide:nth-child(3) img {height: 120px !important; max-width: 220px !important;}"
+      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
