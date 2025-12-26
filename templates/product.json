@@ -191,7 +191,7 @@
         "richtext_43wHFQ"
       ],
       "custom_css": [
-        ".logo-carousel-slide:nth-child(3) img {height: 120px !important; max-width: 220px !important;}"
+        ".logo-carousel-slide:nth-child(3) img,.logo-carousel-slide:nth-child(9) img,.logo-carousel-slide:nth-child(15) img {height: 90px !important; max-width: 220px !important;}"
       ],
       "name": "Rich text",
       "settings": {
