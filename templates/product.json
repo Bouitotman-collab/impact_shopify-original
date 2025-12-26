@@ -185,7 +185,7 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
     },
@@ -494,9 +494,14 @@
         "transition_type": "fade_with_text",
         "autoplay": false,
         "cycle_speed": 6,
-        "background": "#F2F2F2",
+        "background": "#f2f2f2",
         "background_gradient": ""
       }
+    },
+    "bande_avis_client_6VMkUw": {
+      "type": "bande-avis-client",
+      "name": "Bande avis client",
+      "settings": {}
     }
   },
   "order": [
@@ -510,6 +515,7 @@
     "main",
     "slideshow_n3Re4i",
     "related-products",
-    "slideshow_U4qMYm"
+    "slideshow_U4qMYm",
+    "bande_avis_client_6VMkUw"
   ]
 }
