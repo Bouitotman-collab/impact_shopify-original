@@ -14,7 +14,12 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide" {{ block.shopify_attributes }}>
           {% if block.settings.logo != blank %}
-            <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% else %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% endif %}
           {% endif %}
         </div>
       {% endfor %}
@@ -23,7 +28,12 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
-            <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% else %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% endif %}
           {% endif %}
         </div>
       {% endfor %}
@@ -32,7 +42,12 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
-            <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% else %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+            {% endif %}
           {% endif %}
         </div>
       {% endfor %}
@@ -93,6 +108,12 @@
     transition: opacity 0.3s ease;
   }
 
+  /* Style spécifique pour le logo Photoroom */
+  .logo-carousel-slide img.logo-photoroom {
+    height: 90px;
+    max-width: 220px;
+  }
+
   .logo-carousel-slide img:hover {
     opacity: 1;
   }
@@ -120,6 +141,11 @@
     .logo-carousel-slide img {
       height: calc({{ section.settings.logo_height }}px * 0.6);
       max-width: calc({{ section.settings.logo_width }}px * 0.6);
+    }
+
+    .logo-carousel-slide img.logo-photoroom {
+      height: 60px;
+      max-width: 150px;
     }
     
     .logo-carousel-slide {
