@@ -88,6 +88,47 @@
         "text_color": ""
       }
     },
+    "logo_carousel_zGYFVe": {
+      "type": "logo-carousel",
+      "blocks": {
+        "logo_7n4L6y": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_tLiBPE": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_DMxqC9": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_hTCmNh": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_YD83re": {
+          "type": "logo",
+          "settings": {}
+        },
+        "logo_gghn6E": {
+          "type": "logo",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "logo_7n4L6y",
+        "logo_tLiBPE",
+        "logo_DMxqC9",
+        "logo_hTCmNh",
+        "logo_YD83re",
+        "logo_gghn6E"
+      ],
+      "name": "Logo Carousel",
+      "settings": {
+        "title": "Ils nous font confiance"
+      }
+    },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
       "custom_css": [],
@@ -507,6 +548,7 @@
   "order": [
     "slideshow_9eGzHG",
     "custom_liquid_RjxkYf",
+    "logo_carousel_zGYFVe",
     "scrolling_text_Jfmn46",
     "rich_text_ane766",
     "slideshow_YdmTCA",
