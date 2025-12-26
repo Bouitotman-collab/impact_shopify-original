@@ -75,19 +75,6 @@
         "background_gradient": ""
       }
     },
-    "custom_liquid_RjxkYf": {
-      "type": "custom-liquid",
-      "name": "Custom Liquid",
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "liquid": "<div class=\"logo-band-wrapper\">\n  <picture>\n    <source media=\"(max-width: 749px)\" srcset=\"https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Design_sans_titre_8.webp?v=1766596253\">\n    <img src=\"https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Design_sans_titre_7.webp?v=1766596254\" alt=\"Logos partenaires\" class=\"logo-band-image\">\n  </picture>\n</div>\n\n<style>\n.logo-band-wrapper {\n  width: 100%;\n  margin: 0;\n  padding: 10px 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  overflow: hidden;\n  line-height: 0;\n}\n\n.logo-band-image {\n  width: 100%;\n  max-width: 1600px;\n  height: 80px;\n  object-fit: contain;\n  display: block;\n  margin: 0 auto;\n}\n\n@media screen and (max-width: 749px) {\n  .logo-band-image {\n    height: 25px;\n  }\n}\n</style>",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "logo_carousel_zGYFVe": {
       "type": "logo-carousel",
       "blocks": {
@@ -138,7 +125,7 @@
       ],
       "name": "Logo Carousel",
       "settings": {
-        "title": "Ils nous font confiance"
+        "title": "vu dans"
       }
     },
     "scrolling_text_Jfmn46": {
@@ -559,7 +546,6 @@
   },
   "order": [
     "slideshow_9eGzHG",
-    "custom_liquid_RjxkYf",
     "logo_carousel_zGYFVe",
     "scrolling_text_Jfmn46",
     "rich_text_ane766",
