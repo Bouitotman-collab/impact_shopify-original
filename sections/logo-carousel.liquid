@@ -1,219 +1,231 @@
-<style>
-.logo-carousel {
-  background: #FFFFFF;
-  padding: 50px 0;
-  overflow: hidden;
-  position: relative;
-}
+{% comment %}
+  Section: Logo Carousel - Barre de notoriété "Vu dans"
+  Pour le thème Impact de Shopify
+{% endcomment %}
 
-.logo-carousel__title {
-  text-align: center;
-  font-family: 'Epilogue', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #333333;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 40px;
-}
+{{ 'section-logo-carousel.css' | asset_url | stylesheet_tag }}
 
-.logo-carousel__wrapper {
-  overflow: hidden;
-}
-
-.logo-carousel__track {
-  display: flex;
-  width: fit-content;
-  animation: scroll 25s linear infinite;
-  gap: 80px;
-  align-items: center;
-}
-
-.logo-carousel__track:hover {
-  animation-play-state: paused;
-}
-
-.logo-carousel__item {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  opacity: 0.8;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.logo-carousel__item:hover {
-  opacity: 1;
-  transform: scale(1.05);
-}
-
-.logo-carousel__item img {
-  max-height: 70px;
-  max-width: 180px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-}
-
-.logo-carousel__item a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@media screen and (max-width: 749px) {
-  .logo-carousel {
-    padding: 35px 0;
-  }
-  
-  .logo-carousel__title {
-    font-size: 13px;
-    margin-bottom: 25px;
-    letter-spacing: 1px;
-  }
-  
-  .logo-carousel__track {
-    gap: 50px;
-    animation: scroll 20s linear infinite;
-  }
-  
-  .logo-carousel__item {
-    height: 50px;
-  }
-  
-  .logo-carousel__item img {
-    max-height: 50px;
-    max-width: 120px;
-  }
-}
-</style>
-
-<div class="logo-carousel">
-  {% if section.settings.title != blank %}
-    <div class="logo-carousel__title">{{ section.settings.title }}</div>
+<div class="logo-carousel-section">
+  {% if section.settings.show_title %}
+    <p class="logo-carousel-title">{{ section.settings.title }}</p>
   {% endif %}
   
-  <div class="logo-carousel__wrapper">
-    <div class="logo-carousel__track">
-      <!-- Premier set de logos -->
-      {% for block in section.blocks %}
-        <div class="logo-carousel__item" {{ block.shopify_attributes }}>
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" target="_blank" rel="noopener">
-          {% endif %}
-          
-          {% if block.settings.logo != blank %}
-            <img 
-              src="{{ block.settings.logo | image_url: width: 400 }}" 
-              alt="{{ block.settings.logo.alt | default: shop.name }}"
-              loading="lazy"
-            >
-          {% elsif block.settings.logo_svg != blank %}
-            {{ block.settings.logo_svg }}
-          {% endif %}
-          
-          {% if block.settings.link != blank %}
-            </a>
-          {% endif %}
-        </div>
-      {% endfor %}
+  <div class="logo-carousel-wrapper">
+    <div class="logo-carousel-track">
+      <!-- Premier groupe de logos -->
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_1" alt="Logo partenaire 1">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_2" alt="Logo partenaire 2">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_3" alt="Logo partenaire 3">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_4" alt="Logo partenaire 4">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_5" alt="Logo partenaire 5">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_6" alt="Logo partenaire 6">
+      </div>
       
-      <!-- Duplication pour l'effet infini -->
-      {% for block in section.blocks %}
-        <div class="logo-carousel__item">
-          {% if block.settings.link != blank %}
-            <a href="{{ block.settings.link }}" target="_blank" rel="noopener">
-          {% endif %}
-          
-          {% if block.settings.logo != blank %}
-            <img 
-              src="{{ block.settings.logo | image_url: width: 400 }}" 
-              alt="{{ block.settings.logo.alt | default: shop.name }}"
-              loading="lazy"
-            >
-          {% elsif block.settings.logo_svg != blank %}
-            {{ block.settings.logo_svg }}
-          {% endif %}
-          
-          {% if block.settings.link != blank %}
-            </a>
-          {% endif %}
-        </div>
-      {% endfor %}
+      <!-- Duplication pour effet de boucle infinie -->
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_1" alt="Logo partenaire 1">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_2" alt="Logo partenaire 2">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_3" alt="Logo partenaire 3">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_4" alt="Logo partenaire 4">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_5" alt="Logo partenaire 5">
+      </div>
+      <div class="logo-carousel-slide">
+        <img src="INSERER_URL_LOGO_6" alt="Logo partenaire 6">
+      </div>
     </div>
   </div>
 </div>
+
+<style>
+  .logo-carousel-section {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .logo-carousel-title {
+    text-align: center;
+    font-family: 'Epilogue', sans-serif;
+    font-size: {{ section.settings.title_size }}px;
+    color: {{ section.settings.title_color }};
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .logo-carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .logo-carousel-track {
+    display: flex;
+    animation: scroll {{ section.settings.animation_speed }}s linear infinite;
+    width: calc({{ section.settings.logo_width }}px * 12 + 80px * 12);
+  }
+
+  .logo-carousel-slide {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+  }
+
+  .logo-carousel-slide img {
+    height: {{ section.settings.logo_height }}px;
+    width: auto;
+    max-width: {{ section.settings.logo_width }}px;
+    object-fit: contain;
+    opacity: {{ section.settings.logo_opacity }};
+    transition: opacity 0.3s ease;
+  }
+
+  .logo-carousel-slide img:hover {
+    opacity: 1;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-{{ section.settings.logo_width }}px * 6 - 80px * 6));
+    }
+  }
+
+  /* Pause au survol */
+  .logo-carousel-wrapper:hover .logo-carousel-track {
+    animation-play-state: paused;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 749px) {
+    .logo-carousel-title {
+      font-size: calc({{ section.settings.title_size }}px * 0.8);
+    }
+    
+    .logo-carousel-slide img {
+      height: calc({{ section.settings.logo_height }}px * 0.7);
+      max-width: calc({{ section.settings.logo_width }}px * 0.7);
+    }
+    
+    .logo-carousel-slide {
+      padding: 0 25px;
+    }
+  }
+</style>
 
 {% schema %}
 {
   "name": "Logo Carousel",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Afficher le titre",
+      "default": true
+    },
+    {
       "type": "text",
       "id": "title",
       "label": "Titre",
-      "default": "Ils nous font confiance"
-    }
-  ],
-  "blocks": [
+      "default": "Vu dans"
+    },
     {
-      "type": "logo",
-      "name": "Logo",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo (image)"
-        },
-        {
-          "type": "html",
-          "id": "logo_svg",
-          "label": "Logo (SVG)",
-          "info": "Utilisez ceci si vous voulez coller du code SVG directement"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Lien URL (optionnel)",
-          "info": "Le logo sera cliquable et ouvrira ce lien dans un nouvel onglet"
-        }
-      ]
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre (px)",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "logo_height",
+      "label": "Hauteur des logos (px)",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "Largeur max des logos (px)",
+      "min": 80,
+      "max": 200,
+      "step": 10,
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "logo_opacity",
+      "label": "Opacité des logos",
+      "min": 0.3,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Vitesse de défilement (secondes)",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacement haut (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacement bas (px)",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40
     }
   ],
   "presets": [
     {
-      "name": "Logo Carousel",
-      "blocks": [
-        {
-          "type": "logo"
-        },
-        {
-          "type": "logo"
-        },
-        {
-          "type": "logo"
-        },
-        {
-          "type": "logo"
-        },
-        {
-          "type": "logo"
-        },
-        {
-          "type": "logo"
-        }
-      ]
+      "name": "Logo Carousel"
     }
   ]
 }
