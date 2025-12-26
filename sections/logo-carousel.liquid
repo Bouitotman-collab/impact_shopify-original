@@ -14,21 +14,21 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide" {{ block.shopify_attributes }}>
           {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
             {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
+              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
+              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% else %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% endif %}
           {% endif %}
         </div>
@@ -38,21 +38,21 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
             {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
+              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
+              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% else %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% endif %}
           {% endif %}
         </div>
@@ -62,21 +62,21 @@
       {% for block in section.blocks %}
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 300 %}
+            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
             {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
+              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
+              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% else %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
             {% endif %}
           {% endif %}
         </div>
@@ -126,54 +126,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
-    height: 200px;
   }
 
-  .logo-carousel-slide img {
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    margin: 0 25px;
+  }
+
+  .logo-container img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     opacity: {{ section.settings.logo_opacity }};
     transition: opacity 0.3s ease;
   }
 
-  /* Tous les logos - largeur fixe pour espacement uniforme */
-  .logo-carousel-slide img.logo-1,
-  .logo-carousel-slide img.logo-2,
-  .logo-carousel-slide img.logo-3,
-  .logo-carousel-slide img.logo-4,
-  .logo-carousel-slide img.logo-5,
-  .logo-carousel-slide img.logo-6 {
-    width: 200px;
-    height: auto;
-  }
-
-  /* Ajustements individuels de hauteur max */
-  .logo-carousel-slide img.logo-1 {
-    max-height: 150px;
-  }
-
-  .logo-carousel-slide img.logo-2 {
-    max-height: 120px;
-  }
-
-  .logo-carousel-slide img.logo-3 {
-    max-height: 190px;
-  }
-
-  .logo-carousel-slide img.logo-4 {
-    max-height: 80px;
-  }
-
-  .logo-carousel-slide img.logo-5 {
-    max-height: 80px;
-  }
-
-  .logo-carousel-slide img.logo-6 {
-    max-height: 80px;
-  }
-
-  .logo-carousel-slide img:hover {
+  .logo-container img:hover {
     opacity: 1;
+  }
+
+  /* Tailles individuelles des conteneurs */
+  .logo-container.logo-1 {
+    width: 200px;
+    height: 80px;
+  }
+
+  .logo-container.logo-2 {
+    width: 250px;
+    height: 120px;
+  }
+
+  .logo-container.logo-3 {
+    width: 310px;
+    height: 190px;
+  }
+
+  .logo-container.logo-4 {
+    width: 200px;
+    height: 80px;
+  }
+
+  .logo-container.logo-5 {
+    width: 200px;
+    height: 80px;
+  }
+
+  .logo-container.logo-6 {
+    width: 200px;
+    height: 80px;
   }
 
   @keyframes scroll {
@@ -196,42 +200,40 @@
       font-size: calc({{ section.settings.title_size }}px * 0.8);
     }
 
-    .logo-carousel-slide {
+    .logo-container {
       width: 150px;
       height: 120px;
+      margin: 0 15px;
     }
 
-    .logo-carousel-slide img.logo-1,
-    .logo-carousel-slide img.logo-2,
-    .logo-carousel-slide img.logo-3,
-    .logo-carousel-slide img.logo-4,
-    .logo-carousel-slide img.logo-5,
-    .logo-carousel-slide img.logo-6 {
+    .logo-container.logo-1 {
       width: 120px;
+      height: 50px;
     }
 
-    .logo-carousel-slide img.logo-1 {
-      max-height: 50px;
+    .logo-container.logo-2 {
+      width: 180px;
+      height: 90px;
     }
 
-    .logo-carousel-slide img.logo-2 {
-      max-height: 90px;
+    .logo-container.logo-3 {
+      width: 220px;
+      height: 140px;
     }
 
-    .logo-carousel-slide img.logo-3 {
-      max-height: 140px;
+    .logo-container.logo-4 {
+      width: 120px;
+      height: 50px;
     }
 
-    .logo-carousel-slide img.logo-4 {
-      max-height: 50px;
+    .logo-container.logo-5 {
+      width: 120px;
+      height: 50px;
     }
 
-    .logo-carousel-slide img.logo-5 {
-      max-height: 50px;
-    }
-
-    .logo-carousel-slide img.logo-6 {
-      max-height: 50px;
+    .logo-container.logo-6 {
+      width: 120px;
+      height: 50px;
     }
 
     .logo-carousel-track {
