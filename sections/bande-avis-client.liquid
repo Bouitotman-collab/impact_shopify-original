@@ -7,7 +7,7 @@
   font-family: 'Epilogue', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 0;
   margin: 20px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -32,9 +32,9 @@
 }
 
 .trustpilot-banner__separator {
-  font-size: 24px;
+  font-size: 12px;
   font-weight: 700;
-  margin: 0 5px;
+  margin: 0 8px;
 }
 
 .trustpilot-banner__stars {
@@ -51,10 +51,11 @@
 
 .trustpilot-banner__excellent {
   font-weight: 700;
-  background: #FFFFFF;
-  color: #00bf63;
-  padding: 3px 10px;
-  border-radius: 3px;
+  color: #FFFFFF;
+}
+
+.trustpilot-banner__avis-number {
+  font-weight: 400;
 }
 
 @media screen and (max-width: 989px) {
@@ -69,6 +70,11 @@
   
   .trustpilot-banner__content {
     gap: 10px;
+  }
+  
+  .trustpilot-banner__text,
+  .trustpilot-banner__separator {
+    display: none;
   }
 }
 </style>
@@ -101,7 +107,7 @@
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
         </svg>
       </div>
-      <span><strong>4.8/5</strong> sur <strong>386</strong> avis</span>
+      <span><strong>4.8/5</strong> sur <span class="trustpilot-banner__avis-number">386</span> avis clients</span>
     </div>
   </div>
 </div>
