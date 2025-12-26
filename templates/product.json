@@ -81,37 +81,43 @@
         "logo_7n4L6y": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Logo-ConsoMag-Photoroom.webp"
+            "logo": "shopify://shop_images/Logo-ConsoMag-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         },
         "logo_tLiBPE": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom.webp"
+            "logo": "shopify://shop_images/8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         },
         "logo_DMxqC9": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom.webp"
+            "logo": "shopify://shop_images/D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         },
         "logo_hTCmNh": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1.-fotor-enhance-20251226215225-Photoroom.webp"
+            "logo": "shopify://shop_images/AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1.-fotor-enhance-20251226215225-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         },
         "logo_YD83re": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Design_sans_titre-Photoroom-Photoroom.webp"
+            "logo": "shopify://shop_images/Design_sans_titre-Photoroom-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         },
         "logo_gghn6E": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/new-enhance-photo-v2-1_3_-Photoroom.webp"
+            "logo": "shopify://shop_images/new-enhance-photo-v2-1_3_-Photoroom.webp",
+            "logo_alt": "Logo partenaire"
           }
         }
       },
@@ -125,7 +131,16 @@
       ],
       "name": "Logo Carousel",
       "settings": {
-        "title": ""
+        "show_title": true,
+        "title": "",
+        "title_size": 14,
+        "title_color": "#666666",
+        "logo_height": 100,
+        "logo_width": 200,
+        "logo_opacity": 0.6,
+        "animation_speed": 30,
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "scrolling_text_Jfmn46": {
