@@ -15,10 +15,18 @@
         <div class="logo-carousel-slide" {{ block.shopify_attributes }}>
           {% if block.settings.logo != blank %}
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
-            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -31,10 +39,18 @@
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
-            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -47,10 +63,18 @@
         <div class="logo-carousel-slide">
           {% if block.settings.logo != blank %}
             {% assign logo_url = block.settings.logo | image_url: width: 300 %}
-            {% if logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-photoroom">
+            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-1">
             {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-2">
+            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-3">
+            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-4">
+            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-5">
+            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
+              <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}" class="logo-6">
             {% else %}
               <img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
             {% endif %}
@@ -115,16 +139,40 @@
     transition: opacity 0.3s ease;
   }
 
-  /* Style spécifique pour le logo Photoroom */
-  .logo-carousel-slide img.logo-photoroom {
+  /* Logo 1 - ConsoMag */
+  .logo-carousel-slide img.logo-1 {
+    height: 80px;
+    max-width: 200px;
+  }
+
+  /* Logo 2 */
+  .logo-carousel-slide img.logo-2 {
+    height: 120px;
+    max-width: 250px;
+  }
+
+  /* Logo 3 - Photoroom (celui que tu avais modifié) */
+  .logo-carousel-slide img.logo-3 {
     height: 190px;
     max-width: 310px;
   }
 
-  /* Style spécifique pour le logo 2 */
-  .logo-carousel-slide img.logo-2 {
-    height: 120px;
-    max-width: 250px;
+  /* Logo 4 */
+  .logo-carousel-slide img.logo-4 {
+    height: 80px;
+    max-width: 200px;
+  }
+
+  /* Logo 5 */
+  .logo-carousel-slide img.logo-5 {
+    height: 80px;
+    max-width: 200px;
+  }
+
+  /* Logo 6 */
+  .logo-carousel-slide img.logo-6 {
+    height: 80px;
+    max-width: 200px;
   }
 
   .logo-carousel-slide img:hover {
@@ -152,23 +200,44 @@
     }
 
     .logo-carousel-slide {
-      width: 180px;
+      width: 150px;
       margin: 0 15px;
     }
-    
-    .logo-carousel-slide img {
-      height: calc({{ section.settings.logo_height }}px * 0.6);
-      max-width: calc({{ section.settings.logo_width }}px * 0.6);
+
+    /* Logo 1 - ConsoMag */
+    .logo-carousel-slide img.logo-1 {
+      height: 50px;
+      max-width: 120px;
     }
 
-    .logo-carousel-slide img.logo-photoroom {
+    /* Logo 2 */
+    .logo-carousel-slide img.logo-2 {
+      height: 90px;
+      max-width: 180px;
+    }
+
+    /* Logo 3 - Photoroom */
+    .logo-carousel-slide img.logo-3 {
       height: 140px;
       max-width: 220px;
     }
 
-    .logo-carousel-slide img.logo-2 {
-      height: 90px;
-      max-width: 180px;
+    /* Logo 4 */
+    .logo-carousel-slide img.logo-4 {
+      height: 50px;
+      max-width: 120px;
+    }
+
+    /* Logo 5 */
+    .logo-carousel-slide img.logo-5 {
+      height: 50px;
+      max-width: 120px;
+    }
+
+    /* Logo 6 */
+    .logo-carousel-slide img.logo-6 {
+      height: 50px;
+      max-width: 120px;
     }
 
     .logo-carousel-track {
