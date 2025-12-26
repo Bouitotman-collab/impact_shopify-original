@@ -262,6 +262,11 @@
         "text_color": ""
       }
     },
+    "bande_avis_client_6VMkUw": {
+      "type": "bande-avis-client",
+      "name": "Bande avis client",
+      "settings": {}
+    },
     "multi_column_4HV87L": {
       "type": "multi-column",
       "name": "Multi-column",
@@ -497,11 +502,6 @@
         "background": "#f2f2f2",
         "background_gradient": ""
       }
-    },
-    "bande_avis_client_6VMkUw": {
-      "type": "bande-avis-client",
-      "name": "Bande avis client",
-      "settings": {}
     }
   },
   "order": [
@@ -511,11 +511,11 @@
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "multi_column_n83Ttc",
+    "bande_avis_client_6VMkUw",
     "multi_column_4HV87L",
     "main",
     "slideshow_n3Re4i",
     "related-products",
-    "slideshow_U4qMYm",
-    "bande_avis_client_6VMkUw"
+    "slideshow_U4qMYm"
   ]
 }
