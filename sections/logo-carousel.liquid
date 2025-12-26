@@ -3,8 +3,6 @@
   Pour le thème Impact de Shopify
 {% endcomment %}
 
-{{ 'section-logo-carousel.css' | asset_url | stylesheet_tag }}
-
 <div class="logo-carousel-section">
   {% if section.settings.show_title %}
     <p class="logo-carousel-title">{{ section.settings.title }}</p>
@@ -13,44 +11,22 @@
   <div class="logo-carousel-wrapper">
     <div class="logo-carousel-track">
       <!-- Premier groupe de logos -->
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_1" alt="Logo partenaire 1">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_2" alt="Logo partenaire 2">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_3" alt="Logo partenaire 3">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_4" alt="Logo partenaire 4">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_5" alt="Logo partenaire 5">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_6" alt="Logo partenaire 6">
-      </div>
+      {% for block in section.blocks %}
+        <div class="logo-carousel-slide" {{ block.shopify_attributes }}>
+          {% if block.settings.logo != blank %}
+            <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+          {% endif %}
+        </div>
+      {% endfor %}
       
       <!-- Duplication pour effet de boucle infinie -->
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_1" alt="Logo partenaire 1">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_2" alt="Logo partenaire 2">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_3" alt="Logo partenaire 3">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_4" alt="Logo partenaire 4">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_5" alt="Logo partenaire 5">
-      </div>
-      <div class="logo-carousel-slide">
-        <img src="INSERER_URL_LOGO_6" alt="Logo partenaire 6">
-      </div>
+      {% for block in section.blocks %}
+        <div class="logo-carousel-slide">
+          {% if block.settings.logo != blank %}
+            <img src="{{ block.settings.logo | image_url: width: 300 }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}">
+          {% endif %}
+        </div>
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -82,7 +58,6 @@
   .logo-carousel-track {
     display: flex;
     animation: scroll {{ section.settings.animation_speed }}s linear infinite;
-    width: calc({{ section.settings.logo_width }}px * 12 + 80px * 12);
   }
 
   .logo-carousel-slide {
@@ -111,7 +86,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-{{ section.settings.logo_width }}px * 6 - 80px * 6));
+      transform: translateX(-50%);
     }
   }
 
@@ -193,7 +168,7 @@
       "min": 0.3,
       "max": 1,
       "step": 0.1,
-      "default": 0.7
+      "default": 1
     },
     {
       "type": "range",
@@ -223,9 +198,29 @@
       "default": 40
     }
   ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Image du logo"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Texte alternatif",
+          "default": "Logo partenaire"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Logo Carousel"
+      "name": "Logo Carousel",
+      "blocks": []
     }
   ]
 }
