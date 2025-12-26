@@ -127,52 +127,49 @@
     align-items: center;
     justify-content: center;
     width: 250px;
-    margin: 0 25px;
+    height: 200px;
   }
 
   .logo-carousel-slide img {
-    height: {{ section.settings.logo_height }}px;
-    width: auto;
-    max-width: {{ section.settings.logo_width }}px;
     object-fit: contain;
     opacity: {{ section.settings.logo_opacity }};
     transition: opacity 0.3s ease;
   }
 
-  /* Logo 1 - ConsoMag */
-  .logo-carousel-slide img.logo-1 {
-    height: 80px;
-    max-width: 200px;
-  }
-
-  /* Logo 2 */
-  .logo-carousel-slide img.logo-2 {
-    height: 120px;
-    max-width: 250px;
-  }
-
-  /* Logo 3 - Photoroom (celui que tu avais modifié) */
-  .logo-carousel-slide img.logo-3 {
-    height: 190px;
-    max-width: 310px;
-  }
-
-  /* Logo 4 */
-  .logo-carousel-slide img.logo-4 {
-    height: 80px;
-    max-width: 200px;
-  }
-
-  /* Logo 5 */
-  .logo-carousel-slide img.logo-5 {
-    height: 80px;
-    max-width: 200px;
-  }
-
-  /* Logo 6 */
+  /* Tous les logos - largeur fixe pour espacement uniforme */
+  .logo-carousel-slide img.logo-1,
+  .logo-carousel-slide img.logo-2,
+  .logo-carousel-slide img.logo-3,
+  .logo-carousel-slide img.logo-4,
+  .logo-carousel-slide img.logo-5,
   .logo-carousel-slide img.logo-6 {
-    height: 80px;
-    max-width: 200px;
+    width: 200px;
+    height: auto;
+  }
+
+  /* Ajustements individuels de hauteur max */
+  .logo-carousel-slide img.logo-1 {
+    max-height: 80px;
+  }
+
+  .logo-carousel-slide img.logo-2 {
+    max-height: 120px;
+  }
+
+  .logo-carousel-slide img.logo-3 {
+    max-height: 190px;
+  }
+
+  .logo-carousel-slide img.logo-4 {
+    max-height: 80px;
+  }
+
+  .logo-carousel-slide img.logo-5 {
+    max-height: 80px;
+  }
+
+  .logo-carousel-slide img.logo-6 {
+    max-height: 80px;
   }
 
   .logo-carousel-slide img:hover {
@@ -201,43 +198,40 @@
 
     .logo-carousel-slide {
       width: 150px;
-      margin: 0 15px;
+      height: 120px;
     }
 
-    /* Logo 1 - ConsoMag */
-    .logo-carousel-slide img.logo-1 {
-      height: 50px;
-      max-width: 120px;
-    }
-
-    /* Logo 2 */
-    .logo-carousel-slide img.logo-2 {
-      height: 90px;
-      max-width: 180px;
-    }
-
-    /* Logo 3 - Photoroom */
-    .logo-carousel-slide img.logo-3 {
-      height: 140px;
-      max-width: 220px;
-    }
-
-    /* Logo 4 */
-    .logo-carousel-slide img.logo-4 {
-      height: 50px;
-      max-width: 120px;
-    }
-
-    /* Logo 5 */
-    .logo-carousel-slide img.logo-5 {
-      height: 50px;
-      max-width: 120px;
-    }
-
-    /* Logo 6 */
+    .logo-carousel-slide img.logo-1,
+    .logo-carousel-slide img.logo-2,
+    .logo-carousel-slide img.logo-3,
+    .logo-carousel-slide img.logo-4,
+    .logo-carousel-slide img.logo-5,
     .logo-carousel-slide img.logo-6 {
-      height: 50px;
-      max-width: 120px;
+      width: 120px;
+    }
+
+    .logo-carousel-slide img.logo-1 {
+      max-height: 50px;
+    }
+
+    .logo-carousel-slide img.logo-2 {
+      max-height: 90px;
+    }
+
+    .logo-carousel-slide img.logo-3 {
+      max-height: 140px;
+    }
+
+    .logo-carousel-slide img.logo-4 {
+      max-height: 50px;
+    }
+
+    .logo-carousel-slide img.logo-5 {
+      max-height: 50px;
+    }
+
+    .logo-carousel-slide img.logo-6 {
+      max-height: 50px;
     }
 
     .logo-carousel-track {
@@ -276,24 +270,6 @@
       "id": "title_color",
       "label": "Couleur du titre",
       "default": "#666666"
-    },
-    {
-      "type": "range",
-      "id": "logo_height",
-      "label": "Hauteur des logos (px)",
-      "min": 30,
-      "max": 150,
-      "step": 5,
-      "default": 70
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "label": "Largeur max des logos (px)",
-      "min": 80,
-      "max": 300,
-      "step": 10,
-      "default": 180
     },
     {
       "type": "range",
