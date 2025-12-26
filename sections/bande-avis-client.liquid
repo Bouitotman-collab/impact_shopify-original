@@ -1,0 +1,119 @@
+<style>
+.trustpilot-banner {
+  background: #305AD0;
+  padding: 12px 20px;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trustpilot-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.trustpilot-banner__text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trustpilot-banner__number {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.trustpilot-banner__separator {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 5px;
+}
+
+.trustpilot-banner__stars {
+  display: flex;
+  gap: 2px;
+}
+
+.trustpilot-banner__rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.trustpilot-banner__excellent {
+  font-weight: 700;
+  background: #FFFFFF;
+  color: #00bf63;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 989px) {
+  .trustpilot-banner {
+    font-size: 12px;
+    padding: 10px 15px;
+  }
+  
+  .trustpilot-banner__number {
+    font-size: 14px;
+  }
+  
+  .trustpilot-banner__content {
+    gap: 10px;
+  }
+}
+</style>
+
+<div class="trustpilot-banner">
+  <div class="trustpilot-banner__content">
+    <div class="trustpilot-banner__text">
+      <span>Plus de</span>
+      <span class="trustpilot-banner__number">800</span>
+      <span>personnes satisfaites</span>
+      <span class="trustpilot-banner__separator">•</span>
+    </div>
+    
+    <div class="trustpilot-banner__rating">
+      <span class="trustpilot-banner__excellent">Excellent</span>
+      <div class="trustpilot-banner__stars">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00bf63">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00bf63">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00bf63">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00bf63">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#00bf63">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+      </div>
+      <span><strong>4.8/5</strong> sur <strong>386</strong> avis</span>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bande avis client",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Bande avis client"
+    }
+  ]
+}
+{% endschema %}
