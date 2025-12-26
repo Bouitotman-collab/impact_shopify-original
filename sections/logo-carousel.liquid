@@ -1,0 +1,220 @@
+<style>
+.logo-carousel {
+  background: #FFFFFF;
+  padding: 50px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-carousel__title {
+  text-align: center;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 40px;
+}
+
+.logo-carousel__wrapper {
+  overflow: hidden;
+}
+
+.logo-carousel__track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 25s linear infinite;
+  gap: 80px;
+  align-items: center;
+}
+
+.logo-carousel__track:hover {
+  animation-play-state: paused;
+}
+
+.logo-carousel__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.logo-carousel__item:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.logo-carousel__item img {
+  max-height: 70px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-carousel__item a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .logo-carousel {
+    padding: 35px 0;
+  }
+  
+  .logo-carousel__title {
+    font-size: 13px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+  }
+  
+  .logo-carousel__track {
+    gap: 50px;
+    animation: scroll 20s linear infinite;
+  }
+  
+  .logo-carousel__item {
+    height: 50px;
+  }
+  
+  .logo-carousel__item img {
+    max-height: 50px;
+    max-width: 120px;
+  }
+}
+</style>
+
+<div class="logo-carousel">
+  {% if section.settings.title != blank %}
+    <div class="logo-carousel__title">{{ section.settings.title }}</div>
+  {% endif %}
+  
+  <div class="logo-carousel__wrapper">
+    <div class="logo-carousel__track">
+      <!-- Premier set de logos -->
+      {% for block in section.blocks %}
+        <div class="logo-carousel__item" {{ block.shopify_attributes }}>
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" target="_blank" rel="noopener">
+          {% endif %}
+          
+          {% if block.settings.logo != blank %}
+            <img 
+              src="{{ block.settings.logo | image_url: width: 400 }}" 
+              alt="{{ block.settings.logo.alt | default: shop.name }}"
+              loading="lazy"
+            >
+          {% elsif block.settings.logo_svg != blank %}
+            {{ block.settings.logo_svg }}
+          {% endif %}
+          
+          {% if block.settings.link != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+      
+      <!-- Duplication pour l'effet infini -->
+      {% for block in section.blocks %}
+        <div class="logo-carousel__item">
+          {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" target="_blank" rel="noopener">
+          {% endif %}
+          
+          {% if block.settings.logo != blank %}
+            <img 
+              src="{{ block.settings.logo | image_url: width: 400 }}" 
+              alt="{{ block.settings.logo.alt | default: shop.name }}"
+              loading="lazy"
+            >
+          {% elsif block.settings.logo_svg != blank %}
+            {{ block.settings.logo_svg }}
+          {% endif %}
+          
+          {% if block.settings.link != blank %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Logo Carousel",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ils nous font confiance"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo (image)"
+        },
+        {
+          "type": "html",
+          "id": "logo_svg",
+          "label": "Logo (SVG)",
+          "info": "Utilisez ceci si vous voulez coller du code SVG directement"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Lien URL (optionnel)",
+          "info": "Le logo sera cliquable et ouvrira ce lien dans un nouvel onglet"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Carousel",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
