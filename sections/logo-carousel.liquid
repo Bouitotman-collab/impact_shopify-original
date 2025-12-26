@@ -102,7 +102,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 50px;
+    width: 320px;
+    margin: 0 25px;
   }
 
   .logo-carousel-slide img {
@@ -149,6 +150,11 @@
     .logo-carousel-title {
       font-size: calc({{ section.settings.title_size }}px * 0.8);
     }
+
+    .logo-carousel-slide {
+      width: 180px;
+      margin: 0 15px;
+    }
     
     .logo-carousel-slide img {
       height: calc({{ section.settings.logo_height }}px * 0.6);
@@ -163,10 +169,6 @@
     .logo-carousel-slide img.logo-2 {
       height: 90px;
       max-width: 180px;
-    }
-    
-    .logo-carousel-slide {
-      padding: 0 25px;
     }
 
     .logo-carousel-track {
