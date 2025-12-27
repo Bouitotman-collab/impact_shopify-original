@@ -532,10 +532,10 @@
         "background_gradient": ""
       }
     },
-    "1766807845a2bc0a9e": {
+    "1766807680243468ff": {
       "type": "apps",
       "blocks": {
-        "ali_reviews_widget_box_iFzkDH": {
+        "ali_reviews_widget_box_GYNndg": {
           "type": "shopify://apps/ali-reviews/blocks/widget-box/bf2eea72-0400-4db1-8908-44b7418f9a88",
           "settings": {
             "product": ""
@@ -543,7 +543,7 @@
         }
       },
       "block_order": [
-        "ali_reviews_widget_box_iFzkDH"
+        "ali_reviews_widget_box_GYNndg"
       ],
       "settings": {
         "full_width": true,
@@ -568,6 +568,6 @@
     "slideshow_n3Re4i",
     "related-products",
     "slideshow_U4qMYm",
-    "1766807845a2bc0a9e"
+    "1766807680243468ff"
   ]
 }
