@@ -5,7 +5,7 @@
 
 <div class="logo-carousel-section">
   <div class="logo-carousel-wrapper">
-    <div class="logo-carousel-track">
+    <div class="logo-carousel-track" id="logoTrack">
       <!-- Premier groupe -->
       <div class="logo-slide"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
       <div class="logo-slide"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
@@ -39,7 +39,6 @@
   .logo-carousel-track {
     display: flex;
     align-items: center;
-    animation: scroll 12s linear infinite;
   }
 
   .logo-slide {
@@ -56,11 +55,6 @@
     width: auto;
   }
 
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1160px); }
-  }
-
   .logo-carousel-wrapper:hover .logo-carousel-track {
     animation-play-state: paused;
   }
@@ -74,17 +68,30 @@
     .logo-slide img {
       height: 50px;
     }
-
-    .logo-carousel-track {
-      animation: scroll-mobile 8s linear infinite;
-    }
   }
-
-@keyframes scroll-mobile {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-700px); }
-}
 </style>
+
+<script>
+window.addEventListener('load', function() {
+  var track = document.getElementById('logoTrack');
+  var slides = track.querySelectorAll('.logo-slide');
+  var groupWidth = 0;
+  
+  for (var i = 0; i < 6; i++) {
+    groupWidth += slides[i].offsetWidth;
+  }
+  
+  console.log('=== LARGEUR GROUPE LOGOS ===');
+  console.log('Largeur totale du groupe: ' + groupWidth + 'px');
+  console.log('Largeur écran: ' + window.innerWidth + 'px');
+  
+  var speed = window.innerWidth <= 749 ? 8 : 12;
+  
+  var style = document.createElement('style');
+  style.innerHTML = '@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-' + groupWidth + 'px); } } .logo-carousel-track { animation: scroll ' + speed + 's linear infinite; }';
+  document.head.appendChild(style);
+});
+</script>
 
 {% schema %}
 {
