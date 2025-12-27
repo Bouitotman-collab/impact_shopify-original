@@ -5,7 +5,7 @@
 
 <div class="logo-carousel-section">
   <div class="logo-carousel-wrapper">
-    <div class="logo-carousel-track">
+    <div class="logo-carousel-track" id="logoTrack">
       <!-- Premier groupe de logos -->
       <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
       <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
@@ -15,22 +15,6 @@
       <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
       
       <!-- Deuxième groupe -->
-      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
-      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
-      
-      <!-- Troisième groupe -->
-      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
-      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
-      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
-      
-      <!-- Quatrième groupe -->
       <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
       <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
       <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
@@ -55,8 +39,6 @@
   .logo-carousel-track {
     display: flex;
     align-items: center;
-    animation: scroll 12s linear infinite;
-    width: max-content;
   }
 
   .logo-slide {
@@ -83,40 +65,57 @@
     height: 80px;
   }
 
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1160px); }
-  }
-
   .logo-carousel-wrapper:hover .logo-carousel-track {
     animation-play-state: paused;
   }
 
   @media screen and (max-width: 749px) {
-  .logo-slide {
-    margin: 0 20px;
-  }
+    .logo-slide {
+      margin: 0 20px;
+    }
 
-  .logo-carre {
-    width: 50px;
-    height: 50px;
-  }
+    .logo-carre {
+      width: 50px;
+      height: 50px;
+    }
 
-  .logo-rect {
-    width: 100px;
-    height: 50px;
+    .logo-rect {
+      width: 100px;
+      height: 50px;
+    }
   }
-
-  .logo-carousel-track {
-    animation: scroll-mobile 16s linear infinite;
-  }
-}
-
-@keyframes scroll-mobile {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('logoTrack');
+    const slides = track.querySelectorAll('.logo-slide');
+    const totalSlides = slides.length;
+    const halfSlides = totalSlides / 2;
+    
+    let totalWidth = 0;
+    for (let i = 0; i < halfSlides; i++) {
+      const slide = slides[i];
+      const style = window.getComputedStyle(slide);
+      totalWidth += slide.offsetWidth + parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+    }
+    
+    const isMobile = window.innerWidth <= 749;
+    const duration = isMobile ? 8 : 12;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = `
+      @keyframes scrollAuto {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-${totalWidth}px); }
+      }
+      .logo-carousel-track {
+        animation: scrollAuto ${duration}s linear infinite;
+      }
+    `;
+    document.head.appendChild(styleSheet);
+  });
+</script>
 
 {% schema %}
 {
