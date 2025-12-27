@@ -17,7 +17,7 @@
       "settings": {
         "background_color": "#000c7d",
         "text_color": "#ffffff",
-        "code_background": "#ffffff40",
+        "code_background": "#ffffff",
         "font_size": 14,
         "font_size_mobile": 11,
         "icon_size": 20,
