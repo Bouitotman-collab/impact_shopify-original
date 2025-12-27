@@ -11,6 +11,36 @@
   "type": "header",
   "name": "Header group",
   "sections": {
+    "barre_annonce_rotation_hnxyXh": {
+      "type": "barre-annonce-rotation",
+      "name": "Barre annonce rotation",
+      "settings": {
+        "background_color": "#000c7d",
+        "text_color": "#ffffff",
+        "code_background": "#ffffff40",
+        "font_size": 14,
+        "font_size_mobile": 11,
+        "icon_size": 20,
+        "icon_size_mobile": 16,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10,
+        "rotation_speed": 4,
+        "show_message_1": true,
+        "show_icon_1": true,
+        "message_1_text": "-10% sur votre 1ère commande avec le code",
+        "show_code_1": true,
+        "message_1_code": "BIENVENUE10",
+        "show_message_2": true,
+        "message_2_part1": "Livraison gratuite",
+        "message_2_part2": "Satisfait ou remboursé",
+        "message_2_part3": "Paiement sécurisé",
+        "show_message_3": true,
+        "show_icon_3": true,
+        "message_3_text": "Plus de 800 personnes satisfaites"
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -97,11 +127,6 @@
         "background_gradient": "",
         "text_color": ""
       }
-    },
-    "barre_annonce_rotation_hnxyXh": {
-      "type": "barre-annonce-rotation",
-      "name": "Barre annonce rotation",
-      "settings": {}
     }
   },
   "order": [
