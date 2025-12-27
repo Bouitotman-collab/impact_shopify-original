@@ -14,8 +14,15 @@
 }
 
 .announcement-bar-rotating,
-.announcement-bar-rotating * {
+.announcement-bar-rotating div,
+.announcement-bar-rotating span,
+.announcement-bar-rotating p,
+.announcement-bar-rotating a,
+.announcement-bar-rotating strong,
+.announcement-bar-rotating b,
+.announcement-bar-rotating *:not(svg):not(path) {
   color: {{ section.settings.text_color }} !important;
+  -webkit-text-fill-color: {{ section.settings.text_color }} !important;
 }
 
 .announcement-bar-rotating__messages {
