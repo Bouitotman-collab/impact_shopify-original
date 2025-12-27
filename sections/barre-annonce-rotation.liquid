@@ -13,6 +13,11 @@
   justify-content: center !important;
 }
 
+.announcement-bar-rotating,
+.announcement-bar-rotating * {
+  color: {{ section.settings.text_color }} !important;
+}
+
 .announcement-bar-rotating__messages {
   position: relative !important;
   width: 100% !important;
@@ -61,7 +66,8 @@
   color: {{ section.settings.text_color }} !important;
 }
 
-.announcement-bar-rotating__text span {
+.announcement-bar-rotating__text span,
+.announcement-bar-rotating__text strong {
   color: {{ section.settings.text_color }} !important;
 }
 
