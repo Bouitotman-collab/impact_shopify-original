@@ -3,7 +3,12 @@
   Pour le thème Impact de Shopify
 {% endcomment %}
 
-<div class="logo-carousel-section">
+<div class="logo-carousel-section" style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  {% if section.settings.show_title %}
+    <p class="logo-carousel-title" style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_size }}px;">{{ section.settings.title_text }}</p>
+  {% endif %}
+
   <div class="logo-carousel-wrapper">
     <div class="logo-carousel-track">
       <!-- Premier groupe -->
@@ -35,8 +40,16 @@
 
 <style>
   .logo-carousel-section {
-    padding: 40px 0;
     overflow: hidden;
+  }
+
+  .logo-carousel-title {
+    text-align: center;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
   }
 
   .logo-carousel-wrapper {
@@ -47,7 +60,7 @@
   .logo-carousel-track {
     display: flex;
     align-items: center;
-    animation: scroll 12s linear infinite;
+    animation: scroll {{ section.settings.speed }}s linear infinite;
   }
 
   .logo-slide {
@@ -99,10 +112,14 @@
     }
 
     .logo-carousel-track {
-      animation: scroll-mobile 9s linear infinite;
+      animation: scroll-mobile {{ section.settings.speed_mobile }}s linear infinite;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       will-change: transform;
+    }
+
+    .logo-carousel-title {
+      font-size: {{ section.settings.title_size | times: 0.8 }}px !important;
     }
   }
 
@@ -115,7 +132,102 @@
 {% schema %}
 {
   "name": "Logo Carousel",
-  "settings": [],
-  "presets": [{ "name": "Logo Carousel" }]
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Afficher le titre",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Texte du titre",
+      "default": "Ils parlent de nous"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Couleur de fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Espacement"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacement haut",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacement bas",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Vitesse"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse desktop (secondes)",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "unit": "s"
+    },
+    {
+      "type": "range",
+      "id": "speed_mobile",
+      "label": "Vitesse mobile (secondes)",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "s"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Carousel"
+    }
+  ]
 }
 {% endschema %}
