@@ -29,6 +29,14 @@
       <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
       <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
       <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
+      
+      <!-- Quatrième groupe -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
     </div>
   </div>
 </div>
@@ -48,7 +56,7 @@
     display: flex;
     align-items: center;
     animation: scroll 12s linear infinite;
-    width: fit-content;
+    width: max-content;
   }
 
   .logo-slide {
@@ -84,33 +92,30 @@
     animation-play-state: paused;
   }
 
- @media screen and (max-width: 749px) {
-  .logo-slide {
-    margin: 0 20px;
+  @media screen and (max-width: 749px) {
+    .logo-slide {
+      margin: 0 20px;
+    }
+
+    .logo-carre {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo-rect {
+      width: 100px;
+      height: 50px;
+    }
+
+    .logo-carousel-track {
+      animation: scroll-mobile 16s linear infinite;
+    }
   }
 
-  .logo-carre {
-    width: 50px;
-    height: 50px;
+  @keyframes scroll-mobile {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1480px); }
   }
-
-  .logo-rect {
-    width: 100px;
-    height: 50px;
-  }
-
-  .logo-carousel-track {
-    animation: scroll-mobile 8s linear infinite;
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-}
-
-@keyframes scroll-mobile {
-  0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-740px, 0, 0); }
-}
 </style>
 
 {% schema %}
