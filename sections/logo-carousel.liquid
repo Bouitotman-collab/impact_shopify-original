@@ -1,206 +1,82 @@
 {% comment %}
-  Section: Logo Carousel - Barre de notoriété "Vu dans"
+  Section: Logo Carousel - Barre de notoriété
   Pour le thème Impact de Shopify
 {% endcomment %}
 
 <div class="logo-carousel-section">
-  {% if section.settings.show_title %}
-    <p class="logo-carousel-title">{{ section.settings.title }}</p>
-  {% endif %}
-  
   <div class="logo-carousel-wrapper">
     <div class="logo-carousel-track">
       <!-- Premier groupe de logos -->
-      {% for block in section.blocks %}
-        <div class="logo-carousel-slide" {{ block.shopify_attributes }}>
-          {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
-            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% else %}
-              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endfor %}
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
       
-      <!-- Duplication pour effet de boucle infinie -->
-      {% for block in section.blocks %}
-        <div class="logo-carousel-slide">
-          {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
-            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% else %}
-              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endfor %}
-
-      <!-- Troisième groupe pour éviter les trous -->
-      {% for block in section.blocks %}
-        <div class="logo-carousel-slide">
-          {% if block.settings.logo != blank %}
-            {% assign logo_url = block.settings.logo | image_url: width: 400 %}
-            {% if logo_url contains 'Logo-ConsoMag-Photoroom' %}
-              <div class="logo-container logo-1"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains '8949AA69-DE9A-4BED-9C37-53A9CDD8E100-Photoroom' %}
-              <div class="logo-container logo-2"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'D5B32CF4-B425-4A7B-9433-4504598FE777-Photoroom' %}
-              <div class="logo-container logo-3"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'AACD3ED8-02C4-44A9-95FA-F1E9B396FFC1' %}
-              <div class="logo-container logo-4"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'Design_sans_titre-Photoroom-Photoroom' %}
-              <div class="logo-container logo-5"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% elsif logo_url contains 'new-enhance-photo-v2-1_3_-Photoroom' %}
-              <div class="logo-container logo-6"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% else %}
-              <div class="logo-container"><img src="{{ logo_url }}" alt="{{ block.settings.logo_alt | default: 'Logo partenaire' }}"></div>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endfor %}
+      <!-- Duplication pour boucle infinie -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
+      
+      <!-- Troisième groupe -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
     </div>
   </div>
 </div>
 
 <style>
   .logo-carousel-section {
-    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
-    background-color: transparent;
+    padding: 40px 0;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo-carousel-title {
-    text-align: center;
-    font-family: 'Epilogue', sans-serif;
-    font-size: {{ section.settings.title_size }}px;
-    color: {{ section.settings.title_color }};
-    margin-bottom: 25px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    text-transform: uppercase;
   }
 
   .logo-carousel-wrapper {
     overflow: hidden;
-    position: relative;
     width: 100%;
-    display: flex;
-    align-items: center;
   }
 
   .logo-carousel-track {
     display: flex;
     align-items: center;
-    animation: scroll {{ section.settings.animation_speed }}s linear infinite;
+    animation: scroll 25s linear infinite;
   }
 
-  .logo-carousel-slide {
+  .logo-slide {
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 30px;
   }
 
-  .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .logo-container img {
+  .logo-slide img {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-    opacity: {{ section.settings.logo_opacity }};
-    transition: opacity 0.3s ease;
   }
 
-  .logo-container img:hover {
-    opacity: 1;
-  }
-
-  /* Logo 1 - ConsoMag */
-  .logo-container.logo-1 {
-    width: 200px;
+  .logo-carre {
+    width: 80px;
     height: 80px;
-    margin-left: 25px;
-    margin-right: 25px;
   }
 
-  /* Logo 2 */
-  .logo-container.logo-2 {
-    width: 250px;
-    height: 120px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-  /* Logo 3 - Photoroom */
-  .logo-container.logo-3 {
-    width: 310px;
-    height: 190px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-  /* Logo 4 */
-  .logo-container.logo-4 {
-    width: 200px;
+  .logo-rect {
+    width: 160px;
     height: 80px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-  /* Logo 5 */
-  .logo-container.logo-5 {
-    width: 200px;
-    height: 80px;
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-  /* Logo 6 */
-  .logo-container.logo-6 {
-    width: 200px;
-    height: 80px;
-    margin-left: 25px;
-    margin-right: 25px;
   }
 
   @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-33.333%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.333%); }
   }
 
   .logo-carousel-wrapper:hover .logo-carousel-track {
@@ -208,60 +84,22 @@
   }
 
   @media screen and (max-width: 749px) {
-    .logo-carousel-title {
-      font-size: calc({{ section.settings.title_size }}px * 0.8);
+    .logo-slide {
+      margin: 0 20px;
     }
 
-    /* Logo 1 - Mobile */
-    .logo-container.logo-1 {
-      width: 120px;
+    .logo-carre {
+      width: 50px;
       height: 50px;
-      margin-left: 15px;
-      margin-right: 15px;
     }
 
-    /* Logo 2 - Mobile */
-    .logo-container.logo-2 {
-      width: 180px;
-      height: 90px;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-
-    /* Logo 3 - Mobile */
-    .logo-container.logo-3 {
-      width: 220px;
-      height: 140px;
-      margin-left: -5px;
-      margin-right: 15px;
-    }
-
-    /* Logo 4 - Mobile */
-    .logo-container.logo-4 {
-      width: 120px;
+    .logo-rect {
+      width: 100px;
       height: 50px;
-      margin-left: 15px;
-      margin-right: 160px;
-    }
-
-    /* Logo 5 - Mobile */
-    .logo-container.logo-5 {
-      width: 120px;
-      height: 50px;
-      margin-left: 15px;
-      margin-right: 15px;
-    }
-
-    /* Logo 6 - Mobile */
-    .logo-container.logo-6 {
-      width: 120px;
-      height: 50px;
-      margin-left: 15px;
-      margin-right: 15px;
     }
 
     .logo-carousel-track {
-      animation-duration: {{ section.settings.animation_speed | divided_by: 1.5 }}s;
+      animation-duration: 18s;
     }
   }
 </style>
@@ -269,95 +107,7 @@
 {% schema %}
 {
   "name": "Logo Carousel",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_title",
-      "label": "Afficher le titre",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Titre",
-      "default": "Vu dans"
-    },
-    {
-      "type": "range",
-      "id": "title_size",
-      "label": "Taille du titre (px)",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "default": 14
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Couleur du titre",
-      "default": "#666666"
-    },
-    {
-      "type": "range",
-      "id": "logo_opacity",
-      "label": "Opacité des logos",
-      "min": 0.3,
-      "max": 1,
-      "step": 0.1,
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "animation_speed",
-      "label": "Vitesse de défilement (secondes)",
-      "min": 10,
-      "max": 60,
-      "step": 2,
-      "default": 30
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Espacement haut (px)",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Espacement bas (px)",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 40
-    }
-  ],
-  "blocks": [
-    {
-      "type": "logo",
-      "name": "Logo",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Image du logo"
-        },
-        {
-          "type": "text",
-          "id": "logo_alt",
-          "label": "Texte alternatif",
-          "default": "Logo partenaire"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Logo Carousel",
-      "blocks": []
-    }
-  ]
+  "settings": [],
+  "presets": [{ "name": "Logo Carousel" }]
 }
 {% endschema %}
