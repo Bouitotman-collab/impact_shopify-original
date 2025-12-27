@@ -93,29 +93,29 @@
   }
 
   @media screen and (max-width: 749px) {
-    .logo-slide {
-      margin: 0 20px;
-    }
-
-    .logo-carre {
-      width: 50px;
-      height: 50px;
-    }
-
-    .logo-rect {
-      width: 100px;
-      height: 50px;
-    }
-
-    .logo-carousel-track {
-      animation: scroll-mobile 16s linear infinite;
-    }
+  .logo-slide {
+    margin: 0 20px;
   }
 
-  @keyframes scroll-mobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-1480px); }
+  .logo-carre {
+    width: 50px;
+    height: 50px;
   }
+
+  .logo-rect {
+    width: 100px;
+    height: 50px;
+  }
+
+  .logo-carousel-track {
+    animation: scroll-mobile 16s linear infinite;
+  }
+}
+
+@keyframes scroll-mobile {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 </style>
 
 {% schema %}
