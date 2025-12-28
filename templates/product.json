@@ -15,8 +15,8 @@
         "image_nhcfAd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Design_sans_titre_1__2_11zon.jpg",
-            "mobile_image": "shopify://shop_images/Design_sans_titre_1__2_11zon.jpg",
+            "image": "shopify://shop_images/2_32671a8e-6f2b-4c97-afd1-e106848c0078.webp",
+            "mobile_image": "shopify://shop_images/2_32671a8e-6f2b-4c97-afd1-e106848c0078.webp",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-start-center sm:text-center",
@@ -37,8 +37,8 @@
         "image_63p7te": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Design_sans_titre_2__1_11zon.jpg",
-            "mobile_image": "shopify://shop_images/Design_sans_titre_2__1_11zon.jpg",
+            "image": "shopify://shop_images/1.webp",
+            "mobile_image": "shopify://shop_images/1.webp",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
@@ -534,17 +534,6 @@
     },
     "1766807845a2bc0a9e": {
       "type": "apps",
-      "blocks": {
-        "ali_reviews_widget_box_iFzkDH": {
-          "type": "shopify://apps/ali-reviews/blocks/widget-box/bf2eea72-0400-4db1-8908-44b7418f9a88",
-          "settings": {
-            "product": "waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement"
-          }
-        }
-      },
-      "block_order": [
-        "ali_reviews_widget_box_iFzkDH"
-      ],
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
