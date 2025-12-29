@@ -99,7 +99,6 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": true,
-        "logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg",
         "logo_max_width": 120,
         "logo_mobile_max_width": 100,
         "menu": "main-menu",
