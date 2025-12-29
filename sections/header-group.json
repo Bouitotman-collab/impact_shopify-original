@@ -95,6 +95,10 @@
     },
     "header": {
       "type": "header",
+      "custom_css": [
+        "/* Cacher le logo blanc sur desktop et afficher le noir */@media screen and (min-width: 750px) {.header__heading-logo-link img {opacity: 0; } .header__heading-logo-link {background-image: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo.svg?v=1767027903'); background-repeat: no-repeat; background-position: center; background-size: contain; }}",
+        "/* Logo blanc normal sur mobile */@media screen and (max-width: 749px) {.header__heading-logo-link img {opacity: 1; }}"
+      ],
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": true,
