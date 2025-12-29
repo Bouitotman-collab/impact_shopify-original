@@ -10415,7 +10415,7 @@ p, a, span, div, button, input, textarea, select {
   
   .header__heading-logo img,
   .header__logo img {
-    max-height: 80px !important;
+    max-height: 100px !important;
     width: auto !important;
   }
 }
