@@ -10383,33 +10383,22 @@ p, a, span, div, button, input, textarea, select {
   }
 }
 
-/* Logo noir réduit sur desktop */
+/* ===== DESKTOP : Logo noir ===== */
 @media screen and (min-width: 750px) {
+  /* Afficher le logo noir */
   .header__heading-logo img,
   .header__logo img,
   .header__heading-link img {
     content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236') !important;
-  }
-}
-
-/* Logo blanc agrandi sur mobile */
-@media screen and (max-width: 749px) {
-  .header__heading-logo img,
-  .header__logo img,
-  .header__heading-link img {
-    content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg?v=1767029494') !important;
-    max-height: 40px !important;
+    max-height: 50px !important;
     width: auto !important;
   }
-}
-}
-
-/* Réduire les marges du header sur desktop */
-@media screen and (min-width: 750px) {
+  
+  /* Marges du header desktop */
   .header,
   .shopify-section-header {
-    padding-top: 0px !important;
-    padding-bottom: 0px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
   }
   
   .header__heading,
@@ -10417,13 +10406,33 @@ p, a, span, div, button, input, textarea, select {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
-  
+}
+
+/* ===== MOBILE : Logo blanc ===== */
+@media screen and (max-width: 749px) {
+  /* Afficher le logo blanc */
   .header__heading-logo img,
-  .header__logo img {
-    max-height: 100px !important;
+  .header__logo img,
+  .header__heading-link img {
+    content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg?v=1767029494') !important;
+    max-height: 40px !important;
     width: auto !important;
   }
+  
+  /* Marges du header mobile */
+  .header,
+  .shopify-section-header {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+  
+  .header__heading,
+  .header__heading-logo {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
 }
+
 
 
 
