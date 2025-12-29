@@ -10384,7 +10384,7 @@ p, a, span, div, button, input, textarea, select {
 }
 
 /* ===== DESKTOP : Logo noir ===== */
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 850px) {
   /* Afficher le logo noir */
   .header__heading-logo img,
   .header__logo img,
