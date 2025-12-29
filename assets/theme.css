@@ -10398,7 +10398,7 @@ p, a, span, div, button, input, textarea, select {
   .header__logo img,
   .header__heading-link img {
     content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg?v=1767029494') !important;
-    max-height: 100px !important;
+    max-height: 40px !important;
     width: auto !important;
   }
 }
