@@ -10403,8 +10403,8 @@ p, a, span, div, button, input, textarea, select {
 @media screen and (min-width: 750px) {
   .header,
   .shopify-section-header {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
   }
   
   .header__heading,
