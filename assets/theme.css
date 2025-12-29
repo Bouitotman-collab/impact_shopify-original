@@ -10382,4 +10382,21 @@ p, a, span, div, button, input, textarea, select {
     max-height: 50px !important;
   }
 }
+/* Logo noir sur desktop */
+@media screen and (min-width: 750px) {
+  .header__heading-logo img,
+  .header__logo img,
+  .header__heading-link img {
+    content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo.svg?v=1767027903') !important;
+  }
+}
+
+/* Logo blanc sur mobile */
+@media screen and (max-width: 749px) {
+  .header__heading-logo img,
+  .header__logo img,
+  .header__heading-link img {
+    content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_280_x_80_px.svg?v=1767027317') !important;
+  }
+}
 
