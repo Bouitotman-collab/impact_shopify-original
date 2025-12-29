@@ -10393,7 +10393,7 @@ p, a, span, div, button, input, textarea, select {
 }
 
 /* Logo blanc agrandi sur mobile */
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 749px) {
   .header__heading-logo img,
   .header__logo img,
   .header__heading-link img {
