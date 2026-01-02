@@ -168,6 +168,15 @@
         "background_gradient": ""
       }
     },
+    "image_with_expandable_text_mFwfVE": {
+      "type": "image-with-expandable-text",
+      "name": "Image + Lire plus",
+      "settings": {
+        "title": "aaaaaaa",
+        "content": "<p>Texte ici...</p>",
+        "separate_section_with_border": false
+      }
+    },
     "multi_column_n83Ttc": {
       "type": "multi-column",
       "blocks": {
@@ -559,6 +568,7 @@
     "scrolling_text_Jfmn46",
     "rich_text_ane766",
     "slideshow_YdmTCA",
+    "image_with_expandable_text_mFwfVE",
     "multi_column_n83Ttc",
     "bande_avis_client_6VMkUw",
     "multi_column_4HV87L",
