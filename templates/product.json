@@ -29,7 +29,7 @@
             "button_background": "#ffffff",
             "button_text_color": "#000000",
             "overlay_color": "#000000",
-            "overlay_opacity": 0,
+            "overlay_opacity": 10,
             "background": "",
             "background_gradient": ""
           }
@@ -131,8 +131,8 @@
         "image_bJ3Dd6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/7.jpg",
-            "mobile_image": "shopify://shop_images/7.jpg",
+            "image": "shopify://shop_images/7.png",
+            "mobile_image": "shopify://shop_images/7.png",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
