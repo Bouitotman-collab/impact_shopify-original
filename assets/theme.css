@@ -10432,16 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* Centrer les logos dans la section multi-colonnes */
-.multicolumn-card__image-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.multicolumn-card__image-wrapper img {
-  margin: 0 auto;
-}
 
 
 
