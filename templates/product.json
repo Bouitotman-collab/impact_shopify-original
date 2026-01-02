@@ -15,8 +15,8 @@
         "image_nhcfAd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/puissance_4-en-1_pour_un_foyer_sain_sans_odeurs._7.png",
-            "mobile_image": "shopify://shop_images/puissance_4-en-1_pour_un_foyer_sain_sans_odeurs._7.png",
+            "image": "shopify://shop_images/2.jpg",
+            "mobile_image": "shopify://shop_images/2.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-center text-center",
             "desktop_text_position": "sm:place-self-end-center sm:text-center",
@@ -131,8 +131,8 @@
         "image_bJ3Dd6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2.webp",
-            "mobile_image": "shopify://shop_images/2.webp",
+            "image": "shopify://shop_images/7.jpg",
+            "mobile_image": "shopify://shop_images/7.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-center text-center",
             "desktop_text_position": "sm:place-self-center sm:text-center",
