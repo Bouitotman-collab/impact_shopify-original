@@ -93,15 +93,6 @@
             "text": ""
           }
         },
-        "heading_aCMbaP": {
-          "type": "heading",
-          "settings": {
-            "text": "Puissance 6-en-1 pour un Foyer Sain, sans odeurs.",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        },
         "richtext_43wHFQ": {
           "type": "richtext",
           "settings": {
@@ -111,7 +102,6 @@
       },
       "block_order": [
         "subheading_BFAB6B",
-        "heading_aCMbaP",
         "richtext_43wHFQ"
       ],
       "custom_css": [],
