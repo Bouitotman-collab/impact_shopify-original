@@ -1,11 +1,41 @@
+{%- render 'section-properties' -%}
+
+<div class="image-expandable-section {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+  <div class="section-wrapper">
+    <div class="image-container">
+      {%- if section.settings.image != blank -%}
+        {{- section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', sizes: '100vw', widths: '800,1200,1600,2000', class: 'full-width-image' -}}
+      {%- else -%}
+        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder full-width-image' -}}
+      {%- endif -%}
+      
+      <div class="text-box">
+        <details class="expandable-details">
+          <summary>
+            <h2 class="title">{{ section.settings.title | default: "Notre histoire" }}</h2>
+            <div class="arrow-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </summary>
+          <div class="expandable-content">
+            {{ section.settings.content }}
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
 <style>
   .image-expandable-section {
-    margin: 40px 0;  /* Padding uniquement haut et bas */
+    margin: 40px 0;
     padding: 0;
   }
   
   .section-wrapper {
-    padding: 0;  /* Suppression du padding gauche/droite */
+    padding: 0;
   }
   
   .image-container {
@@ -13,7 +43,6 @@
     width: 100%;
     min-height: 500px;
     overflow: hidden;
-    border-radius: 0;  /* Suppression des coins arrondis */
   }
   
   .full-width-image {
@@ -101,11 +130,11 @@
   /* Responsive */
   @media (max-width: 768px) {
     .image-expandable-section {
-      margin: 24px 0;  /* Moins d'espace sur mobile */
+      margin: 24px 0;
     }
     
     .section-wrapper {
-      padding: 0;  /* Pas de padding sur mobile non plus */
+      padding: 0;
     }
     
     .image-container {
@@ -135,3 +164,39 @@
     }
   }
 </style>
+
+{% schema %}
+{
+  "name": "Image + Lire plus",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Vêtements tout confort : 10 conseils pour la lessive de bébé"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Contenu extensible",
+      "default": "<p>Votre texte détaillé ici...</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "Séparer avec bordure",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image + Lire plus"
+    }
+  ]
+}
+{% endschema %}
