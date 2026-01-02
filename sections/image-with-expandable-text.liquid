@@ -1,25 +1,29 @@
 {%- render 'section-properties' -%}
 
 <div class="image-expandable-section {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
-  <div class="image-container">
-    {%- if section.settings.image != blank -%}
-      {{- section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', sizes: '100vw', widths: '800,1200,1600,2000', class: 'full-width-image' -}}
-    {%- else -%}
-      {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder full-width-image' -}}
-    {%- endif -%}
-    
-    <div class="text-box">
-      <details class="expandable-details">
-        <summary>
-          <h2 class="title">{{ section.settings.title | default: "Notre histoire" }}</h2>
-          <svg class="chevron" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </summary>
-        <div class="expandable-content">
-          {{ section.settings.content }}
-        </div>
-      </details>
+  <div class="section-wrapper">
+    <div class="image-container">
+      {%- if section.settings.image != blank -%}
+        {{- section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', sizes: '100vw', widths: '800,1200,1600,2000', class: 'full-width-image' -}}
+      {%- else -%}
+        {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder full-width-image' -}}
+      {%- endif -%}
+      
+      <div class="text-box">
+        <details class="expandable-details">
+          <summary>
+            <h2 class="title">{{ section.settings.title | default: "Notre histoire" }}</h2>
+            <div class="arrow-circle">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </summary>
+          <div class="expandable-content">
+            {{ section.settings.content }}
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </div>
@@ -30,10 +34,16 @@
     padding: 0;
   }
   
+  .section-wrapper {
+    padding: 0 12px;
+  }
+  
   .image-container {
     position: relative;
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
   }
   
   .full-width-image {
@@ -41,19 +51,18 @@
     height: auto;
     display: block;
     object-fit: cover;
-    min-height: 400px;
+    min-height: 500px;
   }
   
   .text-box {
     position: absolute;
-    bottom: 30px;
-    left: 30px;
+    bottom: 0;
+    left: 0;
     background: white;
-    padding: 24px 32px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    max-width: 500px;
-    width: calc(100% - 60px);
+    padding: 28px 36px;
+    border-radius: 0 12px 0 0;
+    box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
+    max-width: 480px;
   }
   
   .expandable-details summary {
@@ -62,7 +71,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
   }
   
   .expandable-details summary::-webkit-details-marker {
@@ -71,26 +80,39 @@
   
   .title {
     margin: 0;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
-    color: #333;
+    color: #1a1a1a;
+    line-height: 1.3;
   }
   
-  .chevron {
+  .arrow-circle {
     flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .arrow-circle svg {
     transition: transform 0.3s ease;
   }
   
-  .expandable-details[open] .chevron {
-    transform: rotate(180deg);
+  .expandable-details[open] .arrow-circle {
+    transform: rotate(90deg);
   }
   
   .expandable-content {
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid #e5e5e5;
-    color: #666;
-    line-height: 1.6;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e8e8;
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
     animation: slideDown 0.3s ease;
   }
   
@@ -107,15 +129,31 @@
   
   /* Responsive */
   @media (max-width: 768px) {
+    .section-wrapper {
+      padding: 0 8px;
+    }
+    
+    .image-container {
+      min-height: 400px;
+    }
+    
+    .full-width-image {
+      min-height: 400px;
+    }
+    
     .text-box {
-      bottom: 20px;
-      left: 20px;
-      width: calc(100% - 40px);
-      padding: 20px;
+      max-width: 100%;
+      padding: 24px 28px;
+      border-radius: 0 8px 0 0;
     }
     
     .title {
       font-size: 22px;
+    }
+    
+    .arrow-circle {
+      width: 36px;
+      height: 36px;
     }
   }
 </style>
@@ -133,7 +171,7 @@
       "type": "text",
       "id": "title",
       "label": "Titre",
-      "default": "Notre histoire"
+      "default": "Vêtements tout confort : 10 conseils pour la lessive de bébé"
     },
     {
       "type": "richtext",
