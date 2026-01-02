@@ -174,8 +174,8 @@
         "item_rXYDVW": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/11_1.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/5_2.png",
+            "column_size": "1.5",
             "title": "ZÉRO POILS RECOLLÉS SUR LE LINGE NOIR",
             "heading_tag": "h4",
             "content": "<p>Notre formule dissout activement les agglomérats de poils cachés dans le tambour et les filtres. Fini les vêtements \"propres\" encore pleins de poils.</p>",
@@ -187,8 +187,8 @@
         "item_8FKFiX": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/10_2.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/6_2.png",
+            "column_size": "1.5",
             "title": "ÉLIMINATION RADICALE DES ODEURS \"ANIMALES\"",
             "heading_tag": "h4",
             "content": "<p>Ne masquez plus les odeurs, détruisez-les. PurePaw neutralise les bactéries responsables de l'odeur de \"chien mouillé\" et de moisi à la source.</p>",
@@ -200,8 +200,8 @@
         "item_nAmYFD": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/14_1.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/3_2.png",
+            "column_size": "1.5",
             "title": "FINIES LES PANNES ET L'EAU QUI STAGNE",
             "heading_tag": "h4",
             "content": "<p>Prévient activement l'obstruction des filtres et des pompes causée par l'accumulation de poils. Évitez les frais de plombier et les réparations coûteuses grâce à une évacuation toujours fluide.</p>",
@@ -213,8 +213,8 @@
         "item_4dxmGJ": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/12_1.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/4_2.png",
+            "column_size": "1.5",
             "title": "DÉSINFECTION TOTALE : 99,9% DE BACTÉRIES ÉLIMINÉES",
             "heading_tag": "h4",
             "content": "<p>Une action antibactérienne puissante qui assainit votre tambour en profondeur. Indispensable pour stopper la prolifération des germes et allergènes ramenés de l'extérieur par vos animaux.</p>",
@@ -226,8 +226,8 @@
         "item_4rkchc": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/15_1.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/1_3.png",
+            "column_size": "1.5",
             "title": "UNE HYGIÈNE PROFONDE, LÀ OÙ VOUS NE VOYEZ PAS",
             "heading_tag": "h4",
             "content": "<p>Décolle le sébum, la boue et les résidus organiques incrustés dans les zones inaccessibles de votre machine pour un environnement de lavage 100% sain.</p>",
@@ -239,8 +239,8 @@
         "item_WyRxpC": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/13_1.png",
-            "column_size": "2",
+            "image": "shopify://shop_images/icone_100_x_100_px.png",
+            "column_size": "1.5",
             "title": "PROTÈGE VOTRE MACHINE ET ALLONGE SA DURÉE DE VIE",
             "heading_tag": "h4",
             "content": "<p>Élimine le calcaire et les résidus de lessive qui encrassent la mécanique. Une machine saine pour des années de lavages efficaces.</p>",
@@ -258,7 +258,9 @@
         "item_4rkchc",
         "item_WyRxpC"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".multicolumn img {width: 80px !important;}"
+      ],
       "name": "Multi-column",
       "settings": {
         "full_width": true,
