@@ -93,6 +93,15 @@
             "text": ""
           }
         },
+        "heading_aCMbaP": {
+          "type": "heading",
+          "settings": {
+            "text": "Puissance 6-en-1 pour un Foyer Sain, sans odeurs.",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
         "richtext_43wHFQ": {
           "type": "richtext",
           "settings": {
@@ -102,6 +111,7 @@
       },
       "block_order": [
         "subheading_BFAB6B",
+        "heading_aCMbaP",
         "richtext_43wHFQ"
       ],
       "custom_css": [],
@@ -161,32 +171,62 @@
     "image_with_expandable_text_mFwfVE": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-1_1.jpg",
+        "title": "ZÉRO POILS RECOLLÉS SUR LE LINGE NOIR",
+        "content": "<p>Notre formule dissout activement les agglomérats de poils cachés dans le tambour et les filtres. Fini les vêtements \"propres\" encore pleins de poils.</p>",
+        "separate_section_with_border": false
+      }
     },
     "image_with_expandable_text_cBFcV6": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-2_1.jpg",
+        "title": "ÉLIMINATION RADICALE DES ODEURS \"ANIMALES\"",
+        "content": "",
+        "separate_section_with_border": false
+      }
     },
     "image_with_expandable_text_NNkAkn": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-3.jpg",
+        "title": "FINIES LES PANNES ET L'EAU QUI STAGNE",
+        "content": "<p>Texte ici...</p>",
+        "separate_section_with_border": false
+      }
     },
     "image_with_expandable_text_fachMn": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-4.jpg",
+        "title": "DÉSINFECTION TOTALE : 99,9% DE BACTÉRIES ÉLIMINÉES",
+        "content": "<p>Texte ici...</p>",
+        "separate_section_with_border": false
+      }
     },
     "image_with_expandable_text_PYHeYx": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-5.jpg",
+        "title": "UNE HYGIÈNE PROFONDE, LÀ OÙ VOUS NE VOYEZ PAS",
+        "content": "<p>Texte ici...</p>",
+        "separate_section_with_border": false
+      }
     },
     "image_with_expandable_text_a4i4TW": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/new-enhance-photo-v2-6.jpg",
+        "title": "PROTÈGE VOTRE MACHINE ET ALLONGE SA DURÉE DE VIE",
+        "content": "<p>Texte ici...</p>",
+        "separate_section_with_border": false
+      }
     },
     "multi_column_n83Ttc": {
       "type": "multi-column",
