@@ -5,6 +5,14 @@
     #shopify-section-{{ section.id }} {
       --multi-column-grid: {% if section.settings.stack_on_mobile %}none{% else %}auto / auto-flow 73vw{% endif %};
       --multi-column-list-gap: {% if section.settings.gap == 'small' %}var(--grid-gutter){% elsif section.settings.gap == 'medium' %}var(--spacing-12){% elsif section.settings.gap == 'large' %}var(--spacing-20){% else %}var(--spacing-28){% endif %};
+      <style>
+  .multi-column__item > img,
+  .multi-column__item > video-media {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
     }
   </style>
 
@@ -342,18 +350,3 @@
   ]
 }
 {% endschema %}
-
-
-<style>
-  .multicolumn-card__image-wrapper,
-  .multicolumn-list__item .media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .multicolumn-card__image-wrapper img {
-    margin: 0 auto;
-  }
-</style>
