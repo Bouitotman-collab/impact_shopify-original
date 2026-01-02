@@ -10432,9 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-.multicolumn img {
-  max-width: 80px !important;
-  height: auto !important;
+
 }
 
 
