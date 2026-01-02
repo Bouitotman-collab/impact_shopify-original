@@ -10432,33 +10432,6 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* Centrage forcé des images dans multicolonne - Thème Impact */
-.multicolumn-list__item .media {
-  margin-left: auto !important;
-  margin-right: auto !important;
-  display: block !important;
-}
-
-.multicolumn-card__image-wrapper {
-  display: flex !important;
-  justify-content: center !important;
-  width: 100% !important;
-}
-
-.multicolumn-card__image-wrapper img,
-.multicolumn-list__item img {
-  margin: 0 auto !important;
-  display: block !important;
-}
-
-/* Pour les colonnes elles-mêmes */
-.multicolumn-list__item {
-  text-align: center !important;
-}
-
-.multicolumn-card {
-  align-items: center !important;
-}
 
 
 
