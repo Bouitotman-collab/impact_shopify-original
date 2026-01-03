@@ -1,4 +1,4 @@
-<div class="image-expandable-section-wrapper" style="background-color: {{ section.settings.spacing_color }}; padding-top: {{ section.settings.spacing_top }}px; padding-bottom: {{ section.settings.spacing_bottom }}px; padding-left: {{ section.settings.spacing_left }}px; padding-right: {{ section.settings.spacing_right }}px;">
+<div class="image-expandable-section-wrapper" style="background-color: {{ section.settings.spacing_color }}; padding-top: {% if section.settings.is_first_section %}{{ section.settings.spacing_top }}px{% else %}0px{% endif %}; padding-bottom: {{ section.settings.spacing_bottom }}px; padding-left: {{ section.settings.spacing_left }}px; padding-right: {{ section.settings.spacing_right }}px;">
   <div class="image-expandable-section {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
     <div class="section-wrapper">
       <div class="image-container">
@@ -31,11 +31,6 @@
 <style>
   .image-expandable-section-wrapper {
     margin: 0 !important;
-  }
-  
-  /* Supprimer le padding-top à partir de la 2ème section */
-  .image-expandable-section-wrapper.no-top-padding {
-    padding-top: 0 !important;
   }
   
   .image-expandable-section {
@@ -164,18 +159,6 @@
   }
 </style>
 
-<script>
-  // Supprimer le padding-top de toutes les sections sauf la première
-  document.addEventListener('DOMContentLoaded', function() {
-    const wrappers = document.querySelectorAll('.image-expandable-section-wrapper');
-    wrappers.forEach((wrapper, index) => {
-      if (index > 0) {
-        wrapper.classList.add('no-top-padding');
-      }
-    });
-  });
-</script>
-
 {% schema %}
 {
   "name": "Image + Lire plus",
@@ -202,6 +185,13 @@
       "content": "Espacement (padding)"
     },
     {
+      "type": "checkbox",
+      "id": "is_first_section",
+      "label": "Première section (avec padding-top)",
+      "default": false,
+      "info": "Cochez cette case uniquement pour la première section \"Image + Lire plus\" de votre page. Les autres sections seront collées en haut."
+    },
+    {
       "type": "range",
       "id": "spacing_top",
       "min": 0,
@@ -209,7 +199,8 @@
       "step": 5,
       "unit": "px",
       "label": "Espacement haut",
-      "default": 15
+      "default": 15,
+      "info": "S'applique uniquement si 'Première section' est cochée"
     },
     {
       "type": "range",
