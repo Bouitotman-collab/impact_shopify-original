@@ -63,8 +63,8 @@
         "background_color": "#ffffff",
         "padding_top": 10,
         "padding_bottom": 10,
-        "speed": 12,
-        "speed_mobile": 7
+        "speed": 15,
+        "speed_mobile": 10
       }
     },
     "scrolling_text_Jfmn46": {
