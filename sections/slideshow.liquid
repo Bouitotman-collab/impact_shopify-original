@@ -35,19 +35,6 @@ CSS
       --slideshow-slide-controls-color: {{ controls_color.rgb }};
     }
   {%- endfor -%}
-
-  /* Changer la couleur des curseurs en #73E0FF */
-  #shopify-section-{{ section.id }} .numbered-dots__item circle,
-  #shopify-section-{{ section.id }} .stretching-dots button::before,
-  #shopify-section-{{ section.id }} .prev-next-buttons .circle-button {
-    --slideshow-controls-color: 115 224 255 !important;
-  }
-  
-  #shopify-section-{{ section.id }} .numbered-dots__item[aria-current="true"] circle:last-child,
-  #shopify-section-{{ section.id }} .stretching-dots button[aria-current="true"]::before {
-    stroke: rgb(115 224 255) !important;
-    background-color: rgb(115 224 255) !important;
-  }
 </style>
 
 {%- comment -%}
