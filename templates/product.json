@@ -97,16 +97,16 @@
             "gradient": ""
           }
         },
-        "subheading_BFAB6B": {
-          "type": "subheading",
+        "richtext_PQzjYC": {
+          "type": "richtext",
           "settings": {
-            "text": ""
+            "content": "<h2>LA PUISSANCE 6-EN-1</h2>"
           }
         }
       },
       "block_order": [
         "heading_QRhbWU",
-        "subheading_BFAB6B"
+        "richtext_PQzjYC"
       ],
       "custom_css": [],
       "name": "Rich text",
