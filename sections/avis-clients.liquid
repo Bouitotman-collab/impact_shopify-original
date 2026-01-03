@@ -1,0 +1,417 @@
+<div class="reviews-section">
+  <div class="reviews-container">
+    <div class="reviews-header">
+      <div class="reviews-summary">
+        <div class="average-rating">
+          <span class="rating-number">{{ section.settings.average_rating }}</span>
+          <div class="rating-stars">
+            {%- assign rating = section.settings.average_rating | times: 1.0 -%}
+            {%- for i in (1..5) -%}
+              {%- if i <= rating -%}
+                <span class="star star-full">★</span>
+              {%- else -%}
+                <span class="star star-empty">★</span>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+        <p class="reviews-count">Base sur {{ section.blocks.size }} avis</p>
+      </div>
+
+      {%- if section.settings.show_write_review_button -%}
+        <a href="{{ section.settings.review_button_link }}" class="write-review-button">
+          Ecrire un avis
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_search_bar -%}
+      <div class="reviews-toolbar">
+        <div class="sort-dropdown">
+          <label>Trier</label>
+          <select id="reviews-sort">
+            <option value="recent">Plus recents</option>
+            <option value="highest">Note la plus haute</option>
+            <option value="lowest">Note la plus basse</option>
+          </select>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="Rechercher" id="reviews-search">
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="reviews-grid">
+      {%- for block in section.blocks -%}
+        <div class="review-card" {{ block.shopify_attributes }}>
+          {%- if block.settings.verified -%}
+            <div class="verified-badge">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Client verifie
+            </div>
+          {%- endif -%}
+
+          <div class="review-author">{{ block.settings.customer_name }}</div>
+
+          <div class="review-rating">
+            {%- assign stars = block.settings.rating | times: 1 -%}
+            {%- for i in (1..5) -%}
+              {%- if i <= stars -%}
+                <span class="star">★</span>
+              {%- else -%}
+                <span class="star star-empty">★</span>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <div class="review-content">
+            {{ block.settings.review_text }}
+          </div>
+
+          {%- if block.settings.review_date != blank -%}
+            <div class="review-date">{{ block.settings.review_date }}</div>
+          {%- endif -%}
+
+          {%- if block.settings.product_name != blank -%}
+            <div class="review-product">
+              <a href="{{ block.settings.product_link }}">{{ block.settings.product_name }}</a>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<style>
+  .reviews-section {
+    padding: 60px 0;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .average-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rating-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  .rating-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .star {
+    font-size: 24px;
+    color: #FFD700;
+  }
+
+  .star-empty {
+    color: #E0E0E0;
+  }
+
+  .reviews-count {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+
+  .write-review-button {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 40px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+
+  .write-review-button:hover {
+    background-color: #333;
+  }
+
+  .reviews-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+
+  .sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .sort-dropdown label {
+    font-weight: 600;
+    color: #000;
+  }
+
+  .sort-dropdown select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  .search-box input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+  }
+
+  .review-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    transition: box-shadow 0.3s;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #00A651;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .verified-badge svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .review-author {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+  }
+
+  .review-rating {
+    display: flex;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .review-rating .star {
+    font-size: 18px;
+    color: #FFD700;
+  }
+
+  .review-rating .star-empty {
+    color: #E0E0E0;
+  }
+
+  .review-content {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 12px;
+  }
+
+  .review-date {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .review-product {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+
+  .review-product a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .reviews-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .reviews-toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .search-box input {
+      width: 100%;
+    }
+
+    .reviews-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .rating-number {
+      font-size: 28px;
+    }
+
+    .write-review-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Avis clients",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Note moyenne"
+    },
+    {
+      "type": "text",
+      "id": "average_rating",
+      "label": "Note moyenne",
+      "default": "4.59"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_write_review_button",
+      "label": "Afficher bouton avis",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "review_button_link",
+      "label": "Lien bouton avis"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search_bar",
+      "label": "Afficher recherche",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fond",
+      "default": "#ffffff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Verifie",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Nom",
+          "default": "Karen"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Etoiles",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Texte",
+          "default": "Genial"
+        },
+        {
+          "type": "text",
+          "id": "review_date",
+          "label": "Date"
+        },
+        {
+          "type": "text",
+          "id": "product_name",
+          "label": "Produit"
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Lien"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Avis clients",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
