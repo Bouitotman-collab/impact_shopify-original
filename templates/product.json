@@ -88,22 +88,25 @@
     "rich_text_ane766": {
       "type": "rich-text",
       "blocks": {
+        "heading_QRhbWU": {
+          "type": "heading",
+          "settings": {
+            "text": "POURQUOI PUREPAW EST UNIQUE",
+            "heading_tag": "h4",
+            "text_color": "",
+            "gradient": ""
+          }
+        },
         "subheading_BFAB6B": {
           "type": "subheading",
           "settings": {
             "text": ""
           }
-        },
-        "richtext_43wHFQ": {
-          "type": "richtext",
-          "settings": {
-            "content": "<h6>Là où votre lessive échoue, PurePaw agit.</h6>"
-          }
         }
       },
       "block_order": [
-        "subheading_BFAB6B",
-        "richtext_43wHFQ"
+        "heading_QRhbWU",
+        "subheading_BFAB6B"
       ],
       "custom_css": [],
       "name": "Rich text",
