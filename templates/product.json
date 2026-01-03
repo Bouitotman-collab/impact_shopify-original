@@ -166,7 +166,7 @@
         "image": "shopify://shop_images/new-enhance-photo-v2-1_1.jpg",
         "title": "ZÉRO POILS RECOLLÉS SUR LE LINGE NOIR",
         "content": "<p>Notre formule dissout activement les agglomérats de poils cachés dans le tambour et les filtres. Fini les vêtements \"propres\" encore pleins de poils.</p>",
-        "spacing_top": 15,
+        "spacing_top": 0,
         "spacing_bottom": 0,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
