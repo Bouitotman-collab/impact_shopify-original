@@ -55,7 +55,7 @@
     "logo_carousel_zGYFVe": {
       "type": "logo-carousel",
       "custom_css": [
-        "@media screen and (min-width: 750px) {.logo-carousel__items {column-gap: 4rem !important; }}"
+        "@media screen and (min-width: 750px) {.logo-carousel__item {transform: scale(0.8) !important; }}"
       ],
       "name": "Logo Carousel",
       "settings": {
