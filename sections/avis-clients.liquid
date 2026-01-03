@@ -1,313 +1,447 @@
-<div class="reviews-section">
+<div class="loox-style-reviews">
   <div class="reviews-container">
-    <div class="reviews-header">
-      <div class="reviews-summary">
-        <div class="average-rating">
-          <span class="rating-number">{{ section.settings.average_rating }}</span>
-          <div class="rating-stars">
-            {%- assign rating = section.settings.average_rating | times: 1.0 -%}
-            {%- for i in (1..5) -%}
-              {%- if i <= rating -%}
-                <span class="star star-full">★</span>
-              {%- else -%}
-                <span class="star star-empty">★</span>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
+    
+    {%- comment -%} Titre principal {%- endcomment -%}
+    <h2 class="reviews-main-title">
+      Découvrez <span class="highlight-text">les avis</span>
+    </h2>
+
+    {%- comment -%} En-tête avec note et filtres {%- endcomment -%}
+    <div class="reviews-header-section">
+      <div class="rating-summary">
+        <div class="star-display">
+          ★★★★★
         </div>
-        <p class="reviews-count">Base sur {{ section.blocks.size }} avis</p>
+        <button class="reviews-count-btn">
+          {{ section.blocks.size }} Avis <span class="arrow-down">▼</span>
+        </button>
+        <button class="filter-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <line x1="2" y1="5" x2="18" y2="5" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="15" x2="18" y2="15" stroke="currentColor" stroke-width="2"/>
+            <circle cx="6" cy="5" r="2" fill="currentColor"/>
+            <circle cx="14" cy="10" r="2" fill="currentColor"/>
+            <circle cx="10" cy="15" r="2" fill="currentColor"/>
+          </svg>
+        </button>
       </div>
 
-      {%- if section.settings.show_write_review_button -%}
-        <a href="{{ section.settings.review_button_link }}" class="write-review-button">
-          Ecrire un avis
-        </a>
-      {%- endif -%}
+      {%- comment -%} Statistiques détaillées {%- endcomment -%}
+      <div class="rating-breakdown">
+        <div class="average-score">
+          <span class="star-icon-large">★</span>
+          <span class="score-number">{{ section.settings.average_rating }}</span>
+        </div>
+        
+        <div class="rating-bars">
+          <div class="rating-bar-row">
+            <span class="stars-label">★★★★★</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ section.settings.five_star_percent }}%;"></div>
+            </div>
+            <span class="count">({{ section.settings.five_star_count }})</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="stars-label">★★★★☆</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ section.settings.four_star_percent }}%;"></div>
+            </div>
+            <span class="count">({{ section.settings.four_star_count }})</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="stars-label">★★★☆☆</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ section.settings.three_star_percent }}%;"></div>
+            </div>
+            <span class="count">({{ section.settings.three_star_count }})</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="stars-label">★★☆☆☆</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ section.settings.two_star_percent }}%;"></div>
+            </div>
+            <span class="count">({{ section.settings.two_star_count }})</span>
+          </div>
+          <div class="rating-bar-row">
+            <span class="stars-label">★☆☆☆☆</span>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: {{ section.settings.one_star_percent }}%;"></div>
+            </div>
+            <span class="count">({{ section.settings.one_star_count }})</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    {%- if section.settings.show_search_bar -%}
-      <div class="reviews-toolbar">
-        <div class="sort-dropdown">
-          <label>Trier</label>
-          <select id="reviews-sort">
-            <option value="recent">Plus recents</option>
-            <option value="highest">Note la plus haute</option>
-            <option value="lowest">Note la plus basse</option>
-          </select>
-        </div>
-        <div class="search-box">
-          <input type="text" placeholder="Rechercher" id="reviews-search">
-        </div>
-      </div>
+    {%- comment -%} Filtres de tri {%- endcomment -%}
+    <div class="sort-filters">
+      <div class="filter-item active">En vedette</div>
+      <div class="filter-item">Les plus récentes</div>
+      <div class="filter-item">Les meilleures notes</div>
+      <div class="filter-item">Les notes les plus basses</div>
+    </div>
+
+    {%- comment -%} Bouton Écrire un avis {%- endcomment -%}
+    {%- if section.settings.show_write_button -%}
+      <a href="{{ section.settings.write_review_link }}" class="write-review-btn">
+        Écrire un avis
+      </a>
     {%- endif -%}
 
-    <div class="reviews-grid">
+    {%- comment -%} Liste des avis {%- endcomment -%}
+    <div class="reviews-list">
       {%- for block in section.blocks -%}
-        <div class="review-card" {{ block.shopify_attributes }}>
-          {%- if block.settings.verified -%}
-            <div class="verified-badge">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path d="M5.5 8L7 9.5L10.5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-              Client verifie
+        <div class="review-item" {{ block.shopify_attributes }}>
+          <div class="review-content-left">
+            <div class="reviewer-header">
+              <div class="reviewer-name-row">
+                <span class="reviewer-name">{{ block.settings.customer_name }}</span>
+                {%- if block.settings.verified -%}
+                  <span class="verified-badge">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <circle cx="7" cy="7" r="6.5" stroke="currentColor" stroke-width="1"/>
+                      <path d="M4 7L6 9L10 5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                    Vérifié
+                  </span>
+                {%- endif -%}
+              </div>
+              <div class="review-date">{{ block.settings.review_date }}</div>
             </div>
-          {%- endif -%}
 
-          <div class="review-author">{{ block.settings.customer_name }}</div>
+            <div class="review-stars">
+              {%- assign rating = block.settings.rating | times: 1 -%}
+              {%- for i in (1..5) -%}
+                {%- if i <= rating -%}
+                  ★
+                {%- else -%}
+                  ☆
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
 
-          <div class="review-rating">
-            {%- assign stars = block.settings.rating | times: 1 -%}
-            {%- for i in (1..5) -%}
-              {%- if i <= stars -%}
-                <span class="star">★</span>
-              {%- else -%}
-                <span class="star star-empty">★</span>
-              {%- endif -%}
-            {%- endfor -%}
+            <div class="review-text">
+              {{ block.settings.review_text }}
+            </div>
           </div>
 
-          <div class="review-content">
-            {{ block.settings.review_text }}
-          </div>
-
-          {%- if block.settings.review_date != blank -%}
-            <div class="review-date">{{ block.settings.review_date }}</div>
-          {%- endif -%}
-
-          {%- if block.settings.product_name != blank -%}
-            <div class="review-product">
-              <a href="{{ block.settings.product_link }}">{{ block.settings.product_name }}</a>
+          {%- if block.settings.customer_image != blank -%}
+            <div class="review-image">
+              <img src="{{ block.settings.customer_image | image_url: width: 200 }}" alt="{{ block.settings.customer_name }}">
             </div>
           {%- endif -%}
         </div>
       {%- endfor -%}
     </div>
+
+    {%- comment -%} Bouton Charger plus {%- endcomment -%}
+    {%- if section.settings.show_load_more -%}
+      <div class="load-more-container">
+        <button class="load-more-btn">Charger plus d'avis</button>
+      </div>
+    {%- endif -%}
+
   </div>
 </div>
 
 <style>
-  .reviews-section {
+  .loox-style-reviews {
     padding: 60px 0;
-    background-color: {{ section.settings.background_color }};
+    background: #fff;
   }
 
   .reviews-container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
   }
 
-  .reviews-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  .reviews-main-title {
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .highlight-text {
+    color: #00A651;
+    font-weight: 600;
+  }
+
+  .reviews-header-section {
     margin-bottom: 30px;
+  }
+
+  .rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .star-display {
+    font-size: 28px;
+    color: #FFD700;
+    letter-spacing: 2px;
+  }
+
+  .reviews-count-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .arrow-down {
+    font-size: 12px;
+  }
+
+  .filter-btn {
+    background: none;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .rating-breakdown {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+
+  .average-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .star-icon-large {
+    font-size: 48px;
+    color: #FFD700;
+  }
+
+  .score-number {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  .rating-bars {
+    flex: 1;
+  }
+
+  .rating-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .stars-label {
+    color: #FFD700;
+    font-size: 14px;
+    width: 80px;
+  }
+
+  .progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #FFD700;
+    transition: width 0.3s;
+  }
+
+  .count {
+    font-size: 14px;
+    color: #666;
+    width: 40px;
+  }
+
+  .sort-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
   }
 
-  .reviews-summary {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .average-rating {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .rating-number {
-    font-size: 36px;
-    font-weight: 700;
-    color: #000;
-  }
-
-  .rating-stars {
-    display: flex;
-    gap: 2px;
-  }
-
-  .star {
-    font-size: 24px;
-    color: #FFD700;
-  }
-
-  .star-empty {
-    color: #E0E0E0;
-  }
-
-  .reviews-count {
-    font-size: 16px;
-    color: #666;
-    margin: 0;
-  }
-
-  .write-review-button {
-    background-color: #000;
-    color: #fff;
-    padding: 12px 40px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background-color 0.3s;
-  }
-
-  .write-review-button:hover {
-    background-color: #333;
-  }
-
-  .reviews-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    gap: 20px;
-  }
-
-  .sort-dropdown {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .sort-dropdown label {
-    font-weight: 600;
-    color: #000;
-  }
-
-  .sort-dropdown select {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
+  .filter-item {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    font-size: 14px;
     cursor: pointer;
+    transition: all 0.3s;
   }
 
-  .search-box input {
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 250px;
+  .filter-item.active {
+    background: #000;
+    color: #fff;
   }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 20px;
+  .filter-item:hover {
+    background: #e0e0e0;
   }
 
-  .review-card {
+  .write-review-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
     background: #fff;
-    border: 1px solid #e0e0e0;
+    border: 2px solid #000;
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
     border-radius: 8px;
-    padding: 24px;
-    transition: box-shadow 0.3s;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s;
   }
 
-  .review-card:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  .write-review-btn:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .review-item {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+  }
+
+  .review-content-left {
+    flex: 1;
+  }
+
+  .reviewer-header {
+    margin-bottom: 10px;
+  }
+
+  .reviewer-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+
+  .reviewer-name {
+    font-weight: 700;
+    font-size: 16px;
   }
 
   .verified-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    font-size: 12px;
     color: #00A651;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 12px;
-  }
-
-  .verified-badge svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .review-author {
-    font-size: 18px;
-    font-weight: 700;
-    color: #000;
-    margin-bottom: 8px;
-  }
-
-  .review-rating {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 12px;
-  }
-
-  .review-rating .star {
-    font-size: 18px;
-    color: #FFD700;
-  }
-
-  .review-rating .star-empty {
-    color: #E0E0E0;
-  }
-
-  .review-content {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 12px;
   }
 
   .review-date {
     font-size: 13px;
     color: #999;
-    margin-bottom: 8px;
   }
 
-  .review-product {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #f0f0f0;
+  .review-stars {
+    color: #FFD700;
+    font-size: 18px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
   }
 
-  .review-product a {
-    color: #000;
-    text-decoration: underline;
+  .review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  .review-image {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .review-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .load-more-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .load-more-btn {
+    padding: 12px 40px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .load-more-btn:hover {
+    background: #000;
+    color: #fff;
   }
 
   @media (max-width: 768px) {
-    .reviews-header {
+    .reviews-main-title {
+      font-size: 24px;
+    }
+
+    .rating-breakdown {
       flex-direction: column;
       align-items: flex-start;
-      gap: 20px;
     }
 
-    .reviews-toolbar {
-      flex-direction: column;
-      align-items: stretch;
+    .sort-filters {
+      overflow-x: auto;
+      flex-wrap: nowrap;
     }
 
-    .search-box input {
+    .review-item {
+      flex-direction: column-reverse;
+    }
+
+    .review-image {
       width: 100%;
-    }
-
-    .reviews-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .rating-number {
-      font-size: 28px;
-    }
-
-    .write-review-button {
-      width: 100%;
-      text-align: center;
+      height: 200px;
     }
   }
 </style>
 
 {% schema %}
 {
-  "name": "Avis clients",
+  "name": "Avis Loox Style",
   "settings": [
     {
       "type": "header",
@@ -317,34 +451,107 @@
       "type": "text",
       "id": "average_rating",
       "label": "Note moyenne",
-      "default": "4.59"
+      "default": "4.8"
+    },
+    {
+      "type": "header",
+      "content": "Repartition des notes"
+    },
+    {
+      "type": "number",
+      "id": "five_star_count",
+      "label": "Nombre 5 etoiles",
+      "default": 105
+    },
+    {
+      "type": "range",
+      "id": "five_star_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Pourcentage 5 etoiles",
+      "default": 80
+    },
+    {
+      "type": "number",
+      "id": "four_star_count",
+      "label": "Nombre 4 etoiles",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "four_star_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Pourcentage 4 etoiles",
+      "default": 15
+    },
+    {
+      "type": "number",
+      "id": "three_star_count",
+      "label": "Nombre 3 etoiles",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "three_star_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Pourcentage 3 etoiles",
+      "default": 3
+    },
+    {
+      "type": "number",
+      "id": "two_star_count",
+      "label": "Nombre 2 etoiles",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "two_star_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Pourcentage 2 etoiles",
+      "default": 1
+    },
+    {
+      "type": "number",
+      "id": "one_star_count",
+      "label": "Nombre 1 etoile",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "one_star_percent",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "label": "Pourcentage 1 etoile",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Boutons"
     },
     {
       "type": "checkbox",
-      "id": "show_write_review_button",
-      "label": "Afficher bouton avis",
+      "id": "show_write_button",
+      "label": "Afficher bouton Ecrire un avis",
       "default": true
     },
     {
       "type": "url",
-      "id": "review_button_link",
-      "label": "Lien bouton avis"
+      "id": "write_review_link",
+      "label": "Lien Ecrire un avis"
     },
     {
       "type": "checkbox",
-      "id": "show_search_bar",
-      "label": "Afficher recherche",
+      "id": "show_load_more",
+      "label": "Afficher Charger plus",
       "default": true
-    },
-    {
-      "type": "header",
-      "content": "Couleurs"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Fond",
-      "default": "#ffffff"
     }
   ],
   "blocks": [
@@ -353,6 +560,12 @@
       "name": "Avis",
       "settings": [
         {
+          "type": "text",
+          "id": "customer_name",
+          "label": "Nom",
+          "default": "Fanny P."
+        },
+        {
           "type": "checkbox",
           "id": "verified",
           "label": "Verifie",
@@ -360,9 +573,9 @@
         },
         {
           "type": "text",
-          "id": "customer_name",
-          "label": "Nom",
-          "default": "Karen"
+          "id": "review_date",
+          "label": "Date",
+          "default": "11/11/2025"
         },
         {
           "type": "range",
@@ -377,33 +590,20 @@
           "type": "textarea",
           "id": "review_text",
           "label": "Texte",
-          "default": "Genial"
+          "default": "Absolument genial"
         },
         {
-          "type": "text",
-          "id": "review_date",
-          "label": "Date"
-        },
-        {
-          "type": "text",
-          "id": "product_name",
-          "label": "Produit"
-        },
-        {
-          "type": "url",
-          "id": "product_link",
-          "label": "Lien"
+          "type": "image_picker",
+          "id": "customer_image",
+          "label": "Photo client"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Avis clients",
+      "name": "Avis Loox Style",
       "blocks": [
-        {
-          "type": "review"
-        },
         {
           "type": "review"
         },
