@@ -160,12 +160,15 @@
     },
     "image_with_expandable_text_mFwfVE": {
       "type": "image-with-expandable-text",
+      "custom_css": [
+        "section {padding: 0; margin: 0;}"
+      ],
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/new-enhance-photo-v2-1_1.jpg",
         "title": "ZÉRO POILS RECOLLÉS SUR LE LINGE NOIR",
         "content": "<p>Notre formule dissout activement les agglomérats de poils cachés dans le tambour et les filtres. Fini les vêtements \"propres\" encore pleins de poils.</p>",
-        "separate_section_with_border": true
+        "separate_section_with_border": false
       }
     },
     "image_with_expandable_text_cBFcV6": {
@@ -252,8 +255,8 @@
         "padding_bottom": 0,
         "margin_top": 0,
         "margin_bottom": 0,
-        "padding_top_mobile": 10,
-        "padding_bottom_mobile": 10,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
         "margin_top_mobile": 0,
         "margin_bottom_mobile": 0,
         "show_satisfied_text": true,
@@ -507,7 +510,7 @@
       "type": "apps",
       "settings": {
         "full_width": true,
-        "remove_vertical_spacing": false,
+        "remove_vertical_spacing": true,
         "remove_horizontal_spacing": false,
         "background": "",
         "background_gradient": "",
