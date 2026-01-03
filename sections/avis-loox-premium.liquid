@@ -1,6 +1,8 @@
 {% comment %}
-SECTION : Avis clients premium – version optimisée conversion
+SECTION : Avis clients premium – VERSION FINALE STABLE
 {% endcomment %}
+
+{% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
 
 <div class="reviews-premium" id="avis-clients">
   <div class="reviews-container">
@@ -28,7 +30,7 @@ SECTION : Avis clients premium – version optimisée conversion
             ★ {{ section.settings.average_rating }}
           </div>
 
-          {% if section.settings.five_star_percent >= 70 %}
+          {% if five_star_percent_number >= 70 %}
             <div class="top-badge">
               La majorité des clients donnent 5 étoiles
             </div>
@@ -46,8 +48,9 @@ SECTION : Avis clients premium – version optimisée conversion
 
             {% for row in rows %}
               {% assign p = row | split: "," %}
+              {% assign percent_value = section.settings[p[1]] | plus: 0 %}
 
-              <div class="rating-row rating-{{ p[0] }}" data-width="{{ section.settings[p[1]] }}">
+              <div class="rating-row rating-{{ p[0] }}" data-width="{{ percent_value }}">
                 <span class="label">
                   {% for i in (1..5) %}
                     {% if i <= p[0] %}★{% else %}☆{% endif %}
@@ -76,7 +79,6 @@ SECTION : Avis clients premium – version optimisée conversion
 
     <!-- AVIS – SCROLL HORIZONTAL -->
     <div class="reviews-list">
-
       {% for block in section.blocks %}
         <div class="review-item"
              data-rating="{{ block.settings.rating }}"
@@ -102,30 +104,25 @@ SECTION : Avis clients premium – version optimisée conversion
 
         </div>
       {% endfor %}
-
     </div>
 
   </div>
 </div>
 
 <style>
-/* GLOBAL */
 .reviews-premium{padding:60px 0;background:#fff}
 .reviews-container{max-width:1100px;margin:auto;padding:0 20px}
 .reviews-title{text-align:center;font-size:32px;margin-bottom:30px}
 
-/* HEADER */
 .rating-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
 .stars{color:#FFD700;font-size:22px}
 .chevron{font-size:18px}
 
-/* DROPDOWN */
 .rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:14px;max-width:420px}
 .rating-dropdown.active{display:block;animation:fade .25s}
 .average-score{font-size:36px;font-weight:700}
 .top-badge{margin-top:6px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
 
-/* BARS */
 .rating-row{display:flex;align-items:center;gap:10px;margin:8px 0}
 .bar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
 .fill{height:100%;width:0;transition:width .6s ease}
@@ -135,10 +132,19 @@ SECTION : Avis clients premium – version optimisée conversion
 .rating-2 .fill{background:#F39C12}
 .rating-1 .fill{background:#E74C3C}
 
-/* CTA */
-.write-review-btn{display:block;margin:30px auto;text-align:center;border:2px solid #000;padding:14px 30px;border-radius:8px;text-decoration:none;color:#000;font-weight:600;width:max-content}
+.write-review-btn{
+  display:block;
+  margin:30px auto;
+  text-align:center;
+  border:2px solid #000;
+  padding:14px 30px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
+  width:max-content
+}
 
-/* REVIEWS LIST */
 .reviews-list{
   display:flex;
   gap:20px;
@@ -161,8 +167,10 @@ SECTION : Avis clients premium – version optimisée conversion
 .review-text{font-size:15px;line-height:1.5;margin-bottom:12px}
 .verified{color:#00A651;font-size:12px;margin-left:6px}
 
-/* ANIM */
-@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+@keyframes fade{
+  from{opacity:0;transform:translateY(-4px)}
+  to{opacity:1}
+}
 </style>
 
 <script>
@@ -170,14 +178,17 @@ document.addEventListener('DOMContentLoaded',()=>{
   const toggle=document.querySelector('.js-rating-toggle')
   const dropdown=document.querySelector('.js-rating-dropdown')
 
-  toggle.onclick=()=>{
+  if(!toggle || !dropdown) return
+
+  toggle.addEventListener('click',()=>{
     dropdown.classList.toggle('active')
+
     if(dropdown.classList.contains('active')){
       dropdown.querySelectorAll('.rating-row').forEach(row=>{
-        row.querySelector('.fill').style.width=row.dataset.width+'%'
+        row.querySelector('.fill').style.width = row.dataset.width + '%'
       })
     }
-  }
+  })
 })
 </script>
 
@@ -185,7 +196,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 {
   "name": "Avis clients premium",
   "settings": [
-    { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.8" },
+    { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
 
     { "type": "number", "id": "five_star_count", "label": "Nombre 5 étoiles", "default": 105 },
     { "type": "range", "id": "five_star_percent", "label": "Pourcentage 5 étoiles", "min": 0, "max": 100, "step": 1, "default": 80 },
