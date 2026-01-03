@@ -74,7 +74,7 @@
       "settings": {
         "full_width": false,
         "text": "Formules spéciale propriétaires d'animaux          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOI EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
-        "text_size": "small",
+        "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
         "scrolling_speed": 5,
