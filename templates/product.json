@@ -265,6 +265,29 @@
         "separate_section_with_border": false
       }
     },
+    "before_after_image_AF3qda": {
+      "type": "before-after-image",
+      "name": "Before/after image",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "",
+        "content": "<h3>Résultat Avant/Après</h3>",
+        "expand_image": false,
+        "text_position": "center",
+        "before_after_text_position": "top",
+        "before_text": "Avant",
+        "after_text": "après",
+        "drag_initial_position": 50,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "before_text_color": "#ffffff",
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
+      }
+    },
     "multi_column_n83Ttc": {
       "type": "multi-column",
       "custom_css": [],
@@ -574,6 +597,7 @@
     "image_with_expandable_text_fachMn",
     "image_with_expandable_text_PYHeYx",
     "image_with_expandable_text_a4i4TW",
+    "before_after_image_AF3qda",
     "multi_column_n83Ttc",
     "bande_avis_client_6VMkUw",
     "multi_column_4HV87L",
