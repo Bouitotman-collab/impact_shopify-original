@@ -160,9 +160,7 @@
     },
     "image_with_expandable_text_mFwfVE": {
       "type": "image-with-expandable-text",
-      "custom_css": [
-        "section {padding: 0; margin: 0;}"
-      ],
+      "custom_css": [],
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/new-enhance-photo-v2-1_1.jpg",

@@ -9,17 +9,17 @@
         {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder full-width-image' -}}
       {%- endif -%}
       
-      <div class="text-box">
+      <div class="text-box" style="background: {{ section.settings.box_background_color }};">
         <details class="expandable-details">
           <summary>
-            <h2 class="title">{{ section.settings.title | default: "Notre histoire" }}</h2>
-            <div class="arrow-circle">
+            <h2 class="title" style="color: {{ section.settings.title_color }};">{{ section.settings.title | default: "Notre histoire" }}</h2>
+            <div class="arrow-circle" style="border-color: {{ section.settings.arrow_color }}; color: {{ section.settings.arrow_color }};">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
           </summary>
-          <div class="expandable-content">
+          <div class="expandable-content" style="color: {{ section.settings.content_color }};">
             {{ section.settings.content }}
           </div>
         </details>
@@ -67,7 +67,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background: white;
     padding: 10px 20px;
     box-shadow: 0 -2px 20px rgba(0,0,0,0.1);
     width: 90%;
@@ -90,7 +89,6 @@
     margin: 0;
     font-size: 15px;
     font-weight: 700;
-    color: #090909;
     line-height: 1.1;
     flex: 1;
   }
@@ -100,8 +98,7 @@
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    border: 2px solid #73e0ff;
-    color: #73e0ff;
+    border: 2px solid;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,8 +116,7 @@
   .expandable-content {
     margin-top: 12px;
     padding-top: 12px;
-    border-top: 1px solid #e8e8e8;
-    color: #555;
+    border-top: 1px solid rgba(0,0,0,0.1);
     line-height: 1.6;
     font-size: 14px;
     animation: slideDown 0.3s ease;
@@ -213,6 +209,34 @@
       "id": "content",
       "label": "Contenu extensible",
       "default": "<p>Votre texte détaillé ici...</p>"
+    },
+    {
+      "type": "header",
+      "content": "Couleurs"
+    },
+    {
+      "type": "color",
+      "id": "box_background_color",
+      "label": "Couleur de fond de la boîte",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#090909"
+    },
+    {
+      "type": "color",
+      "id": "content_color",
+      "label": "Couleur du contenu",
+      "default": "#555555"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Couleur de la flèche",
+      "default": "#73e0ff"
     },
     {
       "type": "checkbox",
