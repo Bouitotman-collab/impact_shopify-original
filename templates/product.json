@@ -56,7 +56,17 @@
       "type": "logo-carousel",
       "custom_css": [],
       "name": "Logo Carousel",
-      "settings": {}
+      "settings": {
+        "show_title": false,
+        "title_text": "Ils parlent de nous",
+        "title_size": 16,
+        "title_color": "#333333",
+        "background_color": "#ffffff",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "speed": 12,
+        "speed_mobile": 10
+      }
     },
     "scrolling_text_Jfmn46": {
       "type": "scrolling-text",
