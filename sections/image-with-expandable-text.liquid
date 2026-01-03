@@ -37,8 +37,8 @@
     padding: 0 !important;
   }
   
-  /* Supprimer le margin-top à partir de la deuxième section */
-  .image-expandable-section:not(:first-of-type) {
+  /* Classe pour supprimer le margin-top */
+  .image-expandable-section.no-top-margin {
     margin-top: 0 !important;
   }
   
@@ -144,8 +144,7 @@
       margin-bottom: 10px !important;
     }
     
-    /* Supprimer le margin-top à partir de la deuxième section sur mobile */
-    .image-expandable-section:not(:first-of-type) {
+    .image-expandable-section.no-top-margin {
       margin-top: 0 !important;
     }
     
@@ -181,6 +180,18 @@
     }
   }
 </style>
+
+<script>
+  // Supprimer le margin-top de toutes les sections sauf la première
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('.image-expandable-section');
+    sections.forEach((section, index) => {
+      if (index > 0) {
+        section.classList.add('no-top-margin');
+      }
+    });
+  });
+</script>
 
 {% schema %}
 {
