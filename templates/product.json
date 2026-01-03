@@ -446,91 +446,61 @@
         "review_iiykif": {
           "type": "review",
           "settings": {
-            "customer_name": "Dori",
+            "customer_name": "Claire D.",
             "verified": true,
             "review_timestamp": 1731283200,
             "rating": 5,
-            "review_text": "Plus aucune odeur de chien dans la machine, même après les plaids."
+            "review_text": "Plus aucune odeur de chien dans la machine, même après les plaids. Très bonne surprise."
           }
         },
         "review_YXCUkY": {
           "type": "review",
           "settings": {
-            "customer_name": "kristel",
+            "customer_name": "Julien M.",
             "verified": true,
             "review_timestamp": 1731283200,
             "rating": 5,
-            "review_text": "Je pensais que les poils resteraient, mais le tambour est nickel."
+            "review_text": "Avec deux chats à la maison, les poils restaient toujours dans le tambour. Là, vraiment rien."
           }
         },
         "review_C898fg": {
           "type": "review",
           "settings": {
-            "customer_name": "Client",
+            "customer_name": "Sophie L.",
             "verified": true,
             "review_timestamp": 1731283200,
             "rating": 5,
-            "review_text": "Odeur fraîche dès la première utilisation, très pratique."
+            "review_text": "Odeur fraîche dès la première utilisation. J’avais des doutes mais ça fonctionne"
           }
         },
         "review_JUqVri": {
           "type": "review",
           "settings": {
-            "customer_name": "Carla",
+            "customer_name": "Marc P.",
             "verified": true,
             "review_timestamp": 1731283200,
             "rating": 5,
-            "review_text": "Avec 2 chats à la maison, c’est devenu indispensable."
+            "review_text": "Simple à utiliser et efficace. La machine sent enfin le propre."
           }
         },
         "review_Wjj9FF": {
           "type": "review",
           "settings": {
-            "customer_name": "Janet",
+            "customer_name": "Émilie R.",
             "verified": true,
             "review_timestamp": 1731283200,
-            "rating": 5,
-            "review_text": "Fonctionne bien, mais je fais deux cycles par mois."
+            "rating": 4,
+            "review_text": "Très bon résultat sur les odeurs. J’utilise une tablette toutes les 2–3 semaines."
           }
         },
         "review_VzxeFp": {
           "type": "review",
           "settings": {
-            "customer_name": "Monique",
+            "customer_name": "Thomas B.",
             "verified": true,
             "review_timestamp": 1731283200,
-            "rating": 5,
-            "review_text": ""
-          }
-        },
-        "review_hmjhBD": {
-          "type": "review",
-          "settings": {
-            "customer_name": "Camille",
-            "verified": true,
-            "review_timestamp": 1731283200,
-            "rating": 5,
-            "review_text": ""
-          }
-        },
-        "review_4KqHxY": {
-          "type": "review",
-          "settings": {
-            "customer_name": "Julie L.",
-            "verified": true,
-            "review_timestamp": 1731283200,
-            "rating": 5,
-            "review_text": ""
-          }
-        },
-        "review_JTAYgD": {
-          "type": "review",
-          "settings": {
-            "customer_name": "Leila",
-            "verified": true,
-            "review_timestamp": 1731283200,
-            "rating": 5,
-            "review_text": ""
+            "rating": 4,
+            "review_text": "Ça aide vraiment pour les poils et les odeurs, surtout avec les paniers de chien."
           }
         }
       },
@@ -540,10 +510,7 @@
         "review_C898fg",
         "review_JUqVri",
         "review_Wjj9FF",
-        "review_VzxeFp",
-        "review_hmjhBD",
-        "review_4KqHxY",
-        "review_JTAYgD"
+        "review_VzxeFp"
       ],
       "name": "Avis clients",
       "settings": {
