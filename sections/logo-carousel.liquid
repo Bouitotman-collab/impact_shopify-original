@@ -1,3 +1,43 @@
+{% comment %}
+  Section: Logo Carousel - Barre de notoriété
+  Pour le thème Impact de Shopify
+{% endcomment %}
+
+<div class="logo-carousel-section" style="background-color: {{ section.settings.background_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  {% if section.settings.show_title %}
+    <p class="logo-carousel-title" style="color: {{ section.settings.title_color }}; font-size: {{ section.settings.title_size }}px;">{{ section.settings.title_text }}</p>
+  {% endif %}
+
+  <div class="logo-carousel-wrapper">
+    <div class="logo-carousel-track">
+      <!-- Premier groupe -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
+      
+      <!-- Deuxième groupe -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
+      
+      <!-- Troisième groupe -->
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px.png?v=1766797694" alt="ConsoMag"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3.png?v=1766797694" alt="Wamiz"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_3_1.png?v=1766797694" alt="Woopets"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_2_1.png?v=1766797694" alt="Zoomalia"></div>
+      <div class="logo-slide logo-rect"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_300_x_150_px_1_1.png?v=1766797694" alt="SantéVet"></div>
+      <div class="logo-slide logo-carre"><img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Sans_titre_150_x_150_px_1_1.png?v=1766797694" alt="30 Millions d'Amis"></div>
+    </div>
+  </div>
+</div>
+
 <style>
   .logo-carousel-section {
     overflow: hidden;
@@ -28,7 +68,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 50px; /* Changé de 30px à 50px */
+    margin: 0 30px;
   }
 
   .logo-slide img {
@@ -49,7 +89,7 @@
 
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-1400px); } /* Ajusté de -1160px à -1400px */
+    100% { transform: translateX(-1160px); }
   }
 
   .logo-carousel-wrapper:hover .logo-carousel-track {
@@ -88,3 +128,106 @@
     100% { transform: translate3d(-740px, 0, 0); }
   }
 </style>
+
+{% schema %}
+{
+  "name": "Logo Carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Titre"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Afficher le titre",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title_text",
+      "label": "Texte du titre",
+      "default": "Ils parlent de nous"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Taille du titre",
+      "min": 12,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Couleur du titre",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Apparence"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Couleur de fond",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Espacement"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espacement haut",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espacement bas",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "default": 40,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Vitesse"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Vitesse desktop (secondes)",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 12,
+      "unit": "s"
+    },
+    {
+      "type": "range",
+      "id": "speed_mobile",
+      "label": "Vitesse mobile (secondes)",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "default": 10,
+      "unit": "s"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Logo Carousel"
+    }
+  ]
+}
+{% endschema %}
