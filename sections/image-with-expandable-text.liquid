@@ -37,6 +37,11 @@
     padding-right: 0 !important;
   }
   
+  /* Supprimer le padding-top à partir de la 2ème section */
+  .image-expandable-section-wrapper.no-top-padding {
+    padding-top: 0 !important;
+  }
+  
   .image-expandable-section {
     margin: 0 !important;
     padding: 0 !important;
@@ -162,6 +167,18 @@
     }
   }
 </style>
+
+<script>
+  // Supprimer le padding-top de toutes les sections sauf la première
+  document.addEventListener('DOMContentLoaded', function() {
+    const wrappers = document.querySelectorAll('.image-expandable-section-wrapper');
+    wrappers.forEach((wrapper, index) => {
+      if (index > 0) {
+        wrapper.classList.add('no-top-padding');
+      }
+    });
+  });
+</script>
 
 {% schema %}
 {
