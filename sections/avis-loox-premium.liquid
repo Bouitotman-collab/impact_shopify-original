@@ -1,18 +1,19 @@
 {% comment %}
-  SECTION : Avis clients premium – CRO Edition
+SECTION : Avis clients premium – version optimisée conversion
 {% endcomment %}
 
 <div class="reviews-premium" id="avis-clients">
   <div class="reviews-container">
 
+    <!-- TITRE -->
     <h2 class="reviews-title">
-      Découvrez <span>les avis</span>
+      Ce que les propriétaires d’animaux en pensent
     </h2>
 
     <!-- HEADER -->
     <div class="reviews-header">
 
-      <!-- NOTE / SUMMARY -->
+      <!-- RÉSUMÉ -->
       <div class="rating-summary">
         <button class="rating-toggle js-rating-toggle">
           <span class="stars">★★★★★</span>
@@ -29,13 +30,13 @@
 
           {% if section.settings.five_star_percent >= 70 %}
             <div class="top-badge">
-              La majorité de nos clients nous donnent 5 étoiles
+              La majorité des clients donnent 5 étoiles
             </div>
           {% endif %}
 
           <div class="rating-bars">
 
-            {% assign stars_data = 
+            {% assign rows =
               "5,five_star_percent,five_star_count|
                4,four_star_percent,four_star_count|
                3,three_star_percent,three_star_count|
@@ -43,16 +44,13 @@
                1,one_star_percent,one_star_count"
               | split: "|" %}
 
-            {% for row in stars_data %}
-              {% assign parts = row | split: "," %}
-              {% assign star_count = parts[0] %}
-              {% assign percent_id = parts[1] %}
-              {% assign count_id = parts[2] %}
+            {% for row in rows %}
+              {% assign p = row | split: "," %}
 
-              <div class="rating-row rating-{{ star_count }}" data-width="{{ section.settings[percent_id] }}">
+              <div class="rating-row rating-{{ p[0] }}" data-width="{{ section.settings[p[1]] }}">
                 <span class="label">
                   {% for i in (1..5) %}
-                    {% if i <= star_count %}★{% else %}☆{% endif %}
+                    {% if i <= p[0] %}★{% else %}☆{% endif %}
                   {% endfor %}
                 </span>
 
@@ -61,7 +59,7 @@
                 </div>
 
                 <span class="number">
-                  ({{ section.settings[count_id] }})
+                  ({{ section.settings[p[2]] }})
                 </span>
               </div>
             {% endfor %}
@@ -69,49 +67,42 @@
           </div>
         </div>
       </div>
-
-      <!-- FILTER -->
-      <div class="filter-wrapper">
-        <button class="filter-btn js-filter-toggle">☰</button>
-
-        <div class="filter-dropdown js-filter-dropdown">
-          <div class="filter-title">Trier par</div>
-          <div class="filter-item active" data-sort="featured">En vedette</div>
-          <div class="filter-item" data-sort="recent">Les plus récents</div>
-          <div class="filter-item" data-sort="high">Les meilleures notes</div>
-          <div class="filter-item" data-sort="low">Les notes les plus basses</div>
-        </div>
-      </div>
     </div>
 
-    <!-- WRITE REVIEW -->
+    <!-- CTA -->
     <a href="#avis-clients" class="write-review-btn">
       Partager mon expérience
     </a>
 
-    <!-- REVIEWS -->
+    <!-- AVIS – SCROLL HORIZONTAL -->
     <div class="reviews-list">
+
       {% for block in section.blocks %}
         <div class="review-item"
              data-rating="{{ block.settings.rating }}"
              data-date="{{ block.settings.review_timestamp }}"
              {{ block.shopify_attributes }}>
 
-          <strong class="name">{{ block.settings.customer_name }}</strong>
-
-          {% if block.settings.verified %}
-            <span class="verified">✔ Achat vérifié</span>
-          {% endif %}
-
-          <div class="stars">
+          <div class="review-stars">
             {% for i in (1..5) %}
               {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
             {% endfor %}
           </div>
 
-          <p class="text">{{ block.settings.review_text }}</p>
+          <p class="review-text">
+            {{ block.settings.review_text }}
+          </p>
+
+          <div class="review-footer">
+            <strong>{{ block.settings.customer_name }}</strong>
+            {% if block.settings.verified %}
+              <span class="verified">✔ Achat vérifié</span>
+            {% endif %}
+          </div>
+
         </div>
       {% endfor %}
+
     </div>
 
   </div>
@@ -120,49 +111,55 @@
 <style>
 /* GLOBAL */
 .reviews-premium{padding:60px 0;background:#fff}
-.reviews-container{max-width:900px;margin:auto;padding:0 20px}
-.reviews-title{text-align:center;font-size:32px;margin-bottom:40px}
-.reviews-title span{color:#00A651;font-weight:700}
+.reviews-container{max-width:1100px;margin:auto;padding:0 20px}
+.reviews-title{text-align:center;font-size:32px;margin-bottom:30px}
 
 /* HEADER */
-.reviews-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
 .rating-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
 .stars{color:#FFD700;font-size:22px}
 .chevron{font-size:18px}
 
 /* DROPDOWN */
-.rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:12px}
+.rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:14px;max-width:420px}
 .rating-dropdown.active{display:block;animation:fade .25s}
 .average-score{font-size:36px;font-weight:700}
-.top-badge{margin-top:8px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
+.top-badge{margin-top:6px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
 
 /* BARS */
 .rating-row{display:flex;align-items:center;gap:10px;margin:8px 0}
 .bar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
 .fill{height:100%;width:0;transition:width .6s ease}
-
-/* COLORS */
 .rating-5 .fill{background:#00A651}
 .rating-4 .fill{background:#6BCF9B}
 .rating-3 .fill{background:#F4C430}
 .rating-2 .fill{background:#F39C12}
 .rating-1 .fill{background:#E74C3C}
 
-/* FILTER */
-.filter-wrapper{position:relative}
-.filter-btn{border:1px solid #ddd;background:#fff;padding:8px 12px;border-radius:6px;cursor:pointer}
-.filter-dropdown{display:none;position:absolute;right:0;top:40px;background:#fff;border:1px solid #ddd;padding:10px;border-radius:8px}
-.filter-dropdown.active{display:block}
-.filter-item{padding:8px;border-radius:6px;cursor:pointer}
-.filter-item.active{background:#000;color:#fff}
-
 /* CTA */
-.write-review-btn{display:block;margin:30px 0;text-align:center;border:2px solid #000;padding:14px;border-radius:8px;text-decoration:none;color:#000;font-weight:600}
+.write-review-btn{display:block;margin:30px auto;text-align:center;border:2px solid #000;padding:14px 30px;border-radius:8px;text-decoration:none;color:#000;font-weight:600;width:max-content}
 
-/* REVIEWS */
-.review-item{border:1px solid #eee;padding:20px;border-radius:14px;margin-bottom:20px}
-.review-item .stars{font-size:18px}
-.verified{color:#00A651;font-size:12px;margin-left:8px}
+/* REVIEWS LIST */
+.reviews-list{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding-bottom:10px
+}
+
+.review-item{
+  min-width:280px;
+  max-width:280px;
+  flex-shrink:0;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:20px;
+  scroll-snap-align:start;
+}
+
+.review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
+.review-text{font-size:15px;line-height:1.5;margin-bottom:12px}
+.verified{color:#00A651;font-size:12px;margin-left:6px}
 
 /* ANIM */
 @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
@@ -170,41 +167,17 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  const ratingBtn=document.querySelector('.js-rating-toggle')
-  const ratingDrop=document.querySelector('.js-rating-dropdown')
-  const filterBtn=document.querySelector('.js-filter-toggle')
-  const filterDrop=document.querySelector('.js-filter-dropdown')
+  const toggle=document.querySelector('.js-rating-toggle')
+  const dropdown=document.querySelector('.js-rating-dropdown')
 
-  ratingBtn.onclick=()=>{
-    ratingDrop.classList.toggle('active')
-    if(ratingDrop.classList.contains('active')){
-      ratingDrop.querySelectorAll('.rating-row').forEach(row=>{
+  toggle.onclick=()=>{
+    dropdown.classList.toggle('active')
+    if(dropdown.classList.contains('active')){
+      dropdown.querySelectorAll('.rating-row').forEach(row=>{
         row.querySelector('.fill').style.width=row.dataset.width+'%'
       })
     }
   }
-
-  filterBtn.onclick=()=>filterDrop.classList.toggle('active')
-
-  document.querySelectorAll('.filter-item').forEach(btn=>{
-    btn.onclick=()=>{
-      document.querySelectorAll('.filter-item').forEach(b=>b.classList.remove('active'))
-      btn.classList.add('active')
-
-      const list=document.querySelector('.reviews-list')
-      const reviews=[...list.children]
-      const type=btn.dataset.sort
-
-      reviews.sort((a,b)=>{
-        if(type==='recent') return b.dataset.date - a.dataset.date
-        if(type==='high') return b.dataset.rating - a.dataset.rating
-        if(type==='low') return a.dataset.rating - b.dataset.rating
-        return 0
-      })
-
-      reviews.forEach(r=>list.appendChild(r))
-    }
-  })
 })
 </script>
 
