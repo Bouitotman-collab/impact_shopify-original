@@ -1,17 +1,11 @@
-<textarea id="exportJSON" style="width:100%;height:400px;font-family:monospace;font-size:12px;"></textarea>
-
-<script>
-const reviews = [
 {% assign all_reviews = shop.metaobjects.review.values %}
+[
 {% for review in all_reviews limit:500 %}
 {
-  "nom": {{ review.nom.value | json }},
-  "avis": {{ review.avis.value | json }},
-  "note": {{ review.note.value | json }},
-  "achat_verifie": {{ review.achat_verifie.value | json }}
-}{{ forloop.last | unless }},{{ endunless }}
+"nom": {{ review.nom.value | json }},
+"avis": {{ review.avis.value | json }},
+"note": {{ review.note.value | json }},
+"achat_verifie": {{ review.achat_verifie.value | json }}
+}{% unless forloop.last %},{% endunless %}
 {% endfor %}
-];
-
-document.getElementById('exportJSON').value = JSON.stringify(reviews, null, 2);
-</script>
+]
