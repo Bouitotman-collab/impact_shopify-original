@@ -551,6 +551,488 @@
         "one_star_percent": 1
       }
     },
+    "avis_clients_tous_PMJxcT": {
+      "type": "avis-clients-tous",
+      "blocks": {
+        "review_tFqfbL": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_QLqY4i": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_9fMcf6": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_rrpQc9": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_WkLTki": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_RCajgh": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_bQQHWq": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_Fkezbr": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_wkEnAg": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_cXkNAN": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_W6paim": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_E6GhRc": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_bf4LYH": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_7aRtTW": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_JY8dxY": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_AC9rFK": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_GDmadP": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_JNxRkC": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_VYczJy": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_iBce9R": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_GJyqLK": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_3bBGAM": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_E6Fj6C": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_xCiAEa": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_gALm7p": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_wwcAaT": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_VCEETK": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_eUdpXn": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_VCepmP": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_hbb6Ch": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_Lr8kkK": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_DakPxb": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_b3Brt9": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_MTmL3r": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_BRtVNg": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_bYcyeb": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_XCd4dT": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_YY3eAJ": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_DwKPbn": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_afQMpq": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_TV8pq9": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_TLHybb": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_dGwe8B": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_FgXHxB": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_gXPDRF": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_dj8iwc": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        },
+        "review_z8LEXx": {
+          "type": "review",
+          "settings": {
+            "customer_name": "",
+            "verified": true,
+            "rating": 5,
+            "review_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_tFqfbL",
+        "review_QLqY4i",
+        "review_9fMcf6",
+        "review_rrpQc9",
+        "review_WkLTki",
+        "review_RCajgh",
+        "review_bQQHWq",
+        "review_Fkezbr",
+        "review_wkEnAg",
+        "review_cXkNAN",
+        "review_W6paim",
+        "review_E6GhRc",
+        "review_bf4LYH",
+        "review_7aRtTW",
+        "review_JY8dxY",
+        "review_AC9rFK",
+        "review_GDmadP",
+        "review_JNxRkC",
+        "review_VYczJy",
+        "review_iBce9R",
+        "review_GJyqLK",
+        "review_3bBGAM",
+        "review_E6Fj6C",
+        "review_xCiAEa",
+        "review_gALm7p",
+        "review_wwcAaT",
+        "review_VCEETK",
+        "review_eUdpXn",
+        "review_VCepmP",
+        "review_hbb6Ch",
+        "review_Lr8kkK",
+        "review_DakPxb",
+        "review_b3Brt9",
+        "review_MTmL3r",
+        "review_BRtVNg",
+        "review_bYcyeb",
+        "review_XCd4dT",
+        "review_YY3eAJ",
+        "review_DwKPbn",
+        "review_afQMpq",
+        "review_TV8pq9",
+        "review_TLHybb",
+        "review_dGwe8B",
+        "review_FgXHxB",
+        "review_gXPDRF",
+        "review_dj8iwc",
+        "review_z8LEXx"
+      ],
+      "name": "Tous les avis clients",
+      "settings": {
+        "total_reviews": 129,
+        "show_load_more": true
+      }
+    },
     "multi_column_4HV87L": {
       "type": "multi-column",
       "name": "Multi-column",
@@ -815,6 +1297,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "avis_clients_pHEDgk",
+    "avis_clients_tous_PMJxcT",
     "multi_column_4HV87L",
     "main",
     "slideshow_n3Re4i",

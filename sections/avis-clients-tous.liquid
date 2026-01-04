@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Tous les avis clients – version simple & crédible
+SECTION : Tous les avis clients – version finale (Option A)
 {% endcomment %}
 
 <div class="all-reviews" id="tous-les-avis">
@@ -7,10 +7,12 @@ SECTION : Tous les avis clients – version simple & crédible
 
     <h2 class="all-reviews-title">
       Tous les avis clients
-      <span class="all-reviews-count">
-        ({{ section.settings.total_reviews }})
-      </span>
     </h2>
+
+    <p class="all-reviews-subtitle">
+      {{ section.settings.total_reviews }} avis laissés par plus de
+      {{ section.settings.total_customers }} clients
+    </p>
 
     <div class="all-reviews-list">
       {% for block in section.blocks %}
@@ -39,7 +41,7 @@ SECTION : Tous les avis clients – version simple & crédible
 
     {% if section.settings.show_load_more %}
       <div class="load-more-wrapper">
-        <button class="load-more-btn">
+        <button class="load-more-btn" type="button">
           Charger plus d’avis
         </button>
       </div>
@@ -63,13 +65,14 @@ SECTION : Tous les avis clients – version simple & crédible
 .all-reviews-title{
   text-align:center;
   font-size:30px;
-  margin-bottom:40px;
+  margin-bottom:12px;
 }
 
-.all-reviews-count{
-  font-size:16px;
+.all-reviews-subtitle{
+  text-align:center;
+  font-size:15px;
   color:#666;
-  margin-left:6px;
+  margin-bottom:40px;
 }
 
 .all-reviews-list{
@@ -131,6 +134,10 @@ SECTION : Tous les avis clients – version simple & crédible
   .all-reviews-title{
     font-size:24px;
   }
+
+  .all-reviews-subtitle{
+    font-size:14px;
+  }
 }
 </style>
 
@@ -143,6 +150,12 @@ SECTION : Tous les avis clients – version simple & crédible
       "id": "total_reviews",
       "label": "Nombre total d’avis",
       "default": 129
+    },
+    {
+      "type": "number",
+      "id": "total_customers",
+      "label": "Nombre total de clients",
+      "default": 1800
     },
     {
       "type": "checkbox",
