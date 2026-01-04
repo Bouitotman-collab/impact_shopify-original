@@ -10432,50 +10432,59 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ========================================================== */
-/* === HEADER BLANC & COULEURS CORRIGÉES (MÉTHODE IMPACT) === */
-/* ========================================================== */
+/* ================================================= */
+/* === FIX HEADER BLANC & ICÔNES PROPRES (FINAL) === */
+/* ================================================= */
 
-/* 1. On définit les variables du thème pour forcer le mode "clair" */
-#shopify-section-header, 
-.header-wrapper, 
+/* 1. FORCE LE FOND BLANC (Non négociable) */
+#shopify-section-header,
+.shopify-section--header,
+.header-wrapper,
 header.header {
     background-color: #ffffff !important;
     background: #ffffff !important;
-    
-    /* Variables vitales pour le thème Impact */
-    --header-background: #ffffff !important;
-    --header-text: #000000 !important;
-    --header-heading-color: #000000 !important;
-    --color-foreground: 0, 0, 0 !important; /* Force le texte en noir (RGB) */
-    
-    position: relative !important;
+    position: relative !important; /* Stop la transparence */
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* 2. On s'assure que les liens et textes utilisent ces variables */
-.header__link, 
-.header__icon, 
-.header__logo-link,
-.header__icon-wrapper {
-    color: #000000 !important;
-}
-
-/* 3. LE LOGO (Inversion des couleurs) */
-/* Transforme votre image blanche en noire */
+/* 2. LE LOGO (Blanc -> Noir) */
 .header__logo-image {
     filter: invert(1) brightness(0) !important;
 }
 
-/* OPTION DE SECOURS POUR ICÔNES */
-.header__icon svg, 
-.header__icon path {
-    fill: transparent !important; /* Vide l'intérieur */
-    stroke: #000000 !important;   /* Colorie le trait */
-    stroke-width: 1.5px !important;
+/* 3. LES TEXTES (Menu) */
+.header__link,
+.header__nav-link,
+summary.header__icon-wrapper {
+    color: #000000 !important;
 }
 
-/* 6. Correction du compteur de panier (Petit rond) */
+/* 4. LE FIX DU CARRÉ NOIR (Crucial) */
+/* On remet tout à zéro pour éviter le bloc noir */
+.header__icon svg {
+    fill: none !important;      /* Enlève le remplissage du carré */
+    stroke: none !important;    /* Enlève les traits par défaut */
+}
+
+/* 5. ON DESSINE LES TRAITS EN NOIR (Juste les lignes) */
+.header__icon svg path,
+.header__icon svg circle,
+.header__icon svg line,
+.header__icon svg polyline {
+    stroke: #000000 !important;   /* Couleur du trait */
+    stroke-width: 1.5px !important; /* Épaisseur du trait */
+    fill: none !important;        /* Intérieur vide (règle le problème du panier plein) */
+    vector-effect: non-scaling-stroke !important;
+}
+
+/* 6. EXCEPTION POUR LE MENU (Les 3 barres) */
+/* Parfois le menu est codé différemment */
+.header__icon--menu svg rect {
+    fill: #000000 !important; /* Si les barres sont des rectangles pleins */
+    stroke: none !important;
+}
+
+/* 7. LE PETIT ROND DU PANIER */
 .header__cart-count {
     background-color: #000000 !important;
     color: #ffffff !important;
