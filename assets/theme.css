@@ -10433,29 +10433,11 @@ p, a, span, div, button, input, textarea, select {
   }
 }
 @media screen and (max-width: 749px) {
-  header, .header, .header-wrapper, [class*="header"] {
+  header, .header, .header-wrapper {
     background-color: #ffffff !important;
   }
-  
-  /* Force toutes les icônes visibles et complètes */
-  .header__icon,
-  .header__icon svg {
-    color: #1A1A1A !important;
-    stroke: #1A1A1A !important;
-    overflow: visible !important;
-  }
-  
-  /* Assure que le conteneur des icônes ne coupe rien */
-  .header__icons,
-  .header__icon--cart {
-    overflow: visible !important;
-  }
-  
-  /* Donne de l'espace au header */
-  .header {
-    padding: 12px 0 !important;
-  }
 }
+
 
 
 
