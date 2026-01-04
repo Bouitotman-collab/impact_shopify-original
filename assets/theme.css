@@ -10432,7 +10432,33 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-
+@media screen and (max-width: 749px) {
+  header, .header, .header-wrapper, [class*="header"] {
+    background-color: #ffffff !important;
+  }
+}
+@media screen and (max-width: 749px) {
+  header, .header, .header-wrapper, [class*="header"] {
+    background-color: #ffffff !important;
+  }
+  
+  /* Force les icônes en noir */
+  .header__icon,
+  .header__icon svg,
+  .header__menu-item,
+  .icon,
+  header svg,
+  .header svg {
+    color: #1A1A1A !important;
+    fill: #1A1A1A !important;
+    stroke: #1A1A1A !important;
+  }
+  
+  /* Force le logo visible */
+  .header__heading-logo img {
+    opacity: 1 !important;
+  }
+}
 
 
 
