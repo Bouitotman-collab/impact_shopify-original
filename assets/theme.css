@@ -10432,7 +10432,128 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
+/* ===== HEADER SUR FOND BLANC (comme Naali) ===== */
 
+/* Fond blanc pour tout le header */
+.shopify-section-group-header-group {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+.header {
+  background-color: #ffffff !important;
+}
+
+.header__wrapper {
+  background-color: #ffffff !important;
+}
+
+/* Tous les éléments du header en NOIR */
+.header *,
+.header a,
+.header button,
+.header svg,
+.header span:not(.icon) {
+  color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* Logo NOIR sur mobile et desktop */
+.header__heading-logo img,
+.header__logo img,
+.header__heading-link img {
+  content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236') !important;
+}
+
+/* Icônes (hamburger, recherche, panier) en noir */
+.header__icon-list svg,
+.header__icon-list path {
+  stroke: #000000 !important;
+  fill: none !important;
+}
+
+/* Menu hamburger (3 barres) en noir */
+.header__icon--menu svg,
+.header__icon--menu path,
+.header__icon--menu line {
+  stroke: #000000 !important;
+  stroke-width: 1.5 !important;
+}
+
+/* Loupe de recherche en noir */
+.header__icon--search svg,
+.header__icon--search path,
+.header__icon--search circle {
+  stroke: #000000 !important;
+}
+
+/* Panier en noir */
+.header__icon--cart svg,
+.header__icon--cart path {
+  stroke: #000000 !important;
+}
+
+/* Badge du panier (nombre d'articles) */
+.header__cart-count,
+.count-bubble {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Hauteur du header */
+@media screen and (max-width: 749px) {
+  /* Mobile */
+  .header {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+  
+  .header__heading-logo img,
+  .header__logo img {
+    max-height: 40px !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  /* Desktop */
+  .header {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  
+  .header__heading-logo img,
+  .header__logo img {
+    max-height: 45px !important;
+  }
+}
+
+/* Supprimer la transparence sur TOUTES les pages */
+.header[allow-transparency] {
+  background-color: #ffffff !important;
+}
+
+.header[allow-transparency]:not(.is-filled) {
+  --header-background-opacity: 1 !important;
+  --text-color: 0, 0, 0 !important;
+}
+
+/* Forcer le header blanc même sur la page d'accueil */
+.shopify-section:first-child + .shopify-section--header,
+[allow-transparent-header] + .shopify-section--header {
+  background-color: #ffffff !important;
+}
+
+/* Menu de navigation (si visible sur desktop) */
+.header__link-list a {
+  color: #000000 !important;
+  font-weight: 400 !important;
+}
+
+/* Au survol des liens */
+.header__link-list a:hover {
+  opacity: 0.7 !important;
+}
 
 
 
