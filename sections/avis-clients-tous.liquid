@@ -2,53 +2,56 @@
 SECTION : Tous les avis clients – Metaobjects (Load more JS)
 {% endcomment %}
 
-{% assign reviews = shop.metaobjects.review.values %}
-
 <div class="all-reviews" id="tous-les-avis">
   <div class="all-reviews-container">
 
     <h2 class="all-reviews-title">Tous les avis clients</h2>
 
-    <p class="all-reviews-subtitle">
-      {{ reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
-    </p>
+    {% paginate shop.metaobjects.review.values by 250 %}
+      {% assign reviews = paginate.collection %}
+      
+      <p class="all-reviews-subtitle">
+        {{ reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
+      </p>
 
-    {% if reviews.size > 0 %}
-      <div class="all-reviews-list" data-visible="12">
-        {% for review in reviews %}
-          <div class="all-review-item">
+      {% if reviews.size > 0 %}
+        <div class="all-reviews-list" data-visible="12">
+          {% for review in reviews %}
+            <div class="all-review-item">
 
-            <div class="all-review-stars">
-              {% for i in (1..5) %}
-                {% if i <= review.note.value %}★{% else %}☆{% endif %}
-              {% endfor %}
+              <div class="all-review-stars">
+                {% for i in (1..5) %}
+                  {% if i <= review.note.value %}★{% else %}☆{% endif %}
+                {% endfor %}
+              </div>
+
+              <p class="all-review-text">
+                {{ review.avis.value }}
+              </p>
+
+              <div class="all-review-footer">
+                <strong>{{ review.nom.value }}</strong>
+                {% if review.achat_verifie.value %}
+                  <span class="verified">✔ Achat vérifié</span>
+                {% endif %}
+              </div>
+
             </div>
-
-            <p class="all-review-text">
-              {{ review.avis.value }}
-            </p>
-
-            <div class="all-review-footer">
-              <strong>{{ review.nom.value }}</strong>
-              {% if review.achat_verifie.value %}
-                <span class="verified">✔ Achat vérifié</span>
-              {% endif %}
-            </div>
-
-          </div>
-        {% endfor %}
-      </div>
-
-      {% if reviews.size > 12 %}
-        <div class="load-more-container">
-          <button class="load-more-btn" id="loadMoreReviews">
-            Charger plus
-          </button>
+          {% endfor %}
         </div>
+
+        {% if reviews.size > 12 %}
+          <div class="load-more-container">
+            <button class="load-more-btn" id="loadMoreReviews">
+              Charger plus
+            </button>
+          </div>
+        {% endif %}
+      {% else %}
+        <p style="text-align:center;color:#999;">Aucun avis pour le moment.</p>
       {% endif %}
-    {% else %}
-      <p style="text-align:center;color:#999;">Aucun avis pour le moment.</p>
-    {% endif %}
+
+    {% endpaginate %}
 
   </div>
 </div>
