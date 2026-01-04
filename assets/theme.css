@@ -10467,18 +10467,12 @@ header.header {
     filter: invert(1) brightness(0) !important;
 }
 
-/* 4. LE SECRET POUR LES ICÔNES (Loupe, Panier, Menu) */
-/* Au lieu de forcer stroke ou fill, on utilise 'currentColor' */
-/* Cela permet à la Loupe (trait) et au Panier (forme) de s'adapter tout seuls */
-.header__icon svg {
-    fill: currentColor !important;
-    stroke: none !important;
-}
-
-/* 5. Exception pour les icônes tracées au trait (Menu et Loupe souvent) */
-.header__icon svg path {
-    fill: currentColor !important; 
-    /* Si l'icône devient un carré noir, supprimez la ligne 'fill' ci-dessus */
+/* OPTION DE SECOURS POUR ICÔNES */
+.header__icon svg, 
+.header__icon path {
+    fill: transparent !important; /* Vide l'intérieur */
+    stroke: #000000 !important;   /* Colorie le trait */
+    stroke-width: 1.5px !important;
 }
 
 /* 6. Correction du compteur de panier (Petit rond) */
