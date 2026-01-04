@@ -976,6 +976,33 @@
             "rating": 5,
             "review_text": "Bon produit pour prévenir l’encrassement."
           }
+        },
+        "review_cgp4yt": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Patrick S.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Les dépôts et la saleté partent bien."
+          }
+        },
+        "review_BVGCaL": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Aurélie M.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Je vois clairement la différence sur l’état de la machine."
+          }
+        },
+        "review_AEBr4D": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Nicolas P.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Utilisation facile, résultat visible."
+          }
         }
       },
       "block_order": [
@@ -1025,7 +1052,10 @@
         "review_FgXHxB",
         "review_gXPDRF",
         "review_dj8iwc",
-        "review_z8LEXx"
+        "review_z8LEXx",
+        "review_cgp4yt",
+        "review_BVGCaL",
+        "review_AEBr4D"
       ],
       "name": "Tous les avis clients",
       "settings": {
