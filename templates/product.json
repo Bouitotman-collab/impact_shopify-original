@@ -553,13 +553,6 @@
         "one_star_percent": 1
       }
     },
-    "avis_clients_tous_PMJxcT": {
-      "type": "avis-clients-tous",
-      "name": "Tous les avis clients",
-      "settings": {
-        "total_customers": 1800
-      }
-    },
     "multi_column_4HV87L": {
       "type": "multi-column",
       "name": "Multi-column",
@@ -806,6 +799,13 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "avis_clients_tous_PMJxcT": {
+      "type": "avis-clients-tous",
+      "name": "Tous les avis clients",
+      "settings": {
+        "total_customers": 1800
+      }
     }
   },
   "order": [
@@ -824,12 +824,12 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "avis_clients_pHEDgk",
-    "avis_clients_tous_PMJxcT",
     "multi_column_4HV87L",
     "main",
     "slideshow_n3Re4i",
     "related-products",
     "slideshow_U4qMYm",
-    "1766807845a2bc0a9e"
+    "1766807845a2bc0a9e",
+    "avis_clients_tous_PMJxcT"
   ]
 }
