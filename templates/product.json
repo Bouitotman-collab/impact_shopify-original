@@ -441,7 +441,7 @@
       }
     },
     "avis_clients_pHEDgk": {
-      "type": "avis-loox-premium",
+      "type": "avis-clients-premium",
       "blocks": {
         "review_iiykif": {
           "type": "review",
