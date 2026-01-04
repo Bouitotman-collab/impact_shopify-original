@@ -408,6 +408,38 @@
         "text_color": ""
       }
     },
+    "bande_avis_client_6VMkUw": {
+      "type": "bande-avis-client",
+      "name": "Bande avis client",
+      "settings": {
+        "background_color": "#000c7d",
+        "text_color": "#ffffff",
+        "star_color": "#73e0ff",
+        "font_size": 14,
+        "font_size_mobile": 12,
+        "show_stars": true,
+        "star_count": 5,
+        "star_size": 20,
+        "star_size_mobile": 18,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0,
+        "show_satisfied_text": true,
+        "satisfied_prefix": "Plus de",
+        "satisfied_number": "800",
+        "satisfied_suffix": "personnes satisfaites",
+        "show_excellent": true,
+        "excellent_text": "Excellent",
+        "rating_score": "4.8/5",
+        "review_count": "386",
+        "review_text": "avis clients"
+      }
+    },
     "avis_clients_pHEDgk": {
       "type": "avis-loox-premium",
       "blocks": {
@@ -416,7 +448,6 @@
           "settings": {
             "customer_name": "Claire D.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 5,
             "review_text": "Plus aucune odeur de chien dans la machine, même après les plaids. Très bonne surprise."
           }
@@ -426,7 +457,6 @@
           "settings": {
             "customer_name": "Julien M.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 5,
             "review_text": "Avec deux chats à la maison, les poils restaient toujours dans le tambour. Là, vraiment rien."
           }
@@ -436,7 +466,6 @@
           "settings": {
             "customer_name": "Sophie L.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 5,
             "review_text": "Odeur fraîche dès la première utilisation. J’avais des doutes mais ça fonctionne"
           }
@@ -446,7 +475,6 @@
           "settings": {
             "customer_name": "Marc P.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 5,
             "review_text": "Simple à utiliser et efficace. La machine sent enfin le propre."
           }
@@ -456,7 +484,6 @@
           "settings": {
             "customer_name": "Émilie R.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 4,
             "review_text": "Très bon résultat sur les odeurs. J’utilise une tablette toutes les 2–3 semaines."
           }
@@ -466,7 +493,6 @@
           "settings": {
             "customer_name": "Thomas B.",
             "verified": true,
-            "review_timestamp": 1731283200,
             "rating": 4,
             "review_text": "Ça aide vraiment pour les poils et les odeurs, surtout avec les paniers de chien."
           }
@@ -758,6 +784,7 @@
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
+    "bande_avis_client_6VMkUw",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "main",
