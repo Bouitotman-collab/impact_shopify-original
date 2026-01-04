@@ -10298,7 +10298,7 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 .announcement-bar a,
 .announcement-bar span,
 .announcement-bar p {
-  font-family: 'Epilogue', sans-serif !important;
+  
   font-weight: 600 !important;
   color: #ffffff !important;
 }
@@ -10307,14 +10307,14 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 
 /* Toute la page en Epilogue */
 * {
-  font-family: 'Epilogue', sans-serif !important;
+  
 }
 
 body,
 body *,
 h1, h2, h3, h4, h5, h6,
 p, a, span, div, button, input, textarea, select {
-  font-family: 'Epilogue', sans-serif !important;
+  
 }
 
 
