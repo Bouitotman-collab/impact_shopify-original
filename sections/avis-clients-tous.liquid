@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Tous les avis clients – via Metaobjects (illimité)
+SECTION : Tous les avis clients – Metaobjects (review)
 {% endcomment %}
 
 {% assign reviews = shop.metaobjects.review.values %}
@@ -12,8 +12,7 @@ SECTION : Tous les avis clients – via Metaobjects (illimité)
     </h2>
 
     <p class="all-reviews-subtitle">
-      {{ reviews.size }} avis laissés par plus de
-      {{ section.settings.total_customers }} clients
+      {{ reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
     </p>
 
     {% if reviews.size > 0 %}
@@ -21,19 +20,27 @@ SECTION : Tous les avis clients – via Metaobjects (illimité)
         {% for review in reviews %}
           <div class="all-review-item">
 
+            <!-- ÉTOILES -->
             <div class="all-review-stars">
               {% for i in (1..5) %}
-                {% if i <= review.rating.value %}★{% else %}☆{% endif %}
+                {% if i <= review.note.value %}
+                  ★
+                {% else %}
+                  ☆
+                {% endif %}
               {% endfor %}
             </div>
 
+            <!-- TEXTE AVIS -->
             <p class="all-review-text">
-              {{ review.content.value }}
+              {{ review.avis.value }}
             </p>
 
+            <!-- FOOTER -->
             <div class="all-review-footer">
-              <strong>{{ review.name.value }}</strong>
-              {% if review.verified.value %}
+              <strong>{{ review.nom.value }}</strong>
+
+              {% if review.achat_verifie.value %}
                 <span class="verified">✔ Achat vérifié</span>
               {% endif %}
             </div>
@@ -42,7 +49,7 @@ SECTION : Tous les avis clients – via Metaobjects (illimité)
         {% endfor %}
       </div>
     {% else %}
-      <p style="text-align:center;color:#999;">
+      <p class="no-reviews">
         Aucun avis pour le moment.
       </p>
     {% endif %}
@@ -51,65 +58,72 @@ SECTION : Tous les avis clients – via Metaobjects (illimité)
 </div>
 
 <style>
-.all-reviews{
-  padding:40px 0;
-  background:#fafafa;
+.all-reviews {
+  padding: 48px 0;
+  background: #fafafa;
 }
 
-.all-reviews-container{
-  max-width:900px;
-  margin:auto;
-  padding:0 20px;
+.all-reviews-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.all-reviews-title{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:12px;
+.all-reviews-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
-.all-reviews-subtitle{
-  text-align:center;
-  font-size:15px;
-  color:#666;
-  margin-bottom:40px;
+.all-reviews-subtitle {
+  text-align: center;
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 40px;
 }
 
-.all-reviews-list{
-  display:flex;
-  flex-direction:column;
-  gap:24px;
+.all-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.all-review-item{
-  border:1px solid #e5e5e5;
-  border-radius:12px;
-  padding:24px;
-  background:#fff;
+.all-review-item {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  padding: 22px;
 }
 
-.all-review-stars{
-  color:#FFD700;
-  font-size:18px;
-  margin-bottom:10px;
+.all-review-stars {
+  color: #FFD700;
+  font-size: 18px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
 }
 
-.all-review-text{
-  font-size:15px;
-  line-height:1.6;
-  margin-bottom:12px;
-  color:#333;
+.all-review-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 12px;
 }
 
-.all-review-footer{
-  font-size:14px;
-  color:#555;
+.all-review-footer {
+  font-size: 14px;
+  color: #555;
 }
 
-.verified{
-  color:#00A651;
-  font-size:12px;
-  margin-left:6px;
+.verified {
+  color: #00A651;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.no-reviews {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
 }
 </style>
 
