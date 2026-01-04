@@ -10432,7 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ===== HEADER SUR FOND BLANC (comme Naali) ===== */
+/* ===== HEADER SUR FOND BLANC (comme Naali) - VERSION FINALE ===== */
 
 /* Fond blanc pour tout le header */
 .shopify-section-group-header-group {
@@ -10455,8 +10455,6 @@ p, a, span, div, button, input, textarea, select {
 .header svg,
 .header span:not(.icon) {
   color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
 }
 
 /* Logo NOIR sur mobile et desktop */
@@ -10466,44 +10464,75 @@ p, a, span, div, button, input, textarea, select {
   content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236') !important;
 }
 
-/* Icônes (hamburger, recherche, panier) en noir */
-.header__icon-list svg,
-.header__icon-list path {
+/* ===== ICÔNES - Configuration générale ===== */
+.header__icon-list svg {
   stroke: #000000 !important;
   fill: none !important;
+  stroke-width: 1.5 !important;
 }
 
-/* Menu hamburger (3 barres) en noir */
+.header__icon-list svg * {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+/* Menu hamburger (3 barres) */
 .header__icon--menu svg,
 .header__icon--menu path,
 .header__icon--menu line {
   stroke: #000000 !important;
-  stroke-width: 1.5 !important;
+  fill: none !important;
 }
 
-/* Loupe de recherche en noir */
-.header__icon--search svg,
+/* Loupe de recherche - NE PAS remplir */
+.header__icon--search svg *,
 .header__icon--search path,
-.header__icon--search circle {
+.header__icon--search circle,
+.header__icon--search line {
+  fill: none !important;
   stroke: #000000 !important;
 }
 
-/* Panier en noir */
-.header__icon--cart svg,
-.header__icon--cart path {
+/* ===== PANIER - Supprimer le carré noir ===== */
+.header__icon--cart svg *,
+.header__icon--cart path,
+.header__icon--cart polyline {
+  fill: none !important;
   stroke: #000000 !important;
 }
 
-/* Badge du panier (nombre d'articles) */
+/* Supprimer spécifiquement le rectangle/carré du panier */
+.header__icon--cart rect,
+.header__cart-icon rect,
+[href*="cart"] rect,
+button[aria-controls*="cart"] rect,
+a[href="/cart"] rect {
+  fill: none !important;
+  stroke: none !important;
+  opacity: 0 !important;
+  display: none !important;
+}
+
+/* Badge du panier (le petit chiffre) - GARDER */
 .header__cart-count,
 .count-bubble {
+  display: block !important;
   background-color: #000000 !important;
   color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+/* Exception pour le badge - il DOIT être visible */
+.header__icon-list .count-bubble,
+.header__icon-list .count-bubble * {
+  fill: #000000 !important;
+  stroke: none !important;
+  opacity: 1 !important;
+  display: block !important;
 }
 
 /* Hauteur du header */
 @media screen and (max-width: 749px) {
-  /* Mobile */
   .header {
     padding-top: 12px !important;
     padding-bottom: 12px !important;
@@ -10516,7 +10545,6 @@ p, a, span, div, button, input, textarea, select {
 }
 
 @media screen and (min-width: 750px) {
-  /* Desktop */
   .header {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
@@ -10550,119 +10578,8 @@ p, a, span, div, button, input, textarea, select {
   font-weight: 400 !important;
 }
 
-/* Au survol des liens */
 .header__link-list a:hover {
   opacity: 0.7 !important;
-}
-/* ===== CORRECTION DES ICÔNES HEADER ===== */
-
-/* Loupe de recherche - NE PAS remplir */
-.header__icon--search svg,
-.header__icon--search path,
-.header__icon--search circle {
-  stroke: #000000 !important;
-  fill: none !important;
-  stroke-width: 1.5 !important;
-}
-
-/* Forcer tous les éléments de la loupe à être transparents */
-.header__icon--search svg *,
-.header__icon--search path,
-.header__icon--search circle,
-.header__icon--search line {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
-/* Panier - NE PAS ajouter de carré */
-.header__icon--cart svg,
-.header__icon--cart path {
-  stroke: #000000 !important;
-  fill: none !important;
-  stroke-width: 1.5 !important;
-}
-
-/* Forcer tous les éléments du panier à être transparents */
-.header__icon--cart svg *,
-.header__icon--cart path,
-.header__icon--cart rect,
-.header__icon--cart polyline {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
-/* Menu hamburger (3 barres) */
-.header__icon--menu svg,
-.header__icon--menu path,
-.header__icon--menu line {
-  stroke: #000000 !important;
-  fill: none !important;
-  stroke-width: 1.5 !important;
-}
-
-/* Badge du panier (le petit chiffre) - GARDER celui-là */
-.header__cart-count,
-.count-bubble {
-  background-color: #000000 !important;
-  color: #ffffff !important;
-}
-
-/* Supprimer tout remplissage noir sur les icônes */
-.header__icon-list svg rect,
-.header__icon-list svg circle:not(.count-bubble *),
-.header__icon-list svg path {
-  fill: none !important;
-}
-
-/* Couleur de trait par défaut pour toutes les icônes */
-.header__icon-list svg {
-  stroke: #000000 !important;
-  fill: none !important;
-}
-/* ===== CORRECTION PANIER - Supprimer le carré noir ===== */
-
-/* Cibler spécifiquement tous les éléments du panier */
-.header__cart-icon svg,
-.header__cart-icon svg *,
-[aria-label*="panier"] svg,
-[aria-label*="cart"] svg,
-[aria-label*="Cart"] svg {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
-/* Supprimer le carré/rectangle noir du panier */
-.header__cart-icon rect,
-.header__icon--cart rect,
-[href*="cart"] rect,
-button[aria-controls*="cart"] rect {
-  fill: none !important;
-  stroke: none !important;
-  display: none !important;
-}
-
-/* Badge du panier (le chiffre) - GARDER */
-.header__cart-count,
-.count-bubble,
-.header__cart-icon .count-bubble {
-  display: block !important;
-  background-color: #000000 !important;
-  color: #ffffff !important;
-  fill: #000000 !important;
-}
-
-/* Force tous les SVG du header (sauf badge) */
-.header__icon-list > * > svg,
-.header__icon-list > * > svg * {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
-/* Exception pour le badge numérique */
-.header__icon-list .count-bubble,
-.header__icon-list .count-bubble * {
-  fill: #000000 !important;
-  stroke: none !important;
 }
 
 
