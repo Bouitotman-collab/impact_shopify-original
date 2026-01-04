@@ -10432,7 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ===== HEADER SUR FOND BLANC (comme Naali) - VERSION FINALE CORRIGÉE ===== */
+/* ===== HEADER SUR FOND BLANC - VERSION FINALE ET CORRIGÉE ===== */
 
 /* Fond blanc pour tout le header */
 .shopify-section-group-header-group {
@@ -10448,20 +10448,12 @@ p, a, span, div, button, input, textarea, select {
   background-color: #ffffff !important;
 }
 
-/* Tous les éléments du header en NOIR */
-.header *,
-.header a,
-.header button,
-.header svg,
-.header span:not(.icon) {
-  color: #000000 !important;
-}
-
 /* Logo NOIR sur mobile et desktop */
 .header__heading-logo img,
 .header__logo img,
 .header__heading-link img {
   content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236') !important;
+  max-height: 45px !important;
 }
 
 /* ===== ICÔNES - Configuration générale ===== */
@@ -10471,58 +10463,69 @@ p, a, span, div, button, input, textarea, select {
   stroke-width: 1.5 !important;
 }
 
-/* Menu hamburger (3 barres) */
-.header__icon--menu svg,
+/* Menu hamburger */
+.header__icon--menu svg *,
 .header__icon--menu path,
 .header__icon--menu line {
   stroke: #000000 !important;
   fill: none !important;
 }
 
-/* Loupe de recherche - NE PAS remplir */
+/* Loupe de recherche */
 .header__icon--search svg *,
 .header__icon--search path,
-.header__icon--search circle,
-.header__icon--search line {
+.header__icon--search circle {
   fill: none !important;
   stroke: #000000 !important;
 }
 
-/* ===== PANIER - Supprimer les ronds noirs (roues) ===== */
+/* ===== PANIER - Configuration complète ===== */
 
-/* Forcer TOUS les path du panier à ne pas être remplis */
-.icon-cart path {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
-/* Cibler spécifiquement le premier path (les roues) */
+/* Supprimer le premier path (les roues remplies) */
 .icon-cart path:first-child {
-  fill: none !important;
-  stroke: #000000 !important;
-  opacity: 0 !important;
   display: none !important;
 }
 
-/* Garder uniquement le 2ème path (contour du panier) */
+/* Garder uniquement le contour du panier */
 .icon-cart path:last-child {
   fill: none !important;
   stroke: #000000 !important;
-  stroke-linecap: round !important;
-  stroke-linejoin: round !important;
+  stroke-width: 1.5 !important;
 }
 
-/* Badge du panier (le petit chiffre) - GARDER */
-.header__cart-count,
-.count-bubble {
-  display: block !important;
+/* ===== BADGE DU PANIER (le chiffre) ===== */
+
+/* Cacher le badge quand il est vide (0 articles) */
+.header__cart-count .count-bubble[class*="opacity-0"],
+.header__cart-count .count-bubble:has(span[aria-hidden="true"]:empty),
+.header__cart-count .count-bubble:has(span[aria-hidden="true"]:contains("0")) {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Afficher le badge seulement quand il y a des articles */
+.header__cart-count .count-bubble:not([class*="opacity-0"]) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background-color: #000000 !important;
   color: #ffffff !important;
-  opacity: 1 !important;
+  border-radius: 50% !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  padding: 2px 4px !important;
 }
 
-.count-bubble span {
+/* Texte du badge en blanc */
+.count-bubble span[aria-hidden="true"] {
   color: #ffffff !important;
+  font-size: 11px !important;
 }
 
 /* Hauteur du header */
@@ -10543,11 +10546,6 @@ p, a, span, div, button, input, textarea, select {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
   }
-  
-  .header__heading-logo img,
-  .header__logo img {
-    max-height: 45px !important;
-  }
 }
 
 /* Supprimer la transparence sur TOUTES les pages */
@@ -10560,13 +10558,7 @@ p, a, span, div, button, input, textarea, select {
   --text-color: 0, 0, 0 !important;
 }
 
-/* Forcer le header blanc même sur la page d'accueil */
-.shopify-section:first-child + .shopify-section--header,
-[allow-transparent-header] + .shopify-section--header {
-  background-color: #ffffff !important;
-}
-
-/* Menu de navigation (si visible sur desktop) */
+/* Menu de navigation */
 .header__link-list a {
   color: #000000 !important;
   font-weight: 400 !important;
@@ -10575,37 +10567,13 @@ p, a, span, div, button, input, textarea, select {
 .header__link-list a:hover {
   opacity: 0.7 !important;
 }
-/* ===== SOLUTION RADICALE - Supprimer le carré noir du panier ===== */
 
-/* Masquer le premier path (qui contient fill="currentColor") */
-.icon-cart path[fill="currentColor"],
-.icon-cart path[fill] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* Alternative : cibler par position */
-svg.icon-cart > path:nth-child(1) {
-  display: none !important;
-}
-
-/* Garder uniquement le 2ème path (le contour) */
-svg.icon-cart > path:nth-child(2) {
-  fill: none !important;
-  stroke: #000000 !important;
-  stroke-width: 1.5 !important;
-}
-/* SOLUTION EXTRÊME - Recréer l'icône panier */
-.icon-cart {
-  background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.336 6.636H21l-3.636 8.182H6.909L4.636 3H1' fill='none' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: contain !important;
-}
-
-.icon-cart path {
-  display: none !important;
+/* Tous les textes du header en noir */
+.header *,
+.header a,
+.header button,
+.header span:not(.count-bubble span) {
+  color: #000000 !important;
 }
 
 
