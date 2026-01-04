@@ -10436,11 +10436,6 @@ p, a, span, div, button, input, textarea, select {
   header, .header, .header-wrapper, [class*="header"] {
     background-color: #ffffff !important;
   }
-}
-@media screen and (max-width: 749px) {
-  header, .header, .header-wrapper, [class*="header"] {
-    background-color: #ffffff !important;
-  }
   
   /* Force les icônes en noir */
   .header__icon,
@@ -10458,7 +10453,17 @@ p, a, span, div, button, input, textarea, select {
   .header__heading-logo img {
     opacity: 1 !important;
   }
+  
+  /* Affiche le badge du panier */
+  .cart-count-bubble,
+  .header__icon--cart .cart-count-bubble {
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: #1A1A1A !important;
+    color: white !important;
+  }
 }
+
 
 
 
