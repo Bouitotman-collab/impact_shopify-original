@@ -177,22 +177,33 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
 @media (max-width:768px){
   .mobile-rating-bar{
     position:fixed;
-    bottom:80px;
+    bottom:64px; /* plus bas = ne cache pas le titre */
     left:50%;
     transform:translateX(-50%);
     background:#fff;
-    padding:10px 14px;
-    border-radius:14px;
-    box-shadow:0 -4px 12px rgba(0,0,0,.12);
+    padding:8px 14px;
+    border-radius:999px; /* pill shape premium */
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
     display:none;
     align-items:center;
     gap:8px;
-    z-index:60
+    z-index:60;
+    white-space:nowrap; /* FORCE UNE LIGNE */
+    max-width:90vw;
   }
 
-  .mobile-rating-bar .stars{font-size:16px}
-  .mobile-rating-bar .rating-text{font-size:14px;font-weight:600}
+  .mobile-rating-bar .stars{
+    font-size:14px;
+    line-height:1;
+  }
+
+  .mobile-rating-bar .rating-text{
+    font-size:13px;
+    font-weight:600;
+    line-height:1;
+  }
 }
+
 </style>
 
 <script>
