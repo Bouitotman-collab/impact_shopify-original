@@ -1,8 +1,8 @@
 {% comment %}
-SECTION : Tous les avis clients – Metaobjects (review)
+SECTION : Tous les avis clients – Metaobjects avec pagination (129+)
 {% endcomment %}
 
-{% assign reviews = shop.metaobjects.review.values %}
+{% assign all_reviews = shop.metaobjects.review.values %}
 
 <div class="all-reviews" id="tous-les-avis">
   <div class="all-reviews-container">
@@ -12,26 +12,22 @@ SECTION : Tous les avis clients – Metaobjects (review)
     </h2>
 
     <p class="all-reviews-subtitle">
-      {{ reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
+      {{ all_reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
     </p>
 
-    {% if reviews.size > 0 %}
+    {% paginate all_reviews by 12 %}
       <div class="all-reviews-list">
-        {% for review in reviews %}
+        {% for review in paginate.items %}
           <div class="all-review-item">
 
             <!-- ÉTOILES -->
             <div class="all-review-stars">
               {% for i in (1..5) %}
-                {% if i <= review.note.value %}
-                  ★
-                {% else %}
-                  ☆
-                {% endif %}
+                {% if i <= review.note.value %}★{% else %}☆{% endif %}
               {% endfor %}
             </div>
 
-            <!-- TEXTE AVIS -->
+            <!-- TEXTE -->
             <p class="all-review-text">
               {{ review.avis.value }}
             </p>
@@ -39,7 +35,6 @@ SECTION : Tous les avis clients – Metaobjects (review)
             <!-- FOOTER -->
             <div class="all-review-footer">
               <strong>{{ review.nom.value }}</strong>
-
               {% if review.achat_verifie.value %}
                 <span class="verified">✔ Achat vérifié</span>
               {% endif %}
@@ -48,11 +43,19 @@ SECTION : Tous les avis clients – Metaobjects (review)
           </div>
         {% endfor %}
       </div>
-    {% else %}
-      <p class="no-reviews">
-        Aucun avis pour le moment.
-      </p>
-    {% endif %}
+
+      {% if paginate.pages > 1 %}
+        <div class="pagination">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="page-btn">← Précédent</a>
+          {% endif %}
+
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="page-btn">Charger plus</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endpaginate %}
 
   </div>
 </div>
@@ -65,7 +68,7 @@ SECTION : Tous les avis clients – Metaobjects (review)
 
 .all-reviews-container {
   max-width: 900px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 20px;
 }
 
@@ -120,10 +123,19 @@ SECTION : Tous les avis clients – Metaobjects (review)
   margin-left: 6px;
 }
 
-.no-reviews {
+.pagination {
+  margin-top: 40px;
   text-align: center;
-  color: #999;
-  font-size: 14px;
+}
+
+.page-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
 }
 </style>
 
