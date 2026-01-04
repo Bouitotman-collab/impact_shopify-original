@@ -1,216 +1,111 @@
 <style>
-.announcement-bar-rotating {
-  background: {{ section.settings.background_color }} !important;
-  padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px !important;
-  text-align: center !important;
-  font-size: {{ section.settings.font_size }}px !important;
-  font-weight: 600 !important;
-  position: relative !important;
-  overflow: hidden !important;
-  min-height: 45px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.announcement-bar-rotating,
-.announcement-bar-rotating div,
-.announcement-bar-rotating span,
-.announcement-bar-rotating p,
-.announcement-bar-rotating a,
-.announcement-bar-rotating strong,
-.announcement-bar-rotating b,
-.announcement-bar-rotating *:not(svg):not(path) {
-  color: {{ section.settings.text_color }} !important;
-  -webkit-text-fill-color: {{ section.settings.text_color }} !important;
-}
-
-.announcement-bar-rotating__messages {
-  position: relative !important;
-  width: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 45px !important;
-}
-
-.announcement-bar-rotating__message {
-  position: absolute !important;
-  width: 100% !important;
-  opacity: 0 !important;
-  transition: opacity 0.5s ease-in-out !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 8px !important;
-}
-
-.announcement-bar-rotating__message.active {
-  opacity: 1 !important;
-  position: relative !important;
-}
-
-.announcement-bar-rotating__icon {
-  width: {{ section.settings.icon_size }}px !important;
-  height: {{ section.settings.icon_size }}px !important;
-  display: inline-block !important;
-  vertical-align: middle !important;
-  flex-shrink: 0 !important;
-}
-
-.announcement-bar-rotating__icon svg {
-  width: 100% !important;
-  height: 100% !important;
-  fill: {{ section.settings.text_color }} !important;
-}
-
-.announcement-bar-rotating__text {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  flex-wrap: wrap !important;
-  justify-content: center !important;
-  color: {{ section.settings.text_color }} !important;
-}
-
-.announcement-bar-rotating__text span,
-.announcement-bar-rotating__text strong {
-  color: {{ section.settings.text_color }} !important;
-}
-
-.announcement-bar-rotating__code {
-  font-weight: 700 !important;
-  background: rgba(255, 255, 255, 0.4) !important;
-  padding: 3px 10px !important;
-  border-radius: 4px !important;
-  color: {{ section.settings.text_color }} !important;
-}
-}
-
-.announcement-bar-rotating__separator {
-  margin: 0 4px !important;
-  font-weight: 700 !important;
-  color: {{ section.settings.text_color }} !important;
-}
-
-@media screen and (max-width: 749px) {
   .announcement-bar-rotating {
-    font-size: {{ section.settings.font_size_mobile }}px !important;
-    padding: {{ section.settings.padding_top_mobile }}px 15px {{ section.settings.padding_bottom_mobile }}px !important;
-    min-height: 30px !important;
+    background: {{ section.settings.background_color }} !important;
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px !important;
+    text-align: center !important;
+    font-size: {{ section.settings.font_size }}px !important;
+    font-weight: 600 !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.2 !important;
   }
-  
-  .announcement-bar-rotating__messages {
-    min-height: 30px !important;
+
+  .announcement-bar-rotating * {
+    color: {{ section.settings.text_color }} !important;
+    -webkit-text-fill-color: {{ section.settings.text_color }} !important;
   }
-  
-  .announcement-bar-rotating__icon {
-    width: {{ section.settings.icon_size_mobile }}px !important;
-    height: {{ section.settings.icon_size_mobile }}px !important;
+
+  .announcement-bar-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important; /* Espace entre Livraison et Promo */
+    width: 100% !important;
   }
-  
-  .announcement-bar-rotating__text {
-    gap: 6px !important;
-  }
-  
-  .announcement-bar-rotating__separator {
-    display: none !important;
-  }
-  
-  .announcement-bar-rotating__text > span {
+
+  .announcement-group {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
     white-space: nowrap !important;
   }
-}
+
+  .announcement-icon {
+    width: {{ section.settings.icon_size }}px !important;
+    height: {{ section.settings.icon_size }}px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .announcement-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+    fill: {{ section.settings.text_color }} !important;
+  }
+
+  .announcement-code {
+    font-weight: 700 !important;
+    background: {{ section.settings.code_background }} !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    margin-left: 5px !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .announcement-bar-rotating {
+      font-size: {{ section.settings.font_size_mobile }}px !important;
+      padding: 8px 10px !important;
+    }
+    
+    .announcement-bar-content {
+      gap: 5px !important; /* Rapproche les éléments sur mobile */
+      flex-direction: column !important; /* Empile les messages si besoin sur très petit écran */
+      line-height: 1.4 !important;
+    }
+
+    .announcement-icon {
+      width: {{ section.settings.icon_size_mobile }}px !important;
+      height: {{ section.settings.icon_size_mobile }}px !important;
+    }
+    
+    .announcement-separator {
+      display: none !important; /* Cache le séparateur sur mobile pour empiler proprement */
+    }
+  }
 </style>
 
 <div class="announcement-bar-rotating">
-  <div class="announcement-bar-rotating__messages">
-    <!-- Message 1 -->
-    {% if section.settings.show_message_1 %}
-    <div class="announcement-bar-rotating__message active" data-message="1">
-      {% if section.settings.show_icon_1 %}
-      <span class="announcement-bar-rotating__icon">
-        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-          <path d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"/>
-        </svg>
+  <div class="announcement-bar-content">
+    
+    <div class="announcement-group">
+      <span class="announcement-icon">
+        <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="M112 0C85.5 0 64 21.5 64 48V96H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 272c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 48c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 240c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 208c8.8 0 16 7.2 16 16s-7.2 16-16 16H64V416c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H112zM544 237.3V256H416V160h50.7L544 237.3zM160 464a48 48 0 1 1 0-96 48 48 0 1 1 0 96zm368-48a48 48 0 1 1 -96 0 48 48 0 1 1 96 0z"/></svg>
       </span>
-      {% endif %}
-      <span class="announcement-bar-rotating__text">
-        <span>{{ section.settings.message_1_text }}</span> 
-        {% if section.settings.show_code_1 %}
-        <span class="announcement-bar-rotating__code">{{ section.settings.message_1_code }}</span>
-        {% endif %}
-      </span>
+      <span>{{ section.settings.text_delivery }}</span>
     </div>
-    {% endif %}
 
-    <!-- Message 2 -->
-    {% if section.settings.show_message_2 %}
-    <div class="announcement-bar-rotating__message {% unless section.settings.show_message_1 %}active{% endunless %}" data-message="2">
-      <span class="announcement-bar-rotating__text">
-        <span style="display: inline-flex; align-items: center; gap: 4px;">
-          <span class="announcement-bar-rotating__icon">
-            <svg viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M112 0C85.5 0 64 21.5 64 48V96H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 272c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 48c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 240c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 208c8.8 0 16 7.2 16 16s-7.2 16-16 16H64V416c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H112zM544 237.3V256H416V160h50.7L544 237.3zM160 464a48 48 0 1 1 0-96 48 48 0 1 1 0 96zm368-48a48 48 0 1 1 -96 0 48 48 0 1 1 96 0z"/>
-            </svg>
-          </span>
-          <span>{{ section.settings.message_2_part1 }}</span>
-        </span>
-        <span class="announcement-bar-rotating__separator">•</span>
-        <span style="display: inline-flex; align-items: center; gap: 4px;">
-          <span class="announcement-bar-rotating__icon">
-            <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-              <path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/>
-            </svg>
-          </span>
-          <span>{{ section.settings.message_2_part2 }}</span>
-        </span>
-        
-          <span>{{ section.settings.message_2_part3 }}</span>
-        </span>
-      </span>
-    </div>
-    {% endif %}
+    <span class="announcement-separator" style="opacity: 0.5;">|</span>
 
-    <!-- Message 3 -->
-    {% if section.settings.show_message_3 %}
-    <div class="announcement-bar-rotating__message {% unless section.settings.show_message_1 or section.settings.show_message_2 %}active{% endunless %}" data-message="3">
-      {% if section.settings.show_icon_3 %}
-      <span class="announcement-bar-rotating__icon">
-        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-          <path d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"/>
-        </svg>
+    <div class="announcement-group">
+      <span class="announcement-icon">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 68.8L225.3 128H224 152c-22.1 0-40-17.9-40-40s17.9-40 40-40h2.2c14.9 0 28.8 7.9 36.3 20.8zM64 88c0 14.4 3.5 28 9.6 40H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H480c17.7 0 32-14.3 32-32V160c0-17.7-14.3-32-32-32H438.4c6.1-12 9.6-25.6 9.6-40c0-48.6-39.4-88-88-88h-2.2c-31.9 0-61.5 16.9-77.7 44.4L256 85.5l-24.1-41C215.7 16.9 186.1 0 154.2 0H152C103.4 0 64 39.4 64 88zm336 0c0 22.1-17.9 40-40 40H288h-1.3l34.8-59.2C329.1 55.9 342.9 48 357.8 48H360c22.1 0 40 17.9 40 40zM32 288V464c0 26.5 21.5 48 48 48H224V288H32zM288 512H432c26.5 0 48-21.5 48-48V288H288V512z"/></svg>
       </span>
-      {% endif %}
-      <span class="announcement-bar-rotating__text">
-        <span>{{ section.settings.message_3_text }}</span>
-      </span>
+      <span>{{ section.settings.text_promo }}</span>
+      <span class="announcement-code">{{ section.settings.promo_code }}</span>
     </div>
-    {% endif %}
+
   </div>
 </div>
 
-<script>
-(function() {
-  const messages = document.querySelectorAll('.announcement-bar-rotating__message');
-  if (messages.length <= 1) return;
-  
-  let currentIndex = 0;
-  const interval = {{ section.settings.rotation_speed }} * 1000;
-
-  function rotateMessages() {
-    messages[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % messages.length;
-    messages[currentIndex].classList.add('active');
-  }
-
-  setInterval(rotateMessages, interval);
-})();
-</script>
-
 {% schema %}
 {
-  "name": "Barre annonce rotation",
+  "name": "Barre Annonce (Option 1)",
   "settings": [
     {
       "type": "header",
@@ -229,14 +124,40 @@
       "default": "#ffffff"
     },
     {
-      "type": "color",
-      "id": "code_background",
-      "label": "Fond du code promo",
-      "default": "rgba(255, 255, 255, 0.25)"
+       "type": "color",
+       "id": "code_background",
+       "label": "Fond du code promo",
+       "default": "rgba(255, 255, 255, 0.25)"
     },
     {
       "type": "header",
-      "content": "Taille du texte"
+      "content": "Message 1 : Livraison (Camion)"
+    },
+    {
+      "type": "text",
+      "id": "text_delivery",
+      "label": "Texte livraison",
+      "default": "LIVRAISON OFFERTE"
+    },
+    {
+      "type": "header",
+      "content": "Message 2 : Promo (Cadeau)"
+    },
+    {
+      "type": "text",
+      "id": "text_promo",
+      "label": "Texte promo",
+      "default": "-10% code :"
+    },
+    {
+      "type": "text",
+      "id": "promo_code",
+      "label": "Code promo",
+      "default": "BIENVENUE10"
+    },
+    {
+      "type": "header",
+      "content": "Taille et Espacement"
     },
     {
       "type": "range",
@@ -245,7 +166,7 @@
       "min": 10,
       "max": 20,
       "step": 1,
-      "default": 14,
+      "default": 13,
       "unit": "px"
     },
     {
@@ -259,179 +180,35 @@
       "unit": "px"
     },
     {
-      "type": "header",
-      "content": "Icônes"
-    },
-    {
       "type": "range",
       "id": "icon_size",
-      "label": "Taille icônes desktop",
-      "min": 14,
+      "label": "Taille icônes",
+      "min": 10,
       "max": 30,
-      "step": 2,
-      "default": 20,
+      "step": 1,
+      "default": 18,
       "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "icon_size_mobile",
-      "label": "Taille icônes mobile",
-      "min": 12,
-      "max": 24,
-      "step": 2,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Espacement desktop"
     },
     {
       "type": "range",
       "id": "padding_top",
-      "label": "Espacement haut",
+      "label": "Padding Haut",
+      "default": 10,
       "min": 0,
-      "max": 30,
-      "step": 2,
-      "default": 12,
-      "unit": "px"
+      "max": 50
     },
     {
       "type": "range",
       "id": "padding_bottom",
-      "label": "Espacement bas",
-      "min": 0,
-      "max": 30,
-      "step": 2,
-      "default": 12,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Espacement mobile"
-    },
-    {
-      "type": "range",
-      "id": "padding_top_mobile",
-      "label": "Espacement haut mobile",
-      "min": 0,
-      "max": 20,
-      "step": 2,
+      "label": "Padding Bas",
       "default": 10,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom_mobile",
-      "label": "Espacement bas mobile",
       "min": 0,
-      "max": 20,
-      "step": 2,
-      "default": 10,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Vitesse de rotation"
-    },
-    {
-      "type": "range",
-      "id": "rotation_speed",
-      "label": "Durée par message",
-      "min": 2,
-      "max": 10,
-      "step": 1,
-      "default": 4,
-      "unit": "s"
-    },
-    {
-      "type": "header",
-      "content": "Message 1 - Code promo"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_message_1",
-      "label": "Afficher ce message",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_icon_1",
-      "label": "Afficher l'icône cadeau",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "message_1_text",
-      "label": "Texte du message",
-      "default": "-10% sur votre 1ère commande avec le code"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_code_1",
-      "label": "Afficher le code promo",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "message_1_code",
-      "label": "Code promo",
-      "default": "BIENVENUE10"
-    },
-    {
-      "type": "header",
-      "content": "Message 2 - Avantages"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_message_2",
-      "label": "Afficher ce message",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "message_2_part1",
-      "label": "Avantage 1",
-      "default": "Livraison gratuite"
-    },
-    {
-      "type": "text",
-      "id": "message_2_part2",
-      "label": "Avantage 2",
-      "default": "Satisfait ou remboursé"
-    },
-    {
-      "type": "text",
-      "id": "message_2_part3",
-      "label": "Avantage 3",
-      "default": "Paiement sécurisé"
-    },
-    {
-      "type": "header",
-      "content": "Message 3 - Témoignage"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_message_3",
-      "label": "Afficher ce message",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_icon_3",
-      "label": "Afficher l'icône pouce",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "message_3_text",
-      "label": "Texte du message",
-      "default": "Plus de 800 personnes satisfaites"
+      "max": 50
     }
   ],
   "presets": [
     {
-      "name": "Barre annonce rotation"
+      "name": "Barre Annonce (Option 1)"
     }
   ]
 }
