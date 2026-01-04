@@ -10432,59 +10432,61 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ================================================= */
-/* === FIX HEADER BLANC & ICÔNES PROPRES (FINAL) === */
-/* ================================================= */
+/* ========================================================== */
+/* === HEADER BLANC - CORRECTION FINALE (IMPACT) === */
+/* ========================================================== */
 
-/* 1. FORCE LE FOND BLANC (Non négociable) */
+/* 1. FOND BLANC & TEXTE NOIR */
 #shopify-section-header,
-.shopify-section--header,
 .header-wrapper,
 header.header {
     background-color: #ffffff !important;
     background: #ffffff !important;
-    position: relative !important; /* Stop la transparence */
-    border-bottom: 1px solid #e5e5e5;
+    position: relative !important;
+    border-bottom: 1px solid #e2e2e2;
 }
 
-/* 2. LE LOGO (Blanc -> Noir) */
+/* 2. INVERSION DU LOGO (Blanc -> Noir) */
 .header__logo-image {
     filter: invert(1) brightness(0) !important;
 }
 
-/* 3. LES TEXTES (Menu) */
+/* 3. COULEUR DU TEXTE (Menu, Liens) */
 .header__link,
 .header__nav-link,
+.header__icon-wrapper,
 summary.header__icon-wrapper {
     color: #000000 !important;
 }
 
-/* 4. LE FIX DU CARRÉ NOIR (Crucial) */
-/* On remet tout à zéro pour éviter le bloc noir */
+/* 4. RÉINITIALISATION DES ICÔNES (Supprime le carré noir) */
 .header__icon svg {
-    fill: none !important;      /* Enlève le remplissage du carré */
-    stroke: none !important;    /* Enlève les traits par défaut */
-}
-
-/* 5. ON DESSINE LES TRAITS EN NOIR (Juste les lignes) */
-.header__icon svg path,
-.header__icon svg circle,
-.header__icon svg line,
-.header__icon svg polyline {
-    stroke: #000000 !important;   /* Couleur du trait */
-    stroke-width: 1.5px !important; /* Épaisseur du trait */
-    fill: none !important;        /* Intérieur vide (règle le problème du panier plein) */
-    vector-effect: non-scaling-stroke !important;
-}
-
-/* 6. EXCEPTION POUR LE MENU (Les 3 barres) */
-/* Parfois le menu est codé différemment */
-.header__icon--menu svg rect {
-    fill: #000000 !important; /* Si les barres sont des rectangles pleins */
+    background: transparent !important; /* Enlève le fond du carré */
+    fill: none !important;             /* Enlève le remplissage noir */
     stroke: none !important;
 }
 
-/* 7. LE PETIT ROND DU PANIER */
+/* 5. REDESSINER LES TRAITS EN NOIR (Loupe, Menu, Panier) */
+.header__icon svg path,
+.header__icon svg circle,
+.header__icon svg polyline,
+.header__icon svg line,
+.header__icon svg rect {
+    stroke: #000000 !important;      /* Couleur du trait */
+    stroke-width: 1.3px !important;  /* Épaisseur fine et élégante */
+    fill: none !important;           /* Vide l'intérieur pour éviter le bloc noir */
+    vector-effect: non-scaling-stroke !important;
+}
+
+/* 6. CORRECTION SPÉCIALE : LE MENU (3 Barres) */
+/* Si le menu est invisible, c'est souvent qu'il utilise 'fill' et pas 'stroke' */
+.header__icon--menu svg rect,
+.header__icon--menu svg path {
+    fill: #000000 !important; /* On remplit les barres en noir */
+    stroke: none !important;
+}
+
+/* 7. BULLE DU PANIER */
 .header__cart-count {
     background-color: #000000 !important;
     color: #ffffff !important;
