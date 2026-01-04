@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – version finale stable & optimisée
+SECTION : Avis clients premium – version finale avec sticky cliquable
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -14,7 +14,7 @@ SECTION : Avis clients premium – version finale stable & optimisée
 
     <!-- RÉSUMÉ -->
     <div class="rating-summary">
-      <button class="rating-toggle js-rating-toggle">
+      <button class="rating-toggle js-rating-toggle" type="button">
         <span class="stars">★★★★★</span>
         <span class="count">
           {{ section.settings.total_reviews }} clients satisfaits
@@ -73,7 +73,7 @@ SECTION : Avis clients premium – version finale stable & optimisée
       Partager mon expérience
     </a>
 
-    <!-- AVIS MIS EN AVANT (SCROLL HORIZONTAL) -->
+    <!-- AVIS MIS EN AVANT -->
     <div class="reviews-list">
       {% for block in section.blocks %}
         <div class="review-item" {{ block.shopify_attributes }}>
@@ -102,14 +102,14 @@ SECTION : Avis clients premium – version finale stable & optimisée
   </div>
 </div>
 
-<!-- STICKY AVIS MOBILE -->
-<div class="mobile-rating-bar">
+<!-- STICKY AVIS MOBILE (CLIQUABLE) -->
+<button class="mobile-rating-bar js-scroll-to-reviews" type="button">
   <span class="stars">★★★★★</span>
   <span class="rating-text">
     {{ section.settings.total_reviews }} clients satisfaits
   </span>
   <span class="chevron">›</span>
-</div>
+</button>
 
 <style>
 /* STRUCTURE */
@@ -178,6 +178,8 @@ SECTION : Avis clients premium – version finale stable & optimisée
     z-index:60;
     white-space:nowrap;
     max-width:90vw;
+    cursor:pointer;
+    border:none;
   }
 
   .mobile-rating-bar .stars{font-size:14px}
@@ -191,6 +193,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   const dropdown=document.querySelector('.js-rating-dropdown')
   const sticky=document.querySelector('.mobile-rating-bar')
   const section=document.querySelector('[data-reviews-section]')
+  const scrollBtn=document.querySelector('.js-scroll-to-reviews')
 
   if(toggle){
     toggle.addEventListener('click',()=>{
@@ -208,6 +211,12 @@ document.addEventListener('DOMContentLoaded',()=>{
     )
     observer.observe(section)
   }
+
+  if(scrollBtn && section){
+    scrollBtn.addEventListener('click',()=>{
+      section.scrollIntoView({behavior:'smooth',block:'start'})
+    })
+  }
 })
 </script>
 
@@ -216,7 +225,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   "name": "Avis clients premium",
   "settings": [
     { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
-
     { "type": "number", "id": "total_reviews", "label": "Nombre total d’avis", "default": 129 },
     { "type": "number", "id": "total_customers", "label": "Nombre total de clients", "default": 1800 },
 
