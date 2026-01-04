@@ -100,11 +100,28 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "barre_annonce_rotation_ed9tkM": {
+      "type": "Barre-annonce-rotation",
+      "name": "Barre Annonce Fixe (Pro)",
+      "settings": {
+        "background_color": "#000c7d",
+        "text_color": "#ffffff",
+        "text_delivery": "LIVRAISON GRATUITE",
+        "text_promo": "-10% SUR VOTRE 1ÈRE COMMANDE CODE :",
+        "promo_code": "BIENVENUE10",
+        "font_size": 14,
+        "font_size_mobile": 11,
+        "icon_size": 18,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
     }
   },
   "order": [
     "announcement-bar",
     "header",
-    "176635618679dcdcb0"
+    "176635618679dcdcb0",
+    "barre_annonce_rotation_ed9tkM"
   ]
 }
