@@ -1,38 +1,33 @@
 {% comment %}
-SECTION : Tous les avis clients – Metaobjects avec pagination (129+)
+SECTION : Tous les avis clients – Metaobjects (Load more JS)
 {% endcomment %}
 
-{% assign all_reviews = shop.metaobjects.review.values %}
+{% assign reviews = shop.metaobjects.review.values %}
 
 <div class="all-reviews" id="tous-les-avis">
   <div class="all-reviews-container">
 
-    <h2 class="all-reviews-title">
-      Tous les avis clients
-    </h2>
+    <h2 class="all-reviews-title">Tous les avis clients</h2>
 
     <p class="all-reviews-subtitle">
-      {{ all_reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
+      {{ reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
     </p>
 
-    {% paginate all_reviews by 12 %}
-      <div class="all-reviews-list">
-        {% for review in paginate.items %}
+    {% if reviews.size > 0 %}
+      <div class="all-reviews-list" data-visible="12">
+        {% for review in reviews limit:50 %}
           <div class="all-review-item">
 
-            <!-- ÉTOILES -->
             <div class="all-review-stars">
               {% for i in (1..5) %}
                 {% if i <= review.note.value %}★{% else %}☆{% endif %}
               {% endfor %}
             </div>
 
-            <!-- TEXTE -->
             <p class="all-review-text">
               {{ review.avis.value }}
             </p>
 
-            <!-- FOOTER -->
             <div class="all-review-footer">
               <strong>{{ review.nom.value }}</strong>
               {% if review.achat_verifie.value %}
@@ -44,100 +39,81 @@ SECTION : Tous les avis clients – Metaobjects avec pagination (129+)
         {% endfor %}
       </div>
 
-      {% if paginate.pages > 1 %}
-        <div class="pagination">
-          {% if paginate.previous %}
-            <a href="{{ paginate.previous.url }}" class="page-btn">← Précédent</a>
-          {% endif %}
-
-          {% if paginate.next %}
-            <a href="{{ paginate.next.url }}" class="page-btn">Charger plus</a>
-          {% endif %}
+      {% if reviews.size > 12 %}
+        <div class="load-more-container">
+          <button class="load-more-btn" id="loadMoreReviews">
+            Charger plus
+          </button>
         </div>
       {% endif %}
-    {% endpaginate %}
+    {% else %}
+      <p style="text-align:center;color:#999;">Aucun avis pour le moment.</p>
+    {% endif %}
 
   </div>
 </div>
 
 <style>
-.all-reviews {
-  padding: 48px 0;
-  background: #fafafa;
+.all-reviews{padding:48px 0;background:#fafafa}
+.all-reviews-container{max-width:900px;margin:auto;padding:0 20px}
+.all-reviews-title{text-align:center;font-size:30px;margin-bottom:10px}
+.all-reviews-subtitle{text-align:center;font-size:15px;color:#666;margin-bottom:40px}
+
+.all-reviews-list{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
 }
 
-.all-reviews-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 0 20px;
+.all-review-item{
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:14px;
+  padding:22px;
+  display:none;
 }
 
-.all-reviews-title {
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
+.all-review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
+.all-review-text{font-size:15px;line-height:1.6;margin-bottom:12px}
+.all-review-footer{font-size:14px;color:#555}
+.verified{color:#00A651;font-size:12px;margin-left:6px}
 
-.all-reviews-subtitle {
-  text-align: center;
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.all-reviews-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.all-review-item {
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  border-radius: 14px;
-  padding: 22px;
-}
-
-.all-review-stars {
-  color: #FFD700;
-  font-size: 18px;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.all-review-text {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 12px;
-}
-
-.all-review-footer {
-  font-size: 14px;
-  color: #555;
-}
-
-.verified {
-  color: #00A651;
-  font-size: 12px;
-  margin-left: 6px;
-}
-
-.pagination {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.page-btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 2px solid #000;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #000;
-  font-weight: 600;
+.load-more-container{text-align:center;margin-top:40px}
+.load-more-btn{
+  padding:12px 30px;
+  border:2px solid #000;
+  border-radius:8px;
+  background:#fff;
+  font-weight:600;
+  cursor:pointer;
 }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const reviews = document.querySelectorAll('.all-review-item');
+  const btn = document.getElementById('loadMoreReviews');
+  let visible = 12;
+
+  reviews.forEach((el, i) => {
+    if (i < visible) el.style.display = 'block';
+  });
+
+  if (!btn) return;
+
+  btn.addEventListener('click', () => {
+    visible += 12;
+
+    reviews.forEach((el, i) => {
+      if (i < visible) el.style.display = 'block';
+    });
+
+    if (visible >= reviews.length) {
+      btn.style.display = 'none';
+    }
+  });
+});
+</script>
 
 {% schema %}
 {
