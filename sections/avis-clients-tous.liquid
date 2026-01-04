@@ -1,56 +1,40 @@
 {% comment %}
-SECTION : Tous les avis clients – Metaobjects (Load more JS)
+SECTION : Tous les avis clients – Solution simple sans limite
 {% endcomment %}
+
+{% assign all_reviews = shop.metaobjects.review.values %}
 
 <div class="all-reviews" id="tous-les-avis">
   <div class="all-reviews-container">
 
     <h2 class="all-reviews-title">Tous les avis clients</h2>
 
-    {% assign all_reviews = shop.metaobjects.review.values %}
-    
     <p class="all-reviews-subtitle">
-      {{ all_reviews.size }} avis laissés par plus de {{ section.settings.total_customers }} clients
+      Chargement des avis...
     </p>
 
-    {% if all_reviews.size > 0 %}
-      <div class="all-reviews-list" data-visible="12">
-        {% for review in all_reviews %}
-          <div class="all-review-item">
+    <div class="all-reviews-list" id="reviewsList">
+    </div>
 
-            <div class="all-review-stars">
-              {% for i in (1..5) %}
-                {% if i <= review.note.value %}★{% else %}☆{% endif %}
-              {% endfor %}
-            </div>
-
-            <p class="all-review-text">
-              {{ review.avis.value }}
-            </p>
-
-            <div class="all-review-footer">
-              <strong>{{ review.nom.value }}</strong>
-              {% if review.achat_verifie.value %}
-                <span class="verified">✔ Achat vérifié</span>
-              {% endif %}
-            </div>
-
-          </div>
-        {% endfor %}
-      </div>
-
-      {% if all_reviews.size > 12 %}
-        <div class="load-more-container">
-          <button class="load-more-btn" id="loadMoreReviews">
-            Charger plus
-          </button>
-        </div>
-      {% endif %}
-    {% else %}
-      <p style="text-align:center;color:#999;">Aucun avis pour le moment.</p>
-    {% endif %}
+    <div class="load-more-container" id="loadMoreContainer" style="display:none;">
+      <button class="load-more-btn" id="loadMoreReviews">
+        Charger plus
+      </button>
+    </div>
 
   </div>
+</div>
+
+<!-- Liste cachée avec TOUS les avis -->
+<div style="display:none;" id="allReviewsData">
+{% for review in all_reviews limit:500 %}
+  <div class="review-data" 
+       data-nom="{{ review.nom.value | escape }}"
+       data-avis="{{ review.avis.value | escape }}"
+       data-note="{{ review.note.value }}"
+       data-verifie="{{ review.achat_verifie.value }}">
+  </div>
+{% endfor %}
 </div>
 
 <style>
@@ -70,7 +54,6 @@ SECTION : Tous les avis clients – Metaobjects (Load more JS)
   border:1px solid #e5e5e5;
   border-radius:14px;
   padding:22px;
-  display:none;
 }
 
 .all-review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
@@ -90,29 +73,78 @@ SECTION : Tous les avis clients – Metaobjects (Load more JS)
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const reviews = document.querySelectorAll('.all-review-item');
-  const btn = document.getElementById('loadMoreReviews');
+(function() {
+  const reviewsData = document.querySelectorAll('.review-data');
+  const container = document.getElementById('reviewsList');
+  const subtitle = document.querySelector('.all-reviews-subtitle');
+  const loadMoreBtn = document.getElementById('loadMoreContainer');
+  
   let visible = 12;
+  let allReviews = [];
 
-  reviews.forEach((el, i) => {
-    if (i < visible) el.style.display = 'block';
+  // Extraire les données
+  reviewsData.forEach(item => {
+    allReviews.push({
+      nom: item.getAttribute('data-nom'),
+      avis: item.getAttribute('data-avis'),
+      note: parseInt(item.getAttribute('data-note')) || 5,
+      verifie: item.getAttribute('data-verifie') === 'true'
+    });
   });
 
-  if (!btn) return;
+  // Fonction pour afficher les étoiles
+  function renderStars(note) {
+    let stars = '';
+    for (let i = 1; i <= 5; i++) {
+      stars += i <= note ? '★' : '☆';
+    }
+    return stars;
+  }
 
-  btn.addEventListener('click', () => {
-    visible += 12;
-
-    reviews.forEach((el, i) => {
-      if (i < visible) el.style.display = 'block';
+  // Afficher les avis
+  function renderReviews() {
+    container.innerHTML = '';
+    
+    allReviews.slice(0, visible).forEach(review => {
+      const div = document.createElement('div');
+      div.className = 'all-review-item';
+      
+      div.innerHTML = `
+        <div class="all-review-stars">
+          ${renderStars(review.note)}
+        </div>
+        <p class="all-review-text">
+          ${review.avis}
+        </p>
+        <div class="all-review-footer">
+          <strong>${review.nom}</strong>
+          ${review.verifie ? '<span class="verified">✔ Achat vérifié</span>' : ''}
+        </div>
+      `;
+      
+      container.appendChild(div);
     });
 
-    if (visible >= reviews.length) {
-      btn.style.display = 'none';
+    // Mettre à jour le compteur
+    subtitle.textContent = `${allReviews.length} avis laissés par plus de {{ section.settings.total_customers }} clients`;
+
+    // Afficher le bouton si nécessaire
+    if (visible < allReviews.length) {
+      loadMoreBtn.style.display = 'block';
+    } else {
+      loadMoreBtn.style.display = 'none';
     }
+  }
+
+  // Bouton charger plus
+  document.getElementById('loadMoreReviews').addEventListener('click', () => {
+    visible += 12;
+    renderReviews();
   });
-});
+
+  // Afficher au chargement
+  renderReviews();
+})();
 </script>
 
 {% schema %}
