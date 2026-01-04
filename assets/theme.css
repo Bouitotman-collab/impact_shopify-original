@@ -10432,65 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ========================================================== */
-/* === HEADER BLANC - CORRECTION FINALE (IMPACT) === */
-/* ========================================================== */
 
-/* 1. FOND BLANC & TEXTE NOIR */
-#shopify-section-header,
-.header-wrapper,
-header.header {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    position: relative !important;
-    border-bottom: 1px solid #e2e2e2;
-}
-
-/* 2. INVERSION DU LOGO (Blanc -> Noir) */
-.header__logo-image {
-    filter: invert(1) brightness(0) !important;
-}
-
-/* 3. COULEUR DU TEXTE (Menu, Liens) */
-.header__link,
-.header__nav-link,
-.header__icon-wrapper,
-summary.header__icon-wrapper {
-    color: #000000 !important;
-}
-
-/* 4. RÉINITIALISATION DES ICÔNES (Supprime le carré noir) */
-.header__icon svg {
-    background: transparent !important; /* Enlève le fond du carré */
-    fill: none !important;             /* Enlève le remplissage noir */
-    stroke: none !important;
-}
-
-/* 5. REDESSINER LES TRAITS EN NOIR (Loupe, Menu, Panier) */
-.header__icon svg path,
-.header__icon svg circle,
-.header__icon svg polyline,
-.header__icon svg line,
-.header__icon svg rect {
-    stroke: #000000 !important;      /* Couleur du trait */
-    stroke-width: 1.3px !important;  /* Épaisseur fine et élégante */
-    fill: none !important;           /* Vide l'intérieur pour éviter le bloc noir */
-    vector-effect: non-scaling-stroke !important;
-}
-
-/* 6. CORRECTION SPÉCIALE : LE MENU (3 Barres) */
-/* Si le menu est invisible, c'est souvent qu'il utilise 'fill' et pas 'stroke' */
-.header__icon--menu svg rect,
-.header__icon--menu svg path {
-    fill: #000000 !important; /* On remplit les barres en noir */
-    stroke: none !important;
-}
-
-/* 7. BULLE DU PANIER */
-.header__cart-count {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-}
 
 
 
