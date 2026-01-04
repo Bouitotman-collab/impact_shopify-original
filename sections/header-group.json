@@ -95,7 +95,7 @@
         "header_padding_bottom_mobile": 6,
         "header_padding_top_desktop": 16,
         "header_padding_bottom_desktop": 16,
-        "logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg",
+        "logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg",
         "logo_max_width": 120,
         "logo_mobile_max_width": 100,
         "menu": "main-menu",
@@ -110,7 +110,7 @@
         "show_country_flag": true,
         "show_country_name": false,
         "transparent_header_text_color": "#ffffff",
-        "transparent_logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg",
+        "transparent_logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg",
         "reduce_padding": true,
         "background_opacity": 100,
         "background_blur_radius": 0
