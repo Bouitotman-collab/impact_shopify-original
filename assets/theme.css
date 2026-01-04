@@ -10432,7 +10432,37 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
+/* --- FORCER LE HEADER BLANC ET TEXTE NOIR --- */
 
+/* 1. Force le fond en blanc */
+.header-wrapper, .shopify-section-header, sticky-header, .header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e5e5; /* Petit trait gris de séparation optionnel */
+}
+
+/* 2. Force les icônes (panier, loupe, menu) en noir */
+.header__icon, .header__icon--summary, .header__menu-item, details-modal summary {
+    color: #000000 !important;
+}
+
+/* 3. Force le remplissage des SVG (les dessins des icônes) en noir */
+.header__icon svg, .header__icon path {
+    fill: #000000 !important;
+    stroke: transparent !important; /* Parfois nécessaire selon les icônes */
+}
+
+/* 4. LE LOGO (Astuce Magique) */
+/* Comme votre logo est blanc, on inverse ses couleurs pour qu'il devienne noir */
+.header__heading-logo, .header__heading img {
+    filter: invert(1) brightness(0) !important;
+}
+
+/* 5. Corrige la couleur du compteur de panier s'il y a une bulle */
+.cart-count-bubble {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
 
 
 
