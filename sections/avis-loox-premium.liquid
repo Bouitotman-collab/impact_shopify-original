@@ -1,10 +1,9 @@
 {% comment %}
-SECTION : Avis clients premium – version finale avec sticky intelligent
+SECTION : Avis clients premium – version finale corrigée
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
 
-<!-- SECTION AVIS -->
 <div class="reviews-premium" id="avis-clients" data-reviews-section>
   <div class="reviews-container">
 
@@ -20,7 +19,7 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
         <span class="chevron">›</span>
       </button>
 
-      <!-- DROPDOWN NOTE -->
+      <!-- DROPDOWN -->
       <div class="rating-dropdown js-rating-dropdown">
 
         <div class="average-score">
@@ -35,22 +34,17 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
 
         <div class="rating-bars">
 
-          {% assign rows =
-            "5,five_star_percent,five_star_count|
-             4,four_star_percent,four_star_count|
-             3,three_star_percent,three_star_count|
-             2,two_star_percent,two_star_count|
-             1,one_star_percent,one_star_count"
-            | split: "|" %}
+          {% assign rows = "5,five_star_percent,five_star_count|4,four_star_percent,four_star_count|3,three_star_percent,three_star_count|2,two_star_percent,two_star_count|1,one_star_percent,one_star_count" | split: "|" %}
 
           {% for row in rows %}
             {% assign p = row | split: "," %}
+            {% assign stars_number = p[0] | plus: 0 %}
             {% assign percent_value = section.settings[p[1]] | plus: 0 %}
 
-            <div class="rating-row rating-{{ p[0] }}" data-width="{{ percent_value }}">
+            <div class="rating-row rating-{{ stars_number }}" data-width="{{ percent_value }}">
               <span class="label">
                 {% for i in (1..5) %}
-                  {% if i <= p[0] %}★{% else %}☆{% endif %}
+                  {% if i <= stars_number %}★{% else %}☆{% endif %}
                 {% endfor %}
               </span>
 
@@ -73,20 +67,17 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
       Partager mon expérience
     </a>
 
-    <!-- AVIS – SCROLL HORIZONTAL -->
+    <!-- AVIS -->
     <div class="reviews-list">
       {% for block in section.blocks %}
         <div class="review-item" {{ block.shopify_attributes }}>
-
           <div class="review-stars">
             {% for i in (1..5) %}
               {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
             {% endfor %}
           </div>
 
-          <p class="review-text">
-            {{ block.settings.review_text }}
-          </p>
+          <p class="review-text">{{ block.settings.review_text }}</p>
 
           <div class="review-footer">
             <strong>{{ block.settings.customer_name }}</strong>
@@ -94,7 +85,6 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
               <span class="verified">✔ Achat vérifié</span>
             {% endif %}
           </div>
-
         </div>
       {% endfor %}
     </div>
@@ -102,7 +92,7 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
   </div>
 </div>
 
-<!-- STICKY AVIS MOBILE -->
+<!-- STICKY MOBILE -->
 <div class="mobile-rating-bar">
   <span class="stars">★★★★★</span>
   <span class="rating-text">
@@ -111,27 +101,19 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
 </div>
 
 <style>
-/* GLOBAL */
-.reviews-premium{
-  padding:20px 0;
-  background:#fff;
-}
-
+.reviews-premium{padding:20px 0;background:#fff}
 .reviews-container{max-width:1100px;margin:auto;padding:0 20px}
 .reviews-title{text-align:center;font-size:32px;margin-bottom:30px}
 
-/* RÉSUMÉ */
 .rating-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
 .stars{color:#FFD700;font-size:22px}
 .chevron{font-size:18px}
 
-/* DROPDOWN */
 .rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:14px;max-width:420px}
 .rating-dropdown.active{display:block}
 .average-score{font-size:36px;font-weight:700}
 .top-badge{margin-top:6px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
 
-/* BARS */
 .rating-row{display:flex;align-items:center;gap:10px;margin:8px 0}
 .bar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
 .fill{height:100%;width:0;transition:width .6s ease}
@@ -141,80 +123,30 @@ SECTION : Avis clients premium – version finale avec sticky intelligent
 .rating-2 .fill{background:#F39C12}
 .rating-1 .fill{background:#E74C3C}
 
-@media (max-width:768px){
-  .reviews-premium{
-    padding:16px 0;
-  }
-}
+.write-review-btn{display:block;margin:30px auto;border:2px solid #000;padding:14px 30px;border-radius:8px;text-decoration:none;color:#000;font-weight:600;width:max-content}
 
-
-/* CTA */
-.write-review-btn{
-  display:block;
-  margin:30px auto;
-  border:2px solid #000;
-  padding:14px 30px;
-  border-radius:8px;
-  text-decoration:none;
-  color:#000;
-  font-weight:600;
-  width:max-content
-}
-
-/* AVIS */
-.reviews-list{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  padding-bottom:10px
-}
-
-.review-item{
-  min-width:280px;
-  max-width:280px;
-  flex-shrink:0;
-  border:1px solid #eee;
-  border-radius:14px;
-  padding:20px;
-  scroll-snap-align:start;
-}
-
+.reviews-list{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px}
+.review-item{min-width:280px;border:1px solid #eee;border-radius:14px;padding:20px}
 .review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
 .review-text{font-size:15px;line-height:1.5;margin-bottom:12px}
 .verified{color:#00A651;font-size:12px;margin-left:6px}
 
-/* STICKY MOBILE */
 @media (max-width:768px){
+  .reviews-premium{padding:16px 0}
   .mobile-rating-bar{
     position:fixed;
-    bottom:64px; /* plus bas = ne cache pas le titre */
+    bottom:64px;
     left:50%;
     transform:translateX(-50%);
     background:#fff;
     padding:8px 14px;
-    border-radius:999px; /* pill shape premium */
+    border-radius:999px;
     box-shadow:0 4px 12px rgba(0,0,0,.12);
     display:none;
-    align-items:center;
     gap:8px;
     z-index:60;
-    white-space:nowrap; /* FORCE UNE LIGNE */
-    max-width:90vw;
-  }
-
-  .mobile-rating-bar .stars{
-    font-size:14px;
-    line-height:1;
-  }
-
-  .mobile-rating-bar .rating-text{
-    font-size:13px;
-    font-weight:600;
-    line-height:1;
   }
 }
-
 </style>
 
 <script>
@@ -224,22 +156,18 @@ document.addEventListener('DOMContentLoaded',()=>{
   const sticky=document.querySelector('.mobile-rating-bar')
   const section=document.querySelector('[data-reviews-section]')
 
-  if(toggle && dropdown){
+  if(toggle){
     toggle.addEventListener('click',()=>{
       dropdown.classList.toggle('active')
-      if(dropdown.classList.contains('active')){
-        dropdown.querySelectorAll('.rating-row').forEach(row=>{
-          row.querySelector('.fill').style.width=row.dataset.width+'%'
-        })
-      }
+      dropdown.querySelectorAll('.rating-row').forEach(row=>{
+        row.querySelector('.fill').style.width=row.dataset.width+'%'
+      })
     })
   }
 
   if(sticky && section){
     const observer=new IntersectionObserver(
-      ([entry])=>{
-        sticky.style.display=entry.isIntersecting?'none':'flex'
-      },
+      ([entry])=>sticky.style.display=entry.isIntersecting?'none':'flex',
       {threshold:0.2}
     )
     observer.observe(section)
@@ -252,19 +180,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   "name": "Avis clients premium",
   "settings": [
     { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
-
     { "type": "number", "id": "five_star_count", "label": "Nombre 5 étoiles", "default": 105 },
     { "type": "range", "id": "five_star_percent", "label": "Pourcentage 5 étoiles", "min": 0, "max": 100, "step": 1, "default": 80 },
-
     { "type": "number", "id": "four_star_count", "label": "Nombre 4 étoiles", "default": 20 },
     { "type": "range", "id": "four_star_percent", "label": "Pourcentage 4 étoiles", "min": 0, "max": 100, "step": 1, "default": 15 },
-
     { "type": "number", "id": "three_star_count", "label": "Nombre 3 étoiles", "default": 2 },
     { "type": "range", "id": "three_star_percent", "label": "Pourcentage 3 étoiles", "min": 0, "max": 100, "step": 1, "default": 3 },
-
     { "type": "number", "id": "two_star_count", "label": "Nombre 2 étoiles", "default": 1 },
     { "type": "range", "id": "two_star_percent", "label": "Pourcentage 2 étoiles", "min": 0, "max": 100, "step": 1, "default": 1 },
-
     { "type": "number", "id": "one_star_count", "label": "Nombre 1 étoile", "default": 1 },
     { "type": "range", "id": "one_star_percent", "label": "Pourcentage 1 étoile", "min": 0, "max": 100, "step": 1, "default": 1 }
   ],
@@ -273,7 +196,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       "type": "review",
       "name": "Avis",
       "settings": [
-        { "type": "text", "id": "customer_name", "label": "Nom", "default": "Client" },
+        { "type": "text", "id": "customer_name", "label": "Nom" },
         { "type": "checkbox", "id": "verified", "label": "Achat vérifié", "default": true },
         { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
         { "type": "textarea", "id": "review_text", "label": "Avis" }
