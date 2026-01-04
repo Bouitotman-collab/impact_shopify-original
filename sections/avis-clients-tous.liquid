@@ -133,3 +133,15 @@ document.addEventListener('DOMContentLoaded', function () {
   ]
 }
 {% endschema %}
+
+{% assign reviews = shop.metaobjects.review.values %}
+[
+{% for review in reviews %}
+  {
+    "nom": "{{ review.nom.value | escape }}",
+    "avis": "{{ review.avis.value | escape }}",
+    "note": {{ review.note.value | default: 5 }},
+    "achat_verifie": {{ review.achat_verifie.value | default: false }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
