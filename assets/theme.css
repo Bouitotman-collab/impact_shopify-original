@@ -10432,7 +10432,58 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
+/* ======================================================== */
+/* === HEADER BLANC & ICÔNES DÉTOURÉES (CORRECTION) === */
+/* ======================================================== */
 
+/* 1. FOND BLANC (OK) */
+#shopify-section-header,
+.header-wrapper,
+header.header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 2. LOGO & TEXTE (OK) */
+.header__logo-image {
+    filter: invert(1) brightness(0) !important;
+}
+.header__link, .header__nav-link, summary.header__icon-wrapper {
+    color: #000000 !important;
+}
+
+/* 3. RÉINITIALISATION TOTALE DES ICÔNES (C'est ici que le carré noir disparaît) */
+/* On force l'icône à ne PAS avoir de couleur de fond ni de remplissage */
+.header__icon svg {
+    background: transparent !important;
+    fill: none !important;   
+    stroke: none !important;
+}
+
+/* 4. DESSIN DU MENU & DE LA LOUPE (Traits) */
+/* On cible les éléments 'path', 'line', 'circle' pour leur donner un trait noir */
+.header__icon svg path,
+.header__icon svg circle,
+.header__icon svg line,
+.header__icon svg polyline {
+    stroke: #000000 !important;       /* Couleur du trait : NOIR */
+    stroke-width: 1.5px !important;   /* Épaisseur visible */
+    fill: none !important;            /* Intérieur vide (évite le noir plein) */
+    vector-effect: non-scaling-stroke !important;
+}
+
+/* 5. EXCEPTION POUR LE MENU (Si ce sont des rectangles) */
+.header__icon--menu svg rect {
+    fill: #000000 !important; /* Les barres du menu peuvent être pleines */
+    stroke: none !important;
+}
+
+/* 6. CORRECTION DU PANIER (Bulle) */
+.header__cart-count {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
 
 
 
