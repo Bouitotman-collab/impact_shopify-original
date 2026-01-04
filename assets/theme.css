@@ -10433,10 +10433,11 @@ p, a, span, div, button, input, textarea, select {
   }
 }
 @media screen and (max-width: 749px) {
-  header, .header, .header-wrapper {
+  header, .header, .header-wrapper, [class*="header"] {
     background-color: #ffffff !important;
   }
 }
+
 
 
 
