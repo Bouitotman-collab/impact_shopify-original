@@ -15,7 +15,7 @@ SECTION : Tous les avis clients – Metaobjects (Load more JS)
 
     {% if reviews.size > 0 %}
       <div class="all-reviews-list" data-visible="12">
-        {% for review in reviews limit:50 %}
+        {% for review in reviews %}
           <div class="all-review-item">
 
             <div class="all-review-stars">
