@@ -464,6 +464,60 @@
             "rating": 4,
             "review_text": "Ça aide vraiment pour les poils et les odeurs, surtout avec les paniers de chien."
           }
+        },
+        "review_nNMypx": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Julien R.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Avec un chien à la maison, le lave-linge finit vite par sentir mauvais à cause des plaids et paniers. Après deux utilisations, la différence est flagrante. La machine sent propre et le linge aussi."
+          }
+        },
+        "review_LxzaQb": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Sophie L.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "J’ai deux chats et je lave souvent leurs couvertures. Ces tablettes ont vraiment aidé à éliminer les odeurs incrustées dans le tambour. Très simple à utiliser, je suis ravie."
+          }
+        },
+        "review_R6mQCg": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Marc D.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Produit efficace, surtout quand on lave régulièrement des vêtements pleins de poils. Le lave-linge est plus propre et le linge ressort sans mauvaise odeur. Bon produit."
+          }
+        },
+        "review_nLMaAj": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Laura B.",
+            "verified": true,
+            "rating": 4,
+            "review_text": "Les tablettes font bien le travail et nettoient en profondeur la machine. Les odeurs liées aux affaires du chien ont disparu. J’enlève une étoile car j’aurais aimé un léger parfum plus durable."
+          }
+        },
+        "review_YTz4rr": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Antoine M.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Très bon produit pour l’entretien du lave-linge quand on a des animaux. Après le cycle, la machine est propre et il n’y a plus cette odeur désagréable. Je recommande."
+          }
+        },
+        "review_NLN4WP": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Claire P.",
+            "verified": true,
+            "rating": 5,
+            "review_text": "Enfin une solution pensée pour les propriétaires d’animaux. Les poils, les odeurs et les résidus disparaissent vraiment. Je l’utilise une fois par mois et ça fait la différence."
+          }
         }
       },
       "block_order": [
@@ -472,11 +526,19 @@
         "review_C898fg",
         "review_JUqVri",
         "review_Wjj9FF",
-        "review_VzxeFp"
+        "review_VzxeFp",
+        "review_nNMypx",
+        "review_LxzaQb",
+        "review_R6mQCg",
+        "review_nLMaAj",
+        "review_YTz4rr",
+        "review_NLN4WP"
       ],
       "name": "Avis clients",
       "settings": {
         "average_rating": "4.59",
+        "total_reviews": 129,
+        "total_customers": 1800,
         "five_star_count": 105,
         "five_star_percent": 80,
         "four_star_count": 20,
