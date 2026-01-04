@@ -134,18 +134,22 @@ SECTION : Avis clients premium – version finale corrigée
 @media (max-width:768px){
   .reviews-premium{padding:16px 0}
   .mobile-rating-bar{
-    position:fixed;
-    bottom:64px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#fff;
-    padding:8px 14px;
-    border-radius:999px;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    display:none;
-    gap:8px;
-    z-index:60;
-  }
+  position:fixed;
+  bottom:64px;
+  left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  box-shadow:0 4px 12px rgba(0,0,0,.12);
+  display:none;
+  align-items:center;
+  gap:6px;
+  z-index:60;
+  white-space:nowrap;   /* 🔥 FORCE UNE SEULE LIGNE */
+  max-width:90vw;
+}
+
 }
 </style>
 
