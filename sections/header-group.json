@@ -91,8 +91,8 @@
       "settings": {
         "enable_sticky": true,
         "hide_on_scroll": true,
-        "header_padding_top_mobile": 8,
-        "header_padding_bottom_mobile": 8,
+        "header_padding_top_mobile": 6,
+        "header_padding_bottom_mobile": 6,
         "header_padding_top_desktop": 16,
         "header_padding_bottom_desktop": 16,
         "logo": "shopify://shop_images/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px_1.svg",
