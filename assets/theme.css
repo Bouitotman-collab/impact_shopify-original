@@ -10432,51 +10432,57 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ================================================== */
-/* === FORCE HEADER BLANC (SPÉCIAL THÈME IMPACT) === */
-/* ================================================== */
+/* ========================================================== */
+/* === FORCE HEADER BLANC & ÉLÉMENTS NOIRS (IMPACT V2) === */
+/* ========================================================== */
 
-/* 1. On force le fond blanc sur le conteneur principal */
-#shopify-section-header, 
-.header,
-.header.header--transparent {
+/* 1. FORCE LE FOND BLANC (Cible tous les calques possibles) */
+#shopify-section-header,
+.shopify-section--header,
+.header-wrapper,
+header.header,
+.header__bottom-navigation {
     background-color: #ffffff !important;
     background: #ffffff !important;
-    position: relative !important; /* Annule l'effet flottant/transparent */
-    border-bottom: 1px solid #e5e5e5; /* Petit trait gris propre */
-    --header-background: #ffffff !important; /* Variable Impact */
+    --header-background: #ffffff !important;
+    position: relative !important; /* Arrête de flotter sur l'image */
 }
 
-/* 2. On force TOUS les textes et icônes en noir */
+/* 2. FORCE TOUT LE TEXTE EN NOIR */
 .header__link,
-.header__icon,
 .header__nav-link,
-.header__icon-wrapper,
-.header__icon-wrapper span,
-.header__logo-link {
+.header__logo-link,
+.header-item,
+summary.header__icon-wrapper,
+.header__icon-list a,
+.header__icon-list button {
     color: #000000 !important;
-    --header-text: #000000 !important; /* Variable Impact */
-    --color-foreground: 0, 0, 0 !important; /* Variable couleur texte */
+    --color-foreground: 0, 0, 0 !important;
+    --header-text: #000000 !important;
 }
 
-/* 3. On remplit les icônes (SVG) en noir */
+/* 3. FORCE LES ICÔNES (SVG) EN NOIR */
+/* C'est souvent ici que ça bloque pour les loupes/paniers */
 .header__icon svg,
 .header__icon path,
-.icon path {
+.icon path,
+.header__icon-wrapper svg {
     fill: #000000 !important;
-    stroke: none !important;
+    stroke: transparent !important;
+    color: #000000 !important;
 }
 
-/* 4. LOGO : On inverse le logo BLANC pour qu'il devienne NOIR */
-/* (Supprimez ce bloc le jour où vous uploadez un vrai logo noir) */
+/* Cas particulier pour certains traits d'icônes */
+.header__icon svg circle,
+.header__icon svg line,
+.header__icon svg polyline {
+    stroke: #000000 !important;
+}
+
+/* 4. INVERSE LE LOGO (BLANC -> NOIR) */
 .header__logo-image {
     filter: invert(1) brightness(0) !important;
-}
-
-/* 5. Correction spécifique Impact pour le compteur de panier */
-.header__cart-count {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+    -webkit-filter: invert(1) brightness(0) !important;
 }
 
 
