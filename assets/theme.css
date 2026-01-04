@@ -10432,7 +10432,7 @@ p, a, span, div, button, input, textarea, select {
     margin-bottom: 0 !important;
   }
 }
-/* ===== HEADER SUR FOND BLANC (comme Naali) - VERSION FINALE ===== */
+/* ===== HEADER SUR FOND BLANC (comme Naali) - VERSION FINALE CORRIGÉE ===== */
 
 /* Fond blanc pour tout le header */
 .shopify-section-group-header-group {
@@ -10471,11 +10471,6 @@ p, a, span, div, button, input, textarea, select {
   stroke-width: 1.5 !important;
 }
 
-.header__icon-list svg * {
-  fill: none !important;
-  stroke: #000000 !important;
-}
-
 /* Menu hamburger (3 barres) */
 .header__icon--menu svg,
 .header__icon--menu path,
@@ -10493,24 +10488,28 @@ p, a, span, div, button, input, textarea, select {
   stroke: #000000 !important;
 }
 
-/* ===== PANIER - Supprimer le carré noir ===== */
-.header__icon--cart svg *,
-.header__icon--cart path,
-.header__icon--cart polyline {
+/* ===== PANIER - Supprimer les ronds noirs (roues) ===== */
+
+/* Forcer TOUS les path du panier à ne pas être remplis */
+.icon-cart path {
   fill: none !important;
   stroke: #000000 !important;
 }
 
-/* Supprimer spécifiquement le rectangle/carré du panier */
-.header__icon--cart rect,
-.header__cart-icon rect,
-[href*="cart"] rect,
-button[aria-controls*="cart"] rect,
-a[href="/cart"] rect {
+/* Cibler spécifiquement le premier path (les roues) */
+.icon-cart path:first-child {
   fill: none !important;
-  stroke: none !important;
+  stroke: #000000 !important;
   opacity: 0 !important;
   display: none !important;
+}
+
+/* Garder uniquement le 2ème path (contour du panier) */
+.icon-cart path:last-child {
+  fill: none !important;
+  stroke: #000000 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
 }
 
 /* Badge du panier (le petit chiffre) - GARDER */
@@ -10522,13 +10521,8 @@ a[href="/cart"] rect {
   opacity: 1 !important;
 }
 
-/* Exception pour le badge - il DOIT être visible */
-.header__icon-list .count-bubble,
-.header__icon-list .count-bubble * {
-  fill: #000000 !important;
-  stroke: none !important;
-  opacity: 1 !important;
-  display: block !important;
+.count-bubble span {
+  color: #ffffff !important;
 }
 
 /* Hauteur du header */
