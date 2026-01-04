@@ -55,13 +55,21 @@
             "text": "Satisfait ou remboursé",
             "url": ""
           }
+        },
+        "message_JAwLYC": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here",
+            "url": ""
+          }
         }
       },
       "block_order": [
         "message_qqzQGk",
         "message",
         "message_fFimPU",
-        "message_eGh7Y4"
+        "message_eGh7Y4",
+        "message_JAwLYC"
       ],
       "disabled": true,
       "custom_css": [],
