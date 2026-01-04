@@ -49,6 +49,14 @@ the underlying logic of the menu.
     }
   {%- endif -%}
 
+  /* CONTRÔLES DE MARGES PERSONNALISÉES */
+  @media screen and (max-width: 749px) {
+    #shopify-section-{{ section.id }} .header {
+      padding-top: {{ section.settings.header_padding_top_mobile }}px !important;
+      padding-bottom: {{ section.settings.header_padding_bottom_mobile }}px !important;
+    }
+  }
+
   @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} {
       {%- if section.settings.logo != blank -%}
@@ -57,6 +65,11 @@ the underlying logic of the menu.
       {%- endif -%}
 
       --header-padding-block: {% if section.settings.reduce_padding %}var(--spacing-6){% else %}var(--spacing-8-5){% endif %};
+    }
+    
+    #shopify-section-{{ section.id }} .header {
+      padding-top: {{ section.settings.header_padding_top_desktop }}px !important;
+      padding-bottom: {{ section.settings.header_padding_bottom_desktop }}px !important;
     }
   }
 
@@ -338,6 +351,50 @@ the underlying logic of the menu.
       "id": "hide_on_scroll",
       "label": "Hide on scroll",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Marges du header"
+    },
+    {
+      "type": "range",
+      "id": "header_padding_top_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge haute mobile",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "header_padding_bottom_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge basse mobile",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "header_padding_top_desktop",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge haute desktop",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_padding_bottom_desktop",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Marge basse desktop",
+      "default": 16
     },
     {
       "type": "header",
