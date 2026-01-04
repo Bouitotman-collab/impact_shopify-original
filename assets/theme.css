@@ -10619,6 +10619,51 @@ p, a, span, div, button, input, textarea, select {
   stroke: #000000 !important;
   fill: none !important;
 }
+/* ===== CORRECTION PANIER - Supprimer le carré noir ===== */
+
+/* Cibler spécifiquement tous les éléments du panier */
+.header__cart-icon svg,
+.header__cart-icon svg *,
+[aria-label*="panier"] svg,
+[aria-label*="cart"] svg,
+[aria-label*="Cart"] svg {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+/* Supprimer le carré/rectangle noir du panier */
+.header__cart-icon rect,
+.header__icon--cart rect,
+[href*="cart"] rect,
+button[aria-controls*="cart"] rect {
+  fill: none !important;
+  stroke: none !important;
+  display: none !important;
+}
+
+/* Badge du panier (le chiffre) - GARDER */
+.header__cart-count,
+.count-bubble,
+.header__cart-icon .count-bubble {
+  display: block !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  fill: #000000 !important;
+}
+
+/* Force tous les SVG du header (sauf badge) */
+.header__icon-list > * > svg,
+.header__icon-list > * > svg * {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+/* Exception pour le badge numérique */
+.header__icon-list .count-bubble,
+.header__icon-list .count-bubble * {
+  fill: #000000 !important;
+  stroke: none !important;
+}
 
 
 
