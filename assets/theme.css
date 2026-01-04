@@ -10433,58 +10433,58 @@ p, a, span, div, button, input, textarea, select {
   }
 }
 /* ========================================================== */
-/* === FORCE HEADER BLANC & ICÔNES EN CONTOURS (OUTLINE) === */
+/* === HEADER BLANC & COULEURS CORRIGÉES (MÉTHODE IMPACT) === */
 /* ========================================================== */
 
-/* 1. FORCE LE FOND BLANC */
-#shopify-section-header,
-.shopify-section--header,
-.header-wrapper,
+/* 1. On définit les variables du thème pour forcer le mode "clair" */
+#shopify-section-header, 
+.header-wrapper, 
 header.header {
     background-color: #ffffff !important;
     background: #ffffff !important;
+    
+    /* Variables vitales pour le thème Impact */
+    --header-background: #ffffff !important;
+    --header-text: #000000 !important;
+    --header-heading-color: #000000 !important;
+    --color-foreground: 0, 0, 0 !important; /* Force le texte en noir (RGB) */
+    
     position: relative !important;
     border-bottom: 1px solid #e5e5e5;
 }
 
-/* 2. LE LOGO (Inversion des couleurs Blanc -> Noir) */
-.header__logo-image {
-    filter: invert(1) brightness(0) !important;
-    -webkit-filter: invert(1) brightness(0) !important;
-}
-
-/* 3. LES TEXTES DU MENU (En noir) */
-.header__link,
-.header__nav-link,
+/* 2. On s'assure que les liens et textes utilisent ces variables */
+.header__link, 
+.header__icon, 
 .header__logo-link,
-summary.header__icon-wrapper {
+.header__icon-wrapper {
     color: #000000 !important;
 }
 
-/* 4. C'EST ICI QUE CA CHANGE : GESTION FINE DES ICÔNES (Panier, Loupe, Menu) */
-
-/* On dit : "Ne remplis pas l'intérieur (transparent), mais colorie le trait (stroke) en noir" */
-.header__icon svg, 
-.header__icon path, 
-.header__icon polyline, 
-.header__icon line,
-.header__icon circle {
-    fill: transparent !important;  /* Intérieur transparent (règle le panier noir) */
-    stroke: #000000 !important;    /* Trait noir (règle les 3 barres et la loupe) */
-    stroke-width: 1.5px !important; /* Assure que le trait est assez épais pour être vu */
-    overflow: visible !important;   /* Empêche la loupe d'être coupée */
+/* 3. LE LOGO (Inversion des couleurs) */
+/* Transforme votre image blanche en noire */
+.header__logo-image {
+    filter: invert(1) brightness(0) !important;
 }
 
-/* 5. Correction spécifique pour le bouton Menu (les 3 barres) */
-/* Parfois le thème Impact utilise 'currentColor', on force le noir */
-.header__icon--menu svg path {
-    stroke: #000000 !important;
+/* 4. LE SECRET POUR LES ICÔNES (Loupe, Panier, Menu) */
+/* Au lieu de forcer stroke ou fill, on utilise 'currentColor' */
+/* Cela permet à la Loupe (trait) et au Panier (forme) de s'adapter tout seuls */
+.header__icon svg {
+    fill: currentColor !important;
+    stroke: none !important;
 }
 
-/* 6. Le petit rond du nombre d'articles dans le panier */
+/* 5. Exception pour les icônes tracées au trait (Menu et Loupe souvent) */
+.header__icon svg path {
+    fill: currentColor !important; 
+    /* Si l'icône devient un carré noir, supprimez la ligne 'fill' ci-dessus */
+}
+
+/* 6. Correction du compteur de panier (Petit rond) */
 .header__cart-count {
-    background-color: #000000 !important; /* Fond noir */
-    color: #ffffff !important; /* Chiffre blanc */
+    background-color: #000000 !important;
+    color: #ffffff !important;
 }
 
 
