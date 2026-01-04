@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Tous les avis clients – 129 avis
+SECTION : Tous les avis clients – Version optimisée (SEO + Performance)
 {% endcomment %}
 
 <div class="all-reviews" id="tous-les-avis">
@@ -11,9 +11,118 @@ SECTION : Tous les avis clients – 129 avis
       Noté 4,8/5 par 129 clients vérifiés
     </p>
 
-    <div class="all-reviews-list" id="reviewsList"></div>
+    <div class="all-reviews-list" id="reviewsList">
+      <!-- 12 premiers avis en HTML pur pour SEO et performance -->
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Bon entretien pour prévenir les pannes.</p>
+        <div class="all-review-footer">
+          <strong>Vincent G.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
 
-    <div class="load-more-container" id="loadMoreContainer" style="display:none;">
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★☆</div>
+        <p class="all-review-text">Résultat correct sur les résidus.</p>
+        <div class="all-review-footer">
+          <strong>Sandrine M.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Utilisation simple, résultat visible.</p>
+        <div class="all-review-footer">
+          <strong>Camille S.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Lave-linge plus propre après chaque cycle.</p>
+        <div class="all-review-footer">
+          <strong>Pierre D.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★☆</div>
+        <p class="all-review-text">Les poils sont moins présents après nettoyage.</p>
+        <div class="all-review-footer">
+          <strong>Benoît F.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Très efficace sur les résidus.</p>
+        <div class="all-review-footer">
+          <strong>Élodie V.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Les poils ne bouchent plus le filtre.</p>
+        <div class="all-review-footer">
+          <strong>Adrien T.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★☆</div>
+        <p class="all-review-text">Nettoie bien la machine, bon produit.</p>
+        <div class="all-review-footer">
+          <strong>Isabelle T.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Bon nettoyage sans effort.</p>
+        <div class="all-review-footer">
+          <strong>Sophie R.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">La machine fonctionne mieux.</p>
+        <div class="all-review-footer">
+          <strong>Loïc M.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★☆</div>
+        <p class="all-review-text">Bon entretien, fait le travail.</p>
+        <div class="all-review-footer">
+          <strong>Thomas V.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+
+      <div class="all-review-item">
+        <div class="all-review-stars">★★★★★</div>
+        <p class="all-review-text">Les dépôts sont bien éliminés.</p>
+        <div class="all-review-footer">
+          <strong>Karine L.</strong>
+          <span class="verified">✔ Achat vérifié</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="load-more-container" id="loadMoreContainer">
       <button class="load-more-btn" id="loadMoreReviews">
         Charger plus
       </button>
@@ -59,31 +168,8 @@ SECTION : Tous les avis clients – 129 avis
 
 <script>
 (function() {
-  const allReviews = [
-    { "nom": "Fanny P.", "avis": "J'ai un chien et je lave très souvent ses couvertures. Mon lave-linge avait fini par garder une mauvaise odeur. Après une tablette, la machine est redevenue propre et fraîche. Très satisfaite.", "note": 5, "achat_verifie": true },
-    { "nom": "Nicolas T.", "avis": "Produit simple à utiliser et vraiment efficace. On sent clairement que le lave-linge est nettoyé en profondeur, surtout quand on lave beaucoup de textiles avec des poils.", "note": 5, "achat_verifie": true },
-    { "nom": "Vincent G.", "avis": "Bon entretien pour prévenir les pannes.", "note": 5, "achat_verifie": true },
-    { "nom": "Émilie S.", "avis": "Je cherchais une solution pour entretenir ma machine sans produits agressifs. Ces tablettes font très bien le travail, même avec le linge du chat. Plus aucune odeur après le cycle.", "note": 5, "achat_verifie": true },
-    { "nom": "Sandrine M.", "avis": "Résultat correct sur les résidus.", "note": 4, "achat_verifie": true },
-    { "nom": "Thomas G.", "avis": "Après plusieurs lavages de paniers et plaids pour chien, le tambour n'était plus très propre. Une tablette et la différence est nette. Le linge ressort mieux et la machine sent bon.", "note": 5, "achat_verifie": true },
-    { "nom": "Camille S.", "avis": "Utilisation simple, résultat visible.", "note": 5, "achat_verifie": true },
-    { "nom": "Sarah M.", "avis": "Très bon produit pour l'entretien du lave-linge quand on a des animaux. Les odeurs ont bien diminué. J'enlève une étoile car je pense qu'il faut bien respecter le dosage recommandé.", "note": 4, "achat_verifie": true },
-    { "nom": "Pierre D.", "avis": "Lave-linge plus propre après chaque cycle.", "note": 5, "achat_verifie": true },
-    { "nom": "Laurent D.", "avis": "Avec deux chiens à la maison, la machine est très sollicitée. Ces tablettes nettoyantes sont devenues indispensables. Utilisation simple et résultat visible dès la première fois.", "note": 5, "achat_verifie": true },
-    { "nom": "Benoît F.", "avis": "Les poils sont moins présents après nettoyage.", "note": 4, "achat_verifie": true },
-    { "nom": "Julien R.", "avis": "Avec un chien à la maison, le lave-linge finit vite par sentir mauvais à cause des plaids et paniers. Après deux utilisations, la différence est flagrante. La machine sent propre et le linge aussi.", "note": 5, "achat_verifie": true },
-    { "nom": "Élodie V.", "avis": "Très efficace sur les résidus.", "note": 5, "achat_verifie": true },
-    { "nom": "Sophie L.", "avis": "J'ai deux chats et je lave souvent leurs couvertures. Ces tablettes ont vraiment aidé à éliminer les odeurs incrustées dans le tambour. Très simple à utiliser, je suis ravie.", "note": 5, "achat_verifie": true },
-    { "nom": "Adrien T.", "avis": "Les poils ne bouchent plus le filtre.", "note": 5, "achat_verifie": true },
-    { "nom": "Marc D.", "avis": "Produit efficace, surtout quand on lave régulièrement des vêtements pleins de poils. Le lave-linge est plus propre et le linge ressort sans mauvaise odeur. Bon produit.", "note": 5, "achat_verifie": true },
-    { "nom": "Isabelle T.", "avis": "Nettoie bien la machine, bon produit.", "note": 4, "achat_verifie": true },
-    { "nom": "Laura B.", "avis": "Les tablettes font bien le travail et nettoient en profondeur la machine. Les odeurs liées aux affaires du chien ont disparu. J'enlève une étoile car j'aurais aimé un léger parfum plus durable.", "note": 4, "achat_verifie": true },
-    { "nom": "Sophie R.", "avis": "Bon nettoyage sans effort.", "note": 5, "achat_verifie": true },
-    { "nom": "Antoine M.", "avis": "Très bon produit pour l'entretien du lave-linge quand on a des animaux. Après le cycle, la machine est propre et il n'y a plus cette odeur désagréable. Je recommande.", "note": 5, "achat_verifie": true },
-    { "nom": "Loïc M.", "avis": "La machine fonctionne mieux.", "note": 5, "achat_verifie": true },
-    { "nom": "Claire P.", "avis": "Enfin une solution pensée pour les propriétaires d'animaux. Les poils, les odeurs et les résidus disparaissent vraiment. Je l'utilise une fois par mois et ça fait la différence.", "note": 5, "achat_verifie": true },
-    { "nom": "Thomas V.", "avis": "Bon entretien, fait le travail.", "note": 4, "achat_verifie": true },
-    { "nom": "Karine L.", "avis": "Les dépôts sont bien éliminés.", "note": 5, "achat_verifie": true },
+  // Les 117 avis restants (chargés seulement quand on clique sur "Charger plus")
+  const remainingReviews = [
     { "nom": "Julien P.", "avis": "Plus aucun souci d'odeur.", "note": 5, "achat_verifie": true },
     { "nom": "Philippe R.", "avis": "Produit efficace, mais il faut être régulier.", "note": 4, "achat_verifie": true },
     { "nom": "Clémentine A.", "avis": "Le tambour est bien nettoyé.", "note": 5, "achat_verifie": true },
@@ -175,12 +261,24 @@ SECTION : Tous les avis clients – 129 avis
     { "nom": "Pauline D.", "avis": "Résultat correct, sans plus dans mon cas.", "note": 3, "achat_verifie": true },
     { "nom": "Eric L.", "avis": "Lave-linge plus propre, mais pas de changement immédiat.", "note": 3, "achat_verifie": true },
     { "nom": "Marc S.", "avis": "L'effet est léger chez moi, peut-être que ma machine était trop encrassée.", "note": 2, "achat_verifie": true },
-    { "nom": "Julie K.", "avis": "Je n'ai pas vu de différence notable après une seule utilisation.", "note": 1, "achat_verifie": true }
+    { "nom": "Julie K.", "avis": "Je n'ai pas vu de différence notable après une seule utilisation.", "note": 1, "achat_verifie": true },
+    { "nom": "Fanny P.", "avis": "J'ai un chien et je lave très souvent ses couvertures. Mon lave-linge avait fini par garder une mauvaise odeur. Après une tablette, la machine est redevenue propre et fraîche. Très satisfaite.", "note": 5, "achat_verifie": true },
+    { "nom": "Nicolas T.", "avis": "Produit simple à utiliser et vraiment efficace. On sent clairement que le lave-linge est nettoyé en profondeur, surtout quand on lave beaucoup de textiles avec des poils.", "note": 5, "achat_verifie": true },
+    { "nom": "Émilie S.", "avis": "Je cherchais une solution pour entretenir ma machine sans produits agressifs. Ces tablettes font très bien le travail, même avec le linge du chat. Plus aucune odeur après le cycle.", "note": 5, "achat_verifie": true },
+    { "nom": "Thomas G.", "avis": "Après plusieurs lavages de paniers et plaids pour chien, le tambour n'était plus très propre. Une tablette et la différence est nette. Le linge ressort mieux et la machine sent bon.", "note": 5, "achat_verifie": true },
+    { "nom": "Sarah M.", "avis": "Très bon produit pour l'entretien du lave-linge quand on a des animaux. Les odeurs ont bien diminué. J'enlève une étoile car je pense qu'il faut bien respecter le dosage recommandé.", "note": 4, "achat_verifie": true },
+    { "nom": "Laurent D.", "avis": "Avec deux chiens à la maison, la machine est très sollicitée. Ces tablettes nettoyantes sont devenues indispensables. Utilisation simple et résultat visible dès la première fois.", "note": 5, "achat_verifie": true },
+    { "nom": "Julien R.", "avis": "Avec un chien à la maison, le lave-linge finit vite par sentir mauvais à cause des plaids et paniers. Après deux utilisations, la différence est flagrante. La machine sent propre et le linge aussi.", "note": 5, "achat_verifie": true },
+    { "nom": "Sophie L.", "avis": "J'ai deux chats et je lave souvent leurs couvertures. Ces tablettes ont vraiment aidé à éliminer les odeurs incrustées dans le tambour. Très simple à utiliser, je suis ravie.", "note": 5, "achat_verifie": true },
+    { "nom": "Marc D.", "avis": "Produit efficace, surtout quand on lave régulièrement des vêtements pleins de poils. Le lave-linge est plus propre et le linge ressort sans mauvaise odeur. Bon produit.", "note": 5, "achat_verifie": true },
+    { "nom": "Laura B.", "avis": "Les tablettes font bien le travail et nettoient en profondeur la machine. Les odeurs liées aux affaires du chien ont disparu. J'enlève une étoile car j'aurais aimé un léger parfum plus durable.", "note": 4, "achat_verifie": true },
+    { "nom": "Antoine M.", "avis": "Très bon produit pour l'entretien du lave-linge quand on a des animaux. Après le cycle, la machine est propre et il n'y a plus cette odeur désagréable. Je recommande.", "note": 5, "achat_verifie": true },
+    { "nom": "Claire P.", "avis": "Enfin une solution pensée pour les propriétaires d'animaux. Les poils, les odeurs et les résidus disparaissent vraiment. Je l'utilise une fois par mois et ça fait la différence.", "note": 5, "achat_verifie": true }
   ];
 
   const container = document.getElementById('reviewsList');
   const loadMoreBtn = document.getElementById('loadMoreContainer');
-  let visible = 12;
+  let currentIndex = 12; // On commence à 12 car les 12 premiers sont déjà en HTML
 
   function renderStars(note) {
     let stars = '';
@@ -190,10 +288,10 @@ SECTION : Tous les avis clients – 129 avis
     return stars;
   }
 
-  function renderReviews() {
-    container.innerHTML = '';
+  function loadMoreReviews() {
+    const reviewsToLoad = remainingReviews.slice(currentIndex - 12, currentIndex - 12 + 12);
     
-    allReviews.slice(0, visible).forEach(review => {
+    reviewsToLoad.forEach(review => {
       const div = document.createElement('div');
       div.className = 'all-review-item';
       
@@ -213,19 +311,15 @@ SECTION : Tous les avis clients – 129 avis
       container.appendChild(div);
     });
 
-    if (visible < allReviews.length) {
-      loadMoreBtn.style.display = 'block';
-    } else {
+    currentIndex += 12;
+
+    // Cacher le bouton si on a affiché tous les avis
+    if (currentIndex >= 129) {
       loadMoreBtn.style.display = 'none';
     }
   }
 
-  document.getElementById('loadMoreReviews').addEventListener('click', () => {
-    visible += 12;
-    renderReviews();
-  });
-
-  renderReviews();
+  document.getElementById('loadMoreReviews').addEventListener('click', loadMoreReviews);
 })();
 </script>
 
