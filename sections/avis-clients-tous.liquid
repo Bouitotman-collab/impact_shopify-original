@@ -1,0 +1,172 @@
+{% comment %}
+SECTION : Tous les avis clients – version simple & crédible
+{% endcomment %}
+
+<div class="all-reviews" id="tous-les-avis">
+  <div class="all-reviews-container">
+
+    <h2 class="all-reviews-title">
+      Tous les avis clients
+      <span class="all-reviews-count">
+        ({{ section.settings.total_reviews }})
+      </span>
+    </h2>
+
+    <div class="all-reviews-list">
+      {% for block in section.blocks %}
+        <div class="all-review-item" {{ block.shopify_attributes }}>
+
+          <div class="all-review-stars">
+            {% for i in (1..5) %}
+              {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
+            {% endfor %}
+          </div>
+
+          <p class="all-review-text">
+            {{ block.settings.review_text }}
+          </p>
+
+          <div class="all-review-footer">
+            <strong>{{ block.settings.customer_name }}</strong>
+            {% if block.settings.verified %}
+              <span class="verified">✔ Achat vérifié</span>
+            {% endif %}
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_load_more %}
+      <div class="load-more-wrapper">
+        <button class="load-more-btn">
+          Charger plus d’avis
+        </button>
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<style>
+.all-reviews{
+  padding:40px 0;
+  background:#fafafa;
+}
+
+.all-reviews-container{
+  max-width:900px;
+  margin:auto;
+  padding:0 20px;
+}
+
+.all-reviews-title{
+  text-align:center;
+  font-size:30px;
+  margin-bottom:40px;
+}
+
+.all-reviews-count{
+  font-size:16px;
+  color:#666;
+  margin-left:6px;
+}
+
+.all-reviews-list{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+
+.all-review-item{
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  padding:24px;
+  background:#fff;
+}
+
+.all-review-stars{
+  color:#FFD700;
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.all-review-text{
+  font-size:15px;
+  line-height:1.6;
+  margin-bottom:12px;
+  color:#333;
+}
+
+.all-review-footer{
+  font-size:14px;
+  color:#555;
+}
+
+.verified{
+  color:#00A651;
+  font-size:12px;
+  margin-left:6px;
+}
+
+.load-more-wrapper{
+  text-align:center;
+  margin-top:40px;
+}
+
+.load-more-btn{
+  border:2px solid #000;
+  background:#fff;
+  padding:14px 36px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+  .all-reviews{
+    padding:32px 0;
+  }
+
+  .all-reviews-title{
+    font-size:24px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Tous les avis clients",
+  "settings": [
+    {
+      "type": "number",
+      "id": "total_reviews",
+      "label": "Nombre total d’avis",
+      "default": 129
+    },
+    {
+      "type": "checkbox",
+      "id": "show_load_more",
+      "label": "Afficher le bouton Charger plus",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Avis",
+      "settings": [
+        { "type": "text", "id": "customer_name", "label": "Nom" },
+        { "type": "checkbox", "id": "verified", "label": "Achat vérifié", "default": true },
+        { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "review_text", "label": "Avis" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tous les avis clients"
+    }
+  ]
+}
+{% endschema %}
