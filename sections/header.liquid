@@ -16,13 +16,7 @@ the underlying logic of the menu.
 <style>
   :root {
     --sticky-header-enabled: {%- if section.settings.enable_sticky -%}1{% else %}0{% endif %};
-  }
-  @media screen and (max-width: 749px) {
-  .header-wrapper,
-  .header {
-    background-color: white !important;
-  }
-}
+ 
 
 
   #shopify-section-{{ section.id }} {
