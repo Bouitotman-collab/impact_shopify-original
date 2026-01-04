@@ -1,9 +1,10 @@
 {% comment %}
-SECTION : Avis clients premium – version finale corrigée
+SECTION : Avis clients premium – version finale stable & optimisée
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
 
+<!-- SECTION AVIS -->
 <div class="reviews-premium" id="avis-clients" data-reviews-section>
   <div class="reviews-container">
 
@@ -15,11 +16,13 @@ SECTION : Avis clients premium – version finale corrigée
     <div class="rating-summary">
       <button class="rating-toggle js-rating-toggle">
         <span class="stars">★★★★★</span>
-        <span class="count">{{ section.blocks.size }} clients satisfaits</span>
+        <span class="count">
+          {{ section.settings.total_reviews }} clients satisfaits
+        </span>
         <span class="chevron">›</span>
       </button>
 
-      <!-- DROPDOWN -->
+      <!-- DROPDOWN NOTE -->
       <div class="rating-dropdown js-rating-dropdown">
 
         <div class="average-score">
@@ -32,8 +35,12 @@ SECTION : Avis clients premium – version finale corrigée
           </div>
         {% endif %}
 
-        <div class="rating-bars">
+        <p class="review-context">
+          {{ section.settings.total_reviews }} avis laissés par plus de
+          {{ section.settings.total_customers }} clients
+        </p>
 
+        <div class="rating-bars">
           {% assign rows = "5,five_star_percent,five_star_count|4,four_star_percent,four_star_count|3,three_star_percent,three_star_count|2,two_star_percent,two_star_count|1,one_star_percent,one_star_count" | split: "|" %}
 
           {% for row in rows %}
@@ -57,7 +64,6 @@ SECTION : Avis clients premium – version finale corrigée
               </span>
             </div>
           {% endfor %}
-
         </div>
       </div>
     </div>
@@ -67,17 +73,20 @@ SECTION : Avis clients premium – version finale corrigée
       Partager mon expérience
     </a>
 
-    <!-- AVIS -->
+    <!-- AVIS MIS EN AVANT (SCROLL HORIZONTAL) -->
     <div class="reviews-list">
       {% for block in section.blocks %}
         <div class="review-item" {{ block.shopify_attributes }}>
+
           <div class="review-stars">
             {% for i in (1..5) %}
               {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
             {% endfor %}
           </div>
 
-          <p class="review-text">{{ block.settings.review_text }}</p>
+          <p class="review-text">
+            {{ block.settings.review_text }}
+          </p>
 
           <div class="review-footer">
             <strong>{{ block.settings.customer_name }}</strong>
@@ -85,6 +94,7 @@ SECTION : Avis clients premium – version finale corrigée
               <span class="verified">✔ Achat vérifié</span>
             {% endif %}
           </div>
+
         </div>
       {% endfor %}
     </div>
@@ -92,28 +102,34 @@ SECTION : Avis clients premium – version finale corrigée
   </div>
 </div>
 
-<!-- STICKY MOBILE -->
+<!-- STICKY AVIS MOBILE -->
 <div class="mobile-rating-bar">
   <span class="stars">★★★★★</span>
   <span class="rating-text">
-    {{ section.settings.average_rating }} · {{ section.blocks.size }} clients satisfaits
+    {{ section.settings.total_reviews }} clients satisfaits
   </span>
+  <span class="chevron">›</span>
 </div>
 
 <style>
+/* STRUCTURE */
 .reviews-premium{padding:20px 0;background:#fff}
 .reviews-container{max-width:1100px;margin:auto;padding:0 20px}
 .reviews-title{text-align:center;font-size:32px;margin-bottom:30px}
 
+/* RÉSUMÉ */
 .rating-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
 .stars{color:#FFD700;font-size:22px}
-.chevron{font-size:18px}
+.chevron{font-size:16px}
 
+/* DROPDOWN */
 .rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:14px;max-width:420px}
 .rating-dropdown.active{display:block}
 .average-score{font-size:36px;font-weight:700}
 .top-badge{margin-top:6px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
+.review-context{margin-top:8px;font-size:13px;color:#666}
 
+/* BARS */
 .rating-row{display:flex;align-items:center;gap:10px;margin:8px 0}
 .bar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
 .fill{height:100%;width:0;transition:width .6s ease}
@@ -123,33 +139,49 @@ SECTION : Avis clients premium – version finale corrigée
 .rating-2 .fill{background:#F39C12}
 .rating-1 .fill{background:#E74C3C}
 
-.write-review-btn{display:block;margin:30px auto;border:2px solid #000;padding:14px 30px;border-radius:8px;text-decoration:none;color:#000;font-weight:600;width:max-content}
+/* CTA */
+.write-review-btn{
+  display:block;
+  margin:30px auto;
+  border:2px solid #000;
+  padding:14px 30px;
+  border-radius:8px;
+  text-decoration:none;
+  color:#000;
+  font-weight:600;
+  width:max-content
+}
 
+/* AVIS */
 .reviews-list{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px}
 .review-item{min-width:280px;border:1px solid #eee;border-radius:14px;padding:20px}
 .review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
 .review-text{font-size:15px;line-height:1.5;margin-bottom:12px}
 .verified{color:#00A651;font-size:12px;margin-left:6px}
 
+/* STICKY MOBILE */
 @media (max-width:768px){
   .reviews-premium{padding:16px 0}
-  .mobile-rating-bar{
-  position:fixed;
-  bottom:64px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#fff;
-  padding:8px 14px;
-  border-radius:999px;
-  box-shadow:0 4px 12px rgba(0,0,0,.12);
-  display:none;
-  align-items:center;
-  gap:6px;
-  z-index:60;
-  white-space:nowrap;   /* 🔥 FORCE UNE SEULE LIGNE */
-  max-width:90vw;
-}
 
+  .mobile-rating-bar{
+    position:fixed;
+    bottom:64px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#fff;
+    padding:8px 14px;
+    border-radius:999px;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    display:none;
+    align-items:center;
+    gap:6px;
+    z-index:60;
+    white-space:nowrap;
+    max-width:90vw;
+  }
+
+  .mobile-rating-bar .stars{font-size:14px}
+  .mobile-rating-bar .rating-text{font-size:13px;font-weight:600}
 }
 </style>
 
@@ -184,14 +216,22 @@ document.addEventListener('DOMContentLoaded',()=>{
   "name": "Avis clients premium",
   "settings": [
     { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
+
+    { "type": "number", "id": "total_reviews", "label": "Nombre total d’avis", "default": 129 },
+    { "type": "number", "id": "total_customers", "label": "Nombre total de clients", "default": 1800 },
+
     { "type": "number", "id": "five_star_count", "label": "Nombre 5 étoiles", "default": 105 },
     { "type": "range", "id": "five_star_percent", "label": "Pourcentage 5 étoiles", "min": 0, "max": 100, "step": 1, "default": 80 },
+
     { "type": "number", "id": "four_star_count", "label": "Nombre 4 étoiles", "default": 20 },
     { "type": "range", "id": "four_star_percent", "label": "Pourcentage 4 étoiles", "min": 0, "max": 100, "step": 1, "default": 15 },
+
     { "type": "number", "id": "three_star_count", "label": "Nombre 3 étoiles", "default": 2 },
     { "type": "range", "id": "three_star_percent", "label": "Pourcentage 3 étoiles", "min": 0, "max": 100, "step": 1, "default": 3 },
+
     { "type": "number", "id": "two_star_count", "label": "Nombre 2 étoiles", "default": 1 },
     { "type": "range", "id": "two_star_percent", "label": "Pourcentage 2 étoiles", "min": 0, "max": 100, "step": 1, "default": 1 },
+
     { "type": "number", "id": "one_star_count", "label": "Nombre 1 étoile", "default": 1 },
     { "type": "range", "id": "one_star_percent", "label": "Pourcentage 1 étoile", "min": 0, "max": 100, "step": 1, "default": 1 }
   ],
