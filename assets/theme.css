@@ -10576,6 +10576,34 @@ p, a, span, div, button, input, textarea, select {
   color: #000000 !important;
 }
 
+/* ===== MARGES DU HEADER - Ajustables manuellement ===== */
+
+:root {
+  /* Marges mobile (modifiez ces valeurs) */
+  --header-padding-top-mobile: 12px;
+  --header-padding-bottom-mobile: 12px;
+  
+  /* Marges desktop (modifiez ces valeurs) */
+  --header-padding-top-desktop: 16px;
+  --header-padding-bottom-desktop: 16px;
+}
+
+/* Mobile */
+@media screen and (max-width: 749px) {
+  .header {
+    padding-top: var(--header-padding-top-mobile) !important;
+    padding-bottom: var(--header-padding-bottom-mobile) !important;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 750px) {
+  .header {
+    padding-top: var(--header-padding-top-desktop) !important;
+    padding-bottom: var(--header-padding-bottom-desktop) !important;
+  }
+}
+
 
 
 
