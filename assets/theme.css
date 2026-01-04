@@ -10437,46 +10437,26 @@ p, a, span, div, button, input, textarea, select {
     background-color: #ffffff !important;
   }
   
-  /* Augmente la hauteur du header pour ne pas couper les icônes */
-  .header {
-    min-height: 60px !important;
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
-  }
-  
-  /* Force les icônes en noir */
+  /* Force toutes les icônes visibles et complètes */
   .header__icon,
-  .header__icon svg,
-  .header__menu-item,
-  .icon,
-  header svg,
-  .header svg {
+  .header__icon svg {
     color: #1A1A1A !important;
-    fill: #1A1A1A !important;
     stroke: #1A1A1A !important;
+    overflow: visible !important;
   }
   
-  /* Force le logo visible */
-  .header__heading-logo img {
-    opacity: 1 !important;
-  }
-  
-  /* Affiche le badge du panier */
-  .cart-count-bubble,
-  .header__icon--cart .cart-count-bubble {
-    opacity: 1 !important;
-    visibility: visible !important;
-    background-color: #1A1A1A !important;
-    color: white !important;
-  }
-  
-  /* Force l'affichage complet de l'icône panier */
-  .header__icon--cart svg,
+  /* Assure que le conteneur des icônes ne coupe rien */
+  .header__icons,
   .header__icon--cart {
     overflow: visible !important;
-    clip-path: none !important;
+  }
+  
+  /* Donne de l'espace au header */
+  .header {
+    padding: 12px 0 !important;
   }
 }
+
 
 
 
