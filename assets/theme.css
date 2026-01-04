@@ -10575,6 +10575,27 @@ p, a, span, div, button, input, textarea, select {
 .header__link-list a:hover {
   opacity: 0.7 !important;
 }
+/* ===== SOLUTION RADICALE - Supprimer le carré noir du panier ===== */
+
+/* Masquer le premier path (qui contient fill="currentColor") */
+.icon-cart path[fill="currentColor"],
+.icon-cart path[fill] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Alternative : cibler par position */
+svg.icon-cart > path:nth-child(1) {
+  display: none !important;
+}
+
+/* Garder uniquement le 2ème path (le contour) */
+svg.icon-cart > path:nth-child(2) {
+  fill: none !important;
+  stroke: #000000 !important;
+  stroke-width: 1.5 !important;
+}
 
 
 
