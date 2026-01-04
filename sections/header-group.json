@@ -33,11 +33,11 @@
         "show_code_1": true,
         "message_1_code": "BIENVENUE10",
         "show_message_2": true,
-        "message_2_part1": "Livraison gratuite",
-        "message_2_part2": "Satisfait ou remboursé",
-        "message_2_part3": "Paiement sécurisé",
-        "show_message_3": true,
-        "show_icon_3": true,
+        "message_2_part1": "SATISFAIT OU REMBOURSÉ (30 JOURS)",
+        "message_2_part2": "LIVRAISON GRATUITE",
+        "message_2_part3": "",
+        "show_message_3": false,
+        "show_icon_3": false,
         "message_3_text": "Plus de 1800 clients satisfaits"
       }
     },
