@@ -10437,6 +10437,13 @@ p, a, span, div, button, input, textarea, select {
     background-color: #ffffff !important;
   }
   
+  /* Augmente la hauteur du header pour ne pas couper les icônes */
+  .header {
+    min-height: 60px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  
   /* Force les icônes en noir */
   .header__icon,
   .header__icon svg,
@@ -10470,6 +10477,7 @@ p, a, span, div, button, input, textarea, select {
     clip-path: none !important;
   }
 }
+
 
 
 
