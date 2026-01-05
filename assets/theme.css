@@ -10639,7 +10639,7 @@ p, a, span, div, button, input, textarea, select {
 .section:has(.all-reviews-container) {
   background-color: #ffffff !important;
 }
-/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + MARGES RÉDUITES ===== */
+/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + PADDING MINIMUM ===== */
 
 /* Fond blanc sur la section et toutes ses parentes */
 .all-reviews-container,
@@ -10678,14 +10678,22 @@ div:has(.all-reviews-container) {
   margin: 0 !important;
 }
 
-/* MARGES RÉDUITES - Ajustez ces valeurs selon vos besoins */
+/* PADDING MINIMUM - Juste pour éviter que le contenu touche les bords */
 .all-reviews-container {
-  padding: 30px 20px !important; /* Mobile : 30px en haut/bas, 20px gauche/droite */
+  padding: 10px !important; /* Mobile : 10px minimum */
 }
 
 @media screen and (min-width: 750px) {
   .all-reviews-container {
-    padding: 40px 40px !important; /* Desktop : 40px en haut/bas, 40px gauche/droite */
+    padding: 15px 20px !important; /* Desktop : 15px haut/bas, 20px gauche/droite */
   }
 }
+
+/* Si vous voulez VRAIMENT zéro padding (attention le contenu touchera les bords) */
+/* Décommentez les lignes ci-dessous en enlevant les symboles de commentaire */
+/*
+.all-reviews-container {
+  padding: 0 !important;
+}
+*/
 
