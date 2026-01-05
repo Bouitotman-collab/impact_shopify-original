@@ -380,7 +380,7 @@
       ],
       "name": "Slideshow",
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "allow_transparent_header": true,
         "show_initial_transition": false,
         "image_size": "auto",
@@ -576,12 +576,6 @@
           "disabled": true,
           "settings": {}
         },
-        "title": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h2"
-          }
-        },
         "price": {
           "type": "price",
           "settings": {
@@ -599,21 +593,9 @@
             "size_chart_page": ""
           }
         },
-        "liquid_L9Bxpk": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div style=\"\n  width: 100vw; \n  position: relative; \n  left: 50%; \n  right: 50%; \n  margin-left: -50vw; \n  margin-right: -50vw;\n  background-color: #f7f7f7; \n  border-top: 1px solid #eeeeee;\n  border-bottom: 1px solid #eeeeee;\n  display: flex; \n  align-items: center; \n  justify-content: center; \n  min-height: 45px; \n  padding: 12px 0;\n  text-align: center;\n\">\n  <p style=\"\n    margin: 0; \n    font-family: inherit; \n    font-size: 12px; \n    letter-spacing: 0.8px; \n    font-weight: 600; \n    color: #444444; \n    line-height: 1.4;\n    max-width: 90%;\n  \">\n    ⭐ OFFRE DE LANCEMENT : <span style=\"color: #005ad2;\">VOTRE PACK POUR 1 AN À 2,33€/MOIS</span> — STOCK LIMITÉ\n  </p>\n</div>"
-          }
-        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {}
-        },
-        "text_RHfCgR": {
-          "type": "text",
-          "settings": {
-            "text": "<p>✅ <strong>Linge impeccable</strong></p><p>✅ <strong>Économique</strong></p><p>✅ <strong>Rapide</strong></p><p>✨ <strong>Spécial \"Pet Parents\"</strong> (Chiens, Chats, Chevaux)</p><p>🧼 <strong>Nettoyage en profondeur des zones invisibles</strong></p><p>🌱 <strong>Formule protectrice : préserve les joints et le tambour</strong></p>"
-          }
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -666,14 +648,6 @@
             "page": ""
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
-        },
         "payment_terms": {
           "type": "payment_terms",
           "disabled": true,
@@ -699,18 +673,14 @@
       },
       "block_order": [
         "vendor",
-        "title",
         "price",
         "variant_picker",
-        "liquid_L9Bxpk",
         "quantity_selector",
-        "text_RHfCgR",
         "buy_buttons",
         "collapsible_text_ePHCgr",
         "collapsible_text_bFG3gE",
         "collapsible_text_eHCdPx",
         "collapsible_text_PCDfqw",
-        "description",
         "payment_terms",
         "badges",
         "rating",
@@ -732,22 +702,6 @@
         "text_color": "",
         "input_background": "rgba(0,0,0,0)",
         "input_text_color": ""
-      }
-    },
-    "slideshow_n3Re4i": {
-      "type": "slideshow",
-      "name": "Slideshow",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": true,
-        "show_initial_transition": false,
-        "image_size": "auto",
-        "controls_type": "dots",
-        "transition_type": "fade_with_text",
-        "autoplay": true,
-        "cycle_speed": 4,
-        "background": "#f2f2f2",
-        "background_gradient": ""
       }
     },
     "related-products": {
@@ -825,7 +779,6 @@
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "main",
-    "slideshow_n3Re4i",
     "related-products",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
