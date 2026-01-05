@@ -10632,24 +10632,27 @@ p, a, span, div, button, input, textarea, select {
   background-color: #ffffff !important;
 }
 
-.shopify-section:has(.all-reviews-container) {
-  background-color: #ffffff !important;
-}
-
+.shopify-section:has(.all-reviews-container),
 .section:has(.all-reviews-container) {
   background-color: #ffffff !important;
-}
-#template--27446692249947__avis_clients_tous_PMJxcT {
   padding: 0 !important;
   margin: 0 !important;
-  background-color: white !important;
 }
 
-#template--27446692249947__avis_clients_tous_PMJxcT > div {
+#template--27446692249947__avis_clients_tous_PMJxcT,
+#template--27446692249947__avis_clients_tous_PMJxcT * {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  background-color: white !important;
 }
+
+/* Forcer tous les divs à ne pas avoir de padding vertical */
+#template--27446692249947__avis_clients_tous_PMJxcT div {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 
 
