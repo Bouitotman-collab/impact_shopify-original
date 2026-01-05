@@ -10672,7 +10672,7 @@ div:has(.all-reviews-container) {
 
 @media screen and (min-width: 750px) {
   .all-reviews-container {
-    padding: 1px 1px !important;
+    padding: -5px -5px !important;
   }
 }
 
