@@ -10661,8 +10661,8 @@ p, a, span, div, button, input, textarea, select {
 /* Remettre du padding interne pour le contenu (sinon le texte sera collé aux bords) */
 .all-reviews-container h3.all-reviews-title,
 .all-reviews-container > div {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
 }
 
 
