@@ -10575,9 +10575,9 @@ p, a, span, div, button, input, textarea, select {
 .header span:not(.count-bubble span) {
   color: #000000 !important;
 }
-/* ===== UNIFORMISATION DES 4 TITRES EN STYLE H4 BARLOW ===== */
+/* ===== UNIFORMISATION DES TITRES EN BARLOW ===== */
 
-/* 📌 GROUPE 1 - BOLD + UPPERCASE (style H4) */
+/* 📌 GROUPE 1 - BOLD + UPPERCASE (style H4 - plus petit) */
 
 /* "POURQUOI PUREPAW EST UNIQUE" (déjà un <p class="h4">) */
 .rich-text__wrapper .prose p.h4 {
@@ -10601,11 +10601,27 @@ p, a, span, div, button, input, textarea, select {
   margin: 0 !important;
 }
 
-/* 📌 GROUPE 2 - REGULAR (pas de majuscules, pas de bold, style H4) */
+/* Tailles H4 pour le GROUPE 1 - Desktop */
+@media screen and (min-width: 750px) {
+  .rich-text__wrapper .prose p.h4,
+  .section-stack__intro .prose h3 {
+    font-size: 24px !important; /* Taille H4 desktop */
+  }
+}
 
-/* "Ce que les propriétaires d'animaux en pensent" + "Tous les avis clients" */
-.reviews-container .reviews-title,
-.all-reviews-container .all-reviews-title {
+/* Tailles H4 pour le GROUPE 1 - Mobile */
+@media screen and (max-width: 749px) {
+  .rich-text__wrapper .prose p.h4,
+  .section-stack__intro .prose h3 {
+    font-size: 20px !important; /* Taille H4 mobile */
+  }
+}
+
+/* 📌 GROUPE 2 - REGULAR (pas de majuscules, pas de bold, style H3 - plus grand) */
+
+/* "Ce que les propriétaires d'animaux en pensent" + "Tous les avis clients" (en H3) */
+.reviews-container h3.reviews-title,
+.all-reviews-container h3.all-reviews-title {
   font-family: 'Barlow', sans-serif !important;
   font-weight: 400 !important;
   text-transform: none !important;
@@ -10615,23 +10631,19 @@ p, a, span, div, button, input, textarea, select {
   margin: 0 !important;
 }
 
-/* Tailles H4 identiques pour TOUS les titres - Desktop */
+/* Tailles H3 pour le GROUPE 2 - Desktop */
 @media screen and (min-width: 750px) {
-  .rich-text__wrapper .prose p.h4,
-  .section-stack__intro .prose h3,
-  .reviews-container .reviews-title,
-  .all-reviews-container .all-reviews-title {
-    font-size: 24px !important; /* Taille H4 desktop */
+  .reviews-container h3.reviews-title,
+  .all-reviews-container h3.all-reviews-title {
+    font-size: 28px !important; /* Taille H3 desktop - plus grand */
   }
 }
 
-/* Tailles H4 identiques pour TOUS les titres - Mobile */
+/* Tailles H3 pour le GROUPE 2 - Mobile */
 @media screen and (max-width: 749px) {
-  .rich-text__wrapper .prose p.h4,
-  .section-stack__intro .prose h3,
-  .reviews-container .reviews-title,
-  .all-reviews-container .all-reviews-title {
-    font-size: 20px !important; /* Taille H4 mobile */
+  .reviews-container h3.reviews-title,
+  .all-reviews-container h3.all-reviews-title {
+    font-size: 22px !important; /* Taille H3 mobile - plus grand */
   }
 }
 
