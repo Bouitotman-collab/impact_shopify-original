@@ -10575,7 +10575,55 @@ p, a, span, div, button, input, textarea, select {
 .header span:not(.count-bubble span) {
   color: #000000 !important;
 }
+/* ===== UNIFORMISATION DES 4 TITRES EN BARLOW ===== */
 
+/* 📌 GROUPE 1 - H3 BOLD + UPPERCASE */
+/* "POURQUOI PUREPAW EST UNIQUE" + "RÉSULTAT AVANT/APRÈS" */
+
+.section-stack__intro .prose h3,
+.shopify-section h3 {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.2 !important;
+  color: #000000 !important;
+  margin: 0 !important;
+}
+
+/* 📌 GROUPE 2 - H3 REGULAR (pas de majuscules, pas de bold) */
+/* "Ce que les propriétaires d'animaux en pensent" + "Tous les avis clients" */
+
+.reviews-container .reviews-title,
+.all-reviews-container .all-reviews-title {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.2 !important;
+  color: #000000 !important;
+  margin: 0 !important;
+}
+
+/* Tailles identiques pour TOUS les titres - Desktop */
+@media screen and (min-width: 750px) {
+  .section-stack__intro .prose h3,
+  .shopify-section h3,
+  .reviews-container .reviews-title,
+  .all-reviews-container .all-reviews-title {
+    font-size: 28px !important;
+  }
+}
+
+/* Tailles identiques pour TOUS les titres - Mobile */
+@media screen and (max-width: 749px) {
+  .section-stack__intro .prose h3,
+  .shopify-section h3,
+  .reviews-container .reviews-title,
+  .all-reviews-container .all-reviews-title {
+    font-size: 22px !important;
+  }
+}
 
 
 
