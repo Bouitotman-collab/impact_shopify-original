@@ -10651,18 +10651,5 @@ p, a, span, div, button, input, textarea, select {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-.shopify-section:has(.all-reviews-container) {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.section:has(.all-reviews-container) {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
 
 
