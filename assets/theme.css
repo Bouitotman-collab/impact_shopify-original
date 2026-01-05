@@ -10626,6 +10626,21 @@ p, a, span, div, button, input, textarea, select {
   margin: 0 !important;
   font-size: var(--text-h4) !important;
 }
+/* ===== FOND BLANC UNIQUEMENT POUR "TOUS LES AVIS CLIENTS" ===== */
 
+/* Section "TOUS LES AVIS CLIENTS" */
+.all-reviews-container {
+  background-color: #ffffff !important;
+}
+
+/* Forcer le fond blanc sur la section parente */
+.shopify-section:has(.all-reviews-container) {
+  background-color: #ffffff !important;
+}
+
+/* Si la section a une classe .section ou .section-boxed */
+.section:has(.all-reviews-container) {
+  background-color: #ffffff !important;
+}
 
 
