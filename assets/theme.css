@@ -10575,71 +10575,7 @@ p, a, span, div, button, input, textarea, select {
 .header span:not(.count-bubble span) {
   color: #000000 !important;
 }
-/* ===== UNIFORMISATION DES 4 TITRES EN H3 BARLOW ===== */
 
-/* 1️⃣ POURQUOI PUREPAW EST UNIQUE - H3 BOLD + UPPERCASE */
-.rich-text__wrapper .prose p.h4 {
-  font-family: 'Barlow', sans-serif !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.2 !important;
-  color: #000000 !important;
-  margin: 0 !important;
-}
-
-/* 2️⃣ RÉSULTAT AVANT/APRÈS - H3 BOLD + UPPERCASE */
-.section-stack__intro .prose h3 {
-  font-family: 'Barlow', sans-serif !important;
-  font-weight: 700 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.2 !important;
-  color: #000000 !important;
-  margin: 0 !important;
-}
-
-/* 3️⃣ CE QUE LES PROPRIÉTAIRES D'ANIMAUX EN PENSENT - H3 REGULAR + UPPERCASE */
-.reviews-container h3.reviews-title {
-  font-family: 'Barlow', sans-serif !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.2 !important;
-  color: #000000 !important;
-  margin: 0 !important;
-}
-
-/* 4️⃣ TOUS LES AVIS CLIENTS - H3 REGULAR + UPPERCASE */
-.all-reviews-container h3.all-reviews-title {
-  font-family: 'Barlow', sans-serif !important;
-  font-weight: 400 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  line-height: 1.2 !important;
-  color: #000000 !important;
-  margin: 0 !important;
-}
-
-/* Tailles H3 identiques pour TOUS - Desktop */
-@media screen and (min-width: 750px) {
-  .rich-text__wrapper .prose p.h4,
-  .section-stack__intro .prose h3,
-  .reviews-container h3.reviews-title,
-  .all-reviews-container h3.all-reviews-title {
-    font-size: 28px !important;
-  }
-}
-
-/* Tailles H3 identiques pour TOUS - Mobile */
-@media screen and (max-width: 749px) {
-  .rich-text__wrapper .prose p.h4,
-  .section-stack__intro .prose h3,
-  .reviews-container h3.reviews-title,
-  .all-reviews-container h3.all-reviews-title {
-    font-size: 20px !important;
-  }
-}
 
 
 
