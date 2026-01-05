@@ -10667,12 +10667,12 @@ div:has(.all-reviews-container) {
 
 /* Ajouter du padding UNIQUEMENT à l'intérieur du container pour le contenu */
 .all-reviews-container {
-  padding: 30px 20px !important;
+  padding: 20px 20px !important;
 }
 
 @media screen and (min-width: 750px) {
   .all-reviews-container {
-    padding: 40px 40px !important;
+    padding: 20px 40px !important;
   }
 }
 
