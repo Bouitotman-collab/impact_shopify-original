@@ -10639,5 +10639,17 @@ p, a, span, div, button, input, textarea, select {
 .section:has(.all-reviews-container) {
   background-color: #ffffff !important;
 }
+#template--27446692249947__avis_clients_tous_PMJxcT {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: white !important;
+}
+
+#template--27446692249947__avis_clients_tous_PMJxcT > div {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
 
 
