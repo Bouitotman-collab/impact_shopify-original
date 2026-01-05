@@ -10626,7 +10626,20 @@ p, a, span, div, button, input, textarea, select {
   margin: 0 !important;
   font-size: var(--text-h4) !important;
 }
-/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + SUPPRESSION MARGES GRISES ===== */
+/* ===== FOND BLANC UNIQUEMENT POUR "TOUS LES AVIS CLIENTS" ===== */
+
+.all-reviews-container {
+  background-color: #ffffff !important;
+}
+
+.shopify-section:has(.all-reviews-container) {
+  background-color: #ffffff !important;
+}
+
+.section:has(.all-reviews-container) {
+  background-color: #ffffff !important;
+}
+/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + MARGES RÉDUITES ===== */
 
 /* Fond blanc sur la section et toutes ses parentes */
 .all-reviews-container,
@@ -10665,15 +10678,14 @@ div:has(.all-reviews-container) {
   margin: 0 !important;
 }
 
-/* Ajouter du padding UNIQUEMENT à l'intérieur du container pour le contenu */
+/* MARGES RÉDUITES - Ajustez ces valeurs selon vos besoins */
 .all-reviews-container {
-  padding: -5px -5px !important;
+  padding: 30px 20px !important; /* Mobile : 30px en haut/bas, 20px gauche/droite */
 }
 
 @media screen and (min-width: 750px) {
   .all-reviews-container {
-    padding: -5px -5px !important;
+    padding: 40px 40px !important; /* Desktop : 40px en haut/bas, 40px gauche/droite */
   }
 }
-
 
