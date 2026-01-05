@@ -10641,7 +10641,7 @@ p, a, span, div, button, input, textarea, select {
 }
 /* ===== AJOUTEZ CE CODE À LA FIN DE VOTRE FICHIER theme.css (après ligne 10628) ===== */
 
-/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + ZÉRO PADDING ===== */
+/* ===== FOND BLANC + SUPPRESSION TOTALE DES ESPACEMENTS ===== */
 
 /* Fond blanc sur la section et toutes ses parentes */
 .all-reviews-container,
@@ -10653,7 +10653,7 @@ div:has(.all-reviews-container) {
   background-color: #ffffff !important;
 }
 
-/* Supprimer TOUS les espacements */
+/* Supprimer TOUS les espacements externes */
 .shopify-section:has(.all-reviews-container) {
   padding: 0 !important;
   margin: 0 !important;
@@ -10680,8 +10680,31 @@ div:has(.all-reviews-container) {
   margin: 0 !important;
 }
 
-/* ZÉRO PADDING - Le contenu touchera les bords */
+/* ZÉRO PADDING sur le container principal */
 .all-reviews-container {
   padding: 0 !important;
+  margin: 0 !important;
 }
+
+/* SUPPRIMER LES PADDINGS/MARGINS DE TOUS LES ENFANTS */
+.all-reviews-container > *,
+.all-reviews-container > div,
+.all-reviews-container h2,
+.all-reviews-container h3,
+.all-reviews-container .all-reviews-title {
+  padding: 0 !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Si vous voulez garder un TOUT PETIT padding (10px) uniquement sur les côtés */
+/* Décommentez la ligne ci-dessous */
+/*
+.all-reviews-container {
+  padding: 0 10px !important;
+}
+*/
 
