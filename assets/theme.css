@@ -10575,7 +10575,212 @@ p, a, span, div, button, input, textarea, select {
 .header span:not(.count-bubble span) {
   color: #000000 !important;
 }
+/* ===== IMPORT BARLOW DEPUIS GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap');
 
+
+/* ===== HEADER SUR FOND BLANC (comme Naali) ===== */
+
+.shopify-section-group-header-group {
+  background-color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+.header {
+  background-color: #ffffff !important;
+}
+
+.header__wrapper {
+  background-color: #ffffff !important;
+}
+
+.header *,
+.header a,
+.header button,
+.header svg,
+.header span:not(.icon) {
+  color: #000000 !important;
+}
+
+.header__heading-logo img,
+.header__logo img,
+.header__heading-link img {
+  content: url('https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236') !important;
+}
+
+.header__icon-list svg {
+  stroke: #000000 !important;
+  fill: none !important;
+  stroke-width: 1.5 !important;
+}
+
+.header__icon-list svg * {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+.header__icon--menu svg,
+.header__icon--menu path,
+.header__icon--menu line {
+  stroke: #000000 !important;
+  fill: none !important;
+}
+
+.header__icon--search svg *,
+.header__icon--search path,
+.header__icon--search circle,
+.header__icon--search line {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+.header__icon--cart svg *,
+.header__icon--cart path,
+.header__icon--cart polyline {
+  fill: none !important;
+  stroke: #000000 !important;
+}
+
+.icon-cart path:first-child {
+  display: none !important;
+}
+
+.icon-cart path:last-child {
+  fill: none !important;
+  stroke: #000000 !important;
+  stroke-width: 1.5 !important;
+}
+
+.header__cart-count .count-bubble.opacity-0 {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.header__cart-count .count-bubble:not(.opacity-0) {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-radius: 50% !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  padding: 2px 4px !important;
+}
+
+.count-bubble span[aria-hidden="true"] {
+  color: #ffffff !important;
+  font-size: 11px !important;
+}
+
+.header[allow-transparency] {
+  background-color: #ffffff !important;
+}
+
+.header[allow-transparency]:not(.is-filled) {
+  --header-background-opacity: 1 !important;
+  --text-color: 0, 0, 0 !important;
+}
+
+.header__link-list a {
+  color: #000000 !important;
+  font-weight: 400 !important;
+}
+
+.header__link-list a:hover {
+  opacity: 0.7 !important;
+}
+
+
+/* ===== MARGES DU HEADER - Ajustables manuellement ===== */
+
+:root {
+  --header-padding-top-mobile: 12px;
+  --header-padding-bottom-mobile: 12px;
+  --header-padding-top-desktop: 16px;
+  --header-padding-bottom-desktop: 16px;
+}
+
+@media screen and (max-width: 749px) {
+  .header {
+    padding-top: var(--header-padding-top-mobile) !important;
+    padding-bottom: var(--header-padding-bottom-mobile) !important;
+  }
+  
+  .header__heading-logo img,
+  .header__logo img {
+    max-height: 40px !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .header {
+    padding-top: var(--header-padding-top-desktop) !important;
+    padding-bottom: var(--header-padding-bottom-desktop) !important;
+  }
+  
+  .header__heading-logo img,
+  .header__logo img {
+    max-height: 45px !important;
+  }
+}
+
+
+/* ===== TOUS LES TITRES EN BARLOW BOLD ===== */
+
+:root {
+  --heading-font-family: 'Barlow', sans-serif;
+  --heading-font-weight: 700;
+  --heading-font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+.h0,
+.heading,
+.subheading,
+.shopify-section h1,
+.shopify-section h2,
+.shopify-section h3,
+.shopify-section h4,
+.shopify-section h5,
+.shopify-section h6,
+.section-header h1,
+.section-header h2,
+.section-header h3,
+.section-header .h1,
+.section-header .h2,
+.section-header .h3,
+.product-info h1,
+.product-info h2,
+.product-info__title,
+.product-card__title,
+.article h1,
+.article h2,
+.blog-post-card h3,
+.content-over-media h1,
+.content-over-media h2,
+.slideshow h1,
+.slideshow h2,
+.impact-text h1,
+.impact-text h2,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6,
+.header__logo-text {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+}
 
 
 
