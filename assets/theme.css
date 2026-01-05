@@ -10603,9 +10603,9 @@ p, a, span, div, button, input, textarea, select {
 
 /* 📌 GROUPE 2 - REGULAR (pas de majuscules, pas de bold, style H4) */
 
-/* "Ce que les propriétaires d'animaux en pensent" + "Tous les avis clients" (maintenant en H3) */
-.reviews-container h3.reviews-title,
-.all-reviews-container h3.all-reviews-title {
+/* "Ce que les propriétaires d'animaux en pensent" + "Tous les avis clients" */
+.reviews-container .reviews-title,
+.all-reviews-container .all-reviews-title {
   font-family: 'Barlow', sans-serif !important;
   font-weight: 400 !important;
   text-transform: none !important;
@@ -10619,8 +10619,8 @@ p, a, span, div, button, input, textarea, select {
 @media screen and (min-width: 750px) {
   .rich-text__wrapper .prose p.h4,
   .section-stack__intro .prose h3,
-  .reviews-container h3.reviews-title,
-  .all-reviews-container h3.all-reviews-title {
+  .reviews-container .reviews-title,
+  .all-reviews-container .all-reviews-title {
     font-size: 24px !important; /* Taille H4 desktop */
   }
 }
@@ -10629,8 +10629,8 @@ p, a, span, div, button, input, textarea, select {
 @media screen and (max-width: 749px) {
   .rich-text__wrapper .prose p.h4,
   .section-stack__intro .prose h3,
-  .reviews-container h3.reviews-title,
-  .all-reviews-container h3.all-reviews-title {
+  .reviews-container .reviews-title,
+  .all-reviews-container .all-reviews-title {
     font-size: 20px !important; /* Taille H4 mobile */
   }
 }
