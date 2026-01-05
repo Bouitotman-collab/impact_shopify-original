@@ -755,6 +755,7 @@
     },
     "avis_clients_tous_PMJxcT": {
       "type": "avis-clients-tous",
+      "custom_css": [],
       "name": "Tous les avis clients",
       "settings": {
         "total_customers": 1800
