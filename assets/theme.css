@@ -10639,7 +10639,9 @@ p, a, span, div, button, input, textarea, select {
 .section:has(.all-reviews-container) {
   background-color: #ffffff !important;
 }
-/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + PADDING MINIMUM ===== */
+/* ===== AJOUTEZ CE CODE À LA FIN DE VOTRE FICHIER theme.css (après ligne 10628) ===== */
+
+/* ===== FOND BLANC POUR "TOUS LES AVIS CLIENTS" + ZÉRO PADDING ===== */
 
 /* Fond blanc sur la section et toutes ses parentes */
 .all-reviews-container,
@@ -10651,7 +10653,7 @@ div:has(.all-reviews-container) {
   background-color: #ffffff !important;
 }
 
-/* Supprimer TOUS les espacements qui créent les bandes grises */
+/* Supprimer TOUS les espacements */
 .shopify-section:has(.all-reviews-container) {
   padding: 0 !important;
   margin: 0 !important;
@@ -10678,22 +10680,8 @@ div:has(.all-reviews-container) {
   margin: 0 !important;
 }
 
-/* PADDING MINIMUM - Juste pour éviter que le contenu touche les bords */
-.all-reviews-container {
-  padding: 10px !important; /* Mobile : 10px minimum */
-}
-
-@media screen and (min-width: 750px) {
-  .all-reviews-container {
-    padding: 15px 20px !important; /* Desktop : 15px haut/bas, 20px gauche/droite */
-  }
-}
-
-/* Si vous voulez VRAIMENT zéro padding (attention le contenu touchera les bords) */
-/* Décommentez les lignes ci-dessous en enlevant les symboles de commentaire */
-/*
+/* ZÉRO PADDING - Le contenu touchera les bords */
 .all-reviews-container {
   padding: 0 !important;
 }
-*/
 
