@@ -4,7 +4,7 @@
   <style>
     #shopify-section-{{ section.id }} {
       --section-spacing-inline: 0;
-      /* Texte plus petit que le code initial pour lisibilité */
+      /* Taille du texte */
       --scrolling-text-font-size: {% if section.settings.text_size == 'xsmall' %}0.9rem{% elsif section.settings.text_size == 'small' %}1.5rem{% elsif section.settings.text_size == 'medium' %}2.5rem{% elsif section.settings.text_size == 'large' %}3rem{% else %}4rem{% endif %};
     }
 
@@ -20,7 +20,17 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
-      padding-right: 0; /* Important : on laisse le code Liquid gérer l'espace avec le tiret */
+      /* On retire le padding physique car on utilise un pseudo-élément flexible */
+      padding-right: 0; 
+    }
+
+    /* CRÉATION DU TIRET VIA CSS (Solution Robuste) */
+    #shopify-section-{{ section.id }} .scrolling-text__text::after {
+      content: "-";  /* Le tiret */
+      display: inline-block;
+      margin-left: 2rem;  /* Espace avant le tiret de fin */
+      margin-right: 2rem; /* Espace après le tiret de fin */
+      opacity: 1;
     }
 
     /* Réduction des bords / marges verticales */
@@ -42,7 +52,7 @@
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
           {%- render 'styled-text',
-            content: section.settings.text | append: '  -  ', 
+            content: section.settings.text,
             gradient: section.settings.text_gradient,
             style: section.settings.text_style
           -%}
