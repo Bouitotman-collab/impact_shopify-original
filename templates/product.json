@@ -391,7 +391,7 @@
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "Formule spéciale propriétaires d'animaux          •          Élimine poils, odeurs et bactéries          •          Sans danger pour vos animaux          •          Efficace dès le premier lavage          •          Approuvé par des vétérinaires          •",
+        "text": "Formule spéciale propriétaires d'animaux          •          Élimine poils, odeurs et bactéries          •          Sans danger pour vos animaux          •          Efficace dès le premier lavage          •          Approuvé par des vétérinaires          •",
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
