@@ -20,7 +20,7 @@
         "message_text": "-10% supplémentaire dans le panier avec le code",
         "promo_code": "BIENVENUE10",
         "font_size": 14,
-        "font_size_mobile": 11,
+        "font_size_mobile": 13,
         "padding_top": 12,
         "padding_bottom": 12
       }
