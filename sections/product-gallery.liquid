@@ -1,20 +1,18 @@
 {% comment %}
-SECTION : Galerie produit avec grande image + 6 miniatures
+SECTION : Galerie produit avec grande image + 6 miniatures (Format Carré - Non coupé)
 {% endcomment %}
 
 <div class="product-gallery-section">
   <div class="product-gallery-container">
     
-    <!-- GRANDE IMAGE PRINCIPALE -->
     <div class="main-image-wrapper">
       <img 
         id="mainImage" 
-        src="{{ section.settings.image_1 | img_url: '800x' }}" 
+        src="{{ section.settings.image_1 | img_url: '1000x' }}" 
         alt="Image produit principale"
         class="main-image"
       >
       
-      <!-- Flèches de navigation -->
       <button class="gallery-nav gallery-nav-prev" onclick="changeImage('prev')" aria-label="Image précédente">
         ‹
       </button>
@@ -23,7 +21,6 @@ SECTION : Galerie produit avec grande image + 6 miniatures
       </button>
     </div>
 
-    <!-- MINIATURES -->
     <div class="thumbnails-wrapper">
       <div class="thumbnails-container">
         
@@ -31,10 +28,10 @@ SECTION : Galerie produit avec grande image + 6 miniatures
           {% assign image_key = 'image_' | append: i %}
           {% if section.settings[image_key] %}
             <div class="thumbnail {% if i == 1 %}active{% endif %}" 
-                 onclick="selectImage({{ i }}, '{{ section.settings[image_key] | img_url: '800x' }}')"
+                 onclick="selectImage({{ i }}, '{{ section.settings[image_key] | img_url: '1000x' }}')"
                  data-index="{{ i }}">
               <img 
-                src="{{ section.settings[image_key] | img_url: '150x' }}" 
+                src="{{ section.settings[image_key] | img_url: '200x' }}" 
                 alt="Miniature {{ i }}"
               >
             </div>
@@ -65,15 +62,20 @@ SECTION : Galerie produit avec grande image + 6 miniatures
   position: relative;
   width: 100%;
   margin-bottom: 20px;
-  background: #f5f5f5;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  /* Optionnel : petite ombre pour le relief */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
 }
 
 .main-image {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 4/3;
+  /* C'est ici que la magie opère : Format Carré (1/1) + Image entière (contain) */
+  aspect-ratio: 1 / 1; 
+  object-fit: contain; 
 }
 
 /* FLÈCHES DE NAVIGATION */
@@ -81,106 +83,102 @@ SECTION : Galerie produit avec grande image + 6 miniatures
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 12, 125, 0.8);
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 0;
+  background: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent plus moderne */
+  color: #000;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 24px;
   z-index: 10;
-  transition: background 0.3s ease;
+  transition: all 0.2s ease;
+  padding-bottom: 4px; /* Ajustement visuel de la flèche */
 }
 
 .gallery-nav:hover {
-  background: rgba(0, 12, 125, 1);
+  background: #000C7D;
+  color: #fff;
+  border-color: #000C7D;
 }
 
-.gallery-nav-prev {
-  left: 10px;
-}
-
-.gallery-nav-next {
-  right: 10px;
-}
+.gallery-nav-prev { left: 15px; }
+.gallery-nav-next { right: 15px; }
 
 /* MINIATURES */
 .thumbnails-wrapper {
   overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+  padding: 5px; /* Espace pour l'ombre éventuelle */
 }
 
-.thumbnails-wrapper::-webkit-scrollbar {
-  display: none;
-}
+.thumbnails-wrapper::-webkit-scrollbar { display: none; /* Chrome/Safari */ }
 
 .thumbnails-container {
   display: flex;
-  gap: 10px;
-  justify-content: flex-start;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap; 
 }
 
 .thumbnail {
   flex-shrink: 0;
-  width: 120px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
   cursor: pointer;
-  border: 3px solid transparent;
-  transition: all 0.3s ease;
+  border: 2px solid #eee; /* Bordure grise par défaut */
+  border-radius: 6px;
+  transition: all 0.2s ease;
   overflow: hidden;
+  background: #fff;
 }
 
 .thumbnail img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Miniature entière aussi */
   display: block;
+  padding: 2px;
 }
 
 .thumbnail:hover {
   border-color: #000C7D;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .thumbnail.active {
   border-color: #000C7D;
-  border-width: 3px;
+  border-width: 2px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
+  .product-gallery-section {
+    padding: 20px 0;
+  }
+  
+  .product-gallery-container {
+    padding: 0 15px;
+  }
+
+  /* Sur mobile, on garde le carré 1/1 */
   .main-image {
-    aspect-ratio: 3/4;
+    aspect-ratio: 1 / 1; 
   }
 
-  .gallery-nav {
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-  }
-
-  .gallery-nav-prev {
-    left: 5px;
-  }
-
-  .gallery-nav-next {
-    right: 5px;
-  }
-
-  .thumbnail {
-    width: 80px;
-    height: 60px;
-  }
-}
-
-@media (min-width: 769px) {
   .thumbnails-container {
-    justify-content: center;
+    justify-content: flex-start; /* Aligné à gauche pour scroller */
+    flex-wrap: nowrap; /* Force le scroll horizontal */
+    padding-bottom: 10px;
+  }
+  
+  .thumbnail {
+    width: 70px;
+    height: 70px;
   }
 }
 </style>
@@ -189,12 +187,12 @@ SECTION : Galerie produit avec grande image + 6 miniatures
 let currentImageIndex = 1;
 const totalImages = {{ section.blocks.size | default: 6 }};
 
-// Images URLs - on les stocke pour la navigation
+// On stocke les URLs
 const imageUrls = [
   {% for i in (1..6) %}
     {% assign image_key = 'image_' | append: i %}
     {% if section.settings[image_key] %}
-      "{{ section.settings[image_key] | img_url: '800x' }}"{% unless forloop.last %},{% endunless %}
+      "{{ section.settings[image_key] | img_url: '1000x' }}"{% unless forloop.last %},{% endunless %}
     {% endif %}
   {% endfor %}
 ];
@@ -204,35 +202,38 @@ function selectImage(index, imageUrl) {
   currentImageIndex = index;
   
   // Changer l'image principale
-  document.getElementById('mainImage').src = imageUrl;
+  const mainImg = document.getElementById('mainImage');
+  mainImg.style.opacity = '0.8'; // Petit effet de transition
+  
+  setTimeout(() => {
+    mainImg.src = imageUrl;
+    mainImg.style.opacity = '1';
+  }, 150);
   
   // Mettre à jour les miniatures actives
   document.querySelectorAll('.thumbnail').forEach(thumb => {
     thumb.classList.remove('active');
   });
   
-  document.querySelector(`.thumbnail[data-index="${index}"]`).classList.add('active');
+  const activeThumb = document.querySelector(`.thumbnail[data-index="${index}"]`);
+  if(activeThumb) activeThumb.classList.add('active');
 }
 
-// Navigation avec flèches
+// Navigation flèches
 function changeImage(direction) {
+  // Calculer le nombre réel d'images chargées
+  const realTotalImages = imageUrls.length;
+  if(realTotalImages === 0) return;
+
   if (direction === 'prev') {
-    currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : imageUrls.length;
+    currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : realTotalImages;
   } else {
-    currentImageIndex = currentImageIndex < imageUrls.length ? currentImageIndex + 1 : 1;
+    currentImageIndex = currentImageIndex < realTotalImages ? currentImageIndex + 1 : 1;
   }
   
+  // L'index du tableau commence à 0, donc on fait -1
   selectImage(currentImageIndex, imageUrls[currentImageIndex - 1]);
 }
-
-// Navigation au clavier
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'ArrowLeft') {
-    changeImage('prev');
-  } else if (e.key === 'ArrowRight') {
-    changeImage('next');
-  }
-});
 </script>
 
 {% schema %}
@@ -241,12 +242,16 @@ document.addEventListener('keydown', (e) => {
   "settings": [
     {
       "type": "header",
-      "content": "Images de la galerie (6 maximum)"
+      "content": "Images de la galerie"
+    },
+    {
+      "type": "paragraph",
+      "content": "Pour un résultat optimal, utilisez des images carrées (ex: 1000x1000px)."
     },
     {
       "type": "image_picker",
       "id": "image_1",
-      "label": "Image 1 (principale par défaut)"
+      "label": "Image 1 (Principale)"
     },
     {
       "type": "image_picker",
