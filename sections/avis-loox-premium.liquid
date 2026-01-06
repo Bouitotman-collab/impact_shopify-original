@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.6 + Zéro marges
+SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -124,42 +124,28 @@ SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 0;
+  padding: 40px 0; /* Un peu d'espace haut/bas pour respirer */
   background: #fff;
 }
 
 .reviews-container {
   display: flex;
-  gap: 20px;
+  flex-direction: column; /* MODIF ICI : On empile verticalement */
+  align-items: center;    /* On centre le bloc bleu */
+  gap: 40px;              /* Espace entre le bloc bleu et les avis */
   max-width: none;
   margin: 0 auto;
   padding: 0 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  align-items: stretch; 
-}
-
-.reviews-container::-webkit-scrollbar {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .reviews-container {
-    gap: 40px;
-    overflow-x: visible;
-    max-width: 1400px;
-  }
 }
 
 .reviews-title { display: none; }
 
-/* ===== BLOC BLEU ===== */
+/* ===== BLOC BLEU (RÉSUMÉ) ===== */
 .rating-summary {
   flex-shrink: 0;
-  width: 280px;
-  background-color: #000C7D;
+  width: 100%;
+  max-width: 400px; /* Largeur max pour que ce soit joli */
+  background-color: #5472AE; /* <--- COULEUR MODIFIÉE ICI */
   border-radius: 0;
   padding: 30px 20px;
   display: flex;
@@ -243,7 +229,7 @@ SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.
 /* DROPDOWN */
 .rating-dropdown {
   display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px); padding: 20px; border-radius: 0; max-width: 420px;
+  backdrop-filter: blur(10px); padding: 20px; border-radius: 0; max-width: 420px; width: 100%;
 }
 .rating-dropdown.active { display: block; }
 .average-score { font-size: 36px; font-weight: 700; color: #FFFFFF; }
@@ -275,22 +261,47 @@ SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.
 }
 .write-review-btn-inline:hover { background-color: #FFFFFF; color: #000C7D; }
 
-/* ===== CARROUSEL & CARTES AVIS ===== */
+/* ===== LISTE DES AVIS (EN BAS) ===== */
 .reviews-list {
   display: flex;
   gap: 20px;
   flex-shrink: 0;
+  width: 100%; /* Prend toute la largeur */
+  overflow-x: auto; /* Permet le scroll horizontal */
+  padding-bottom: 20px; /* Espace pour le scroll */
+  
+  /* Masquer la scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.reviews-list::-webkit-scrollbar { display: none; }
+
+/* Pour centrer les avis s'il n'y en a pas beaucoup, sinon aligné à gauche */
+@media (min-width: 768px) {
+  .reviews-list {
+    justify-content: center; 
+    flex-wrap: wrap; /* Sur PC, on peut les mettre en grille si on veut, sinon enlever flex-wrap pour garder le carrousel */
+    overflow-x: visible; 
+  }
+}
+/* Sur mobile, on garde le carrousel pur */
+@media (max-width: 767px) {
+  .reviews-list {
+    justify-content: flex-start;
+    padding-left: 10px; /* Petit padding gauche */
+  }
 }
 
 .review-item {
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 300px;
+  max-width: 300px;
   background: #F5F5F5;
   border-radius: 0;
   padding: 25px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex-shrink: 0; /* Important pour le scroll */
 }
 
 .review-header {
@@ -314,10 +325,10 @@ SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.
 
 /* STYLE PHOTO CARRÉE REDUITE & ANGLES DROITS */
 .review-photo-container {
-  width: 150px; /* <-- TAILLE RÉDUITE ICI */
-  aspect-ratio: 1 / 1; /* Garde le format carré */
+  width: 150px;
+  aspect-ratio: 1 / 1; 
   overflow: hidden;
-  border-radius: 0px; /* <-- ANGLES DROITS ICI */
+  border-radius: 0px; 
   margin-top: 10px;
   margin-bottom: 10px;
   background: #e0e0e0;
@@ -326,7 +337,7 @@ SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.
 .review-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Remplit le carré sans déformer */
+  object-fit: cover;
   display: block;
 }
 
