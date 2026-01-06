@@ -23,14 +23,6 @@
             "content": ""
           }
         },
-        "text_tmzbbj": {
-          "type": "text",
-          "settings": {
-            "title": "Besoin d'aide ?",
-            "content": "<p>Notre support vous répond 7j/7 sous 24h. Email : contact@purepaw.fr</p>",
-            "enable_follow_on_shop": true
-          }
-        },
         "text": {
           "type": "text",
           "settings": {
@@ -50,7 +42,6 @@
       },
       "block_order": [
         "newsletter",
-        "text_tmzbbj",
         "text",
         "links"
       ],
