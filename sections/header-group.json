@@ -15,8 +15,8 @@
       "type": "Barre-annonce-rotation",
       "name": "Barre Annonce Fixe (Pro)",
       "settings": {
-        "background_color": "#74d0f1",
-        "text_color": "#000c7d",
+        "background_color": "#5472ae",
+        "text_color": "#ffffff",
         "message_text": "-10% supplémentaire dans le panier avec le code",
         "promo_code": "BIENVENUE10",
         "font_size": 14,
