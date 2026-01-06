@@ -68,7 +68,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
       </div>
       
       <!-- CTA DANS LE BLOC BLEU -->
-      <a href="#avis-clients" class="write-review-btn-inline">
+      <a href="#tous-les-avis" class="write-review-btn-inline">
         Lire tous les avis
       </a>
     </div>
@@ -152,7 +152,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   flex-shrink: 0;
   width: 280px;
   background-color: #000C7D;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
@@ -253,11 +253,24 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   }
 }
 
-/* CHEVRON EN BLANC */
+/* CHEVRON EN BLANC DANS UN CERCLE */
 .rating-toggle .chevron {
   color: #FFFFFF;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 24px;
+  margin-top: 15px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.rating-toggle:hover .chevron {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
 
 /* DROPDOWN - STYLE BLANC */
@@ -267,7 +280,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 20px;
-  border-radius: 14px;
+  border-radius: 0;
   max-width: 420px;
 }
 
@@ -287,7 +300,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   color: #fff;
   font-size: 12px;
   padding: 6px 12px;
-  border-radius: 20px;
+  border-radius: 0;
 }
 
 .review-context {
@@ -341,7 +354,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 0;
   text-decoration: none;
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
@@ -376,7 +389,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   min-width: 350px;
   max-width: 350px;
   background: #F5F5F5;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 30px;
   display: flex;
   flex-direction: column;
