@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – Note 4.6 harmonisée + Zéro marges
+SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -23,7 +23,7 @@ SECTION : Avis clients premium – Note 4.6 harmonisée + Zéro marges
       <div class="rating-dropdown js-rating-dropdown">
 
         <div class="average-score">
-          ★ {{ section.settings.average_rating }}
+          ★ 4.6
         </div>
 
         {% if five_star_percent_number >= 70 %}
@@ -209,7 +209,7 @@ SECTION : Avis clients premium – Note 4.6 harmonisée + Zéro marges
   }
 }
 
-/* MODIFICATION ICI : "4.6 sur 5" */
+/* "4.6 sur 5" */
 .rating-toggle .count::before {
   content: "4.6 sur 5 basés sur";
   display: block;
