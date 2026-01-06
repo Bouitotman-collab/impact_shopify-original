@@ -1,262 +1,253 @@
-{% comment %}
-SECTION : Avis clients premium – version finale avec sticky cliquable
-{% endcomment %}
+/* ===== TRANSFORMATION SECTION AVIS - BLOC BLEU À GAUCHE ===== */
+/* Ajoutez ce CSS dans votre section "Avis clients premium" */
 
-{% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
-
-<!-- SECTION AVIS -->
-<div class="reviews-premium" id="avis-clients" data-reviews-section>
-  <div class="reviews-container">
-
-    <h2 class="reviews-title">
-      Ce que les propriétaires d’animaux en pensent
-    </h2>
-
-    <!-- RÉSUMÉ -->
-    <div class="rating-summary">
-      <button class="rating-toggle js-rating-toggle" type="button">
-        <span class="stars">★★★★★</span>
-        <span class="count">
-          {{ section.settings.total_reviews }} clients satisfaits
-        </span>
-        <span class="chevron">›</span>
-      </button>
-
-      <!-- DROPDOWN NOTE -->
-      <div class="rating-dropdown js-rating-dropdown">
-
-        <div class="average-score">
-          ★ {{ section.settings.average_rating }}
-        </div>
-
-        {% if five_star_percent_number >= 70 %}
-          <div class="top-badge">
-            La majorité des clients donnent 5 étoiles
-          </div>
-        {% endif %}
-
-        <p class="review-context">
-          {{ section.settings.total_reviews }} avis laissés par plus de
-          {{ section.settings.total_customers }} clients
-        </p>
-
-        <div class="rating-bars">
-          {% assign rows = "5,five_star_percent,five_star_count|4,four_star_percent,four_star_count|3,three_star_percent,three_star_count|2,two_star_percent,two_star_count|1,one_star_percent,one_star_count" | split: "|" %}
-
-          {% for row in rows %}
-            {% assign p = row | split: "," %}
-            {% assign stars_number = p[0] | plus: 0 %}
-            {% assign percent_value = section.settings[p[1]] | plus: 0 %}
-
-            <div class="rating-row rating-{{ stars_number }}" data-width="{{ percent_value }}">
-              <span class="label">
-                {% for i in (1..5) %}
-                  {% if i <= stars_number %}★{% else %}☆{% endif %}
-                {% endfor %}
-              </span>
-
-              <div class="bar">
-                <div class="fill"></div>
-              </div>
-
-              <span class="number">
-                ({{ section.settings[p[2]] }})
-              </span>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <a href="#avis-clients" class="write-review-btn">
-      Partager mon expérience
-    </a>
-
-    <!-- AVIS MIS EN AVANT -->
-    <div class="reviews-list">
-      {% for block in section.blocks %}
-        <div class="review-item" {{ block.shopify_attributes }}>
-
-          <div class="review-stars">
-            {% for i in (1..5) %}
-              {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
-            {% endfor %}
-          </div>
-
-          <p class="review-text">
-            {{ block.settings.review_text }}
-          </p>
-
-          <div class="review-footer">
-            <strong>{{ block.settings.customer_name }}</strong>
-            {% if block.settings.verified %}
-              <span class="verified">✔ Achat vérifié</span>
-            {% endif %}
-          </div>
-
-        </div>
-      {% endfor %}
-    </div>
-
-  </div>
-</div>
-
-<!-- STICKY AVIS MOBILE (CLIQUABLE) -->
-<button class="mobile-rating-bar js-scroll-to-reviews" type="button">
-  <span class="stars">★★★★★</span>
-  <span class="rating-text">
-    {{ section.settings.total_reviews }} clients satisfaits
-  </span>
-  <span class="chevron">›</span>
-</button>
-
-<style>
-/* STRUCTURE */
-.reviews-premium{padding:20px 0;background:#fff}
-.reviews-container{max-width:1100px;margin:auto;padding:0 20px}
-.reviews-title{text-align:center;font-size:32px;margin-bottom:30px}
-
-/* RÉSUMÉ */
-.rating-toggle{display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer}
-.stars{color:#FFD700;font-size:22px}
-.chevron{font-size:16px}
-
-/* DROPDOWN */
-.rating-dropdown{display:none;margin-top:12px;background:#f9f9f9;padding:20px;border-radius:14px;max-width:420px}
-.rating-dropdown.active{display:block}
-.average-score{font-size:36px;font-weight:700}
-.top-badge{margin-top:6px;background:#00A651;color:#fff;font-size:12px;padding:6px 12px;border-radius:20px}
-.review-context{margin-top:8px;font-size:13px;color:#666}
-
-/* BARS */
-.rating-row{display:flex;align-items:center;gap:10px;margin:8px 0}
-.bar{flex:1;height:8px;background:#ddd;border-radius:4px;overflow:hidden}
-.fill{height:100%;width:0;transition:width .6s ease}
-.rating-5 .fill{background:#00A651}
-.rating-4 .fill{background:#6BCF9B}
-.rating-3 .fill{background:#F4C430}
-.rating-2 .fill{background:#F39C12}
-.rating-1 .fill{background:#E74C3C}
-
-/* CTA */
-.write-review-btn{
-  display:block;
-  margin:30px auto;
-  border:2px solid #000;
-  padding:14px 30px;
-  border-radius:8px;
-  text-decoration:none;
-  color:#000;
-  font-weight:600;
-  width:max-content
+/* RÉINITIALISER LE LAYOUT */
+.reviews-premium {
+  padding: 60px 0 !important;
+  background: #ffffff !important;
 }
 
-/* AVIS */
-.reviews-list{display:flex;gap:20px;overflow-x:auto;padding-bottom:10px}
-.review-item{min-width:280px;border:1px solid #eee;border-radius:14px;padding:20px}
-.review-stars{color:#FFD700;font-size:18px;margin-bottom:10px}
-.review-text{font-size:15px;line-height:1.5;margin-bottom:12px}
-.verified{color:#00A651;font-size:12px;margin-left:6px}
-
-/* STICKY MOBILE */
-@media (max-width:768px){
-  .reviews-premium{padding:16px 0}
-
-  .mobile-rating-bar{
-    position:fixed;
-    bottom:64px;
-    left:50%;
-    transform:translateX(-50%);
-    background:#fff;
-    padding:8px 14px;
-    border-radius:999px;
-    box-shadow:0 4px 12px rgba(0,0,0,.12);
-    display:none;
-    align-items:center;
-    gap:6px;
-    z-index:60;
-    white-space:nowrap;
-    max-width:90vw;
-    cursor:pointer;
-    border:none;
-  }
-
-  .mobile-rating-bar .stars{font-size:14px}
-  .mobile-rating-bar .rating-text{font-size:13px;font-weight:600}
+.reviews-container {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 30px !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  grid-template-areas: 
+    "title"
+    "summary"
+    "cta"
+    "reviews" !important;
 }
-</style>
 
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  const toggle=document.querySelector('.js-rating-toggle')
-  const dropdown=document.querySelector('.js-rating-dropdown')
-  const sticky=document.querySelector('.mobile-rating-bar')
-  const section=document.querySelector('[data-reviews-section]')
-  const scrollBtn=document.querySelector('.js-scroll-to-reviews')
-
-  if(toggle){
-    toggle.addEventListener('click',()=>{
-      dropdown.classList.toggle('active')
-      dropdown.querySelectorAll('.rating-row').forEach(row=>{
-        row.querySelector('.fill').style.width=row.dataset.width+'%'
-      })
-    })
+/* LAYOUT CÔTE À CÔTE SUR DESKTOP */
+@media (min-width: 768px) {
+  .reviews-container {
+    grid-template-columns: 400px 1fr !important;
+    gap: 40px !important;
+    grid-template-areas: 
+      "title title"
+      "summary reviews"
+      "cta reviews" !important;
   }
-
-  if(sticky && section){
-    const observer=new IntersectionObserver(
-      ([entry])=>sticky.style.display=entry.isIntersecting?'none':'flex',
-      {threshold:0.2}
-    )
-    observer.observe(section)
-  }
-
-  if(scrollBtn && section){
-    scrollBtn.addEventListener('click',()=>{
-      section.scrollIntoView({behavior:'smooth',block:'start'})
-    })
-  }
-})
-</script>
-
-{% schema %}
-{
-  "name": "Avis clients premium",
-  "settings": [
-    { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
-    { "type": "number", "id": "total_reviews", "label": "Nombre total d’avis", "default": 129 },
-    { "type": "number", "id": "total_customers", "label": "Nombre total de clients", "default": 1800 },
-
-    { "type": "number", "id": "five_star_count", "label": "Nombre 5 étoiles", "default": 105 },
-    { "type": "range", "id": "five_star_percent", "label": "Pourcentage 5 étoiles", "min": 0, "max": 100, "step": 1, "default": 80 },
-
-    { "type": "number", "id": "four_star_count", "label": "Nombre 4 étoiles", "default": 20 },
-    { "type": "range", "id": "four_star_percent", "label": "Pourcentage 4 étoiles", "min": 0, "max": 100, "step": 1, "default": 15 },
-
-    { "type": "number", "id": "three_star_count", "label": "Nombre 3 étoiles", "default": 2 },
-    { "type": "range", "id": "three_star_percent", "label": "Pourcentage 3 étoiles", "min": 0, "max": 100, "step": 1, "default": 3 },
-
-    { "type": "number", "id": "two_star_count", "label": "Nombre 2 étoiles", "default": 1 },
-    { "type": "range", "id": "two_star_percent", "label": "Pourcentage 2 étoiles", "min": 0, "max": 100, "step": 1, "default": 1 },
-
-    { "type": "number", "id": "one_star_count", "label": "Nombre 1 étoile", "default": 1 },
-    { "type": "range", "id": "one_star_percent", "label": "Pourcentage 1 étoile", "min": 0, "max": 100, "step": 1, "default": 1 }
-  ],
-  "blocks": [
-    {
-      "type": "review",
-      "name": "Avis",
-      "settings": [
-        { "type": "text", "id": "customer_name", "label": "Nom" },
-        { "type": "checkbox", "id": "verified", "label": "Achat vérifié", "default": true },
-        { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
-        { "type": "textarea", "id": "review_text", "label": "Avis" }
-      ]
-    }
-  ],
-  "presets": [
-    { "name": "Avis clients premium" }
-  ]
 }
-{% endschema %}
+
+/* TITRE - CACHER OU REPOSITIONNER */
+.reviews-title {
+  grid-area: title !important;
+  display: none !important; /* On le cache car on va le mettre dans le bloc bleu */
+}
+
+/* BLOC BLEU - RÉSUMÉ + CTA */
+.rating-summary {
+  grid-area: summary !important;
+  background-color: #000C7D !important;
+  border-radius: 12px !important;
+  padding: 60px 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  min-height: 400px !important;
+}
+
+/* CTA DANS LE BLOC BLEU */
+.write-review-btn {
+  grid-area: cta !important;
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFFFF !important;
+  padding: 14px 30px !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+
+.write-review-btn:hover {
+  background-color: #FFFFFF !important;
+  color: #000C7D !important;
+}
+
+/* POSITIONNER LE CTA DANS LE BLOC BLEU */
+@media (min-width: 768px) {
+  .rating-summary {
+    position: relative !important;
+  }
+  
+  .write-review-btn {
+    position: absolute !important;
+    bottom: 40px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* AJOUTER "EXCELLENT" AU DÉBUT */
+.rating-toggle::before {
+  content: "Excellent" !important;
+  display: block !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 48px !important;
+  color: #FFFFFF !important;
+  margin-bottom: 15px !important;
+}
+
+/* BOUTON TOGGLE - STYLE BLANC */
+.rating-toggle {
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+/* ÉTOILES EN BLANC */
+.rating-toggle .stars {
+  color: #FFFFFF !important;
+  font-size: 32px !important;
+  letter-spacing: 5px !important;
+}
+
+/* TEXTE COMPTEUR EN BLANC */
+.rating-toggle .count {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+}
+
+/* AJOUTER LA NOTE MOYENNE */
+.rating-toggle::after {
+  content: "4.6 sur 5 basés sur" !important;
+  display: block !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 42px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-top: 20px !important;
+  margin-bottom: -10px !important;
+}
+
+/* CHEVRON EN BLANC */
+.rating-toggle .chevron {
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+}
+
+/* DROPDOWN - GARDER EN BLANC */
+.rating-dropdown {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 14px !important;
+  padding: 20px !important;
+  margin-top: 20px !important;
+}
+
+.average-score {
+  color: #FFFFFF !important;
+}
+
+.review-context {
+  color: #FFFFFF !important;
+}
+
+.rating-row .label {
+  color: #FFFFFF !important;
+}
+
+.rating-row .number {
+  color: #FFFFFF !important;
+}
+
+/* CARROUSEL D'AVIS À DROITE */
+.reviews-list {
+  grid-area: reviews !important;
+  display: flex !important;
+  gap: 20px !important;
+  overflow-x: auto !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding: 10px 0 !important;
+  position: relative !important;
+}
+
+.reviews-list::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* CARTES D'AVIS */
+.review-item {
+  min-width: 350px !important;
+  max-width: 350px !important;
+  background: #F5F5F5 !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  border: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+}
+
+.review-stars {
+  color: #FFD700 !important;
+  font-size: 18px !important;
+  margin-bottom: 10px !important;
+}
+
+.review-text {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #333333 !important;
+  margin: 0 !important;
+}
+
+.review-footer {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-top: auto !important;
+}
+
+.review-footer strong {
+  font-family: 'Barlow', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: #000000 !important;
+}
+
+.verified {
+  font-size: 13px !important;
+  color: #00A651 !important;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 767px) {
+  .rating-toggle::before {
+    font-size: 36px !important;
+  }
+  
+  .rating-toggle::after {
+    font-size: 28px !important;
+  }
+  
+  .review-item {
+    min-width: 300px !important;
+    max-width: 300px !important;
+  }
+  
+  .rating-summary {
+    padding: 40px 30px !important;
+    min-height: auto !important;
+  }
+}
