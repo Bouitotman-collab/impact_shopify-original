@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – Zéro marges (Haut/Bas)
+SECTION : Avis clients premium – Note 4.6 harmonisée + Zéro marges
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -108,7 +108,7 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 0; /* MARGES HAUT/BAS À ZÉRO ICI */
+  padding: 0; /* MARGES HAUT/BAS À ZÉRO */
   background: #fff;
 }
 
@@ -136,12 +136,11 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* TITRE - CACHÉ CAR DANS LE BLOC BLEU */
 .reviews-title {
   display: none;
 }
 
-/* ===== BLOC BLEU - RÉSUMÉ ===== */
+/* ===== BLOC BLEU ===== */
 .rating-summary {
   flex-shrink: 0;
   width: 280px;
@@ -165,7 +164,7 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* AJOUTER "EXCELLENT" AU DÉBUT */
+/* TEXTE "Excellent" */
 .rating-toggle::before {
   content: "Excellent";
   display: block;
@@ -184,7 +183,6 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* BOUTON TOGGLE */
 .rating-toggle {
   background: none;
   border: none;
@@ -196,7 +194,6 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   color: #FFFFFF;
 }
 
-/* ÉTOILES EN BLANC */
 .rating-toggle .stars {
   color: #FFFFFF;
   font-size: 20px;
@@ -212,7 +209,7 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* AJOUTER LA NOTE "4.6 sur 5 basés sur" */
+/* MODIFICATION ICI : "4.6 sur 5" */
 .rating-toggle .count::before {
   content: "4.6 sur 5 basés sur";
   display: block;
@@ -230,7 +227,6 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* TEXTE COMPTEUR EN BLANC */
 .rating-toggle .count {
   font-family: 'Barlow', sans-serif;
   font-size: 16px;
@@ -247,7 +243,6 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   }
 }
 
-/* CHEVRON EN BLANC DANS UN CERCLE */
 .rating-toggle .chevron {
   color: #FFFFFF;
   font-size: 24px;
@@ -267,7 +262,7 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   transform: scale(1.1);
 }
 
-/* DROPDOWN - STYLE BLANC */
+/* DROPDOWN */
 .rating-dropdown {
   display: none;
   margin-top: 20px;
@@ -342,7 +337,6 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   text-align: right;
 }
 
-/* BOUTON "LIRE TOUS LES AVIS" DANS LE BLOC BLEU */
 .write-review-btn-inline {
   background-color: transparent;
   color: #FFFFFF;
@@ -371,14 +365,13 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   color: #000C7D;
 }
 
-/* ===== CARROUSEL D'AVIS À DROITE ===== */
+/* ===== CARROUSEL ===== */
 .reviews-list {
   display: flex;
   gap: 20px;
   flex-shrink: 0;
 }
 
-/* CARTES D'AVIS */
 .review-item {
   min-width: 350px;
   max-width: 350px;
@@ -425,7 +418,7 @@ SECTION : Avis clients premium – Zéro marges (Haut/Bas)
   margin-left: 6px;
 }
 
-/* ===== STICKY MOBILE ===== */
+/* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .mobile-rating-bar {
     position: fixed;
