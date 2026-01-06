@@ -152,9 +152,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -172,9 +169,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -193,9 +187,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -213,9 +204,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -234,9 +222,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -254,9 +239,6 @@
         "spacing_right": 20,
         "spacing_color": "#ffffff",
         "box_background_color": "#ffffff",
-        "title_color": "#090909",
-        "content_color": "#555555",
-        "arrow_color": "#73e0ff",
         "separate_section_with_border": false
       }
     },
@@ -415,7 +397,7 @@
         "text_style": "fill",
         "scrolling_mode": "auto",
         "scrolling_speed": 8,
-        "background": "#73e0ff",
+        "background": "#74d0f1",
         "background_gradient": "",
         "text_color": "#ffffff",
         "text_gradient": ""
