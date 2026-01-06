@@ -1,10 +1,9 @@
 {% comment %}
-SECTION : Avis clients premium – version finale avec bloc bleu à gauche
+SECTION : Avis clients premium – Zéro marges (Haut/Bas)
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
 
-<!-- SECTION AVIS -->
 <div class="reviews-premium" id="avis-clients" data-reviews-section>
   <div class="reviews-container">
 
@@ -12,7 +11,6 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
       Ce que les propriétaires d'animaux en pensent
     </h2>
 
-    <!-- RÉSUMÉ -->
     <div class="rating-summary">
       <button class="rating-toggle js-rating-toggle" type="button">
         <span class="stars">★★★★★</span>
@@ -22,7 +20,6 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
         <span class="chevron">›</span>
       </button>
 
-      <!-- DROPDOWN NOTE -->
       <div class="rating-dropdown js-rating-dropdown">
 
         <div class="average-score">
@@ -36,7 +33,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
         {% endif %}
 
         <p class="review-context">
-          {{ section.settings.total_reviews }} avis laissés par plus de
+          {{ section.settings.total_reviews }} avis laissés sur plus de
           {{ section.settings.total_customers }} clients
         </p>
 
@@ -67,13 +64,11 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
         </div>
       </div>
       
-      <!-- CTA DANS LE BLOC BLEU -->
       <a href="#tous-les-avis" class="write-review-btn-inline">
         Lire tous les avis
       </a>
     </div>
 
-    <!-- AVIS MIS EN AVANT -->
     <div class="reviews-list">
       {% for block in section.blocks %}
         <div class="review-item" {{ block.shopify_attributes }}>
@@ -102,7 +97,6 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   </div>
 </div>
 
-<!-- STICKY AVIS MOBILE (CLIQUABLE) -->
 <button class="mobile-rating-bar js-scroll-to-reviews" type="button">
   <span class="stars">★★★★★</span>
   <span class="rating-text">
@@ -114,7 +108,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 60px 0;
+  padding: 0; /* MARGES HAUT/BAS À ZÉRO ICI */
   background: #fff;
 }
 
