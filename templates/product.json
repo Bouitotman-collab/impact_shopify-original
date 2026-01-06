@@ -766,9 +766,9 @@
       "name": "Galerie Produit",
       "settings": {
         "image_1": "shopify://shop_images/1.jpg",
-        "image_2": "shopify://shop_images/2_646ae88e-4a02-4b11-81fb-07cb5e15aa65.jpg",
+        "image_2": "shopify://shop_images/1.jpg",
         "image_3": "shopify://shop_images/3.jpg",
-        "image_4": "shopify://shop_images/5_d9105e5d-2bb5-4c05-87e4-104bc1766fed.jpg",
+        "image_4": "shopify://shop_images/5_806e5203-fe2f-4b10-ad73-977bb98978e5.jpg",
         "image_5": "shopify://shop_images/6.jpg",
         "image_6": "shopify://shop_images/4.jpg"
       }
