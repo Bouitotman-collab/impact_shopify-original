@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes réduits)
+SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -124,7 +124,7 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 0; /* MODIF : Marges ZÉRO absolu */
+  padding: 0; /* Marges ZÉRO absolu */
   margin: 0;
   background: #fff;
 }
@@ -133,7 +133,7 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
   display: flex;
   flex-direction: column; 
   align-items: center;   
-  gap: 30px; /* Espace réduit entre le bloc bleu et les avis */
+  gap: 30px; 
   max-width: none;
   margin: 0 auto;
   padding: 0 20px;
@@ -146,23 +146,22 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
   flex-shrink: 0;
   width: 100%;
   max-width: 400px; 
-  background-color: #5472AE; 
+  /* MODIF ICI : Changement de couleur vers le bleu ciel */
+  background-color: #74D0F1; 
   border-radius: 0;
-  /* MODIF : Padding réduit et suppression du min-height */
   padding: 20px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: auto; /* La hauteur s'adapte au contenu */
+  min-height: auto; 
   position: relative;
 }
 
 @media (min-width: 768px) {
   .rating-summary {
     width: 400px;
-    /* MODIF : Padding desktop réduit aussi */
     padding: 30px 25px;
     min-height: auto;
   }
@@ -174,7 +173,6 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
   display: block;
   font-family: 'Barlow', sans-serif;
   font-weight: 700;
-  /* MODIF : Taille réduite mobile */
   font-size: 22px; 
   color: #FFFFFF;
   margin-bottom: 5px;
@@ -183,7 +181,6 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
 
 @media (min-width: 768px) {
   .rating-toggle::before {
-    /* MODIF : Taille réduite desktop */
     font-size: 32px;
     margin-bottom: 10px;
   }
@@ -196,7 +193,6 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
 
 .rating-toggle .stars {
   color: #FFFFFF; 
-  /* MODIF : Étoiles réduites */
   font-size: 18px; 
   letter-spacing: 3px; 
   margin-bottom: 10px;
@@ -204,7 +200,7 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
 
 @media (min-width: 768px) {
   .rating-toggle .stars { 
-    font-size: 24px; /* Desktop réduit */
+    font-size: 24px; 
     letter-spacing: 4px; 
     margin-bottom: 15px; 
   }
@@ -213,24 +209,22 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
 .rating-toggle .count::before {
   content: "4.6 sur 5 basés sur";
   display: block; font-family: 'Barlow', sans-serif; font-weight: 700;
-  /* MODIF : Taille réduite */
   font-size: 18px; 
   color: #FFFFFF; margin-bottom: 3px; line-height: 1.2;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count::before { font-size: 28px; } /* Desktop réduit */
+  .rating-toggle .count::before { font-size: 28px; } 
 }
 
 .rating-toggle .count {
   font-family: 'Barlow', sans-serif; font-weight: 800; color: #FFFFFF;
   display: flex; flex-direction: column; align-items: center;
-  /* MODIF : Taille réduite */
   font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count { font-size: 18px; } /* Desktop réduit */
+  .rating-toggle .count { font-size: 18px; } 
 }
 
 .rating-toggle .chevron {
@@ -249,7 +243,7 @@ SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes 
   backdrop-filter: blur(10px); padding: 15px; border-radius: 0; max-width: 420px; width: 100%;
 }
 .rating-dropdown.active { display: block; }
-.average-score { font-size: 28px; font-weight: 700; color: #FFFFFF; } /* Note dropdown réduite */
+.average-score { font-size: 28px; font-weight: 700; color: #FFFFFF; } 
 .top-badge {
   margin-top: 5px; background: #00A651; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 0;
 }
