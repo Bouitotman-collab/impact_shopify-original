@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Galerie produit (Fluidité max - Zéro délai - Marges latérales rétablies)
+SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
 {% endcomment %}
 
 <div class="product-gallery-section">
@@ -62,7 +62,7 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marges latérales rét
 .product-gallery-container {
   max-width: 800px;
   margin: 0 auto;
-  /* C'est ICI qu'on gère les côtés : 0 en haut/bas, 20px à gauche/droite */
+  /* MARGES LATÉRALES : 20px partout (Desktop & Mobile) */
   padding: 0 20px; 
 }
 
@@ -74,25 +74,23 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marges latérales rét
   background: #ffffff;
   border-radius: 0px !important;
   overflow: hidden;
-  /* On force le carré pour que le conteneur tienne la place */
   aspect-ratio: 1 / 1; 
 }
 
 .main-image {
-  position: absolute; /* Les images se superposent */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   display: block;
   object-fit: contain; 
-  opacity: 0; /* Cachée par défaut */
-  transition: opacity 0.4s ease-in-out; /* Transition douce */
+  opacity: 0; 
+  transition: opacity 0.4s ease-in-out; 
   z-index: 1;
   background: #fff;
 }
 
-/* L'image active devient visible */
 .main-image.active {
   opacity: 1;
   z-index: 2;
@@ -179,14 +177,14 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marges latérales rét
   
   .product-gallery-container { 
     max-width: 100%;
-    /* CORRECTION ICI : On garde bien 15px de marge sur mobile */
-    padding: 0 15px; 
+    /* 20px sur mobile aussi */
+    padding: 0 20px; 
   }
   
   .thumbnails-container {
     justify-content: flex-start;
     flex-wrap: nowrap;
-    padding: 10px 0; /* Un peu d'air en haut/bas des miniatures */
+    padding: 10px 0; 
   }
   .thumbnail { width: 70px; height: 70px; }
 }
