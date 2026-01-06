@@ -20,6 +20,7 @@
       line-height: 1;
       display: inline-flex;
       align-items: center;
+      padding-right: 0; /* Important : on laisse le code Liquid gérer l'espace avec le tiret */
     }
 
     /* Réduction des bords / marges verticales */
@@ -41,7 +42,7 @@
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
           {%- render 'styled-text',
-            content: section.settings.text | append: ' • ',  /* Ajout du séparateur • */
+            content: section.settings.text | append: '  -  ', 
             gradient: section.settings.text_gradient,
             style: section.settings.text_style
           -%}
@@ -82,7 +83,7 @@
       "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "Promotion text"
+      "default": "Formule spéciale propriétaires d'animaux - Élimine poils, odeurs et bactéries - Sans danger pour vos animaux - Efficace dès le premier lavage - Approuvé par des vétérinaires"
     },
     {
       "type": "select",
