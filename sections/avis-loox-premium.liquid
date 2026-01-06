@@ -131,13 +131,20 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
     "reviews";
 }
 
-/* LAYOUT CÔTE À CÔTE SUR DESKTOP */
+/* LAYOUT CÔTE À CÔTE TOUJOURS (MOBILE ET DESKTOP) */
+.reviews-container {
+  grid-template-columns: 280px 1fr;
+  gap: 20px;
+  grid-template-areas: 
+    "summary reviews";
+  overflow-x: auto;
+}
+
 @media (min-width: 768px) {
   .reviews-container {
     grid-template-columns: 400px 1fr;
     gap: 40px;
-    grid-template-areas: 
-      "summary reviews";
+    overflow-x: visible;
   }
 }
 
@@ -152,14 +159,21 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   grid-area: summary;
   background-color: #000C7D;
   border-radius: 12px;
-  padding: 60px 40px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 400px;
+  min-height: 350px;
   position: relative;
+}
+
+@media (min-width: 768px) {
+  .rating-summary {
+    padding: 60px 40px;
+    min-height: 400px;
+  }
 }
 
 /* AJOUTER "EXCELLENT" AU DÉBUT */
@@ -168,10 +182,17 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   display: block;
   font-family: 'Barlow', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 28px;
   color: #FFFFFF;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .rating-toggle::before {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
 }
 
 /* BOUTON TOGGLE */
@@ -189,9 +210,17 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 /* ÉTOILES EN BLANC */
 .rating-toggle .stars {
   color: #FFFFFF;
-  font-size: 32px;
-  letter-spacing: 5px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .rating-toggle .stars {
+    font-size: 32px;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+  }
 }
 
 /* AJOUTER LA NOTE "4.6 sur 5 basés sur" */
@@ -199,22 +228,34 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   content: "4.6 sur 5 basés sur";
   display: block;
   font-family: 'Barlow', sans-serif;
-  font-size: 42px;
+  font-size: 24px;
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 5px;
   line-height: 1.2;
 }
 
+@media (min-width: 768px) {
+  .rating-toggle .count::before {
+    font-size: 42px;
+  }
+}
+
 /* TEXTE COMPTEUR EN BLANC */
 .rating-toggle .count {
   font-family: 'Barlow', sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 800;
   color: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .rating-toggle .count {
+    font-size: 24px;
+  }
 }
 
 /* CHEVRON EN BLANC */
@@ -304,14 +345,23 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
   background-color: transparent;
   color: #FFFFFF;
   border: 2px solid #FFFFFF;
-  padding: 14px 30px;
+  padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-family: 'Barlow', sans-serif;
   font-weight: 400;
-  margin-top: 30px;
+  font-size: 13px;
+  margin-top: 20px;
   display: inline-block;
   transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .write-review-btn-inline {
+    padding: 14px 30px;
+    font-size: 16px;
+    margin-top: 30px;
+  }
 }
 
 .write-review-btn-inline:hover {
@@ -384,28 +434,6 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 
 /* ===== STICKY MOBILE ===== */
 @media (max-width: 768px) {
-  .reviews-premium {
-    padding: 40px 0;
-  }
-
-  .rating-summary {
-    padding: 40px 30px;
-    min-height: auto;
-  }
-
-  .rating-toggle::before {
-    font-size: 36px;
-  }
-
-  .rating-toggle .count::before {
-    font-size: 28px;
-  }
-
-  .review-item {
-    min-width: 300px;
-    max-width: 300px;
-  }
-
   .mobile-rating-bar {
     position: fixed;
     bottom: 64px;
