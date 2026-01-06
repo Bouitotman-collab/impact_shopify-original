@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
+SECTION : Galerie produit – BLEU CIEL #74D0F1 + Carré + Zéro marges
 {% endcomment %}
 
 <div class="product-gallery-section">
@@ -53,8 +53,8 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
 <style>
 /* CONTAINER PRINCIPAL */
 .product-gallery-section {
-  padding-top: 0 !important;    /* Force Zéro haut */
-  padding-bottom: 0 !important; /* Force Zéro bas */
+  padding-top: 0 !important;    
+  padding-bottom: 0 !important; 
   margin: 0;
   background: #ffffff;
 }
@@ -62,7 +62,6 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
 .product-gallery-container {
   max-width: 800px;
   margin: 0 auto;
-  /* MARGES LATÉRALES : 20px partout (Desktop & Mobile) */
   padding: 0 20px; 
 }
 
@@ -117,10 +116,11 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
   padding-bottom: 4px;
 }
 
+/* MODIFICATION ICI : Bleu Ciel au survol */
 .gallery-nav:hover {
-  background: #000C7D;
+  background: #74D0F1; 
   color: #fff;
-  border-color: #000C7D;
+  border-color: #74D0F1;
 }
 
 .gallery-nav-prev { left: 15px; }
@@ -161,13 +161,15 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
   padding: 2px;
 }
 
+/* MODIFICATION ICI : Bleu Ciel au survol */
 .thumbnail:hover {
-  border-color: #000C7D;
+  border-color: #74D0F1;
   opacity: 1;
 }
 
+/* MODIFICATION ICI : Bleu Ciel quand active */
 .thumbnail.active {
-  border-color: #000C7D;
+  border-color: #74D0F1;
   border-width: 2px;
 }
 
@@ -177,7 +179,6 @@ SECTION : Galerie produit (Fluidité max - Zéro délai - Marge 20px partout)
   
   .product-gallery-container { 
     max-width: 100%;
-    /* 20px sur mobile aussi */
     padding: 0 20px; 
   }
   
