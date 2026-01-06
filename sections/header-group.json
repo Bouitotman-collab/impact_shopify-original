@@ -16,7 +16,7 @@
       "name": "Barre Annonce Fixe (Pro)",
       "settings": {
         "background_color": "#74d0f1",
-        "text_color": "#1a1a1a",
+        "text_color": "#000c7d",
         "message_text": "-10% supplémentaire dans le panier avec le code",
         "promo_code": "BIENVENUE10",
         "font_size": 14,
