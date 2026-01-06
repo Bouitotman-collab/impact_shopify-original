@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – PHOTOS CARRÉES + Note 4.6 + Zéro marges
+SECTION : Avis clients premium – PHOTOS PETIT CARRÉ + ANGLES DROITS + Note 4.6 + Zéro marges
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -91,7 +91,7 @@ SECTION : Avis clients premium – PHOTOS CARRÉES + Note 4.6 + Zéro marges
           {% if block.settings.review_image %}
             <div class="review-photo-container">
               <img 
-                src="{{ block.settings.review_image | img_url: '400x400', crop: 'center' }}" 
+                src="{{ block.settings.review_image | img_url: '300x300', crop: 'center' }}" 
                 alt="Photo avis client" 
                 loading="lazy"
                 class="review-photo"
@@ -312,14 +312,14 @@ SECTION : Avis clients premium – PHOTOS CARRÉES + Note 4.6 + Zéro marges
   margin: 0; flex: 1;
 }
 
-/* STYLE PHOTO CARRÉE */
+/* STYLE PHOTO CARRÉE REDUITE & ANGLES DROITS */
 .review-photo-container {
-  width: 100%;
-  aspect-ratio: 1 / 1; /* C'est ici que le carré se fait */
+  width: 150px; /* <-- TAILLE RÉDUITE ICI */
+  aspect-ratio: 1 / 1; /* Garde le format carré */
   overflow: hidden;
-  border-radius: 8px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  border-radius: 0px; /* <-- ANGLES DROITS ICI */
+  margin-top: 10px;
+  margin-bottom: 10px;
   background: #e0e0e0;
 }
 
