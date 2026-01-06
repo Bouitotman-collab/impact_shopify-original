@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – NOTE 4.8 + BLEU CIEL #74D0F1
+SECTION : Avis clients premium – CARRÉ BLEU VIF #01DAFE + NOTE 4.8
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -146,7 +146,8 @@ SECTION : Avis clients premium – NOTE 4.8 + BLEU CIEL #74D0F1
   flex-shrink: 0;
   width: 100%;
   max-width: 400px; 
-  background-color: #74D0F1; 
+  /* MODIF ICI : Changement de couleur vers le bleu vif #01DAFE */
+  background-color: #01DAFE; 
   border-radius: 0;
   padding: 20px 15px;
   display: flex;
@@ -205,7 +206,7 @@ SECTION : Avis clients premium – NOTE 4.8 + BLEU CIEL #74D0F1
   }
 }
 
-/* MODIFICATION ICI : NOTE EXTÉRIEURE FORCÉE À 4.8 */
+/* NOTE EXTÉRIEURE FORCÉE À 4.8 */
 .rating-toggle .count::before {
   content: "4.8 sur 5 basés sur";
   display: block; font-family: 'Barlow', sans-serif; font-weight: 700;
@@ -270,7 +271,7 @@ SECTION : Avis clients premium – NOTE 4.8 + BLEU CIEL #74D0F1
 @media (min-width: 768px) {
   .write-review-btn-inline { padding: 10px 24px; font-size: 15px; margin-top: 20px; }
 }
-.write-review-btn-inline:hover { background-color: #FFFFFF; color: #000C7D; }
+.write-review-btn-inline:hover { background-color: #FFFFFF; color: #01DAFE; }
 
 /* ===== LISTE DES AVIS (EN BAS) ===== */
 .reviews-list {
