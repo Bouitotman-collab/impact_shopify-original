@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
+SECTION : Avis clients premium – NOTE 4.8 + BLEU CIEL #74D0F1
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -23,7 +23,7 @@ SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
       <div class="rating-dropdown js-rating-dropdown">
 
         <div class="average-score">
-          ★ 4.6
+          ★ 4.8
         </div>
 
         {% if five_star_percent_number >= 70 %}
@@ -124,7 +124,7 @@ SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 0; /* Marges ZÉRO absolu */
+  padding: 0; 
   margin: 0;
   background: #fff;
 }
@@ -146,7 +146,6 @@ SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
   flex-shrink: 0;
   width: 100%;
   max-width: 400px; 
-  /* MODIF ICI : Changement de couleur vers le bleu ciel */
   background-color: #74D0F1; 
   border-radius: 0;
   padding: 20px 15px;
@@ -206,8 +205,9 @@ SECTION : Avis clients premium – COMPACT + BLEU CIEL #74D0F1
   }
 }
 
+/* MODIFICATION ICI : NOTE EXTÉRIEURE FORCÉE À 4.8 */
 .rating-toggle .count::before {
-  content: "4.6 sur 5 basés sur";
+  content: "4.8 sur 5 basés sur";
   display: block; font-family: 'Barlow', sans-serif; font-weight: 700;
   font-size: 18px; 
   color: #FFFFFF; margin-bottom: 3px; line-height: 1.2;
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {
   "name": "Avis clients premium",
   "settings": [
-    { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.6" },
+    { "type": "text", "id": "average_rating", "label": "Note moyenne", "default": "4.8" },
     { "type": "number", "id": "total_reviews", "label": "Nombre total d'avis", "default": 129 },
     { "type": "number", "id": "total_customers", "label": "Nombre total de clients", "default": 1800 },
 
