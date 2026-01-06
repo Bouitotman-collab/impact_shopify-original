@@ -766,11 +766,7 @@
       "name": "Galerie Produit",
       "settings": {
         "image_1": "shopify://shop_images/1.jpg",
-        "image_2": "shopify://shop_images/1.jpg",
-        "image_3": "shopify://shop_images/3.jpg",
-        "image_4": "shopify://shop_images/5_806e5203-fe2f-4b10-ad73-977bb98978e5.jpg",
-        "image_5": "shopify://shop_images/6.jpg",
-        "image_6": "shopify://shop_images/4.jpg"
+        "image_2": "shopify://shop_images/3.jpg"
       }
     }
   },
@@ -789,13 +785,13 @@
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
+    "product_gallery_VEcqDj",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "main",
     "related-products",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
-    "avis_clients_tous_PMJxcT",
-    "product_gallery_VEcqDj"
+    "avis_clients_tous_PMJxcT"
   ]
 }
