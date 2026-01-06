@@ -68,23 +68,6 @@
         "speed_mobile": 12
       }
     },
-    "scrolling_text_Jfmn46": {
-      "type": "scrolling-text",
-      "custom_css": [],
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "Formules spéciale propriétaires d'animaux          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOIE EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 8,
-        "background": "#74d0f1",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
-      }
-    },
     "rich_text_ane766": {
       "type": "rich-text",
       "blocks": {
@@ -419,6 +402,23 @@
         "image_4": "shopify://shop_images/5_ab598922-e61c-478b-995d-23bcd5c266d2.jpg",
         "image_5": "shopify://shop_images/6.jpg",
         "image_6": "shopify://shop_images/4.jpg"
+      }
+    },
+    "scrolling_text_Jfmn46": {
+      "type": "scrolling-text",
+      "custom_css": [],
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Formules spéciale propriétaires d'animaux          •          ÉLIMINE ODEURS, POILS ET RÉSIDUS INCRUSTÉS          •          SANS DANGER POUR LES ANIMAUX          •          APPROUVÉ VÉTÉRINAIRES          •          TESTÉ DERMATOLOGIQUEMENT          •          EFFICACE DÈS LE PREMIER LAVAGE          •          NETTOIE EN PROFONDEUR          •          PROTÈGE VOTRE MACHINE          •          COMPATIBLE TOUTES MACHINES          •",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 8,
+        "background": "#74d0f1",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
       }
     },
     "main": {
@@ -778,7 +778,6 @@
   "order": [
     "slideshow_9eGzHG",
     "logo_carousel_zGYFVe",
-    "scrolling_text_Jfmn46",
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "image_with_expandable_text_mFwfVE",
@@ -791,6 +790,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
+    "scrolling_text_Jfmn46",
     "main",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
