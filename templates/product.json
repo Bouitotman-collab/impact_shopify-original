@@ -409,6 +409,18 @@
         "text_color": ""
       }
     },
+    "product_gallery_VEcqDj": {
+      "type": "product-gallery",
+      "name": "Galerie Produit",
+      "settings": {
+        "image_1": "shopify://shop_images/1.jpg",
+        "image_2": "shopify://shop_images/2_3c7d2b18-9119-498f-b33a-696e090ee925.jpg",
+        "image_3": "shopify://shop_images/3.jpg",
+        "image_4": "shopify://shop_images/5_ab598922-e61c-478b-995d-23bcd5c266d2.jpg",
+        "image_5": "shopify://shop_images/6.jpg",
+        "image_6": "shopify://shop_images/4.jpg"
+      }
+    },
     "avis_clients_pHEDgk": {
       "type": "avis-loox-premium",
       "blocks": {
@@ -759,14 +771,6 @@
       "name": "Tous les avis clients",
       "settings": {
         "total_customers": 1800
-      }
-    },
-    "product_gallery_VEcqDj": {
-      "type": "product-gallery",
-      "name": "Galerie Produit",
-      "settings": {
-        "image_1": "shopify://shop_images/1.jpg",
-        "image_2": "shopify://shop_images/3.jpg"
       }
     }
   },
