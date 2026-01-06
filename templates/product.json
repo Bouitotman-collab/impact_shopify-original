@@ -442,46 +442,6 @@
             "payment_button_text_color": ""
           }
         },
-        "collapsible_text_ePHCgr": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "picto-truck",
-            "icon_width": 20,
-            "title": "Livraison Suivie Offerte",
-            "content": "<p>Votre commande est expédiée sous 24/48h. Un numéro de suivi vous sera envoyé par email.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_bFG3gE": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "picto-lock",
-            "icon_width": 20,
-            "title": "Paiement 100% Sécurisé",
-            "content": "<p>Nous utilisons le cryptage SSL pour protéger vos données bancaires. Nous acceptons Visa, Mastercard et Shop Pay.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_eHCdPx": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "picto-recycle",
-            "icon_width": 20,
-            "title": "Garantie Satisfait ou Remboursé",
-            "content": "<p>Testez notre pack en toute sérénité. Si vous n'êtes pas 100% satisfait de la propreté de votre linge ou de l'état de votre machine, vous avez 30 jours pour nous le renvoyer. Nous vous remboursons l'intégralité, sans poser de questions.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_text_PCDfqw": {
-          "type": "collapsible_text",
-          "settings": {
-            "icon": "picto-chat",
-            "icon_width": 20,
-            "title": "SAV Français disponible 7j/7",
-            "content": "<p>Une question sur l'utilisation de nos produits ou sur votre commande ? Notre équipe basée en France vous répond en moins de 24h. Contactez-nous à tout moment via l'adresse : </p>",
-            "page": ""
-          }
-        },
         "payment_terms": {
           "type": "payment_terms",
           "disabled": true,
@@ -511,10 +471,6 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
-        "collapsible_text_ePHCgr",
-        "collapsible_text_bFG3gE",
-        "collapsible_text_eHCdPx",
-        "collapsible_text_PCDfqw",
         "payment_terms",
         "badges",
         "rating",
