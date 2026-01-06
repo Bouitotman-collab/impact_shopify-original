@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
+SECTION : Galerie produit (Fluidité max - Zéro délai - Marges latérales rétablies)
 {% endcomment %}
 
 <div class="product-gallery-section">
@@ -53,7 +53,8 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
 <style>
 /* CONTAINER PRINCIPAL */
 .product-gallery-section {
-  padding: 0;
+  padding-top: 0 !important;    /* Force Zéro haut */
+  padding-bottom: 0 !important; /* Force Zéro bas */
   margin: 0;
   background: #ffffff;
 }
@@ -61,7 +62,8 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
 .product-gallery-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  /* C'est ICI qu'on gère les côtés : 0 en haut/bas, 20px à gauche/droite */
+  padding: 0 20px; 
 }
 
 /* GRANDE IMAGE - SYSTÈME D'EMPILEMENT */
@@ -85,7 +87,7 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
   display: block;
   object-fit: contain; 
   opacity: 0; /* Cachée par défaut */
-  transition: opacity 0.4s ease-in-out; /* Transition douce pure CSS */
+  transition: opacity 0.4s ease-in-out; /* Transition douce */
   z-index: 1;
   background: #fff;
 }
@@ -112,7 +114,7 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  z-index: 10; /* Au dessus des images */
+  z-index: 10;
   transition: all 0.2s ease;
   padding-bottom: 4px;
 }
@@ -174,12 +176,17 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
 /* RESPONSIVE MOBILE */
 @media (max-width: 768px) {
   .product-gallery-section { padding: 0; }
-  .product-gallery-container { padding: 0; max-width: 100%; }
+  
+  .product-gallery-container { 
+    max-width: 100%;
+    /* CORRECTION ICI : On garde bien 15px de marge sur mobile */
+    padding: 0 15px; 
+  }
   
   .thumbnails-container {
     justify-content: flex-start;
     flex-wrap: nowrap;
-    padding: 10px;
+    padding: 10px 0; /* Un peu d'air en haut/bas des miniatures */
   }
   .thumbnail { width: 70px; height: 70px; }
 }
@@ -187,14 +194,13 @@ SECTION : Galerie produit "Instant Switch" (Zéro latence - Empilement CSS)
 
 <script>
 let currentImageIndex = 1;
-// Compte combien d'images existent réellement dans le HTML
 const totalImages = document.querySelectorAll('.main-image').length;
 
 function selectImage(index) {
   if(index > totalImages || index < 1) return;
   currentImageIndex = index;
   
-  // 1. GESTION IMAGES PRINCIPALES (CSS class swap = instantané)
+  // 1. GESTION IMAGES PRINCIPALES
   document.querySelectorAll('.main-image').forEach(img => {
     img.classList.remove('active');
   });
