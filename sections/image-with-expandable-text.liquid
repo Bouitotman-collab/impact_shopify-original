@@ -11,14 +11,16 @@
         <div class="text-box" style="background: {{ section.settings.box_background_color }};">
           <details class="expandable-details">
             <summary>
-              <h2 class="title" style="color: {{ section.settings.title_color }};">{{ section.settings.title | default: "Notre histoire" }}</h2>
-              <div class="arrow-circle" style="border-color: {{ section.settings.arrow_color }}; color: {{ section.settings.arrow_color }};">
+              <h2 class="title" style="color: #74D0F1;">{{ section.settings.title | default: "Notre histoire" }}</h2>
+              
+              <div class="arrow-circle" style="border-color: #74D0F1; color: #74D0F1;">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
             </summary>
-            <div class="expandable-content" style="color: {{ section.settings.content_color }};">
+            
+            <div class="expandable-content" style="color: #74D0F1;">
               {{ section.settings.content }}
             </div>
           </details>
@@ -247,24 +249,6 @@
       "id": "box_background_color",
       "label": "Couleur de fond de la boîte",
       "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "Couleur du titre",
-      "default": "#74D0F1"
-    },
-    {
-      "type": "color",
-      "id": "content_color",
-      "label": "Couleur du contenu (texte intérieur)",
-      "default": "#74D0F1"
-    },
-    {
-      "type": "color",
-      "id": "arrow_color",
-      "label": "Couleur de la flèche et du rond",
-      "default": "#74D0F1"
     },
     {
       "type": "checkbox",
