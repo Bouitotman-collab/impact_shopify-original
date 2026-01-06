@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
+SECTION : Avis clients premium – PHOTOS CARRÉES + Note 4.6 + Zéro marges
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -91,7 +91,7 @@ SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
           {% if block.settings.review_image %}
             <div class="review-photo-container">
               <img 
-                src="{{ block.settings.review_image | img_url: '400x' }}" 
+                src="{{ block.settings.review_image | img_url: '400x400', crop: 'center' }}" 
                 alt="Photo avis client" 
                 loading="lazy"
                 class="review-photo"
@@ -138,7 +138,7 @@ SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  align-items: stretch; /* Pour que les boîtes aient la même hauteur */
+  align-items: stretch; 
 }
 
 .reviews-container::-webkit-scrollbar {
@@ -312,12 +312,12 @@ SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
   margin: 0; flex: 1;
 }
 
-/* STYLE DE LA PHOTO DANS L'AVIS */
+/* STYLE PHOTO CARRÉE */
 .review-photo-container {
   width: 100%;
-  height: 180px; /* Hauteur fixe pour uniformiser */
+  aspect-ratio: 1 / 1; /* C'est ici que le carré se fait */
   overflow: hidden;
-  border-radius: 8px; /* Jolis coins arrondis */
+  border-radius: 8px;
   margin-top: 5px;
   margin-bottom: 5px;
   background: #e0e0e0;
@@ -326,7 +326,7 @@ SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
 .review-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Remplit le cadre sans déformer */
+  object-fit: cover; /* Remplit le carré sans déformer */
   display: block;
 }
 
