@@ -119,44 +119,38 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 }
 
 .reviews-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-  max-width: 1400px;
+  display: flex;
+  gap: 20px;
+  max-width: none;
   margin: 0 auto;
   padding: 0 20px;
-  grid-template-areas: 
-    "title"
-    "summary"
-    "reviews";
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* LAYOUT CÔTE À CÔTE TOUJOURS (MOBILE ET DESKTOP) */
-.reviews-container {
-  grid-template-columns: 280px 1fr;
-  gap: 20px;
-  grid-template-areas: 
-    "summary reviews";
-  overflow-x: auto;
+.reviews-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 768px) {
   .reviews-container {
-    grid-template-columns: 400px 1fr;
     gap: 40px;
     overflow-x: visible;
+    max-width: 1400px;
   }
 }
 
 /* TITRE - CACHÉ CAR DANS LE BLOC BLEU */
 .reviews-title {
-  grid-area: title;
   display: none;
 }
 
 /* ===== BLOC BLEU - RÉSUMÉ ===== */
 .rating-summary {
-  grid-area: summary;
+  flex-shrink: 0;
+  width: 280px;
   background-color: #000C7D;
   border-radius: 12px;
   padding: 30px 20px;
@@ -171,6 +165,7 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 
 @media (min-width: 768px) {
   .rating-summary {
+    width: 400px;
     padding: 60px 40px;
     min-height: 400px;
   }
@@ -371,18 +366,9 @@ SECTION : Avis clients premium – version finale avec bloc bleu à gauche
 
 /* ===== CARROUSEL D'AVIS À DROITE ===== */
 .reviews-list {
-  grid-area: reviews;
   display: flex;
   gap: 20px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding: 10px 0;
-}
-
-.reviews-list::-webkit-scrollbar {
-  display: none;
+  flex-shrink: 0;
 }
 
 /* CARTES D'AVIS */
