@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
+SECTION : Avis clients premium – COMPACT (Zéro marges, bloc bleu fin, textes réduits)
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -124,15 +124,16 @@ SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 40px 0; /* Un peu d'espace haut/bas pour respirer */
+  padding: 0; /* MODIF : Marges ZÉRO absolu */
+  margin: 0;
   background: #fff;
 }
 
 .reviews-container {
   display: flex;
-  flex-direction: column; /* MODIF ICI : On empile verticalement */
-  align-items: center;    /* On centre le bloc bleu */
-  gap: 40px;              /* Espace entre le bloc bleu et les avis */
+  flex-direction: column; 
+  align-items: center;   
+  gap: 30px; /* Espace réduit entre le bloc bleu et les avis */
   max-width: none;
   margin: 0 auto;
   padding: 0 20px;
@@ -140,84 +141,100 @@ SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
 
 .reviews-title { display: none; }
 
-/* ===== BLOC BLEU (RÉSUMÉ) ===== */
+/* ===== BLOC BLEU (RÉSUMÉ COMPACT) ===== */
 .rating-summary {
   flex-shrink: 0;
   width: 100%;
-  max-width: 400px; /* Largeur max pour que ce soit joli */
-  background-color: #5472AE; /* <--- COULEUR MODIFIÉE ICI */
+  max-width: 400px; 
+  background-color: #5472AE; 
   border-radius: 0;
-  padding: 30px 20px;
+  /* MODIF : Padding réduit et suppression du min-height */
+  padding: 20px 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 350px;
+  min-height: auto; /* La hauteur s'adapte au contenu */
   position: relative;
 }
 
 @media (min-width: 768px) {
   .rating-summary {
     width: 400px;
-    padding: 60px 40px;
-    min-height: 400px;
+    /* MODIF : Padding desktop réduit aussi */
+    padding: 30px 25px;
+    min-height: auto;
   }
 }
 
-/* Textes Bloc Bleu */
+/* Textes Bloc Bleu - TAILLES RÉDUITES */
 .rating-toggle::before {
   content: "Excellent";
   display: block;
   font-family: 'Barlow', sans-serif;
   font-weight: 700;
-  font-size: 28px;
+  /* MODIF : Taille réduite mobile */
+  font-size: 22px; 
   color: #FFFFFF;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .rating-toggle::before {
-    font-size: 48px;
-    margin-bottom: 15px;
+    /* MODIF : Taille réduite desktop */
+    font-size: 32px;
+    margin-bottom: 10px;
   }
 }
 
 .rating-toggle {
   background: none; border: none; cursor: pointer;
-  display: flex; flex-direction: column; align-items: center; gap: 10px; color: #FFFFFF;
+  display: flex; flex-direction: column; align-items: center; gap: 5px; color: #FFFFFF;
 }
 
 .rating-toggle .stars {
-  color: #FFFFFF; font-size: 20px; letter-spacing: 3px; margin-bottom: 15px;
+  color: #FFFFFF; 
+  /* MODIF : Étoiles réduites */
+  font-size: 18px; 
+  letter-spacing: 3px; 
+  margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .stars { font-size: 32px; letter-spacing: 5px; margin-bottom: 20px; }
+  .rating-toggle .stars { 
+    font-size: 24px; /* Desktop réduit */
+    letter-spacing: 4px; 
+    margin-bottom: 15px; 
+  }
 }
 
 .rating-toggle .count::before {
   content: "4.6 sur 5 basés sur";
-  display: block; font-family: 'Barlow', sans-serif; font-size: 24px; font-weight: 700;
-  color: #FFFFFF; margin-bottom: 5px; line-height: 1.2;
+  display: block; font-family: 'Barlow', sans-serif; font-weight: 700;
+  /* MODIF : Taille réduite */
+  font-size: 18px; 
+  color: #FFFFFF; margin-bottom: 3px; line-height: 1.2;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count::before { font-size: 42px; }
+  .rating-toggle .count::before { font-size: 28px; } /* Desktop réduit */
 }
 
 .rating-toggle .count {
-  font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 800; color: #FFFFFF;
+  font-family: 'Barlow', sans-serif; font-weight: 800; color: #FFFFFF;
   display: flex; flex-direction: column; align-items: center;
+  /* MODIF : Taille réduite */
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count { font-size: 24px; }
+  .rating-toggle .count { font-size: 18px; } /* Desktop réduit */
 }
 
 .rating-toggle .chevron {
-  color: #FFFFFF; font-size: 24px; margin-top: 15px; width: 40px; height: 40px;
+  color: #FFFFFF; font-size: 20px; margin-top: 10px; width: 32px; height: 32px;
   border: 2px solid #FFFFFF; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
 }
@@ -226,38 +243,38 @@ SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
   background-color: rgba(255, 255, 255, 0.2); transform: scale(1.1);
 }
 
-/* DROPDOWN */
+/* DROPDOWN COMPACT */
 .rating-dropdown {
-  display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px); padding: 20px; border-radius: 0; max-width: 420px; width: 100%;
+  display: none; margin-top: 15px; background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); padding: 15px; border-radius: 0; max-width: 420px; width: 100%;
 }
 .rating-dropdown.active { display: block; }
-.average-score { font-size: 36px; font-weight: 700; color: #FFFFFF; }
+.average-score { font-size: 28px; font-weight: 700; color: #FFFFFF; } /* Note dropdown réduite */
 .top-badge {
-  margin-top: 6px; background: #00A651; color: #fff; font-size: 12px; padding: 6px 12px; border-radius: 0;
+  margin-top: 5px; background: #00A651; color: #fff; font-size: 11px; padding: 4px 10px; border-radius: 0;
 }
-.review-context { margin-top: 8px; font-size: 13px; color: #FFFFFF; }
+.review-context { margin-top: 8px; font-size: 12px; color: #FFFFFF; }
 
-/* BARS */
-.rating-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
-.rating-row .label { color: #FFFFFF; min-width: 80px; }
-.bar { flex: 1; height: 8px; background: rgba(255, 255, 255, 0.3); border-radius: 4px; overflow: hidden; }
+/* BARS COMPACTES */
+.rating-row { display: flex; align-items: center; gap: 8px; margin: 5px 0; }
+.rating-row .label { color: #FFFFFF; min-width: 70px; font-size: 13px; }
+.bar { flex: 1; height: 6px; background: rgba(255, 255, 255, 0.3); border-radius: 3px; overflow: hidden; }
 .fill { height: 100%; width: 0; transition: width 0.6s ease; }
 .rating-5 .fill { background: #00A651; }
 .rating-4 .fill { background: #6BCF9B; }
 .rating-3 .fill { background: #F4C430; }
 .rating-2 .fill { background: #F39C12; }
 .rating-1 .fill { background: #E74C3C; }
-.rating-row .number { color: #FFFFFF; min-width: 40px; text-align: right; }
+.rating-row .number { color: #FFFFFF; min-width: 35px; text-align: right; font-size: 13px; }
 
 .write-review-btn-inline {
   background-color: transparent; color: #FFFFFF; border: 2px solid #FFFFFF;
-  padding: 10px 20px; border-radius: 0; text-decoration: none;
+  padding: 8px 16px; border-radius: 0; text-decoration: none;
   font-family: 'Barlow', sans-serif; font-weight: 400; font-size: 13px;
-  margin-top: 20px; display: inline-block; transition: all 0.3s ease;
+  margin-top: 15px; display: inline-block; transition: all 0.3s ease;
 }
 @media (min-width: 768px) {
-  .write-review-btn-inline { padding: 14px 30px; font-size: 16px; margin-top: 30px; }
+  .write-review-btn-inline { padding: 10px 24px; font-size: 15px; margin-top: 20px; }
 }
 .write-review-btn-inline:hover { background-color: #FFFFFF; color: #000C7D; }
 
@@ -266,29 +283,26 @@ SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
   display: flex;
   gap: 20px;
   flex-shrink: 0;
-  width: 100%; /* Prend toute la largeur */
-  overflow-x: auto; /* Permet le scroll horizontal */
-  padding-bottom: 20px; /* Espace pour le scroll */
-  
-  /* Masquer la scrollbar */
+  width: 100%; 
+  overflow-x: auto; 
+  padding-bottom: 20px; 
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 .reviews-list::-webkit-scrollbar { display: none; }
 
-/* Pour centrer les avis s'il n'y en a pas beaucoup, sinon aligné à gauche */
 @media (min-width: 768px) {
   .reviews-list {
     justify-content: center; 
-    flex-wrap: wrap; /* Sur PC, on peut les mettre en grille si on veut, sinon enlever flex-wrap pour garder le carrousel */
+    flex-wrap: wrap; 
     overflow-x: visible; 
+    padding-bottom: 0;
   }
 }
-/* Sur mobile, on garde le carrousel pur */
 @media (max-width: 767px) {
   .reviews-list {
     justify-content: flex-start;
-    padding-left: 10px; /* Petit padding gauche */
+    padding-left: 10px; 
   }
 }
 
@@ -301,7 +315,7 @@ SECTION : Avis clients premium – BLEU #5472AE + AVIS EN BAS + PHOTOS CARRÉES
   display: flex;
   flex-direction: column;
   gap: 12px;
-  flex-shrink: 0; /* Important pour le scroll */
+  flex-shrink: 0; 
 }
 
 .review-header {
