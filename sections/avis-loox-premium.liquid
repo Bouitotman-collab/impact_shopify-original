@@ -1,5 +1,5 @@
 {% comment %}
-SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
+SECTION : Avis clients premium – Avec PHOTOS + Note 4.6 + Zéro marges
 {% endcomment %}
 
 {% assign five_star_percent_number = section.settings.five_star_percent | plus: 0 %}
@@ -73,20 +73,36 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
       {% for block in section.blocks %}
         <div class="review-item" {{ block.shopify_attributes }}>
 
-          <div class="review-stars">
-            {% for i in (1..5) %}
-              {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
-            {% endfor %}
+          <div class="review-header">
+            <div class="review-stars">
+              {% for i in (1..5) %}
+                {% if i <= block.settings.rating %}★{% else %}☆{% endif %}
+              {% endfor %}
+            </div>
+            {% if block.settings.verified %}
+              <span class="verified-badge">✔</span>
+            {% endif %}
           </div>
 
           <p class="review-text">
             {{ block.settings.review_text }}
           </p>
 
+          {% if block.settings.review_image %}
+            <div class="review-photo-container">
+              <img 
+                src="{{ block.settings.review_image | img_url: '400x' }}" 
+                alt="Photo avis client" 
+                loading="lazy"
+                class="review-photo"
+              >
+            </div>
+          {% endif %}
+
           <div class="review-footer">
             <strong>{{ block.settings.customer_name }}</strong>
             {% if block.settings.verified %}
-              <span class="verified">✔ Achat vérifié</span>
+              <span class="verified-text">Achat vérifié</span>
             {% endif %}
           </div>
 
@@ -108,7 +124,7 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
 <style>
 /* ===== CSS DE BASE ===== */
 .reviews-premium {
-  padding: 0; /* MARGES HAUT/BAS À ZÉRO */
+  padding: 0;
   background: #fff;
 }
 
@@ -122,6 +138,7 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  align-items: stretch; /* Pour que les boîtes aient la même hauteur */
 }
 
 .reviews-container::-webkit-scrollbar {
@@ -136,9 +153,7 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
   }
 }
 
-.reviews-title {
-  display: none;
-}
+.reviews-title { display: none; }
 
 /* ===== BLOC BLEU ===== */
 .rating-summary {
@@ -164,7 +179,7 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
   }
 }
 
-/* TEXTE "Excellent" */
+/* Textes Bloc Bleu */
 .rating-toggle::before {
   content: "Excellent";
   display: block;
@@ -184,188 +199,83 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
 }
 
 .rating-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: #FFFFFF;
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 10px; color: #FFFFFF;
 }
 
 .rating-toggle .stars {
-  color: #FFFFFF;
-  font-size: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
+  color: #FFFFFF; font-size: 20px; letter-spacing: 3px; margin-bottom: 15px;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .stars {
-    font-size: 32px;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
-  }
+  .rating-toggle .stars { font-size: 32px; letter-spacing: 5px; margin-bottom: 20px; }
 }
 
-/* "4.6 sur 5" */
 .rating-toggle .count::before {
   content: "4.6 sur 5 basés sur";
-  display: block;
-  font-family: 'Barlow', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #FFFFFF;
-  margin-bottom: 5px;
-  line-height: 1.2;
+  display: block; font-family: 'Barlow', sans-serif; font-size: 24px; font-weight: 700;
+  color: #FFFFFF; margin-bottom: 5px; line-height: 1.2;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count::before {
-    font-size: 42px;
-  }
+  .rating-toggle .count::before { font-size: 42px; }
 }
 
 .rating-toggle .count {
-  font-family: 'Barlow', sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-family: 'Barlow', sans-serif; font-size: 16px; font-weight: 800; color: #FFFFFF;
+  display: flex; flex-direction: column; align-items: center;
 }
 
 @media (min-width: 768px) {
-  .rating-toggle .count {
-    font-size: 24px;
-  }
+  .rating-toggle .count { font-size: 24px; }
 }
 
 .rating-toggle .chevron {
-  color: #FFFFFF;
-  font-size: 24px;
-  margin-top: 15px;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #FFFFFF;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  color: #FFFFFF; font-size: 24px; margin-top: 15px; width: 40px; height: 40px;
+  border: 2px solid #FFFFFF; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
 }
 
 .rating-toggle:hover .chevron {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.2); transform: scale(1.1);
 }
 
 /* DROPDOWN */
 .rating-dropdown {
-  display: none;
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 0;
-  max-width: 420px;
+  display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px); padding: 20px; border-radius: 0; max-width: 420px;
 }
-
-.rating-dropdown.active {
-  display: block;
-}
-
-.average-score {
-  font-size: 36px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-
+.rating-dropdown.active { display: block; }
+.average-score { font-size: 36px; font-weight: 700; color: #FFFFFF; }
 .top-badge {
-  margin-top: 6px;
-  background: #00A651;
-  color: #fff;
-  font-size: 12px;
-  padding: 6px 12px;
-  border-radius: 0;
+  margin-top: 6px; background: #00A651; color: #fff; font-size: 12px; padding: 6px 12px; border-radius: 0;
 }
-
-.review-context {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #FFFFFF;
-}
+.review-context { margin-top: 8px; font-size: 13px; color: #FFFFFF; }
 
 /* BARS */
-.rating-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 8px 0;
-}
-
-.rating-row .label {
-  color: #FFFFFF;
-  min-width: 80px;
-}
-
-.bar {
-  flex: 1;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.fill {
-  height: 100%;
-  width: 0;
-  transition: width 0.6s ease;
-}
-
+.rating-row { display: flex; align-items: center; gap: 10px; margin: 8px 0; }
+.rating-row .label { color: #FFFFFF; min-width: 80px; }
+.bar { flex: 1; height: 8px; background: rgba(255, 255, 255, 0.3); border-radius: 4px; overflow: hidden; }
+.fill { height: 100%; width: 0; transition: width 0.6s ease; }
 .rating-5 .fill { background: #00A651; }
 .rating-4 .fill { background: #6BCF9B; }
 .rating-3 .fill { background: #F4C430; }
 .rating-2 .fill { background: #F39C12; }
 .rating-1 .fill { background: #E74C3C; }
-
-.rating-row .number {
-  color: #FFFFFF;
-  min-width: 40px;
-  text-align: right;
-}
+.rating-row .number { color: #FFFFFF; min-width: 40px; text-align: right; }
 
 .write-review-btn-inline {
-  background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  padding: 10px 20px;
-  border-radius: 0;
-  text-decoration: none;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  margin-top: 20px;
-  display: inline-block;
-  transition: all 0.3s ease;
+  background-color: transparent; color: #FFFFFF; border: 2px solid #FFFFFF;
+  padding: 10px 20px; border-radius: 0; text-decoration: none;
+  font-family: 'Barlow', sans-serif; font-weight: 400; font-size: 13px;
+  margin-top: 20px; display: inline-block; transition: all 0.3s ease;
 }
-
 @media (min-width: 768px) {
-  .write-review-btn-inline {
-    padding: 14px 30px;
-    font-size: 16px;
-    margin-top: 30px;
-  }
+  .write-review-btn-inline { padding: 14px 30px; font-size: 16px; margin-top: 30px; }
 }
+.write-review-btn-inline:hover { background-color: #FFFFFF; color: #000C7D; }
 
-.write-review-btn-inline:hover {
-  background-color: #FFFFFF;
-  color: #000C7D;
-}
-
-/* ===== CARROUSEL ===== */
+/* ===== CARROUSEL & CARTES AVIS ===== */
 .reviews-list {
   display: flex;
   gap: 20px;
@@ -373,80 +283,78 @@ SECTION : Avis clients premium – Note 4.6 forcée + Zéro marges
 }
 
 .review-item {
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 320px;
+  max-width: 320px;
   background: #F5F5F5;
   border-radius: 0;
-  padding: 30px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .review-stars {
-  color: #FFD700;
-  font-size: 18px;
-  margin-bottom: 10px;
+  color: #FFD700; font-size: 18px;
+}
+
+.verified-badge {
+  color: #00A651; font-size: 14px;
 }
 
 .review-text {
-  font-family: 'Barlow', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #333333;
-  margin: 0;
-  flex: 1;
+  font-family: 'Barlow', sans-serif; font-size: 15px; line-height: 1.5; color: #333333;
+  margin: 0; flex: 1;
+}
+
+/* STYLE DE LA PHOTO DANS L'AVIS */
+.review-photo-container {
+  width: 100%;
+  height: 180px; /* Hauteur fixe pour uniformiser */
+  overflow: hidden;
+  border-radius: 8px; /* Jolis coins arrondis */
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: #e0e0e0;
+}
+
+.review-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le cadre sans déformer */
+  display: block;
 }
 
 .review-footer {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
+  display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,0.05);
 }
 
 .review-footer strong {
-  font-family: 'Barlow', sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  color: #000000;
+  font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; color: #000000;
 }
 
-.verified {
-  font-size: 13px;
-  color: #00A651;
-  margin-left: 6px;
+.verified-text {
+  font-size: 12px; color: #00A651; display: flex; align-items: center; gap: 4px;
 }
+.verified-text::before { content: "✔"; }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .mobile-rating-bar {
-    position: fixed;
-    bottom: 64px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    padding: 8px 14px;
-    border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    display: none;
-    align-items: center;
-    gap: 6px;
-    z-index: 60;
-    white-space: nowrap;
-    max-width: 90vw;
-    cursor: pointer;
-    border: none;
+    position: fixed; bottom: 64px; left: 50%; transform: translateX(-50%);
+    background: #fff; padding: 8px 14px; border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); display: none;
+    align-items: center; gap: 6px; z-index: 60; white-space: nowrap;
+    max-width: 90vw; cursor: pointer; border: none;
   }
-
-  .mobile-rating-bar .stars {
-    font-size: 14px;
-  }
-
-  .mobile-rating-bar .rating-text {
-    font-size: 13px;
-    font-weight: 600;
-  }
+  .mobile-rating-bar .stars { font-size: 14px; }
+  .mobile-rating-bar .rating-text { font-size: 13px; font-weight: 600; }
 }
 </style>
 
@@ -514,7 +422,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { "type": "text", "id": "customer_name", "label": "Nom" },
         { "type": "checkbox", "id": "verified", "label": "Achat vérifié", "default": true },
         { "type": "range", "id": "rating", "label": "Note", "min": 1, "max": 5, "step": 1, "default": 5 },
-        { "type": "textarea", "id": "review_text", "label": "Avis" }
+        { "type": "textarea", "id": "review_text", "label": "Avis" },
+        { 
+          "type": "image_picker", 
+          "id": "review_image", 
+          "label": "Photo de l'avis" 
+        }
       ]
     }
   ],
