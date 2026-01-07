@@ -3036,19 +3036,21 @@ var ProductQuickAdd = class extends HTMLElement {
   disconnectedCallback() {
     this.#intersectionObserver.disconnect();
   }
- _onObserved(entries) {
-  entries.forEach((entry) => {
-    if (entry.target === this._scopeFrom) {
-      this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
-    }
-    if (entry.target === this._scopeTo) {
-      if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
-        this.#scopeToReached = true;
+  _onObserved(entries) {
+    entries.forEach((entry) => {
+      if (entry.target === this._scopeFrom) {
+        this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
       }
-    }
-  });
-  this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
-}
+      if (entry.target === this._scopeTo) {
+        // Une fois qu'on a atteint cette section, on reste à true pour toujours
+        if (entry.isIntersecting || this.#scopeToReached) {
+          this.#scopeToReached = true;
+        }
+      }
+    });
+    this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
+  }
+};
 if (!window.customElements.get("product-quick-add")) {
   window.customElements.define("product-quick-add", ProductQuickAdd);
 }
