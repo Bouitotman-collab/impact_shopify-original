@@ -14,13 +14,12 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "newsletter": {
-          "type": "newsletter",
+        "links": {
+          "type": "links",
           "settings": {
-            "image_width": 150,
-            "heading_size": "h6",
-            "title": "Rejoignez le club PurePaw : Profitez de nos conseils d'entretien et de nos offres exclusives.",
-            "content": ""
+            "menu": "footer",
+            "show_menu_title": false,
+            "menu_title": "Informations"
           }
         },
         "text": {
@@ -31,19 +30,20 @@
             "enable_follow_on_shop": true
           }
         },
-        "links": {
-          "type": "links",
+        "newsletter": {
+          "type": "newsletter",
           "settings": {
-            "menu": "footer",
-            "show_menu_title": false,
-            "menu_title": "Informations"
+            "image_width": 150,
+            "heading_size": "h6",
+            "title": "Rejoignez le club PurePaw : Profitez de nos conseils d'entretien et de nos offres exclusives.",
+            "content": ""
           }
         }
       },
       "block_order": [
-        "newsletter",
+        "links",
         "text",
-        "links"
+        "newsletter"
       ],
       "settings": {
         "show_social_media": true,
