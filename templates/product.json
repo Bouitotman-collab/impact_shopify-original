@@ -797,8 +797,8 @@
       "settings": {
         "full_width": true,
         "subheading": "",
-        "title": "Questions fréquentes",
-        "content": "",
+        "title": "",
+        "content": "<h3>Questions fréquentes</h3>",
         "team_avatar_width": 160,
         "support_hours": "Une question ? Contactez nos experts du lundi au vendredi : contact@purepaw.fr",
         "answer_time": "Délai de réponse moyen : 24 h",
