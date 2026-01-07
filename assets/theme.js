@@ -3021,45 +3021,33 @@ var ProductLoader = class {
 
 // js/common/product/quick-add.js
 var ProductQuickAdd = class extends HTMLElement {
-  #scopeFromPassed = false;
-  #scopeToReached = false;
-  #intersectionObserver = new IntersectionObserver(this._onObserved.bind(this));
-  
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
     
-    // Cible la section Shopify avec "avis-clients-reviews-premium"
-    this._scopeTo = document.querySelector('[id*="avis-clients-reviews-premium"]') || 
-                     document.querySelector('.reviews-container') ||
-                     document.querySelector('.footer');
-    
-    if (!this._scopeFrom || !this._scopeTo) {
+    if (!this._scopeFrom) {
       return;
     }
-    
-    this.#intersectionObserver.observe(this._scopeFrom);
-    this.#intersectionObserver.observe(this._scopeTo);
-  }
-  
-  disconnectedCallback() {
-    this.#intersectionObserver.disconnect();
-  }
-  
-  _onObserved(entries) {
-    entries.forEach((entry) => {
-      if (entry.target === this._scopeFrom) {
-        this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
+
+    // Dès qu'on scroll, on vérifie la position
+    window.addEventListener('scroll', () => {
+      const reviewsSection = document.querySelector('[id*="avis-clients-reviews-premium"]');
+      
+      if (!reviewsSection) return;
+      
+      const formRect = this._scopeFrom.getBoundingClientRect();
+      const reviewsRect = reviewsSection.getBoundingClientRect();
+      
+      // Si on a dépassé le form ET qu'on est arrivé aux avis
+      if (formRect.bottom < 0 && reviewsRect.top < window.innerHeight) {
+        this.classList.add('is-visible');
       }
       
-      if (entry.target === this._scopeTo && entry.isIntersecting) {
-        this.#scopeToReached = true;
+      // Si on a atteint les avis, on cache DÉFINITIVEMENT
+      if (reviewsRect.top <= 0) {
+        this.classList.remove('is-visible');
         this.style.display = 'none';
       }
     });
-    
-    if (!this.#scopeToReached) {
-      this.classList.toggle("is-visible", this.#scopeFromPassed);
-    }
   }
 };
 if (!window.customElements.get("product-quick-add")) {
