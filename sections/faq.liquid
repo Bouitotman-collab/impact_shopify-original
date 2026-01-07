@@ -7,6 +7,33 @@
     --section-stack-intro: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
     --section-stack-main: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
   }
+  
+  /* Fond blanc et texte bleu pour la FAQ */
+  #shopify-section-{{ section.id }} .accordion-box {
+    background-color: white !important;
+  }
+  
+  #shopify-section-{{ section.id }} .accordion-box * {
+    color: #74D0F1 !important;
+  }
+  
+  /* Bordures de séparation entre les questions */
+  #shopify-section-{{ section.id }} .accordion-box > * {
+    border-bottom: 1px solid #e5e5e5 !important;
+  }
+  
+  #shopify-section-{{ section.id }} .accordion-box > *:last-child {
+    border-bottom: none !important;
+  }
+  
+  /* Réduction de l'espace entre le titre et les questions */
+  #shopify-section-{{ section.id }} .section-stack__intro {
+    margin-bottom: 1rem !important;
+  }
+  
+  #shopify-section-{{ section.id }} .v-stack.gap-10 {
+    gap: 1rem !important;
+  }
 </style>
 
 <div {% render 'section-properties' %}>
