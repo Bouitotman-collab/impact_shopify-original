@@ -52,6 +52,22 @@
         "background_gradient": ""
       }
     },
+    "scrolling_text_w37wcW": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Formulé spécialement propriétaires d'animaux               •               élimine poils, odeurs et bactéries               •               Sans danger pour vos animaux               •               Efficace dès le premier lavage               •               Approuvé par des vétérinaires               •",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "#74d0f1",
+        "background_gradient": "",
+        "text_color": "#ffffff",
+        "text_gradient": ""
+      }
+    },
     "logo_carousel_zGYFVe": {
       "type": "logo-carousel",
       "custom_css": [],
@@ -381,22 +397,6 @@
         "image_3": "shopify://shop_images/4.jpg",
         "image_4": "shopify://shop_images/5_6d968f46-fa5c-4066-a1ae-c1720c538b91.jpg",
         "image_5": "shopify://shop_images/2_4ffdbead-fb97-4cb9-93f2-8f5cce233d7a.jpg"
-      }
-    },
-    "scrolling_text_w37wcW": {
-      "type": "scrolling-text",
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "Formulé spécialement propriétaires d'animaux               •               élimine poils, odeurs et bactéries               •               Sans danger pour vos animaux               •               Efficace dès le premier lavage               •               Approuvé par des vétérinaires               •",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 10,
-        "background": "#74d0f1",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
       }
     },
     "main": {
@@ -819,7 +819,7 @@
   },
   "order": [
     "slideshow_9eGzHG",
-    "logo_carousel_zGYFVe",
+    "scrolling_text_w37wcW",
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "image_with_expandable_text_mFwfVE",
@@ -832,8 +832,8 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
-    "scrolling_text_w37wcW",
     "main",
+    "logo_carousel_zGYFVe",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "related-products",
