@@ -177,7 +177,6 @@
       "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-3.jpg",
         "title": "FINIES LES PANNES ET L'EAU QUI STAGNE",
         "content": "<p>Prévient activement l'obstruction des filtres et des pompes causée par l'accumulation de poils. Évitez les frais de plombier et les réparations coûteuses grâce à une évacuation toujours fluide.</p>",
         "is_first_section": true,
@@ -212,7 +211,6 @@
       "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-5.jpg",
         "title": "UNE HYGIÈNE PROFONDE, LÀ OÙ VOUS NE VOYEZ PAS",
         "content": "<p>Décolle le sébum, la boue et les résidus organiques incrustés dans les zones inaccessibles de votre machine pour un environnement de lavage 100% sain.</p>",
         "is_first_section": true,
@@ -708,6 +706,59 @@
       "settings": {
         "total_customers": 1800
       }
+    },
+    "faq_4UwMC7": {
+      "type": "faq",
+      "blocks": {
+        "item_D3CtVf": {
+          "type": "item",
+          "settings": {
+            "title": "Do you ship overseas?",
+            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+          }
+        },
+        "item_3jBBKf": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "item_HA9f3d": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_D3CtVf",
+        "item_3jBBKf",
+        "item_HA9f3d"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
     }
   },
   "order": [
@@ -732,6 +783,7 @@
     "related-products",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
-    "avis_clients_tous_PMJxcT"
+    "avis_clients_tous_PMJxcT",
+    "faq_4UwMC7"
   ]
 }
