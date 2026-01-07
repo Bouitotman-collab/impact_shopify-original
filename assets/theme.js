@@ -3026,7 +3026,7 @@ var ProductQuickAdd = class extends HTMLElement {
   #intersectionObserver = new IntersectionObserver(this._onObserved.bind(this));
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
-    this._scopeTo = document.querySelector('h2:has-text("Tous les avis clients")') || document.querySelector(".footer");
+    this._scopeTo = document.querySelector('[id*="tous-les-avis"]') || document.querySelector(".footer");
     if (!this._scopeFrom || !this._scopeTo) {
       return;
     }
@@ -3036,18 +3036,19 @@ var ProductQuickAdd = class extends HTMLElement {
   disconnectedCallback() {
     this.#intersectionObserver.disconnect();
   }
-  _onObserved(entries) {
-    entries.forEach((entry) => {
-      if (entry.target === this._scopeFrom) {
-        this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
+ _onObserved(entries) {
+  entries.forEach((entry) => {
+    if (entry.target === this._scopeFrom) {
+      this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
+    }
+    if (entry.target === this._scopeTo) {
+      if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+        this.#scopeToReached = true;
       }
-      if (entry.target === this._scopeTo) {
-        this.#scopeToReached = entry.isIntersecting;
-      }
-    });
-    this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
-  }
-};
+    }
+  });
+  this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
+}
 if (!window.customElements.get("product-quick-add")) {
   window.customElements.define("product-quick-add", ProductQuickAdd);
 }
