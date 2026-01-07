@@ -1,6 +1,36 @@
 <div style="text-align: center; margin: 0 auto 0rem auto; width: 100%; display: block;">
   <img src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Black_and_White_Minimalist_Music_Studio_Logo_50_x_50_px.svg?v=1767029236" alt="PurePaw" style="max-width: 200px; height: auto; display: block; margin: 0 auto;">
 </div>
+
+<style>
+  /* Fond bleu #74D0F1 et texte blanc pour le footer */
+  .footer {
+    background-color: #74D0F1 !important;
+    color: white !important;
+  }
+  
+  .footer * {
+    color: white !important;
+  }
+  
+  .footer a {
+    color: white !important;
+  }
+  
+  .footer a:hover {
+    opacity: 0.8;
+  }
+  
+  .footer .text-subdued {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  /* Icônes de paiement en blanc */
+  .footer__payment-icons svg {
+    fill: white !important;
+  }
+</style>
+
 {%- assign newsletter_block = section.blocks | where: 'type', 'newsletter' | first -%}
 
 {%- if section.blocks.size > 3 -%}
@@ -216,7 +246,7 @@
       "type": "checkbox",
       "id": "show_policy_links",
       "label": "Show policy links",
-      "info": "To add store policies, go to your [policy settings](/admin/settings/legal).",
+      "info": "To add store policies, go to your [policy settings](/admin/settings/legal)."
     },
     {
       "type": "header",
