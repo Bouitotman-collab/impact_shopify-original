@@ -7,6 +7,15 @@
     --section-stack-intro: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
     --section-stack-main: {% if text_position == 'center' %}60%{% else %}50%{% endif %};
   }
+  
+  /* Fond blanc et texte bleu pour la FAQ */
+  #shopify-section-{{ section.id }} .accordion-box {
+    background-color: white !important;
+  }
+  
+  #shopify-section-{{ section.id }} .accordion-box * {
+    color: #74D0F1 !important;
+  }
 </style>
 
 <div {% render 'section-properties' %}>
