@@ -68,22 +68,6 @@
         "text_gradient": ""
       }
     },
-    "logo_carousel_zGYFVe": {
-      "type": "logo-carousel",
-      "custom_css": [],
-      "name": "Logo Carousel",
-      "settings": {
-        "show_title": false,
-        "title_text": "Ils parlent de nous",
-        "title_size": 16,
-        "title_color": "#333333",
-        "background_color": "#ffffff",
-        "padding_top": 10,
-        "padding_bottom": 10,
-        "speed": 15,
-        "speed_mobile": 12
-      }
-    },
     "rich_text_ane766": {
       "type": "rich-text",
       "blocks": {
@@ -491,6 +475,22 @@
         "input_text_color": ""
       }
     },
+    "logo_carousel_zGYFVe": {
+      "type": "logo-carousel",
+      "custom_css": [],
+      "name": "Logo Carousel",
+      "settings": {
+        "show_title": false,
+        "title_text": "Ils parlent de nous",
+        "title_size": 16,
+        "title_color": "#333333",
+        "background_color": "#ffffff",
+        "padding_top": 10,
+        "padding_bottom": 10,
+        "speed": 15,
+        "speed_mobile": 12
+      }
+    },
     "avis_clients_pHEDgk": {
       "type": "avis-loox-premium",
       "blocks": {
@@ -819,7 +819,7 @@
   },
   "order": [
     "slideshow_9eGzHG",
-    "scrolling_text_w37wcW",
+    "logo_carousel_zGYFVe",
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "image_with_expandable_text_mFwfVE",
@@ -832,8 +832,8 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
+    "scrolling_text_w37wcW",
     "main",
-    "logo_carousel_zGYFVe",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "related-products",
