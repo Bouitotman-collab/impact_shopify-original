@@ -3024,31 +3024,38 @@ var ProductQuickAdd = class extends HTMLElement {
   #scopeFromPassed = false;
   #scopeToReached = false;
   #intersectionObserver = new IntersectionObserver(this._onObserved.bind(this));
+  
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
     this._scopeTo = document.querySelector('[id*="tous-les-avis"]') || document.querySelector(".footer");
+    
     if (!this._scopeFrom || !this._scopeTo) {
       return;
     }
+    
     this.#intersectionObserver.observe(this._scopeFrom);
     this.#intersectionObserver.observe(this._scopeTo);
   }
+  
   disconnectedCallback() {
     this.#intersectionObserver.disconnect();
   }
+  
   _onObserved(entries) {
     entries.forEach((entry) => {
       if (entry.target === this._scopeFrom) {
         this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
       }
-      if (entry.target === this._scopeTo) {
-        // Une fois qu'on a atteint cette section, on reste à true pour toujours
-        if (entry.isIntersecting || this.#scopeToReached) {
-          this.#scopeToReached = true;
-        }
+      
+      if (entry.target === this._scopeTo && entry.isIntersecting) {
+        this.#scopeToReached = true;
+        this.classList.remove("is-visible");
       }
     });
-    this.classList.toggle("is-visible", this.#scopeFromPassed && !this.#scopeToReached);
+    
+    if (!this.#scopeToReached) {
+      this.classList.toggle("is-visible", this.#scopeFromPassed);
+    }
   }
 };
 if (!window.customElements.get("product-quick-add")) {
