@@ -142,7 +142,7 @@
       "custom_css": [],
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-1_1.jpg",
+        "image": "shopify://shop_images/19.jpg",
         "title": "FAVORISE L'ÉVACUATION DES POILS",
         "content": "<p>Notre formule aide à décoller les poils incrustés dans le tambour et les filtres. En facilitant leur évacuation naturelle, elle réduit considérablement le risque qu'ils se redéposent sur vos vêtements.</p>",
         "is_first_section": false,
@@ -159,7 +159,7 @@
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-2_1.jpg",
+        "image": "shopify://shop_images/20.jpg",
         "title": "ÉLIMINATION RADICALE DES ODEURS \"ANIMALES\"",
         "content": "<p>Ne masquez plus les odeurs, détruisez-les. PurePaw neutralise les bactéries responsables de l'odeur de \"chien mouillé\" et de moisi à la source.</p>",
         "is_first_section": true,
@@ -194,7 +194,7 @@
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-4.jpg",
+        "image": "shopify://shop_images/22.jpg",
         "title": "DÉSINFECTION TOTALE : 99,9% DE BACTÉRIES ÉLIMINÉES",
         "content": "<p>Une action antibactérienne puissante qui assainit votre tambour en profondeur. Indispensable pour stopper la prolifération des germes et allergènes ramenés de l'extérieur par vos animaux.</p>",
         "is_first_section": true,
@@ -229,7 +229,7 @@
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
       "settings": {
-        "image": "shopify://shop_images/new-enhance-photo-v2-6.jpg",
+        "image": "shopify://shop_images/24.jpg",
         "title": "PROTÈGE VOTRE MACHINE ET ALLONGE SA DURÉE DE VIE",
         "content": "<p>Élimine le calcaire et les résidus de lessive qui encrassent la mécanique. Une machine saine pour des années de lavages efficaces.</p>",
         "is_first_section": true,
