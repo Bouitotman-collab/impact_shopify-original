@@ -3028,9 +3028,9 @@ var ProductQuickAdd = class extends HTMLElement {
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
     
-    // Cible la section Shopify "avis-loox-premium"
-    this._scopeTo = document.querySelector('.shopify-section[id*="avis-loox-premium"]') || 
-                     document.querySelector('[id*="loox"]') ||
+    // Cible la section Shopify avec "avis-clients-reviews-premium"
+    this._scopeTo = document.querySelector('[id*="avis-clients-reviews-premium"]') || 
+                     document.querySelector('.reviews-container') ||
                      document.querySelector('.footer');
     
     if (!this._scopeFrom || !this._scopeTo) {
@@ -3052,7 +3052,6 @@ var ProductQuickAdd = class extends HTMLElement {
       }
       
       if (entry.target === this._scopeTo && entry.isIntersecting) {
-        // Dès qu'on atteint la section Loox, on cache définitivement
         this.#scopeToReached = true;
         this.style.display = 'none';
       }
