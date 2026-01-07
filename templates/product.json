@@ -385,17 +385,16 @@
         "image_5": "shopify://shop_images/2_4ffdbead-fb97-4cb9-93f2-8f5cce233d7a.jpg"
       }
     },
-    "scrolling_text_Jfmn46": {
+    "scrolling_text_w37wcW": {
       "type": "scrolling-text",
-      "custom_css": [],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "FORMULE SPÉCIALE PROPRIÉTAIRES D'ANIMAUX          •          ÉLIMINE POILS, ODEURS ET BACTÉRIES          •          SANS DANGER POUR VOS ANIMAUX          •          EFFICACE DÈS LE PREMIER LAVAGE          •          APPROUVÉ PAR DES VÉTÉRINAIRES          •",
+        "text": "Formulé spécialement propriétaires d'animaux               •               élimine poils, odeurs et bactéries               •               Sans danger pour vos animaux               •               Efficace dès le premier lavage               •               Approuvé par des vétérinaires               •",
         "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
-        "scrolling_speed": 8,
+        "scrolling_speed": 10,
         "background": "#74d0f1",
         "background_gradient": "",
         "text_color": "#ffffff",
@@ -726,7 +725,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
-    "scrolling_text_Jfmn46",
+    "scrolling_text_w37wcW",
     "main",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
