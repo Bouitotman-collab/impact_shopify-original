@@ -3027,7 +3027,15 @@ var ProductQuickAdd = class extends HTMLElement {
   
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
-    this._scopeTo = document.querySelector('[id*="tous-les-avis"]') || document.querySelector(".footer");
+    
+    // Test de tous les sélecteurs possibles
+    this._scopeTo = document.querySelector('h2:contains("Tous les avis")') ||
+                     document.querySelector('.shopify-section h2') ||
+                     document.querySelector('[id*="avis"]') ||
+                     document.querySelector('.footer');
+    
+    console.log("scopeFrom:", this._scopeFrom);
+    console.log("scopeTo:", this._scopeTo);
     
     if (!this._scopeFrom || !this._scopeTo) {
       return;
@@ -3047,9 +3055,13 @@ var ProductQuickAdd = class extends HTMLElement {
         this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
       }
       
-      if (entry.target === this._scopeTo && entry.isIntersecting) {
-        this.#scopeToReached = true;
-        this.classList.remove("is-visible");
+      if (entry.target === this._scopeTo) {
+        console.log("scopeTo intersecting:", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          this.#scopeToReached = true;
+          this.classList.remove("is-visible");
+          console.log("STICKY CACHÉ");
+        }
       }
     });
     
