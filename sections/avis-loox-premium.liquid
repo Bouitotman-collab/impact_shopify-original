@@ -396,12 +396,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (sticky && section) {
-    const observer = new IntersectionObserver(
-      ([entry]) => sticky.style.display = entry.isIntersecting ? 'none' : 'flex',
-      { threshold: 0.2 }
-    );
-    observer.observe(section);
-  }
+  let hasReachedSection = false;
+  
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        hasReachedSection = true;
+        sticky.style.display = 'none';
+      } else if (!hasReachedSection) {
+        sticky.style.display = 'flex';
+      }
+    },
+    { threshold: 0.2 }
+  );
+  observer.observe(section);
+}
 
   if (scrollBtn && section) {
     scrollBtn.addEventListener('click', () => {
