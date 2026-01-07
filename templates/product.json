@@ -720,7 +720,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Livraison gratuite",
-            "content": "<p>Livraison gratuite partout en France</p>"
+            "content": ""
           }
         },
         "item_HWwrQn": {
@@ -733,7 +733,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Garantie 30 jours",
-            "content": "<p>Satisfait ou remboursé</p>"
+            "content": ""
           }
         },
         "item_EH7iqV": {
@@ -746,7 +746,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Service client 7j/7",
-            "content": "<p>À votre écoute tous les jours</p>"
+            "content": ""
           }
         },
         "item_WANd6P": {
@@ -759,7 +759,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Paiement 100% sécurisé",
-            "content": "<p>Vos données sont protégées</p>"
+            "content": ""
           }
         }
       },
