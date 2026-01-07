@@ -770,7 +770,7 @@
           "type": "item",
           "settings": {
             "title": "Quels sont les délais de livraison ?",
-            "content": "<p>Nous expédions sous 24h ouvrées. La livraison standard prend 2 à 4 jours ouvrés en France métropolitaine. La livraison est gratuite à partir de 30€ d'achat.</p>"
+            "content": "<p>Nous expédions sous 24/48h ouvrées. La livraison standard prend 8 à 10 jours ouvrés en France métropolitaine. La livraison est gratuite.</p>"
           }
         },
         "item_9rpcRT": {
@@ -800,8 +800,8 @@
         "title": "Questions fréquentes",
         "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "Une question ? Contactez nos experts du lundi au vendredi : contact@purepaw.fr",
+        "answer_time": "Délai de réponse moyen : 24 h",
         "button_text": "",
         "button_url": "",
         "text_position": "center",
