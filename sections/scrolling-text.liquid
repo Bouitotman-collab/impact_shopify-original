@@ -40,11 +40,7 @@
           class="scrolling-text__text heading {% unless forloop.first %}motion-reduce:hidden{% endunless %}"
           {% unless forloop.first %}aria-hidden="true"{% endunless %}
         >
-          {%- render 'styled-text',
-            content: section.settings.text,
-            gradient: section.settings.text_gradient,
-            style: section.settings.text_style
-          -%}<span style="margin: 0 2rem;">•</span>
+          {{ section.settings.text }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span>
       {%- endfor -%}
     {%- endcapture -%}
