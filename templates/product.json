@@ -713,71 +713,71 @@
         "item_JtL7Py": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Comment utiliser les tablettes PurePaw ?",
+            "content": "<p>Placez une tablette directement dans le tambour vide de votre machine à laver. Lancez un cycle à vide à 60°C minimum (programme coton sans essorage). Pour un entretien optimal, utilisez deux tablettes tous les mois.</p>"
           }
         },
         "item_FWVGWq": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Les tablettes sont-elles sans danger pour mes animaux ?",
+            "content": "<p>Absolument. Nos tablettes sont formulées avec des ingrédients non toxiques et approuvées par des vétérinaires. Elles ne laissent aucun résidu nocif pour vos animaux de compagnie. Après le cycle de nettoyage, vous pouvez utiliser votre machine normalement.</p>"
           }
         },
         "item_jehUNF": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "À quelle fréquence dois-je nettoyer ma machine ?",
+            "content": "<p>Nous recommandons un nettoyage mensuel pour les propriétaires d'animaux. Si vous lavez fréquemment des articles très sales (couvertures, paniers), un nettoyage toutes les 2 à 3 semaines peut être nécessaire.</p>"
           }
         },
         "item_w4myzA": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Est-ce compatible avec toutes les machines à laver ?",
+            "content": "<p>Oui, nos tablettes sont compatibles avec tous les types de machines : hublot, top, haute efficacité (HE), et toutes les marques. Elles fonctionnent aussi bien avec les machines récentes qu'anciennes.</p>"
           }
         },
         "item_hRJYqj": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Quelle est la différence avec un nettoyant classique ?",
+            "content": "<p>Les tablettes PurePaw sont spécialement conçues pour éliminer les poils d'animaux incrustés, les odeurs tenaces et les bactéries spécifiques liées aux animaux domestiques. Leur formule contient des agents anti-poils et anti-odeurs que les nettoyants classiques n'ont pas.</p>"
           }
         },
         "item_hGwGfr": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Combien de temps dure un paquet ?",
+            "content": "<p>Avec un usage mensuel recommandé, un paquet de 12 tablettes dure 1 an. Pour un usage plus fréquent (toutes les 2 semaines), comptez 6 mois par paquet.</p>"
           }
         },
         "item_hg3iYd": {
           "type": "item",
           "settings": {
-            "title": "Question",
-            "content": "<p>Write content to answer to common questions your customers may have about your products, shipping policies..</p>"
+            "title": "Puis-je laver du linge en même temps ?",
+            "content": "<p>Non, les tablettes doivent être utilisées lors d'un cycle à vide, sans linge. Cela permet au produit de nettoyer efficacement toutes les parties de la machine (tambour, joints, filtres, tuyaux).</p>"
           }
         },
         "item_xfXRPE": {
           "type": "item",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "title": "Les tablettes éliminent-elles vraiment les odeurs ?",
+            "content": "<p>Oui, dès le premier lavage. Notre formule brevetée neutralise les odeurs à la source en éliminant les bactéries responsables des mauvaises odeurs, notamment celles causées par l'humidité et les poils d'animaux.</p>"
           }
         },
         "item_XLiJia": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quels sont les délais de livraison ?",
+            "content": "<p>Nous expédions sous 24h ouvrées. La livraison standard prend 2 à 4 jours ouvrés en France métropolitaine. La livraison est gratuite à partir de 30€ d'achat.</p>"
           }
         },
         "item_9rpcRT": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Puis-je retourner le produit si je ne suis pas satisfait ?",
+            "content": "<p>Oui, nous offrons une garantie satisfait ou remboursé de 30 jours. Si vous n'êtes pas entièrement satisfait, contactez-nous à <a href=\"mailto:contact@purepaw.fr\">contact@purepaw.fr</a> pour un remboursement complet.</p>"
           }
         }
       },
