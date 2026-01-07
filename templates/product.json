@@ -749,7 +749,7 @@
           "type": "item",
           "settings": {
             "title": "Combien de temps dure un paquet ?",
-            "content": "<p>Avec un usage mensuel recommandé, un paquet de 12 tablettes dure 1 an. Pour un usage plus fréquent (toutes les 2 semaines), comptez 6 mois par paquet.</p>"
+            "content": "<p>Un paquet contient 24 tablettes et dure 1 an. Vous avez le choix entre deux modes d'utilisation : 2 tablettes par mois pour un nettoyage en profondeur, ou 1 tablette toutes les 2 semaines pour un entretien régulier.</p>"
           }
         },
         "item_hg3iYd": {
