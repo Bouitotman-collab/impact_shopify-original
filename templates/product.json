@@ -355,23 +355,6 @@
         "background_gradient": ""
       }
     },
-    "multi_column_n83Ttc": {
-      "type": "multi-column",
-      "custom_css": [],
-      "name": "Multi-column",
-      "settings": {
-        "full_width": true,
-        "stack_on_mobile": true,
-        "gap": "medium",
-        "text_alignment": "center",
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "product_gallery_VEcqDj": {
       "type": "product-gallery",
       "name": "Galerie Produit",
@@ -707,6 +690,19 @@
         "total_customers": 1800
       }
     },
+    "custom_liquid_pjHEjU": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<style>\n.faq .rte { margin-bottom: 1rem; }\n.faq__accordion { margin-top: 0; }\n</style>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "text_with_icons_cFz9qM": {
       "type": "text-with-icons",
       "blocks": {
@@ -777,6 +773,19 @@
         "heading_tag": "h5",
         "text_alignment": "center",
         "icon_spacing": "medium",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "custom_liquid_QEcF3n": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<style>\n.faq .rte { margin-bottom: 1rem; }\n.faq__accordion { margin-top: 0; }\n</style>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
@@ -905,7 +914,6 @@
     "image_with_expandable_text_a4i4TW",
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
-    "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
     "scrolling_text_w37wcW",
     "main",
@@ -915,7 +923,9 @@
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
     "avis_clients_tous_PMJxcT",
+    "custom_liquid_pjHEjU",
     "text_with_icons_cFz9qM",
+    "custom_liquid_QEcF3n",
     "faq_3Wfxcg"
   ]
 }
