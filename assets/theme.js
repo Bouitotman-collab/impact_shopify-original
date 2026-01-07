@@ -3028,14 +3028,10 @@ var ProductQuickAdd = class extends HTMLElement {
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
     
-    // Test de tous les sélecteurs possibles
-    this._scopeTo = document.querySelector('h2:contains("Tous les avis")') ||
-                     document.querySelector('.shopify-section h2') ||
-                     document.querySelector('[id*="avis"]') ||
+    // Cible la section Shopify "avis-loox-premium"
+    this._scopeTo = document.querySelector('.shopify-section[id*="avis-loox-premium"]') || 
+                     document.querySelector('[id*="loox"]') ||
                      document.querySelector('.footer');
-    
-    console.log("scopeFrom:", this._scopeFrom);
-    console.log("scopeTo:", this._scopeTo);
     
     if (!this._scopeFrom || !this._scopeTo) {
       return;
@@ -3055,13 +3051,10 @@ var ProductQuickAdd = class extends HTMLElement {
         this.#scopeFromPassed = entry.boundingClientRect.bottom < 0;
       }
       
-      if (entry.target === this._scopeTo) {
-        console.log("scopeTo intersecting:", entry.isIntersecting);
-        if (entry.isIntersecting) {
-          this.#scopeToReached = true;
-          this.classList.remove("is-visible");
-          console.log("STICKY CACHÉ");
-        }
+      if (entry.target === this._scopeTo && entry.isIntersecting) {
+        // Dès qu'on atteint la section Loox, on cache définitivement
+        this.#scopeToReached = true;
+        this.style.display = 'none';
       }
     });
     
