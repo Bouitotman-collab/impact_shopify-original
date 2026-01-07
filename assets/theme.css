@@ -10656,5 +10656,13 @@ p, a, span, div, button, input, textarea, select {
   padding: 0 !important;
   margin: 0 !important;
 }
+/* Réduire l'espace entre le titre FAQ et les questions */
+.faq .rte {
+  margin-bottom: 1rem;
+}
+
+.faq__accordion {
+  margin-top: 0;
+}
 
 
