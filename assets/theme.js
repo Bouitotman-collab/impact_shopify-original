@@ -5235,3 +5235,15 @@ export {
   throttle,
   waitForEvent
 };
+// Cache le sticky aux avis
+setInterval(() => {
+  const sticky = document.querySelector('product-quick-add.is-visible');
+  const reviews = document.querySelector('[id*="avis-clients-reviews-premium"]');
+  
+  if (sticky && reviews) {
+    const rect = reviews.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      sticky.remove();
+    }
+  }
+}, 100);
