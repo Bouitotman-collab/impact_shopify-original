@@ -3026,7 +3026,7 @@ var ProductQuickAdd = class extends HTMLElement {
   #intersectionObserver = new IntersectionObserver(this._onObserved.bind(this));
   connectedCallback() {
     this._scopeFrom = document.getElementById(this.getAttribute("form"));
-    this._scopeTo = document.querySelector(".product-reviews") || document.querySelector(".footer");
+    this._scopeTo = document.querySelector('[id*="tous-les-avis"]') || document.querySelector(".footer");
     if (!this._scopeFrom || !this._scopeTo) {
       return;
     }
