@@ -24,7 +24,7 @@
             "title": "saletés. odeurs. bactéries",
             "heading_tag": "h0",
             "button_text": "",
-            "button_link": "shopify://products/waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement",
+            "button_link": "shopify://products/pack-solo-24-tablettes",
             "text_color": "#ffffff",
             "button_background": "#ffffff",
             "button_text_color": "#000000",
@@ -264,7 +264,7 @@
       "name": "Featured product",
       "settings": {
         "full_width": true,
-        "product": "waching-machine-cleaner-pro-pack-annuel-1-an-de-traitement",
+        "product": "pack-solo-24-tablettes",
         "desktop_media_width": 55,
         "desktop_media_layout": "carousel_thumbnails_left",
         "mobile_media_size": "expanded",
