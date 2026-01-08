@@ -663,28 +663,6 @@
         "text_color": ""
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "recommendations_count": 6,
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
     "slideshow_U4qMYm": {
       "type": "slideshow",
       "name": "Slideshow",
@@ -926,7 +904,6 @@
     "custom_liquid_TPmRPk",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
-    "related-products",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
     "avis_clients_tous_PMJxcT",
