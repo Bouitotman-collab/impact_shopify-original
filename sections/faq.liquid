@@ -34,6 +34,15 @@
 #shopify-section-{{ section.id }} .section-stack {
   gap: 0.1rem !important;
 }
+
+/* Réduction du padding en bas de la section */
+#shopify-section-{{ section.id }} {
+  padding-bottom: 20px !important;
+}
+
+#shopify-section-{{ section.id }} .section-stack {
+  padding-bottom: 0 !important;
+}
 </style>
 
 <div {% render 'section-properties' %}>
