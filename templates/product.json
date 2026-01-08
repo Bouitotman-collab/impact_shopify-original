@@ -663,28 +663,6 @@
         "text_color": ""
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "recommendations_count": 6,
-        "products": [],
-        "full_width": true,
-        "stack_products": true,
-        "show_progress_bar": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
-        "subheading": "",
-        "title": "You may also like",
-        "content": "",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "product_card_background": "",
-        "product_card_text_color": ""
-      }
-    },
     "slideshow_U4qMYm": {
       "type": "slideshow",
       "name": "Slideshow",
@@ -904,6 +882,48 @@
         "accordion_background": "#74d0f1",
         "accordion_text_color": "#ffffff"
       }
+    },
+    "slideshow_KPre3a": {
+      "type": "slideshow",
+      "blocks": {
+        "image_qzHxP3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Autre.png",
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide 1",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "background": "",
+            "background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_qzHxP3"
+      ],
+      "name": "Slideshow",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": true,
+        "show_initial_transition": false,
+        "image_size": "auto",
+        "controls_type": "dots",
+        "transition_type": "fade_with_text",
+        "autoplay": false,
+        "cycle_speed": 6,
+        "background": "#F2F2F2",
+        "background_gradient": ""
+      }
     }
   },
   "order": [
@@ -926,11 +946,11 @@
     "custom_liquid_TPmRPk",
     "avis_clients_pHEDgk",
     "multi_column_4HV87L",
-    "related-products",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
     "avis_clients_tous_PMJxcT",
     "text_with_icons_cFz9qM",
-    "faq_3Wfxcg"
+    "faq_3Wfxcg",
+    "slideshow_KPre3a"
   ]
 }
