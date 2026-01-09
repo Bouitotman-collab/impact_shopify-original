@@ -899,6 +899,19 @@
         "background": "#f2f2f2",
         "background_gradient": ""
       }
+    },
+    "custom_liquid_ABD9jB": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div data-rapi-id=\"rapi_647e9d77b2c4b4\"></div>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -924,6 +937,7 @@
     "avis_clients_tous_PMJxcT",
     "text_with_icons_cFz9qM",
     "faq_3Wfxcg",
-    "slideshow_KPre3a"
+    "slideshow_KPre3a",
+    "custom_liquid_ABD9jB"
   ]
 }
