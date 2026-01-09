@@ -336,17 +336,6 @@
         "text_color": ""
       }
     },
-    "product_gallery_VEcqDj": {
-      "type": "product-gallery",
-      "name": "Galerie Produit",
-      "settings": {
-        "image_1": "shopify://shop_images/3.jpg",
-        "image_2": "shopify://shop_images/1.jpg",
-        "image_3": "shopify://shop_images/4.jpg",
-        "image_4": "shopify://shop_images/5_6d968f46-fa5c-4066-a1ae-c1720c538b91.jpg",
-        "image_5": "shopify://shop_images/2_4ffdbead-fb97-4cb9-93f2-8f5cce233d7a.jpg"
-      }
-    },
     "featured_product_f4D3Uk": {
       "type": "featured-product",
       "blocks": {
@@ -1024,7 +1013,6 @@
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
-    "product_gallery_VEcqDj",
     "featured_product_f4D3Uk",
     "scrolling_text_w37wcW",
     "17679279221b3f0cbd",
