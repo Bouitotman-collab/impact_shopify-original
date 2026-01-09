@@ -10699,7 +10699,7 @@ div.product-info__quantity-selector {
 /* Réduire la taille du titre pour qu'il tienne sur une ligne */
 h1.product-info__title,
 .product-info__title {
-  font-size: 22px !important;
+  font-size: 24px !important;
   line-height: 1.2 !important;
 }
 
