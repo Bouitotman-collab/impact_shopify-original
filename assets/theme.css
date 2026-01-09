@@ -10660,9 +10660,17 @@ p, a, span, div, button, input, textarea, select {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
-/* Masquer "Pure Paw" (vendor) */
-.product-info__block-item[data-block-id="vendor_VepK"] {
+/* Masquer "Pure Paw" (vendor) - version ultra-spécifique */
+.product-info__block-item[data-block-id="vendor_VepK"],
+.product-info__vendor,
+div.product-info__vendor,
+a[href*="vendors"][href*="Pure"],
+.link-faded:has(> a[href*="Pure"]) {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
 }
 
 /* Masquer le prix */
