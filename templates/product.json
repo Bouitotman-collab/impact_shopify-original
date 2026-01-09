@@ -139,7 +139,6 @@
     },
     "image_with_expandable_text_mFwfVE": {
       "type": "image-with-expandable-text",
-      "custom_css": [],
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/19.jpg",
@@ -172,23 +171,6 @@
         "separate_section_with_border": false
       }
     },
-    "image_with_expandable_text_NNkAkn": {
-      "type": "image-with-expandable-text",
-      "disabled": true,
-      "name": "Image + Lire plus",
-      "settings": {
-        "title": "FINIES LES PANNES ET L'EAU QUI STAGNE",
-        "content": "<p>Prévient activement l'obstruction des filtres et des pompes causée par l'accumulation de poils. Évitez les frais de plombier et les réparations coûteuses grâce à une évacuation toujours fluide.</p>",
-        "is_first_section": true,
-        "spacing_top": 40,
-        "spacing_bottom": 0,
-        "spacing_left": 20,
-        "spacing_right": 20,
-        "spacing_color": "#ffffff",
-        "box_background_color": "#ffffff",
-        "separate_section_with_border": false
-      }
-    },
     "image_with_expandable_text_fachMn": {
       "type": "image-with-expandable-text",
       "name": "Image + Lire plus",
@@ -198,23 +180,6 @@
         "content": "<p>Une action antibactérienne puissante qui assainit votre tambour en profondeur. Indispensable pour stopper la prolifération des germes et allergènes ramenés de l'extérieur par vos animaux.</p>",
         "is_first_section": true,
         "spacing_top": 20,
-        "spacing_bottom": 0,
-        "spacing_left": 20,
-        "spacing_right": 20,
-        "spacing_color": "#ffffff",
-        "box_background_color": "#ffffff",
-        "separate_section_with_border": false
-      }
-    },
-    "image_with_expandable_text_PYHeYx": {
-      "type": "image-with-expandable-text",
-      "disabled": true,
-      "name": "Image + Lire plus",
-      "settings": {
-        "title": "UNE HYGIÈNE PROFONDE, LÀ OÙ VOUS NE VOYEZ PAS",
-        "content": "<p>Décolle le sébum, la boue et les résidus organiques incrustés dans les zones inaccessibles de votre machine pour un environnement de lavage 100% sain.</p>",
-        "is_first_section": true,
-        "spacing_top": 40,
         "spacing_bottom": 0,
         "spacing_left": 20,
         "spacing_right": 20,
@@ -943,9 +908,7 @@
     "slideshow_YdmTCA",
     "image_with_expandable_text_mFwfVE",
     "image_with_expandable_text_cBFcV6",
-    "image_with_expandable_text_NNkAkn",
     "image_with_expandable_text_fachMn",
-    "image_with_expandable_text_PYHeYx",
     "image_with_expandable_text_a4i4TW",
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
