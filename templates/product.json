@@ -124,6 +124,12 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "rapi_rapi_bundle_ezPRBd": {
+          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "settings": {
+            "product": "{{section.settings.product}}"
+          }
+        },
         "buy_buttons_wXyhRp": {
           "type": "buy_buttons",
           "settings": {
@@ -150,6 +156,7 @@
         "description_He9JjX",
         "variant_picker_TCHGAD",
         "quantity_selector_D7PKw3",
+        "rapi_rapi_bundle_ezPRBd",
         "buy_buttons_wXyhRp",
         "pickup_availability_yCgm63"
       ],
