@@ -382,6 +382,28 @@
         "image_5": "shopify://shop_images/2_4ffdbead-fb97-4cb9-93f2-8f5cce233d7a.jpg"
       }
     },
+    "1767921538b65a56c1": {
+      "type": "apps",
+      "blocks": {
+        "rapi_rapi_bundle_G44CaN": {
+          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "rapi_rapi_bundle_G44CaN"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "scrolling_text_w37wcW": {
       "type": "scrolling-text",
       "name": "Scrolling text",
@@ -912,28 +934,6 @@
         "background": "#f2f2f2",
         "background_gradient": ""
       }
-    },
-    "1767921538b65a56c1": {
-      "type": "apps",
-      "blocks": {
-        "rapi_rapi_bundle_G44CaN": {
-          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
-          "settings": {
-            "product": "{{product}}"
-          }
-        }
-      },
-      "block_order": [
-        "rapi_rapi_bundle_G44CaN"
-      ],
-      "settings": {
-        "full_width": true,
-        "remove_vertical_spacing": false,
-        "remove_horizontal_spacing": false,
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
@@ -951,6 +951,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
+    "1767921538b65a56c1",
     "scrolling_text_w37wcW",
     "main",
     "avis_clients_pHEDgk",
@@ -960,7 +961,6 @@
     "avis_clients_tous_PMJxcT",
     "text_with_icons_cFz9qM",
     "faq_3Wfxcg",
-    "slideshow_KPre3a",
-    "1767921538b65a56c1"
+    "slideshow_KPre3a"
   ]
 }
