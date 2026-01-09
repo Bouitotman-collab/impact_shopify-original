@@ -10660,11 +10660,8 @@ p, a, span, div, button, input, textarea, select {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
-/* Masquer les éléments sur la page produit sans affecter Rapi Bundle */
-
-/* Masquer le titre du produit "PurePaw - Tablettes Nettoyantes" */
-.product-info__title,
-h1.product-info__title {
+/* Masquer uniquement "Pure Paw" (vendor) en haut */
+.product-info__block-item[data-block-id="vendor_7gcErr"] {
   display: none !important;
 }
 
@@ -10675,9 +10672,10 @@ div.price-list,
   display: none !important;
 }
 
-/* Masquer le sélecteur de quantité */
+/* Masquer le sélecteur de quantité ET son label "Quantité:" */
 .quantity-selector,
-quantity-selector {
+quantity-selector,
+.product-info__block-item[data-block-type="quantity_selector"] {
   display: none !important;
 }
 
