@@ -10660,5 +10660,33 @@ p, a, span, div, button, input, textarea, select {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
+/* Masquer les éléments sur la page produit sans affecter Rapi Bundle */
 
+/* Masquer Pure Paw (vendor) */
+.product-info__header .vendor,
+.product__vendor {
+  display: none !important;
+}
+
+/* Masquer le prix €29,99 */
+.product-info__header .price,
+.product__price,
+.price--large {
+  display: none !important;
+}
+
+/* Masquer le sélecteur de quantité */
+.product-form__quantity,
+.quantity-selector,
+.product-form__input--quantity {
+  display: none !important;
+}
+
+/* S'assurer que le bundle Rapi reste visible */
+[data-rapi-id],
+.rapi-bundle-widget,
+#rapi-bundle-container {
+  display: block !important;
+  visibility: visible !important;
+}
 
