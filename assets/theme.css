@@ -10662,31 +10662,32 @@ p, a, span, div, button, input, textarea, select {
 }
 /* Masquer les éléments sur la page produit sans affecter Rapi Bundle */
 
-/* Masquer Pure Paw (vendor) */
-.product-info__header .vendor,
-.product__vendor {
+/* Masquer le titre du produit "PurePaw - Tablettes Nettoyantes" */
+.product-info__title,
+h1.product-info__title {
   display: none !important;
 }
 
-/* Masquer le prix €29,99 */
-.product-info__header .price,
-.product__price,
-.price--large {
+/* Masquer le prix */
+.price-list,
+div.price-list,
+.product-info__block-item[data-block-type="price"] {
   display: none !important;
 }
 
 /* Masquer le sélecteur de quantité */
-.product-form__quantity,
 .quantity-selector,
-.product-form__input--quantity {
+quantity-selector {
   display: none !important;
 }
 
 /* S'assurer que le bundle Rapi reste visible */
 [data-rapi-id],
 .rapi-bundle-widget,
-#rapi-bundle-container {
+#rapi-bundle-container,
+div[data-rapi-id] {
   display: block !important;
   visibility: visible !important;
+  opacity: 1 !important;
 }
 
