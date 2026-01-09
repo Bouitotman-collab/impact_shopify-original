@@ -68,117 +68,6 @@
         "speed_mobile": 12
       }
     },
-    "featured_product_f4D3Uk": {
-      "type": "featured-product",
-      "blocks": {
-        "vendor_VepKT9": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title_7gCeFT": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h2"
-          }
-        },
-        "badges_hEgeLa": {
-          "type": "badges",
-          "settings": {}
-        },
-        "price_KHjzrT": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "rating_i6PTka": {
-          "type": "rating",
-          "settings": {
-            "show_empty": false
-          }
-        },
-        "separator_qE3bga": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description_He9JjX": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
-        },
-        "variant_picker_TCHGAD": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector_D7PKw3": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "liquid_i8BdJ9": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div data-rapi-id=\"rapi_647e9d77b2c4b4\"></div>"
-          }
-        },
-        "buy_buttons_wXyhRp": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "pickup_availability_yCgm63": {
-          "type": "pickup_availability",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "vendor_VepKT9",
-        "title_7gCeFT",
-        "badges_hEgeLa",
-        "price_KHjzrT",
-        "rating_i6PTka",
-        "separator_qE3bga",
-        "description_He9JjX",
-        "variant_picker_TCHGAD",
-        "quantity_selector_D7PKw3",
-        "liquid_i8BdJ9",
-        "buy_buttons_wXyhRp",
-        "pickup_availability_yCgm63"
-      ],
-      "name": "Featured product",
-      "settings": {
-        "full_width": true,
-        "product": "pack-solo-24-tablettes",
-        "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_left",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
-        "enable_video_autoplay": true,
-        "enable_video_looping": false,
-        "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
-      }
-    },
     "rich_text_ane766": {
       "type": "rich-text",
       "blocks": {
@@ -456,6 +345,117 @@
         "image_3": "shopify://shop_images/4.jpg",
         "image_4": "shopify://shop_images/5_6d968f46-fa5c-4066-a1ae-c1720c538b91.jpg",
         "image_5": "shopify://shop_images/2_4ffdbead-fb97-4cb9-93f2-8f5cce233d7a.jpg"
+      }
+    },
+    "featured_product_f4D3Uk": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_VepKT9": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_7gCeFT": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "badges_hEgeLa": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_KHjzrT": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_i6PTka": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator_qE3bga": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_He9JjX": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        },
+        "variant_picker_TCHGAD": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_D7PKw3": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "liquid_i8BdJ9": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div data-rapi-id=\"rapi_647e9d77b2c4b4\"></div>"
+          }
+        },
+        "buy_buttons_wXyhRp": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_yCgm63": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_VepKT9",
+        "title_7gCeFT",
+        "badges_hEgeLa",
+        "price_KHjzrT",
+        "rating_i6PTka",
+        "separator_qE3bga",
+        "description_He9JjX",
+        "variant_picker_TCHGAD",
+        "quantity_selector_D7PKw3",
+        "liquid_i8BdJ9",
+        "buy_buttons_wXyhRp",
+        "pickup_availability_yCgm63"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "full_width": true,
+        "product": "pack-solo-24-tablettes",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
       }
     },
     "scrolling_text_w37wcW": {
@@ -1015,7 +1015,6 @@
   "order": [
     "slideshow_9eGzHG",
     "logo_carousel_zGYFVe",
-    "featured_product_f4D3Uk",
     "rich_text_ane766",
     "slideshow_YdmTCA",
     "image_with_expandable_text_mFwfVE",
@@ -1026,6 +1025,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "product_gallery_VEcqDj",
+    "featured_product_f4D3Uk",
     "scrolling_text_w37wcW",
     "17679279221b3f0cbd",
     "main",
