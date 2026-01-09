@@ -10660,32 +10660,32 @@ p, a, span, div, button, input, textarea, select {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
 }
-/* Masquer uniquement "Pure Paw" (vendor) en haut */
-.product-info__block-item[data-block-id="vendor_7gcErr"] {
+/* Masquer "Pure Paw" (vendor) */
+.product-info__block-item[data-block-id="vendor_VepK"] {
   display: none !important;
 }
 
 /* Masquer le prix */
 .price-list,
-div.price-list,
 .product-info__block-item[data-block-type="price"] {
   display: none !important;
 }
 
-/* Masquer le sélecteur de quantité ET son label "Quantité:" */
-.quantity-selector,
-quantity-selector,
-.product-info__block-item[data-block-type="quantity_selector"] {
+/* Masquer le label "Quantité:" */
+label[for="featured-product-form-template--27446692249995__featured_product_f4D3uK-quantity"].block-label.text-subdued {
+  display: none !important;
+}
+
+/* Masquer le sélecteur de quantité */
+.product-info__quantity-selector,
+div.product-info__quantity-selector {
   display: none !important;
 }
 
 /* S'assurer que le bundle Rapi reste visible */
 [data-rapi-id],
-.rapi-bundle-widget,
-#rapi-bundle-container,
-div[data-rapi-id] {
+.rapi-bundle-widget {
   display: block !important;
   visibility: visible !important;
-  opacity: 1 !important;
 }
 
