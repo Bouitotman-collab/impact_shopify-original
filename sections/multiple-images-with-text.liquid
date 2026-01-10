@@ -30,6 +30,19 @@ CSS
     margin-top: 0 !important;
   }
 
+  /* Forcer aussi le padding bottom sur les enfants */
+  #shopify-section-{{ section.id }} > *:last-child,
+  #shopify-section-{{ section.id }} .multiple-images-with-text {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Supprimer l'espacement de la section suivante */
+  #shopify-section-{{ section.id }} + .shopify-section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
   #shopify-section-{{ section.id }} {
     --multiple-images-with-text-max-width: 580px;
     --multiple-images-with-text-images-grid-template: {% if section.settings.images_layout != 'stacked' and visible_images_count > 1 %}repeat({% if visible_images_count == 2 %}1{% else %}2{% endif %}, auto) / minmax(0, 0.75fr) minmax(0, 1fr){% else %}none{% endif %};
