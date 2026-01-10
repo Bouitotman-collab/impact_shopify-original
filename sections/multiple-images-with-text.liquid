@@ -9,14 +9,25 @@ CSS
 {%- endcomment -%}
 
 <style>
-  /* Padding personnalisé depuis les paramètres */
+  /* Padding personnalisé depuis les paramètres - VERSION AGGRESSIVE */
   #shopify-section-{{ section.id }} {
     {%- if section.settings.padding_top != blank -%}
       padding-top: {{ section.settings.padding_top }}px !important;
+      margin-top: 0 !important;
     {%- endif -%}
     {%- if section.settings.padding_bottom != blank -%}
       padding-bottom: {{ section.settings.padding_bottom }}px !important;
+      margin-bottom: 0 !important;
     {%- endif -%}
+  }
+
+  /* Forcer le padding sur tous les éléments enfants */
+  #shopify-section-{{ section.id }} > *,
+  #shopify-section-{{ section.id }} .section-stack,
+  #shopify-section-{{ section.id }} .section,
+  #shopify-section-{{ section.id }} > div {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
   }
 
   #shopify-section-{{ section.id }} {
