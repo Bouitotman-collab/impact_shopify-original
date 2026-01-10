@@ -496,22 +496,6 @@
         "input_text_color": ""
       }
     },
-    "scrolling_text_w37wcW": {
-      "type": "scrolling-text",
-      "name": "Scrolling text",
-      "settings": {
-        "full_width": true,
-        "text": "Formulé spécialement propriétaires d'animaux               •               élimine poils, odeurs et bactéries               •               Sans danger pour vos animaux               •               Efficace dès le premier lavage               •               Approuvé par des vétérinaires               •",
-        "text_size": "xsmall",
-        "text_style": "fill",
-        "scrolling_mode": "auto",
-        "scrolling_speed": 10,
-        "background": "#74d0f1",
-        "background_gradient": "",
-        "text_color": "#ffffff",
-        "text_gradient": ""
-      }
-    },
     "17679279221b3f0cbd": {
       "type": "apps",
       "blocks": {
@@ -525,6 +509,7 @@
       "block_order": [
         "rapi_rapi_bundle_cr67AB"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
@@ -1063,11 +1048,10 @@
     "before_after_image_AF3qda",
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
+    "avis_clients_pHEDgk",
     "featured_product_f4D3Uk",
-    "scrolling_text_w37wcW",
     "17679279221b3f0cbd",
     "main",
-    "avis_clients_pHEDgk",
     "multi_column_4HV87L",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
