@@ -1,4 +1,4 @@
-{%- comment -%}{%- render 'section-spacing-collapsing' -%}{%- endcomment -%}
+{%- render 'section-spacing-collapsing' -%}
 
 {%- assign visible_images_count = section.blocks | map: 'settings' | where: 'image' | size -%}
 
@@ -9,11 +9,14 @@ CSS
 {%- endcomment -%}
 
 <style>
-  /* Padding personnalisé : 0 en haut, 20px en bas */
+  /* Padding personnalisé depuis les paramètres */
   #shopify-section-{{ section.id }} {
-    padding-top: 0 !important;
-    padding-bottom: 20px !important;
-    margin-top: 0 !important;
+    {%- if section.settings.padding_top != blank -%}
+      padding-top: {{ section.settings.padding_top }}px !important;
+    {%- endif -%}
+    {%- if section.settings.padding_bottom != blank -%}
+      padding-bottom: {{ section.settings.padding_bottom }}px !important;
+    {%- endif -%}
   }
 
   #shopify-section-{{ section.id }} {
@@ -198,6 +201,30 @@ LIQUID
         }
       ],
       "default": "middle"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 20
     },
     {
       "type": "header",
