@@ -10702,10 +10702,9 @@ h1.product-info__title,
   font-size: 24px !important;
   line-height: 1.2 !important;
 }
-#shopify-block-template--27446692249947__slideshow_KPre3a__image_qzHxP3 .content-over-media {
-  margin-bottom: 35px;
-  margin-left: 20px;
-  margin-right: 20px;
+#shopify-block-template--27446692249947__slideshow_KPre3a__image_qzHxP3 {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 35px;
 }
-
 
