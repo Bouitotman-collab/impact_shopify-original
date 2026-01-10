@@ -524,12 +524,6 @@
     "featured_product_f4D3Uk": {
       "type": "featured-product",
       "blocks": {
-        "liquid_bLK3zm": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0; margin: 10px 0;\">\n  <style>\n    .stock-dot {\n      width: 10px;\n      height: 10px;\n      background-color: #ff0000;\n      border-radius: 50%;\n      display: inline-block;\n      position: relative;\n      animation: stock-pulse-effect 2s infinite;\n    }\n    \n    .stock-dot::before,\n    .stock-dot::after {\n      content: '';\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      border-radius: 50%;\n      border: 2px solid #ff0000;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      animation: stock-ripple-effect 2s infinite;\n    }\n    \n    .stock-dot::after {\n      animation-delay: 1s;\n    }\n    \n    @keyframes stock-pulse-effect {\n      0%, 100% {\n        transform: scale(1);\n        opacity: 1;\n      }\n      50% {\n        transform: scale(1.1);\n        opacity: 0.8;\n      }\n    }\n    \n    @keyframes stock-ripple-effect {\n      0% {\n        transform: translate(-50%, -50%) scale(1);\n        opacity: 1;\n      }\n      100% {\n        transform: translate(-50%, -50%) scale(2.5);\n        opacity: 0;\n      }\n    }\n    \n    .stock-text {\n      font-size: 14px;\n      color: #ff0000;\n      font-weight: 600;\n    }\n  </style>\n  \n  <div class=\"stock-dot\"></div>\n  <span class=\"stock-text\" id=\"stock-count\"></span>\n  \n  <script>\n    (function() {\n      function getRandomStock() {\n        return Math.floor(Math.random() * (15 - 7 + 1)) + 7;\n      }\n      \n      function updateStock() {\n        var stockCount = getRandomStock();\n        var element = document.getElementById('stock-count');\n        if (element) {\n          element.textContent = 'Plus que ' + stockCount + ' en stock';\n        }\n      }\n      \n      // Mise à jour initiale\n      setTimeout(function() {\n        updateStock();\n      }, 100);\n      \n      // Mise à jour toutes les 10 secondes\n      setInterval(function() {\n        updateStock();\n      }, 10000);\n    })();\n  </script>\n</div>"
-          }
-        },
         "vendor_VepKT9": {
           "type": "vendor",
           "settings": {}
@@ -566,6 +560,12 @@
             "icon": "none",
             "icon_width": 20,
             "collapse_content": false
+          }
+        },
+        "liquid_bLK3zm": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0; margin: 10px 0;\">\n  <style>\n    .stock-dot {\n      width: 10px;\n      height: 10px;\n      background-color: #ff0000;\n      border-radius: 50%;\n      display: inline-block;\n      position: relative;\n      animation: stock-pulse-effect 2s infinite;\n    }\n    \n    .stock-dot::before,\n    .stock-dot::after {\n      content: '';\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      border-radius: 50%;\n      border: 2px solid #ff0000;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      animation: stock-ripple-effect 2s infinite;\n    }\n    \n    .stock-dot::after {\n      animation-delay: 1s;\n    }\n    \n    @keyframes stock-pulse-effect {\n      0%, 100% {\n        transform: scale(1);\n        opacity: 1;\n      }\n      50% {\n        transform: scale(1.1);\n        opacity: 0.8;\n      }\n    }\n    \n    @keyframes stock-ripple-effect {\n      0% {\n        transform: translate(-50%, -50%) scale(1);\n        opacity: 1;\n      }\n      100% {\n        transform: translate(-50%, -50%) scale(2.5);\n        opacity: 0;\n      }\n    }\n    \n    .stock-text {\n      font-size: 14px;\n      color: #ff0000;\n      font-weight: 600;\n    }\n  </style>\n  \n  <div class=\"stock-dot\"></div>\n  <span class=\"stock-text\" id=\"stock-count\"></span>\n  \n  <script>\n    (function() {\n      function getRandomStock() {\n        return Math.floor(Math.random() * (15 - 7 + 1)) + 7;\n      }\n      \n      function updateStock() {\n        var stockCount = getRandomStock();\n        var element = document.getElementById('stock-count');\n        if (element) {\n          element.textContent = 'Plus que ' + stockCount + ' en stock';\n        }\n      }\n      \n      // Mise à jour initiale\n      setTimeout(function() {\n        updateStock();\n      }, 100);\n      \n      // Mise à jour toutes les 10 secondes\n      setInterval(function() {\n        updateStock();\n      }, 10000);\n    })();\n  </script>\n</div>"
           }
         },
         "variant_picker_TCHGAD": {
@@ -612,7 +612,6 @@
         }
       },
       "block_order": [
-        "liquid_bLK3zm",
         "vendor_VepKT9",
         "title_7gCeFT",
         "badges_hEgeLa",
@@ -620,6 +619,7 @@
         "rating_i6PTka",
         "separator_qE3bga",
         "description_He9JjX",
+        "liquid_bLK3zm",
         "variant_picker_TCHGAD",
         "quantity_selector_D7PKw3",
         "liquid_i8BdJ9",
