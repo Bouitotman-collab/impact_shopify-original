@@ -10707,7 +10707,8 @@ h1.product-info__title,
   margin-left: 20px;
   margin-right: 20px;
 }
-#template--27446692249947__featured_product_f4D3Uk .section__inner {
+.section[id="template--27446692249947__featured_product_f4D3Uk"] {
   padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
