@@ -275,6 +275,7 @@
       "blocks": {
         "image_azcAFA": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/27.jpg",
             "content_max_width": 780,
@@ -296,6 +297,7 @@
         },
         "image_xn9WaX": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/26.jpg",
             "mobile_image": "shopify://shop_images/26.jpg",
@@ -318,6 +320,7 @@
         },
         "image_ntfEFj": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/25.jpg",
             "mobile_image": "shopify://shop_images/25.jpg",
@@ -344,6 +347,7 @@
         "image_xn9WaX",
         "image_ntfEFj"
       ],
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "full_width": false,
