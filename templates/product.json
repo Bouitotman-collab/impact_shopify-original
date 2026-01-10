@@ -524,6 +524,12 @@
     "featured_product_f4D3Uk": {
       "type": "featured-product",
       "blocks": {
+        "liquid_m3EPKM": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<style>\n/* Animation du badge \"OFFRE LA PLUS CHOISIE\" */\n.rapi_highlight_badge,\n[class*=\"highlight\"],\n.rapi-bundle-highlight,\n.bundle-highlight,\n[style*=\"OFFRE LA PLUS CHOISIE\"] {\n  animation: pulse-glow 2s ease-in-out infinite !important;\n}\n\n@keyframes pulse-glow {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 1;\n    box-shadow: 0 0 10px rgba(91, 200, 242, 0.5);\n  }\n  50% {\n    transform: scale(1.05);\n    opacity: 0.85;\n    box-shadow: 0 0 20px rgba(91, 200, 242, 0.8), 0 0 30px rgba(91, 200, 242, 0.4);\n  }\n}\n</style>"
+          }
+        },
         "vendor_VepKT9": {
           "type": "vendor",
           "settings": {}
@@ -612,6 +618,7 @@
         }
       },
       "block_order": [
+        "liquid_m3EPKM",
         "vendor_VepKT9",
         "title_7gCeFT",
         "badges_hEgeLa",
