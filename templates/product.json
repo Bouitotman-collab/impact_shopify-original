@@ -440,6 +440,12 @@
             "liquid": "<div data-rapi-id=\"rapi_647e9d77b2c4b4\"></div>"
           }
         },
+        "liquid_T9Jjzy": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0; margin: 0;\">\n  <style>\n    .visitor-dot {\n      width: 10px;\n      height: 10px;\n      background-color: #229907;\n      border-radius: 50%;\n      display: inline-block;\n      position: relative;\n      animation: pulse-effect 2s infinite;\n    }\n    \n    .visitor-dot::before,\n    .visitor-dot::after {\n      content: '';\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      border-radius: 50%;\n      border: 2px solid #229907;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      animation: ripple-effect 2s infinite;\n    }\n    \n    .visitor-dot::after {\n      animation-delay: 1s;\n    }\n    \n    @keyframes pulse-effect {\n      0%, 100% {\n        transform: scale(1);\n        opacity: 1;\n      }\n      50% {\n        transform: scale(1.1);\n        opacity: 0.8;\n      }\n    }\n    \n    @keyframes ripple-effect {\n      0% {\n        transform: translate(-50%, -50%) scale(1);\n        opacity: 1;\n      }\n      100% {\n        transform: translate(-50%, -50%) scale(2.5);\n        opacity: 0;\n      }\n    }\n    \n    .visitor-text {\n      font-size: 14px;\n      color: #333;\n      font-weight: 500;\n    }\n  </style>\n  \n  <div class=\"visitor-dot\"></div>\n  <span class=\"visitor-text\" id=\"live-count\"></span>\n  \n  <script>\n    (function() {\n      function getRandomViewers() {\n        return Math.floor(Math.random() * (29 - 19 + 1)) + 19;\n      }\n      \n      function getSessionViewers() {\n        var sessionKey = 'purepaw_viewers_session';\n        var viewers = sessionStorage.getItem(sessionKey);\n        \n        if (!viewers) {\n          viewers = getRandomViewers();\n          sessionStorage.setItem(sessionKey, viewers);\n        }\n        \n        return viewers;\n      }\n      \n      setTimeout(function() {\n        var viewerCount = getSessionViewers();\n        var element = document.getElementById('live-count');\n        if (element) {\n          element.textContent = viewerCount + ' personnes regardent ce produit en ce moment';\n        }\n      }, 100);\n    })();\n  </script>\n</div>"
+          }
+        },
         "buy_buttons_wXyhRp": {
           "type": "buy_buttons",
           "settings": {
@@ -454,12 +460,6 @@
         "pickup_availability_yCgm63": {
           "type": "pickup_availability",
           "settings": {}
-        },
-        "liquid_T9Jjzy": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div style=\"display: flex; align-items: center; justify-content: center; gap: 8px; padding: 0; margin: 0;\">\n  <style>\n    .visitor-dot {\n      width: 10px;\n      height: 10px;\n      background-color: #229907;\n      border-radius: 50%;\n      display: inline-block;\n      position: relative;\n      animation: pulse-effect 2s infinite;\n    }\n    \n    .visitor-dot::before,\n    .visitor-dot::after {\n      content: '';\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      border-radius: 50%;\n      border: 2px solid #229907;\n      top: 50%;\n      left: 50%;\n      transform: translate(-50%, -50%);\n      animation: ripple-effect 2s infinite;\n    }\n    \n    .visitor-dot::after {\n      animation-delay: 1s;\n    }\n    \n    @keyframes pulse-effect {\n      0%, 100% {\n        transform: scale(1);\n        opacity: 1;\n      }\n      50% {\n        transform: scale(1.1);\n        opacity: 0.8;\n      }\n    }\n    \n    @keyframes ripple-effect {\n      0% {\n        transform: translate(-50%, -50%) scale(1);\n        opacity: 1;\n      }\n      100% {\n        transform: translate(-50%, -50%) scale(2.5);\n        opacity: 0;\n      }\n    }\n    \n    .visitor-text {\n      font-size: 14px;\n      color: #333;\n      font-weight: 500;\n    }\n  </style>\n  \n  <div class=\"visitor-dot\"></div>\n  <span class=\"visitor-text\" id=\"live-count\"></span>\n  \n  <script>\n    (function() {\n      function getRandomViewers() {\n        return Math.floor(Math.random() * (29 - 19 + 1)) + 19;\n      }\n      \n      function getSessionViewers() {\n        var sessionKey = 'purepaw_viewers_session';\n        var viewers = sessionStorage.getItem(sessionKey);\n        \n        if (!viewers) {\n          viewers = getRandomViewers();\n          sessionStorage.setItem(sessionKey, viewers);\n        }\n        \n        return viewers;\n      }\n      \n      setTimeout(function() {\n        var viewerCount = getSessionViewers();\n        var element = document.getElementById('live-count');\n        if (element) {\n          element.textContent = viewerCount + ' personnes regardent ce produit en ce moment';\n        }\n      }, 100);\n    })();\n  </script>\n</div>"
-          }
         }
       },
       "block_order": [
@@ -473,9 +473,9 @@
         "variant_picker_TCHGAD",
         "quantity_selector_D7PKw3",
         "liquid_i8BdJ9",
+        "liquid_T9Jjzy",
         "buy_buttons_wXyhRp",
-        "pickup_availability_yCgm63",
-        "liquid_T9Jjzy"
+        "pickup_availability_yCgm63"
       ],
       "name": "Featured product",
       "settings": {
