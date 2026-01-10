@@ -137,8 +137,40 @@
         "background_gradient": ""
       }
     },
+    "multiple_images_with_text_XqzXQR": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_89BzQL": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Beige_Playful_Skincare_Key_Benefits_Instagram_Post.webp",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_89BzQL"
+      ],
+      "name": "Multiple images with text",
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "middle",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
+    },
     "image_with_expandable_text_mFwfVE": {
       "type": "image-with-expandable-text",
+      "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/19.jpg",
@@ -156,6 +188,7 @@
     },
     "image_with_expandable_text_cBFcV6": {
       "type": "image-with-expandable-text",
+      "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/20.jpg",
@@ -173,6 +206,7 @@
     },
     "image_with_expandable_text_fachMn": {
       "type": "image-with-expandable-text",
+      "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/22.jpg",
@@ -190,6 +224,7 @@
     },
     "image_with_expandable_text_a4i4TW": {
       "type": "image-with-expandable-text",
+      "disabled": true,
       "name": "Image + Lire plus",
       "settings": {
         "image": "shopify://shop_images/24.jpg",
@@ -1006,6 +1041,7 @@
     "logo_carousel_zGYFVe",
     "rich_text_ane766",
     "slideshow_YdmTCA",
+    "multiple_images_with_text_XqzXQR",
     "image_with_expandable_text_mFwfVE",
     "image_with_expandable_text_cBFcV6",
     "image_with_expandable_text_fachMn",
