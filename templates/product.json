@@ -1011,6 +1011,26 @@
     "slideshow_KPre3a": {
       "type": "slideshow",
       "blocks": {
+        "image_YgkCD4": {
+          "type": "image",
+          "settings": {
+            "content_max_width": 780,
+            "mobile_text_position": "place-self-center text-center",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "subheading": "Tell your story",
+            "title": "Slide title",
+            "heading_tag": "h0",
+            "button_text": "",
+            "button_link": "",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30,
+            "background": "",
+            "background_gradient": ""
+          }
+        },
         "image_qzHxP3": {
           "type": "image",
           "settings": {
@@ -1035,6 +1055,7 @@
         }
       },
       "block_order": [
+        "image_YgkCD4",
         "image_qzHxP3"
       ],
       "name": "Slideshow",
@@ -1073,8 +1094,8 @@
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
     "faq_3Wfxcg",
+    "slideshow_KPre3a",
     "avis_clients_tous_PMJxcT",
-    "text_with_icons_cFz9qM",
-    "slideshow_KPre3a"
+    "text_with_icons_cFz9qM"
   ]
 }
