@@ -10702,12 +10702,4 @@ h1.product-info__title,
   font-size: 24px !important;
   line-height: 1.2 !important;
 }
-/* Supprimer padding bas Featured Product */
-#shopify-section-template--27446692249995__featured_product_f4D3uK {
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
-}
 
-.shopify-section--featured-product {
-  padding-bottom: 0 !important;
-}
