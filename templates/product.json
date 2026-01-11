@@ -924,23 +924,6 @@
         "accordion_text_color": "#ffffff"
       }
     },
-    "image_with_text_overlay_LFTXh8": {
-      "type": "image-with-text-overlay",
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": false,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/Beige_Playful_Skincare_Key_Benefits_Instagram_Post_2.webp",
-        "mobile_image": "shopify://shop_images/Beige_Playful_Skincare_Key_Benefits_Instagram_Post_2.webp",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#ffffff",
-        "overlay_opacity": 0
-      }
-    },
     "avis_clients_tous_PMJxcT": {
       "type": "avis-clients-tous",
       "custom_css": [],
@@ -1047,7 +1030,6 @@
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
     "faq_3Wfxcg",
-    "image_with_text_overlay_LFTXh8",
     "avis_clients_tous_PMJxcT",
     "text_with_icons_cFz9qM"
   ]
