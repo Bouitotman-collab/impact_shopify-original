@@ -1,0 +1,158 @@
+{% comment %}
+  Section personnalisée : Tableau comparatif PurePaw
+  Zéro espace, zéro padding, design propre
+{% endcomment %}
+
+<style>
+  /* Reset complet de la section */
+  .purepaw-comparatif-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Conteneur de l'image */
+  .purepaw-comparatif-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; /* Supprime l'espace en bas de l'image */
+    background-color: transparent;
+  }
+
+  /* Image responsive sans espace */
+  .purepaw-comparatif-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+
+  /* Texte de contact en dessous (optionnel) */
+  .purepaw-contact-text {
+    text-align: center;
+    padding: 20px 20px 40px;
+    margin: 0;
+    background-color: #ffffff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .purepaw-contact-text p {
+    margin: 0;
+    color: #333333;
+  }
+
+  .purepaw-contact-email {
+    color: #305AD0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .purepaw-contact-email:hover {
+    text-decoration: underline;
+  }
+
+  /* Version mobile */
+  @media (max-width: 768px) {
+    .purepaw-contact-text {
+      font-size: 14px;
+      padding: 15px 15px 30px;
+    }
+  }
+</style>
+
+<section class="purepaw-comparatif-section">
+  <div class="purepaw-comparatif-wrapper">
+    {% if section.settings.image != blank %}
+      <img 
+        src="{{ section.settings.image | image_url: width: 2000 }}"
+        srcset="{{ section.settings.image | image_url: width: 600 }} 600w,
+                {{ section.settings.image | image_url: width: 1200 }} 1200w,
+                {{ section.settings.image | image_url: width: 2000 }} 2000w"
+        sizes="100vw"
+        alt="{{ section.settings.alt_text | default: 'Tableau comparatif PurePaw vs Autres' }}"
+        class="purepaw-comparatif-image"
+        loading="lazy"
+        width="2000"
+        height="auto"
+      >
+    {% else %}
+      <img 
+        src="https://cdn.shopify.com/s/files/1/0978/1873/9035/files/Beige_Playful_Skincare_Key_Benefits_Instagram_Post_1.webp?v=1768171570"
+        alt="Tableau comparatif PurePaw vs Autres"
+        class="purepaw-comparatif-image"
+        loading="lazy"
+      >
+    {% endif %}
+  </div>
+
+  {% if section.settings.show_contact_text %}
+  <div class="purepaw-contact-text">
+    <p>
+      {{ section.settings.contact_text | default: 'Une question ? Contactez nos experts du lundi au vendredi :' }}
+      <a href="mailto:{{ section.settings.contact_email | default: 'contact@purepaw.fr' }}" class="purepaw-contact-email">
+        {{ section.settings.contact_email | default: 'contact@purepaw.fr' }}
+      </a>
+      <br>
+      {{ section.settings.response_time | default: 'Délai de réponse moyen : 24 h' }}
+    </p>
+  </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "PurePaw Comparatif",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image du tableau comparatif",
+      "info": "Image par défaut : tableau PurePaw vs Autres"
+    },
+    {
+      "type": "text",
+      "id": "alt_text",
+      "label": "Texte alternatif de l'image",
+      "default": "Tableau comparatif PurePaw vs Autres"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_text",
+      "label": "Afficher le texte de contact",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_text",
+      "label": "Texte de contact",
+      "default": "Une question ? Contactez nos experts du lundi au vendredi :"
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Email de contact",
+      "default": "contact@purepaw.fr"
+    },
+    {
+      "type": "text",
+      "id": "response_time",
+      "label": "Délai de réponse",
+      "default": "Délai de réponse moyen : 24 h"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PurePaw Comparatif",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
