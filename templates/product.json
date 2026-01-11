@@ -1007,6 +1007,13 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "purepaw_comparatif_9GYiKP": {
+      "type": "purepaw-comparatif",
+      "name": "PurePaw Comparatif",
+      "settings": {
+        "alt_text": "Tableau comparatif PurePaw vs Autres"
+      }
     }
   },
   "order": [
@@ -1029,6 +1036,7 @@
     "multi_column_4HV87L",
     "slideshow_U4qMYm",
     "1766807845a2bc0a9e",
+    "purepaw_comparatif_9GYiKP",
     "faq_3Wfxcg",
     "avis_clients_tous_PMJxcT",
     "text_with_icons_cFz9qM"
