@@ -137,21 +137,6 @@
         "background_gradient": ""
       }
     },
-    "purepaw_comparatif_9GYiKP": {
-      "type": "purepaw-comparatif",
-      "name": "PurePaw Comparatif",
-      "settings": {
-        "alt_text": "Tableau comparatif PurePaw vs Autres",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_left": 0,
-        "padding_right": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "padding_left_mobile": 20,
-        "padding_right_mobile": 20
-      }
-    },
     "multiple_images_with_text_XqzXQR": {
       "type": "multiple-images-with-text",
       "blocks": {
@@ -632,6 +617,7 @@
         },
         "pickup_availability_yCgm63": {
           "type": "pickup_availability",
+          "disabled": true,
           "settings": {}
         }
       },
@@ -828,6 +814,21 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "purepaw_comparatif_9GYiKP": {
+      "type": "purepaw-comparatif",
+      "name": "PurePaw Comparatif",
+      "settings": {
+        "alt_text": "Tableau comparatif PurePaw vs Autres",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20
       }
     },
     "faq_3Wfxcg": {
