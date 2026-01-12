@@ -63,7 +63,20 @@ SECTION : Avis clients premium – SANS CARRÉ BLEU + TITRE INCLUSIF
   padding-bottom: {{ section.settings.padding_bottom }}px;
   margin: 0;
   background: #fff;
-  border-bottom: 1px solid #E5E5E5;
+  position: relative;
+}
+
+/* Ligne de séparation avec padding */
+.reviews-premium-simple::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #E5E5E5;
+  margin: 0 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .reviews-container-simple {
