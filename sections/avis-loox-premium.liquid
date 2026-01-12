@@ -195,7 +195,8 @@ SECTION : Avis clients premium – SANS CARRÉ BLEU + TITRE INCLUSIF
 /* ===== RESPONSIVE ===== */
 @media (max-width: 767px) {
   .reviews-premium-simple {
-    padding: 40px 0;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 
   .reviews-container-simple {
