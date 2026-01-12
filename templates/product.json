@@ -85,7 +85,7 @@
         "heading_QRhbWU"
       ],
       "custom_css": [
-        "* {padding-top: 3px !important;}"
+        "* {padding-top: 2px !important;}"
       ],
       "name": "Rich text",
       "settings": {
