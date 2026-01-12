@@ -518,7 +518,9 @@
       ],
       "name": "Avis clients",
       "settings": {
-        "main_title": "Testé par des propriétaires d'animaux comme vous"
+        "main_title": "Testé par des propriétaires d'animaux comme vous",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_product_f4D3Uk": {
