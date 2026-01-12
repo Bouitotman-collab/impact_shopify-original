@@ -84,7 +84,9 @@
       "block_order": [
         "heading_QRhbWU"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "* {padding-top: 0 !important;}"
+      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
