@@ -56,6 +56,7 @@
     background-color: transparent !important;
     border: none !important;
     border-bottom: none !important;
+    text-align: center;
   }
   
   /* Premier titre sans margin top */
@@ -74,7 +75,7 @@
     margin: 0 -20px 30px -20px;
     border-radius: 0 !important;
     overflow: hidden;
-    padding: 0;
+    padding: 20px;
     width: calc(100% + 40px);
   }
   
@@ -85,12 +86,19 @@
     background-color: #F5F5F5 !important;
   }
   
-  /* Supprimer toutes les bordures internes */
+  /* Supprimer toutes les bordures internes par défaut */
   #shopify-section-{{ section.id }} .faq-category-group .accordion {
     border: none !important;
   }
   
-  /* Supprimer les bordures sous les titres et entre les items */
+  /* Lignes de séparation entre les questions */
+  #shopify-section-{{ section.id }} .faq-category-group > *:not(:last-child) {
+    border-bottom: 1px solid #E0E0E0 !important;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  /* Supprimer les bordures sous les titres et entre les items de l'accordion-box principal */
   #shopify-section-{{ section.id }} .accordion-box > * {
     border-bottom: none !important;
   }
