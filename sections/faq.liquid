@@ -27,22 +27,43 @@
   }
   
   /* Réduction de l'espace entre le titre et les questions */
-#shopify-section-{{ section.id }} .section-stack__intro .v-stack {
-  gap: 0.1rem !important;
-}
+  #shopify-section-{{ section.id }} .section-stack__intro .v-stack {
+    gap: 0.1rem !important;
+  }
 
-#shopify-section-{{ section.id }} .section-stack {
-  gap: 0.1rem !important;
-}
+  #shopify-section-{{ section.id }} .section-stack {
+    gap: 0.1rem !important;
+  }
 
-/* Réduction du padding en bas de la section */
-#shopify-section-{{ section.id }} {
-  padding-bottom: 0px !important;
-}
+  /* Réduction du padding en bas de la section */
+  #shopify-section-{{ section.id }} {
+    padding-bottom: 0px !important;
+  }
 
-#shopify-section-{{ section.id }} .section-stack {
-  padding-bottom: 0 !important;
-}
+  #shopify-section-{{ section.id }} .section-stack {
+    padding-bottom: 0 !important;
+  }
+  
+  /* NOUVEAU : Styles pour les sous-titres de catégories */
+  .faq-category-title {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #000000 !important;
+    padding: 20px 25px 15px;
+    margin: 0;
+    background-color: #F8F8F8 !important;
+    border-bottom: 2px solid #74D0F1 !important;
+  }
+  
+  /* Premier sous-titre sans padding top */
+  .faq-category-title:first-of-type {
+    padding-top: 25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
 </style>
 
 <div {% render 'section-properties' %}>
@@ -109,17 +130,26 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="section-stack__main" >
+      <div class="section-stack__main">
         <div {% render 'surface', class: 'accordion-box rounded', background: section.settings.accordion_background, text_color: section.settings.accordion_text_color, background_fallback: 'bg-secondary' %}>
+          
+          {%- assign current_category = '' -%}
+          
           {%- for block in section.blocks -%}
-            {%- if block.settings.title != blank and block.settings.content != blank -%}
-              {%- capture accordion_content -%}
-                <div class="prose">{{ block.settings.content }}</div>
-              {%- endcapture -%}
+            {%- if block.type == 'category' -%}
+              {%- assign current_category = block.settings.category_title -%}
+              <h3 class="faq-category-title">{{ current_category }}</h3>
+            {%- elsif block.type == 'item' -%}
+              {%- if block.settings.title != blank and block.settings.content != blank -%}
+                {%- capture accordion_content -%}
+                  <div class="prose">{{ block.settings.content }}</div>
+                {%- endcapture -%}
 
-              {%- render 'accordion', title: block.settings.title, content: accordion_content, block: block -%}
+                {%- render 'accordion', title: block.settings.title, content: accordion_content, block: block -%}
+              {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
+          
         </div>
       </div>
     {%- endif -%}
@@ -138,14 +168,16 @@
     "@type": "FAQPage",
     "mainEntity": [
       {%- for block in section.blocks -%}
-        {
-          "@type": "Question",
-          "name": {{ block.settings.title | json }},
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": {{ block.settings.content | json }}
-          }
-        }{% unless forloop.last %},{% endunless %}
+        {%- if block.type == 'item' -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.title | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ block.settings.content | json }}
+            }
+          }{% unless forloop.last %},{% endunless %}
+        {%- endif -%}
       {%- endfor -%}
     ]
   }
@@ -160,6 +192,18 @@
     "groups": ["header", "custom.overlay"]
   },
   "blocks": [
+    {
+      "name": "Category",
+      "type": "category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category_title",
+          "label": "Category Title",
+          "default": "Category Name"
+        }
+      ]
+    },
     {
       "name": "Item",
       "type": "item",
@@ -321,24 +365,29 @@
       "name": "FAQ",
       "blocks": [
         {
-          "type": "item",
+          "type": "category",
           "settings": {
-            "title": "Do you ship overseas?",
-            "content": "<p>Yes, we ship all over the world. Shipping costs will apply, and will be added at checkout. We run discounts and promotions all year, so stay tuned for exclusive deals.</p>"
+            "category_title": "Utilisation & Dosage"
           }
         },
         {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Comment utiliser les tablettes PurePaw ?",
+            "content": "<p>C'est très simple : placez une ou deux tablettes (selon votre fréquence d'entretien) directement dans le tambour vide de votre machine. Lancez un cycle standard à 60°C minimum (idéalement programme coton). Note : N'ajoutez ni linge ni lessive durant ce cycle de nettoyage.</p>"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "category_title": "Efficacité & Sécurité"
           }
         },
         {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Quelle est la différence avec un nettoyant classique ?",
+            "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
           }
         }
       ]
