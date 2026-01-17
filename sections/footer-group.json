@@ -35,7 +35,7 @@
           "type": "text",
           "settings": {
             "title": "Nous contacter",
-            "content": "<p>Service client : contact@purepaw.fr</p><p>Du lundi au vendredi : réponse sous 24h</p>",
+            "content": "<p>📧 E-mail : contact@purepaw.fr<br/>⏱️ Disponibilité : Du lundi au vendredi<br/>💬 Délai de réponse : sous 24h ouvrées</p>",
             "enable_follow_on_shop": false
           }
         }
