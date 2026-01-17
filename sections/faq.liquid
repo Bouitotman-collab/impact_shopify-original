@@ -51,10 +51,11 @@
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 0 20px 15px 20px;
+    padding: 0 0 15px 0;
     margin: 30px 0 0 0;
     background-color: transparent !important;
     border: none !important;
+    border-bottom: none !important;
   }
   
   /* Premier titre sans margin top */
@@ -67,13 +68,14 @@
     color: #000000 !important;
   }
   
-  /* Cadre gris uniquement pour les questions */
+  /* Cadre gris pleine largeur pour les questions */
   .faq-category-group {
     background-color: #F5F5F5 !important;
-    margin: 0 20px 30px 20px;
-    border-radius: 8px;
+    margin: 0 0 30px 0;
+    border-radius: 0;
     overflow: hidden;
     padding: 0;
+    width: 100%;
   }
   
   /* Questions dans le groupe avec fond gris et texte noir */
@@ -86,6 +88,11 @@
   /* Supprimer toutes les bordures internes */
   #shopify-section-{{ section.id }} .faq-category-group .accordion {
     border: none !important;
+  }
+  
+  /* Supprimer les bordures sous les titres et entre les items */
+  #shopify-section-{{ section.id }} .accordion-box > * {
+    border-bottom: none !important;
   }
 </style>
 
