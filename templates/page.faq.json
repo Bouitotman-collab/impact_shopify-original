@@ -1,1 +1,83 @@
-{"sections":{"main":{"type":"main-page","settings":{}}},"order":["main"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": "80ch"
+      }
+    },
+    "faq_da3G74": {
+      "type": "faq",
+      "blocks": {
+        "category_WF6FGh": {
+          "type": "category",
+          "settings": {
+            "category_title": "Utilisation & Dosage"
+          }
+        },
+        "item_d4nr4L": {
+          "type": "item",
+          "settings": {
+            "title": "Comment utiliser les tablettes PurePaw ?",
+            "content": "<p>C'est très simple : placez une ou deux tablettes (selon votre fréquence d'entretien) directement dans le tambour vide de votre machine. Lancez un cycle standard à 60°C minimum (idéalement programme coton). Note : N'ajoutez ni linge ni lessive durant ce cycle de nettoyage.</p>"
+          }
+        },
+        "category_aRGUGA": {
+          "type": "category",
+          "settings": {
+            "category_title": "Efficacité & Sécurité"
+          }
+        },
+        "item_wKXbGF": {
+          "type": "item",
+          "settings": {
+            "title": "Quelle est la différence avec un nettoyant classique ?",
+            "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_WF6FGh",
+        "item_d4nr4L",
+        "category_aRGUGA",
+        "item_wKXbGF"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_da3G74"
+  ]
+}
