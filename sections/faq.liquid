@@ -51,10 +51,15 @@
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 20px 25px 15px;
-    margin: 0;
-    background-color: #F5F5F5 !important;
-    border-bottom: 2px solid #74D0F1 !important;
+    padding: 0 20px 15px 20px;
+    margin: 30px 0 0 0;
+    background-color: transparent !important;
+    border: none !important;
+  }
+  
+  /* Premier titre sans margin top */
+  .faq-category-title:first-child {
+    margin-top: 0;
   }
   
   #shopify-section-{{ section.id }} .faq-category-title,
@@ -62,28 +67,25 @@
     color: #000000 !important;
   }
   
-  /* Fond gris pour les groupes de questions */
+  /* Cadre gris uniquement pour les questions */
   .faq-category-group {
     background-color: #F5F5F5 !important;
-    margin-bottom: 20px;
+    margin: 0 20px 30px 20px;
     border-radius: 8px;
     overflow: hidden;
+    padding: 0;
   }
   
   /* Questions dans le groupe avec fond gris et texte noir */
-  .faq-category-group .accordion-item {
+  #shopify-section-{{ section.id }} .faq-category-group .accordion,
+  #shopify-section-{{ section.id }} .faq-category-group * {
+    color: #000000 !important;
     background-color: #F5F5F5 !important;
   }
   
-  #shopify-section-{{ section.id }} .faq-category-group * {
-    color: #000000 !important;
-  }
-  
-  /* Premier sous-titre sans padding top */
-  .faq-category-title:first-child {
-    padding-top: 25px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+  /* Supprimer toutes les bordures internes */
+  #shopify-section-{{ section.id }} .faq-category-group .accordion {
+    border: none !important;
   }
 </style>
 
@@ -154,20 +156,26 @@
       <div class="section-stack__main">
         <div {% render 'surface', class: 'accordion-box rounded', background: section.settings.accordion_background, text_color: section.settings.accordion_text_color, background_fallback: 'bg-secondary' %}>
           
-          {%- assign current_category = '' -%}
           {%- assign category_started = false -%}
           
           {%- for block in section.blocks -%}
             {%- if block.type == 'category' -%}
               {%- if category_started -%}
-                </div> <!-- Fermer le groupe précédent -->
+                </div> <!-- Fermer le cadre gris précédent -->
               {%- endif -%}
               
-              <div class="faq-category-group">
-                <h3 class="faq-category-title">{{ block.settings.category_title }}</h3>
-                {%- assign category_started = true -%}
-                
+              {%- assign category_started = false -%}
+              
+              <!-- TITRE EN DEHORS DU CADRE -->
+              <h3 class="faq-category-title">{{ block.settings.category_title }}</h3>
+              
             {%- elsif block.type == 'item' -%}
+              {%- if category_started == false -%}
+                <!-- OUVRIR LE CADRE GRIS -->
+                <div class="faq-category-group">
+                {%- assign category_started = true -%}
+              {%- endif -%}
+              
               {%- if block.settings.title != blank and block.settings.content != blank -%}
                 {%- capture accordion_content -%}
                   <div class="prose">{{ block.settings.content }}</div>
@@ -179,7 +187,7 @@
           {%- endfor -%}
           
           {%- if category_started -%}
-            </div> <!-- Fermer le dernier groupe -->
+            </div> <!-- Fermer le dernier cadre gris -->
           {%- endif -%}
           
         </div>
