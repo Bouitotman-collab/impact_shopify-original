@@ -862,6 +862,13 @@
             "content": "<p>Un paquet contient <strong>24 tablettes</strong>, ce qui correspond à <strong>1 an d'entretien complet</strong> (sur la base d'un usage standard).<br/>Pour une efficacité optimale, nous recommandons d'utiliser <strong>2 tablettes par mois</strong> :</p><ul><li>Soit <strong>1 tablette tous les 15 jours</strong> pour un entretien régulier.</li><li>Soit <strong>2 tablettes d'un coup</strong> pour un décrassage mensuel en profondeur.</li></ul><p><em>Si vous lavez très fréquemment des couvertures ou paniers sales, un nettoyage plus soutenu (tous les 10 jours) peut être nécessaire.</em></p>"
           }
         },
+        "item_64prcf": {
+          "type": "item",
+          "settings": {
+            "title": "Puis-je laver du linge en même temps ?",
+            "content": "<p><strong>Non, absolument pas.</strong> Les tablettes doivent être utilisées lors d'un cycle à vide. Cela permet aux agents actifs de circuler librement pour décoller les poils et désinfecter les recoins inaccessibles (tambour, joints, filtres) sans risquer d'abîmer vos vêtements.</p>"
+          }
+        },
         "category_h6qtTW": {
           "type": "category",
           "settings": {
@@ -880,6 +887,7 @@
         "category_BwQpEh",
         "item_mR4Xxn",
         "item_gaqtTN",
+        "item_64prcf",
         "category_h6qtTW",
         "item_WEyXrn"
       ],
