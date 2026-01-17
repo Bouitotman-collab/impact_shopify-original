@@ -881,6 +881,13 @@
             "title": "Quelle est la différence avec un nettoyant classique ?",
             "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
           }
+        },
+        "item_xyMBTa": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce sans danger pour mes animaux ?",
+            "content": "<p>Absolument. La sécurité de vos compagnons est notre priorité. Nos ingrédients sont non-toxiques, sans javel, et ne laissent aucun résidu irritant dans la machine. Après le cycle de rinçage, votre machine est saine et prête pour laver les affaires de toute la famille.</p>"
+          }
         }
       },
       "block_order": [
@@ -889,7 +896,8 @@
         "item_gaqtTN",
         "item_64prcf",
         "category_h6qtTW",
-        "item_WEyXrn"
+        "item_WEyXrn",
+        "item_xyMBTa"
       ],
       "name": "FAQ",
       "settings": {
