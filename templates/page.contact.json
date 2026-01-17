@@ -20,9 +20,9 @@
       "type": "contact",
       "settings": {
         "full_width": true,
-        "subheading": "Besoin d'assistance ?",
-        "title": "",
-        "content": "<p>Notre équipe d'experts est à votre disposition pour répondre à l'ensemble de vos questions. Que vous souhaitiez obtenir des conseils sur nos solutions de nettoyage spécialisées, suivre l'état de votre commande ou échanger sur vos besoins spécifiques, nous mettons notre expertise à votre service.</p><p><strong>Contactez-nous par email :</strong> <a href=\"mailto:contact@purepaw.fr\">contact@purepaw.fr</a><br/><br/>Délai de réponse : sous 24 heures ouvrées (du lundi au vendredi)</p><p>Vous pouvez également utiliser le formulaire de contact ci-dessous. Notre équipe vous apportera une réponse personnalisée dans les meilleurs délais.</p>",
+        "subheading": "",
+        "title": "Contact",
+        "content": "<p>Une question sur nos produits, votre commande ou nos solutions <br/>d'entretien ? Notre équipe est là pour vous accompagner.<br/><br/>📧 E-mail : contact@purepaw.fr<br/>⏱️ Délai de réponse : sous 24h (du lundi au vendredi)<br/><br/>Vous pouvez également utiliser le formulaire de contact ci-dessous. <br/>Notre équipe vous apportera une réponse personnalisée dans les <br/>meilleurs délais.</p>",
         "text_position": "start",
         "contact_form_size": "large",
         "background": "",
