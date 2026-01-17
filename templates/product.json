@@ -908,6 +908,13 @@
             "title": "Quels sont les délais de livraison ?",
             "content": "<p>La livraison est <strong>gratuite</strong> en France métropolitaine.</p><ul><li>Expédition : sous 24 à 48h ouvrées.</li><li>Livraison : comptez 8 à 10 jours ouvrés pour recevoir votre commande.</li></ul>"
           }
+        },
+        "item_9nQiar": {
+          "type": "item",
+          "settings": {
+            "title": "Que faire si je ne suis pas satisfait ?",
+            "content": "<p>Nous sommes sûrs de l'efficacité de PurePaw. C'est pourquoi nous offrons une garantie <strong>satisfait ou remboursé de 30 jours</strong>. Si le produit ne vient pas à bout des odeurs de votre machine, contactez-nous simplement à contact@purepaw.fr pour un remboursement intégral.</p>"
+          }
         }
       },
       "block_order": [
@@ -920,7 +927,8 @@
         "item_xyMBTa",
         "item_N3NbGq",
         "category_KPcnGz",
-        "item_MJ6cH8"
+        "item_MJ6cH8",
+        "item_9nQiar"
       ],
       "name": "FAQ",
       "settings": {
