@@ -839,6 +839,73 @@
         "padding_right_mobile": 20
       }
     },
+    "faq_yemprk": {
+      "type": "faq",
+      "blocks": {
+        "category_BwQpEh": {
+          "type": "category",
+          "settings": {
+            "category_title": "Utilisation & Dosage"
+          }
+        },
+        "item_mR4Xxn": {
+          "type": "item",
+          "settings": {
+            "title": "Comment utiliser les tablettes PurePaw ?",
+            "content": "<p>C'est très simple : placez une ou deux tablettes (selon votre fréquence d'entretien) directement dans le tambour vide de votre machine. Lancez un cycle standard à 60°C minimum (idéalement programme coton). Note : N'ajoutez ni linge ni lessive durant ce cycle de nettoyage.</p>"
+          }
+        },
+        "item_gaqtTN": {
+          "type": "item",
+          "settings": {
+            "title": "Combien de temps dure un paquet et à quelle fréquence l'utiliser ?",
+            "content": "<p>Un paquet contient <strong>24 tablettes</strong>, ce qui correspond à <strong>1 an d'entretien complet</strong> (sur la base d'un usage standard).<br/>Pour une efficacité optimale, nous recommandons d'utiliser <strong>2 tablettes par mois</strong> :</p><ul><li>Soit <strong>1 tablette tous les 15 jours</strong> pour un entretien régulier.</li><li>Soit <strong>2 tablettes d'un coup</strong> pour un décrassage mensuel en profondeur.</li></ul><p><em>Si vous lavez très fréquemment des couvertures ou paniers sales, un nettoyage plus soutenu (tous les 10 jours) peut être nécessaire.</em></p>"
+          }
+        },
+        "category_h6qtTW": {
+          "type": "category",
+          "settings": {
+            "category_title": "Efficacité & Sécurité"
+          }
+        },
+        "item_WEyXrn": {
+          "type": "item",
+          "settings": {
+            "title": "Quelle est la différence avec un nettoyant classique ?",
+            "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "category_BwQpEh",
+        "item_mR4Xxn",
+        "item_gaqtTN",
+        "category_h6qtTW",
+        "item_WEyXrn"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
     "avis_clients_tous_PMJxcT": {
       "type": "avis-clients-tous",
       "custom_css": [],
@@ -954,65 +1021,6 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
-      }
-    },
-    "faq_yemprk": {
-      "type": "faq",
-      "blocks": {
-        "category_BwQpEh": {
-          "type": "category",
-          "settings": {
-            "category_title": "Utilisation & Dosage"
-          }
-        },
-        "item_mR4Xxn": {
-          "type": "item",
-          "settings": {
-            "title": "Comment utiliser les tablettes PurePaw ?",
-            "content": "<p>C'est très simple : placez une ou deux tablettes (selon votre fréquence d'entretien) directement dans le tambour vide de votre machine. Lancez un cycle standard à 60°C minimum (idéalement programme coton). Note : N'ajoutez ni linge ni lessive durant ce cycle de nettoyage.</p>"
-          }
-        },
-        "category_h6qtTW": {
-          "type": "category",
-          "settings": {
-            "category_title": "Efficacité & Sécurité"
-          }
-        },
-        "item_WEyXrn": {
-          "type": "item",
-          "settings": {
-            "title": "Quelle est la différence avec un nettoyant classique ?",
-            "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "category_BwQpEh",
-        "item_mR4Xxn",
-        "category_h6qtTW",
-        "item_WEyXrn"
-      ],
-      "name": "FAQ",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
-        "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
-        "button_text": "",
-        "button_url": "",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "heading_color": "",
-        "heading_gradient": "",
-        "button_background": "",
-        "button_text_color": "",
-        "accordion_background": "",
-        "accordion_text_color": ""
       }
     }
   },
