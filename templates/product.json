@@ -665,7 +665,7 @@
       "type": "apps",
       "blocks": {
         "rapi_rapi_bundle_cr67AB": {
-          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "type": "shopify://apps/rapi-bundles/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
           "settings": {
             "product": "pack-solo-24-tablettes"
           }
@@ -687,6 +687,17 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "trustwill_trustoo_star_rating_widget_bBXiLe": {
+          "type": "shopify://apps/trustwill-trustoo/blocks/star-rating-widget/c8f15077-6475-4e86-ad06-b66038d5ba2c",
+          "settings": {
+            "star_size": 20,
+            "font_size": 16,
+            "text_color": "#585858",
+            "block_aligment": "left",
+            "margin_top": 10,
+            "margin_bottom": 0
+          }
+        },
         "vendor": {
           "type": "vendor",
           "disabled": true,
@@ -748,6 +759,7 @@
         }
       },
       "block_order": [
+        "trustwill_trustoo_star_rating_widget_bBXiLe",
         "vendor",
         "price",
         "variant_picker",
