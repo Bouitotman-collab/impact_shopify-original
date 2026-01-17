@@ -15,8 +15,6 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/retirer_le_logo_artguru_2_1__2_11zon.jpg",
-            "mobile_image": "shopify://shop_images/retirer_le_logo_artguru_2_1__2_11zon.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-center sm:text-center",
@@ -37,8 +35,6 @@
         "image_GLUEgD": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/retirer_le_logo_artguru_1_1_1_1__1_11zon.jpg",
-            "mobile_image": "shopify://shop_images/retirer_le_logo_artguru_1_1_1_1__1_11zon.jpg",
             "content_max_width": 780,
             "mobile_text_position": "place-self-end-start text-start",
             "desktop_text_position": "sm:place-self-end-start sm:text-start",
@@ -802,6 +798,8 @@
         "full_width": true,
         "images_layout": "scattered",
         "collage_images_alignment": "middle",
+        "padding_top": 0,
+        "padding_bottom": 20,
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -958,6 +956,26 @@
         "accordion_background": "",
         "accordion_text_color": ""
       }
+    },
+    "17686727448d22f43b": {
+      "type": "apps",
+      "blocks": {
+        "trustwill_trustoo_photo_carousel_kTBGir": {
+          "type": "shopify://apps/trustwill-trustoo/blocks/photo-carousel/c8f15077-6475-4e86-ad06-b66038d5ba2c",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "trustwill_trustoo_photo_carousel_kTBGir"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -979,6 +997,7 @@
     "hot-spots",
     "multiple-images-with-text",
     "featured-product",
-    "faq"
+    "faq",
+    "17686727448d22f43b"
   ]
 }
