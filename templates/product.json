@@ -888,6 +888,13 @@
             "title": "Est-ce sans danger pour mes animaux ?",
             "content": "<p>Absolument. La sécurité de vos compagnons est notre priorité. Nos ingrédients sont non-toxiques, sans javel, et ne laissent aucun résidu irritant dans la machine. Après le cycle de rinçage, votre machine est saine et prête pour laver les affaires de toute la famille.</p>"
           }
+        },
+        "item_N3NbGq": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce compatible avec ma machine ?",
+            "content": "<p>Oui, PurePaw est universel. Nos tablettes sont compatibles avec :</p><ul><li>Toutes les marques (Samsung, LG, Whirlpool, Bosch, etc.)</li><li>Tous les types (ouverture hublot ou par le dessus/top)</li><li>Les machines haute efficacité (HE) et les fosses septiques.</li></ul>"
+          }
         }
       },
       "block_order": [
@@ -897,7 +904,8 @@
         "item_64prcf",
         "category_h6qtTW",
         "item_WEyXrn",
-        "item_xyMBTa"
+        "item_xyMBTa",
+        "item_N3NbGq"
       ],
       "name": "FAQ",
       "settings": {
