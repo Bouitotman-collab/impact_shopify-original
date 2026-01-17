@@ -252,7 +252,7 @@
         "full_width": true,
         "subheading": "",
         "title": "",
-        "content": "<h3>Résultat Avant/Après</h3>",
+        "content": "<h3>Résultats dès la première utilisation</h3><h3>Avant/Après</h3>",
         "before_image": "shopify://shop_images/5.jpg",
         "before_image_mobile": "shopify://shop_images/5.jpg",
         "after_image": "shopify://shop_images/new-enhance-photo-base-7.jpg",
