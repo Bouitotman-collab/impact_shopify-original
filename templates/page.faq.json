@@ -16,51 +16,106 @@
         "content_width": "80ch"
       }
     },
-    "faq_da3G74": {
+    "faq_fxCper": {
       "type": "faq",
       "blocks": {
-        "category_WF6FGh": {
+        "category_ELBRWU": {
           "type": "category",
           "settings": {
             "category_title": "Utilisation & Dosage"
           }
         },
-        "item_d4nr4L": {
+        "item_XWhwgB": {
           "type": "item",
           "settings": {
             "title": "Comment utiliser les tablettes PurePaw ?",
             "content": "<p>C'est très simple : placez une ou deux tablettes (selon votre fréquence d'entretien) directement dans le tambour vide de votre machine. Lancez un cycle standard à 60°C minimum (idéalement programme coton). Note : N'ajoutez ni linge ni lessive durant ce cycle de nettoyage.</p>"
           }
         },
-        "category_aRGUGA": {
+        "item_6XJYVT": {
+          "type": "item",
+          "settings": {
+            "title": "Combien de temps dure un paquet et à quelle fréquence l'utiliser ?",
+            "content": "<p>Un paquet contient <strong>24 tablettes</strong>, ce qui correspond à <strong>1 an d'entretien complet</strong> (sur la base d'un usage standard).<br/>Pour une efficacité optimale, nous recommandons d'utiliser <strong>2 tablettes par mois</strong> :</p><ul><li>Soit <strong>1 tablette tous les 15 jours</strong> pour un entretien régulier.</li><li>Soit <strong>2 tablettes d'un coup</strong> pour un décrassage mensuel en profondeur.</li></ul><p><em>Si vous lavez très fréquemment des couvertures ou paniers sales, un nettoyage plus soutenu (tous les 10 jours) peut être nécessaire.</em></p>"
+          }
+        },
+        "item_dyQtXc": {
+          "type": "item",
+          "settings": {
+            "title": "Puis-je laver du linge en même temps ?",
+            "content": "<p><strong>Non, absolument pas.</strong> Les tablettes doivent être utilisées lors d'un cycle à vide. Cela permet aux agents actifs de circuler librement pour décoller les poils et désinfecter les recoins inaccessibles (tambour, joints, filtres) sans risquer d'abîmer vos vêtements.</p>"
+          }
+        },
+        "category_gQxyht": {
           "type": "category",
           "settings": {
             "category_title": "Efficacité & Sécurité"
           }
         },
-        "item_wKXbGF": {
+        "item_mUCfWG": {
           "type": "item",
           "settings": {
             "title": "Quelle est la différence avec un nettoyant classique ?",
             "content": "<p>Les tablettes PurePaw sont spécialement formulées pour les contraintes des propriétaires d'animaux.</p>"
           }
+        },
+        "item_ftayGh": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce sans danger pour mes animaux ?",
+            "content": "<p>Absolument. La sécurité de vos compagnons est notre priorité. Nos ingrédients sont non-toxiques, sans javel, et ne laissent aucun résidu irritant dans la machine. Après le cycle de rinçage, votre machine est saine et prête pour laver les affaires de toute la famille.</p>"
+          }
+        },
+        "item_cCx4bJ": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce compatible avec ma machine ?",
+            "content": "<p>Oui, PurePaw est universel. Nos tablettes sont compatibles avec :</p><ul><li>Toutes les marques (Samsung, LG, Whirlpool, Bosch, etc.)</li><li>Tous les types (ouverture hublot ou par le dessus/top)</li><li>Les machines haute efficacité (HE) et les fosses septiques.</li></ul>"
+          }
+        },
+        "category_yTJ9GR": {
+          "type": "category",
+          "settings": {
+            "category_title": "Livraison & Garanties"
+          }
+        },
+        "item_Qa4iJU": {
+          "type": "item",
+          "settings": {
+            "title": "Quels sont les délais de livraison ?",
+            "content": "<p>La livraison est <strong>gratuite</strong> en France métropolitaine.</p><ul><li>Expédition : sous 24 à 48h ouvrées.</li><li>Livraison : comptez 10 à 14 jours ouvrés pour recevoir votre commande.</li></ul>"
+          }
+        },
+        "item_YXYt4B": {
+          "type": "item",
+          "settings": {
+            "title": "Que faire si je ne suis pas satisfait ?",
+            "content": "<p>Nous sommes sûrs de l'efficacité de PurePaw. C'est pourquoi nous offrons une garantie <strong>satisfait ou remboursé de 30 jours</strong>. Si le produit ne vient pas à bout des odeurs de votre machine, contactez-nous simplement à contact@purepaw.fr pour un remboursement intégral.</p>"
+          }
         }
       },
       "block_order": [
-        "category_WF6FGh",
-        "item_d4nr4L",
-        "category_aRGUGA",
-        "item_wKXbGF"
+        "category_ELBRWU",
+        "item_XWhwgB",
+        "item_6XJYVT",
+        "item_dyQtXc",
+        "category_gQxyht",
+        "item_mUCfWG",
+        "item_ftayGh",
+        "item_cCx4bJ",
+        "category_yTJ9GR",
+        "item_Qa4iJU",
+        "item_YXYt4B"
       ],
       "name": "FAQ",
       "settings": {
         "full_width": true,
         "subheading": "",
         "title": "FAQ",
-        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "Une question ? Contactez nos experts du lundi au vendredi : contact@purepaw.fr",
+        "answer_time": "Délai de réponse moyen : 24 h",
         "button_text": "",
         "button_url": "",
         "text_position": "center",
@@ -78,6 +133,6 @@
   },
   "order": [
     "main",
-    "faq_da3G74"
+    "faq_fxCper"
   ]
 }
