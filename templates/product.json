@@ -895,6 +895,19 @@
             "title": "Est-ce compatible avec ma machine ?",
             "content": "<p>Oui, PurePaw est universel. Nos tablettes sont compatibles avec :</p><ul><li>Toutes les marques (Samsung, LG, Whirlpool, Bosch, etc.)</li><li>Tous les types (ouverture hublot ou par le dessus/top)</li><li>Les machines haute efficacité (HE) et les fosses septiques.</li></ul>"
           }
+        },
+        "category_KPcnGz": {
+          "type": "category",
+          "settings": {
+            "category_title": "Livraison & Garanties"
+          }
+        },
+        "item_MJ6cH8": {
+          "type": "item",
+          "settings": {
+            "title": "Quels sont les délais de livraison ?",
+            "content": "<p>La livraison est <strong>gratuite</strong> en France métropolitaine.</p><ul><li>Expédition : sous 24 à 48h ouvrées.</li><li>Livraison : comptez 8 à 10 jours ouvrés pour recevoir votre commande.</li></ul>"
+          }
         }
       },
       "block_order": [
@@ -905,7 +918,9 @@
         "category_h6qtTW",
         "item_WEyXrn",
         "item_xyMBTa",
-        "item_N3NbGq"
+        "item_N3NbGq",
+        "category_KPcnGz",
+        "item_MJ6cH8"
       ],
       "name": "FAQ",
       "settings": {
