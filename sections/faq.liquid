@@ -53,7 +53,7 @@
     letter-spacing: 0.5px;
     padding: 20px 25px 15px;
     margin: 0;
-    background-color: #F8F8F8 !important;
+    background-color: #F5F5F5 !important;
     border-bottom: 2px solid #74D0F1 !important;
   }
   
@@ -62,8 +62,25 @@
     color: #000000 !important;
   }
   
+  /* Fond gris pour les groupes de questions */
+  .faq-category-group {
+    background-color: #F5F5F5 !important;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Questions dans le groupe avec fond gris et texte noir */
+  .faq-category-group .accordion-item {
+    background-color: #F5F5F5 !important;
+  }
+  
+  #shopify-section-{{ section.id }} .faq-category-group * {
+    color: #000000 !important;
+  }
+  
   /* Premier sous-titre sans padding top */
-  .faq-category-title:first-of-type {
+  .faq-category-title:first-child {
     padding-top: 25px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -138,11 +155,18 @@
         <div {% render 'surface', class: 'accordion-box rounded', background: section.settings.accordion_background, text_color: section.settings.accordion_text_color, background_fallback: 'bg-secondary' %}>
           
           {%- assign current_category = '' -%}
+          {%- assign category_started = false -%}
           
           {%- for block in section.blocks -%}
             {%- if block.type == 'category' -%}
-              {%- assign current_category = block.settings.category_title -%}
-              <h3 class="faq-category-title">{{ current_category }}</h3>
+              {%- if category_started -%}
+                </div> <!-- Fermer le groupe précédent -->
+              {%- endif -%}
+              
+              <div class="faq-category-group">
+                <h3 class="faq-category-title">{{ block.settings.category_title }}</h3>
+                {%- assign category_started = true -%}
+                
             {%- elsif block.type == 'item' -%}
               {%- if block.settings.title != blank and block.settings.content != blank -%}
                 {%- capture accordion_content -%}
@@ -153,6 +177,10 @@
               {%- endif -%}
             {%- endif -%}
           {%- endfor -%}
+          
+          {%- if category_started -%}
+            </div> <!-- Fermer le dernier groupe -->
+          {%- endif -%}
           
         </div>
       </div>
