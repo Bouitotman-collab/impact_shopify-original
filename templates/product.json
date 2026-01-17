@@ -687,17 +687,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "trustwill_trustoo_star_rating_widget_bBXiLe": {
-          "type": "shopify://apps/trustwill-trustoo/blocks/star-rating-widget/c8f15077-6475-4e86-ad06-b66038d5ba2c",
-          "settings": {
-            "star_size": 20,
-            "font_size": 16,
-            "text_color": "#585858",
-            "block_aligment": "left",
-            "margin_top": 10,
-            "margin_bottom": 0
-          }
-        },
         "vendor": {
           "type": "vendor",
           "disabled": true,
@@ -759,7 +748,6 @@
         }
       },
       "block_order": [
-        "trustwill_trustoo_star_rating_widget_bBXiLe",
         "vendor",
         "price",
         "variant_picker",
@@ -1039,6 +1027,28 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "176867210224f0cdef": {
+      "type": "apps",
+      "blocks": {
+        "trustwill_trustoo_review_widget_g9tWqK": {
+          "type": "shopify://apps/trustwill-trustoo/blocks/review-widget/c8f15077-6475-4e86-ad06-b66038d5ba2c",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "trustwill_trustoo_review_widget_g9tWqK"
+      ],
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -1064,6 +1074,7 @@
     "purepaw_comparatif_9GYiKP",
     "faq_3Wfxcg",
     "avis_clients_tous_PMJxcT",
-    "text_with_icons_cFz9qM"
+    "text_with_icons_cFz9qM",
+    "176867210224f0cdef"
   ]
 }
