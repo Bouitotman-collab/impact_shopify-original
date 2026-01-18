@@ -829,6 +829,7 @@
       "type": "purepaw-comparatif",
       "name": "PurePaw Comparatif",
       "settings": {
+        "image": "shopify://shop_images/Beige_Playful_Skincare_Key_Benefits_Instagram_Post_2.webp",
         "alt_text": "Tableau comparatif PurePaw vs Autres",
         "padding_top": 0,
         "padding_bottom": 0,
