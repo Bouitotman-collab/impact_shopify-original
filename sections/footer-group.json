@@ -26,9 +26,17 @@
         "links": {
           "type": "links",
           "settings": {
-            "menu": "footer",
+            "menu": "aide-support",
             "show_menu_title": true,
-            "menu_title": "Liens utiles"
+            "menu_title": "AIDE & SUPPORT"
+          }
+        },
+        "links_hj38rH": {
+          "type": "links",
+          "settings": {
+            "menu": "information-l-gales",
+            "show_menu_title": true,
+            "menu_title": "INFORMATIONS LÉGALES"
           }
         },
         "text": {
@@ -43,6 +51,7 @@
       "block_order": [
         "newsletter",
         "links",
+        "links_hj38rH",
         "text"
       ],
       "settings": {
