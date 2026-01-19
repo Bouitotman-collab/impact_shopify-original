@@ -504,7 +504,7 @@
       "settings": {
         "full_width": true,
         "text": "Promotion text",
-        "text_size": "xsmall",
+        "text_size": "small",
         "text_style": "fill",
         "scrolling_mode": "auto",
         "scrolling_speed": 10,
