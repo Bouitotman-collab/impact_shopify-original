@@ -491,12 +491,27 @@
         "review_YTz4rr",
         "review_NLN4WP"
       ],
-      "disabled": true,
       "name": "Avis clients",
       "settings": {
         "main_title": "Testé et approuvé par nos clients",
         "padding_top": 0,
         "padding_bottom": 0
+      }
+    },
+    "scrolling_text_HP4XBy": {
+      "type": "scrolling-text",
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "text": "Promotion text",
+        "text_size": "xsmall",
+        "text_style": "fill",
+        "scrolling_mode": "auto",
+        "scrolling_speed": 10,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "text_gradient": ""
       }
     },
     "featured_product_f4D3Uk": {
@@ -990,6 +1005,7 @@
     "slideshow_Azmg3L",
     "multi_column_n83Ttc",
     "avis_clients_pHEDgk",
+    "scrolling_text_HP4XBy",
     "featured_product_f4D3Uk",
     "17679279221b3f0cbd",
     "main",
