@@ -524,7 +524,7 @@
         "full_width": true,
         "remove_vertical_spacing": true,
         "remove_horizontal_spacing": true,
-        "liquid": "<style>\n#shopify-section-template--27446692249947__scrolling_text_HP4XBy {\n  margin-bottom: 20px !important;\n}\n\n#shopify-section-template--27446692249947__custom_liquid_Vxain7 {\n  margin: 0 !important;\n  padding: 0 !important;\n  height: 0 !important;\n  overflow: visible !important;\n}\n</style>",
+        "liquid": "<style>\n#shopify-section-template--27446692249947__scrolling_text_HP4XBy {\n  margin-bottom: 25px !important;\n}\n\n#shopify-section-template--27446692249947__custom_liquid_Vxain7 {\n  margin: 0 !important;\n  padding: 0 !important;\n  height: 0 !important;\n  overflow: visible !important;\n}\n</style>",
         "background": "",
         "background_gradient": "",
         "text_color": ""
