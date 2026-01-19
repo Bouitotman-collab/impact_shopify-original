@@ -37,6 +37,105 @@
       --product-gallery-media-list-gap: var(--grid-gutter);
     }
   }
+
+  /* ===== PERSONNALISATION MINIATURES - VERSION SÛRE ===== */
+  
+  /* Afficher seulement 3 miniatures */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail:nth-child(n+4) {
+    display: none !important;
+  }
+
+  /* Miniatures carrées plus grandes sans bordure par défaut */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail {
+    width: 125px !important;
+    height: 125px !important;
+    min-width: 125px !important;
+    border: none !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  /* Bordure noire UNIQUEMENT sur miniature sélectionnée */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail[aria-current="true"],
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected,
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-active {
+    border: 3px solid #000 !important;
+  }
+
+  /* Image dans miniature */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 13px !important;
+  }
+
+  /* Conteneur des miniatures */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
+    display: flex !important;
+    gap: 16px !important;
+    padding: 20px 50px !important;
+    justify-content: center !important;
+  }
+
+  /* Flèches de navigation - style simple */
+  #shopify-section-{{ section.id }} .product-gallery [data-direction="previous"],
+  #shopify-section-{{ section.id }} .product-gallery [data-direction="next"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    width: 30px !important;
+    height: 30px !important;
+    cursor: pointer !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-gallery [data-direction="previous"] {
+    left: 10px !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-gallery [data-direction="next"] {
+    right: 10px !important;
+  }
+
+  #shopify-section-{{ section.id }} .product-gallery [data-direction] svg {
+    color: #000 !important;
+    stroke: #000 !important;
+    stroke-width: 3px !important;
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  /* Responsive - Mobile */
+  @media screen and (max-width: 999px) {
+    #shopify-section-{{ section.id }} .product-gallery__thumbnail {
+      width: 100px !important;
+      height: 100px !important;
+      min-width: 100px !important;
+    }
+    
+    #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
+      padding: 16px 40px !important;
+      gap: 12px !important;
+    }
+  }
+
+  /* Responsive - Desktop */
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .product-gallery__thumbnail {
+      width: 145px !important;
+      height: 145px !important;
+    }
+    
+    #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
+      gap: 20px !important;
+    }
+  }
 </style>
 
 <div {% render 'section-properties', tight: true %}>
@@ -157,6 +256,213 @@
     "templates": ["password"],
     "groups": ["header", "custom.overlay"]
   },
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "vendor",
+      "name": "Vendor",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Style",
+          "options": [
+            {
+              "value": "h1",
+              "label": "X-Large"
+            },
+            {
+              "value": "h2",
+              "label": "Large"
+            },
+            {
+              "value": "h3",
+              "label": "Medium"
+            },
+            {
+              "value": "h4",
+              "label": "Small"
+            },
+            {
+              "value": "h5",
+              "label": "X-Small"
+            },
+            {
+              "value": "h6",
+              "label": "XX-Small"
+            }
+          ],
+          "default": "h2"
+        }
+      ]
+    },
+    {
+      "type": "sku",
+      "name": "SKU",
+      "limit": 1
+    },
+    {
+      "type": "badges",
+      "name": "Badges",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Use metafields to add custom badges. [Learn more](https://support.maestrooo.com/article/75-collection-displaying-custom-label)"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_taxes_notice",
+          "label": "Show taxes notice",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "payment_terms",
+      "name": "Payment installments",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To display payment installments, your store needs to support Shop Pay Installments. [Learn more](https://help.shopify.com/en/manual/payments/shop-pay-installments)"
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Rating",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "To display a rating, add a product rating app. [Learn more](https://apps.shopify.com/categories/store-design-social-proof-product-reviews)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_empty",
+          "label": "Show if no reviews",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "separator",
+      "name": "Separator"
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "picto-coupon",
+              "label": "Coupon",
+              "group": "Shop"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon",
+          "info": "96 x 96px .png or .svg recommended. Only used when content is collapsed."
+        },
+        {
+          "type": "range",
+          "id": "icon_width",
+          "min": 16,
+          "max": 48,
+          "step": 2,
+          "unit": "px",
+          "label": "Icon width",
+          "default": 20
+        },
+        {
+          "type": "checkbox",
+          "id": "collapse_content",
+          "label": "Collapse content",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "Variant picker",
+      "limit": 1
+    },
+    {
+      "type": "quantity_selector",
+      "name": "Quantity selector",
+      "limit": 1
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_payment_button",
+          "label": "Show dynamic checkout button",
+          "info": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "label": "Show recipient information form for gift cards",
+          "info": "Allow buyers to send gift cards along with a personal message. [Learn more](https://help.shopify.com/manual/online-store/themes/customizing-themes/add-gift-card-recipient-fields)",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "atc_button_background",
+          "label": "Add to cart background"
+        },
+        {
+          "type": "color",
+          "id": "atc_button_text_color",
+          "label": "Add to cart color"
+        },
+        {
+          "type": "color",
+          "id": "payment_button_background",
+          "label": "Buy now button background"
+        },
+        {
+          "type": "color",
+          "id": "payment_button_text_color",
+          "label": "Buy now button color"
+        }
+      ]
+    }
+  ],
   "settings": [
     {
       "type": "checkbox",
@@ -201,10 +507,6 @@
           "label": "Grid (2x2)"
         },
         {
-          "value": "grid_highlight",
-          "label": "Grid (2x2) with highlighted media"
-        },
-        {
           "value": "carousel_thumbnails_left",
           "label": "Thumbnails left (carousel)"
         },
@@ -213,7 +515,7 @@
           "label": "Thumbnails bottom (carousel)"
         }
       ],
-      "default": "carousel_thumbnails_left"
+      "default": "carousel_thumbnails_bottom"
     },
     {
       "type":"select",
@@ -229,7 +531,7 @@
           "label": "Contained"
         }
       ],
-      "default": "expanded"
+      "default": "contained"
     },
     {
       "type": "select",
@@ -253,7 +555,7 @@
           "label": "Free scroll"
         }
       ],
-      "default": "floating_dots"
+      "default": "thumbnails"
     },
     {
       "type": "checkbox",
@@ -269,28 +571,10 @@
       "default": false
     },
     {
-      "type": "header",
-      "content": "Image zoom"
-    },
-    {
       "type": "checkbox",
       "id": "enable_image_zoom",
-      "label": "Enable",
+      "label": "Enable image zoom",
       "default": true
-    },
-    {
-      "type": "range",
-      "id": "max_image_zoom_level",
-      "min": 1,
-      "max": 4,
-      "step": 0.5,
-      "label": "Max zoom level",
-      "default": 3
-    },
-    {
-      "type": "header",
-      "content": "Colors",
-      "info": "Gradient replaces solid colors when set."
     },
     {
       "type": "color",
@@ -298,33 +582,11 @@
       "label": "Background"
     },
     {
-      "type": "color_background",
-      "id": "background_gradient",
-      "label": "Background gradient"
-    },
-    {
       "type": "color",
       "id": "text_color",
       "label": "Text"
-    },
-    {
-      "type": "header",
-      "content": "Input colors",
-      "info": "Applies to elements like quantity selector and variant selectors."
-    },
-    {
-      "type": "color",
-      "id": "input_background",
-      "label": "Background",
-      "default": "rgba(0,0,0,0)"
-    },
-    {
-      "type": "color",
-      "id": "input_text_color",
-      "label": "Text"
     }
   ],
-  "blocks": [],
   "presets": [
     {
       "name": "Featured product"
