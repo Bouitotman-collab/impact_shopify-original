@@ -70,7 +70,7 @@
   #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
     display: flex !important;
     gap: 16px !important;
-    padding: 5px 50px !important; /* Réduit de 10px à 5px */
+    padding: 5px 0px !important; /* Padding horizontal supprimé */
     justify-content: flex-start !important; /* Alignement à gauche */
     overflow: hidden !important; /* Cache ce qui dépasse */
     max-width: calc(135px * 3 + 16px * 2) !important; /* Largeur pour exactement 3 miniatures */
@@ -119,7 +119,7 @@
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-      padding: 3px 40px !important; /* Réduit également sur mobile */
+      padding: 3px 0px !important; /* Padding horizontal supprimé */
       gap: 12px !important;
       max-width: calc(105px * 3 + 12px * 2) !important; /* 3 miniatures sur mobile */
     }
