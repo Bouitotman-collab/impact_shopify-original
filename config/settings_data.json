@@ -164,6 +164,9 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      "/* Bordure noire sur miniature sélectionnée */.product-gallery__thumbnail[aria-current=\"true\"],.product-gallery__thumbnail.is-selected,.product-gallery__thumbnail.is-active {border: 3px solid #000 !important; border-radius: 16px !important;}",
+      "/* Aucune bordure sur les autres miniatures */.product-gallery__thumbnail:not([aria-current=\"true\"]):not(.is-selected):not(.is-active) {border: none !important;}"
+    ]
   }
 }
