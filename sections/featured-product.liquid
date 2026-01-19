@@ -39,11 +39,6 @@
   }
 
   /* ===== PERSONNALISATION MINIATURES - VERSION SÛRE ===== */
-  
-  /* Conteneur avec overflow hidden pour le défilement */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-    overflow: hidden !important;
-  }
 
   /* Miniatures carrées plus grandes sans bordure par défaut */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail {
@@ -76,7 +71,10 @@
     display: flex !important;
     gap: 16px !important;
     padding: 5px 50px !important; /* Réduit de 10px à 5px */
-    justify-content: center !important;
+    justify-content: flex-start !important; /* Alignement à gauche */
+    overflow: hidden !important; /* Cache ce qui dépasse */
+    max-width: calc(135px * 3 + 16px * 2) !important; /* Largeur pour exactement 3 miniatures */
+    margin: 0 auto !important; /* Centrer le conteneur */
   }
 
   /* Flèches de navigation - style simple */
@@ -123,6 +121,7 @@
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
       padding: 3px 40px !important; /* Réduit également sur mobile */
       gap: 12px !important;
+      max-width: calc(105px * 3 + 12px * 2) !important; /* 3 miniatures sur mobile */
     }
   }
 
@@ -135,6 +134,7 @@
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
       gap: 20px !important;
+      max-width: calc(155px * 3 + 20px * 2) !important; /* 3 miniatures sur desktop */
     }
   }
 
@@ -210,11 +210,23 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   let currentIndex = 0;
-  const thumbWidth = 135; // Largeur de base d'une miniature
-  const gap = 16; // Gap entre miniatures
+  
+  function getThumbWidth() {
+    // Calculer dynamiquement selon la largeur d'écran
+    const isMobile = window.innerWidth < 1000;
+    return isMobile ? 105 : 155;
+  }
+  
+  function getGap() {
+    const isMobile = window.innerWidth < 1000;
+    return isMobile ? 12 : 20;
+  }
   
   function scrollThumbnails() {
+    const thumbWidth = getThumbWidth();
+    const gap = getGap();
     const scrollAmount = currentIndex * (thumbWidth + gap);
+    
     thumbList.style.transform = `translateX(-${scrollAmount}px)`;
     thumbList.style.transition = 'transform 0.3s ease';
     
@@ -239,6 +251,15 @@ document.addEventListener('DOMContentLoaded', function() {
       currentIndex++;
       scrollThumbnails();
     }
+  });
+  
+  // Recalculer au resize
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      scrollThumbnails();
+    }, 250);
   });
   
   scrollThumbnails();
