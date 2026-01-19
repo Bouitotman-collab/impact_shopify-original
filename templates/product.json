@@ -500,6 +500,9 @@
     },
     "scrolling_text_HP4XBy": {
       "type": "scrolling-text",
+      "custom_css": [
+        ".scrolling-text {padding-top: 10px !important; padding-bottom: 10px !important;}"
+      ],
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
