@@ -68,35 +68,6 @@
         "speed_mobile": 30
       }
     },
-    "rich_text_ane766": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_QRhbWU": {
-          "type": "heading",
-          "settings": {
-            "text": "pourquoi adopter pure paw ?",
-            "heading_tag": "h4",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_QRhbWU"
-      ],
-      "custom_css": [
-        "* {padding-top: 3px !important;}"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
-    },
     "slideshow_YdmTCA": {
       "type": "slideshow",
       "blocks": {
@@ -529,13 +500,6 @@
     "featured_product_f4D3Uk": {
       "type": "featured-product",
       "blocks": {
-        "liquid_m3EPKM": {
-          "type": "liquid",
-          "name": "Badge clignotant Custom Liquid ",
-          "settings": {
-            "liquid": "<style>\n/* Animation du badge \"OFFRE LA PLUS CHOISIE\" - Version corrigée */\n\n/* Cibler le badge avec la vraie classe */\n.rapi-bundles__bar-most-popular__content {\n  animation: pulse-glow 2s ease-in-out infinite !important;\n}\n\n/* Animation combinée : pulsation + clignotement lumineux */\n@keyframes pulse-glow {\n  0%, 100% {\n    transform: scale(1);\n    opacity: 1;\n    box-shadow: 0 0 10px rgba(91, 200, 242, 0.5);\n  }\n  50% {\n    transform: scale(1.05);\n    opacity: 0.85;\n    box-shadow: 0 0 20px rgba(91, 200, 242, 0.8), 0 0 30px rgba(91, 200, 242, 0.4);\n  }\n}\n</style>"
-          }
-        },
         "vendor_VepKT9": {
           "type": "vendor",
           "settings": {}
@@ -576,24 +540,11 @@
         },
         "variant_picker_TCHGAD": {
           "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
+          "settings": {}
         },
         "quantity_selector_D7PKw3": {
           "type": "quantity_selector",
           "settings": {}
-        },
-        "liquid_i8BdJ9": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div data-rapi-id=\"rapi_647e9d77b2c4b4\"></div>"
-          }
         },
         "buy_buttons_wXyhRp": {
           "type": "buy_buttons",
@@ -605,15 +556,9 @@
             "payment_button_background": "",
             "payment_button_text_color": ""
           }
-        },
-        "pickup_availability_yCgm63": {
-          "type": "pickup_availability",
-          "disabled": true,
-          "settings": {}
         }
       },
       "block_order": [
-        "liquid_m3EPKM",
         "vendor_VepKT9",
         "badges_hEgeLa",
         "title_7gCeFT",
@@ -623,9 +568,7 @@
         "description_He9JjX",
         "variant_picker_TCHGAD",
         "quantity_selector_D7PKw3",
-        "liquid_i8BdJ9",
-        "buy_buttons_wXyhRp",
-        "pickup_availability_yCgm63"
+        "buy_buttons_wXyhRp"
       ],
       "name": "Featured product",
       "settings": {
@@ -638,12 +581,8 @@
         "enable_video_autoplay": true,
         "enable_video_looping": false,
         "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
         "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
+        "text_color": ""
       }
     },
     "17679279221b3f0cbd": {
@@ -1035,7 +974,6 @@
   "order": [
     "slideshow_9eGzHG",
     "logo_carousel_zGYFVe",
-    "rich_text_ane766",
     "slideshow_YdmTCA",
     "multiple_images_with_text_XqzXQR",
     "image_with_expandable_text_mFwfVE",
