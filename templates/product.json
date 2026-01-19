@@ -503,14 +503,14 @@
       "name": "Scrolling text",
       "settings": {
         "full_width": true,
-        "text": "ACTION 6 EN 1",
-        "text_size": "small",
+        "text": "DISSOUT LES POILS          •          ÉLIMINE LES ODEURS TENACES          •          100% SÛR POUR VOS ANIMAUX          •          MACHINE COMME NEUVE          •",
+        "text_size": "xsmall",
         "text_style": "fill",
         "scrolling_mode": "auto",
         "scrolling_speed": 10,
-        "background": "",
+        "background": "#74d0f1",
         "background_gradient": "",
-        "text_color": "",
+        "text_color": "#ffffff",
         "text_gradient": ""
       }
     },
