@@ -11,14 +11,14 @@ CSS
 <style>
   /* 1. APPLIQUER VOS RÉGLAGES SUR LE CONTENEUR PRINCIPAL */
   #shopify-section-{{ section.id }} {
-    {%- if section.settings.padding_top != blank -%}
-      padding-top: {{ section.settings.padding_top }}px !important;
-      margin-top: 0 !important;
-    {%- endif -%}
-    {%- if section.settings.padding_bottom != blank -%}
-      padding-bottom: {{ section.settings.padding_bottom }}px !important;
-      margin-bottom: 0 !important;
-    {%- endif -%}
+    /* MODIFICATION ICI : On force le padding haut et bas à 0 directement */
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    
+    /* GESTION PADDING GAUCHE ET DROITE (On garde le contrôle via les paramètres pour ceux-ci) */
     {%- if section.settings.padding_left != blank -%}
       padding-left: {{ section.settings.padding_left }}px !important;
     {%- endif -%}
@@ -28,7 +28,6 @@ CSS
   }
 
   /* 2. FORCER LA SUPPRESSION DU PADDING INTERNE (GUTTERS) DU THÈME */
-  /* C'est souvent ici que le thème impose ses 20px ou 40px par défaut */
   #shopify-section-{{ section.id }} > div,
   #shopify-section-{{ section.id }} .section,
   #shopify-section-{{ section.id }} .container {
@@ -38,6 +37,12 @@ CSS
     margin-right: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
+    
+    /* AJOUT POUR LE HAUT/BAS INTERNE : On s'assure qu'il n'y a pas de padding interne non plus */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   /* Supprimer l'espacement de la section suivante */
@@ -249,7 +254,7 @@ LIQUID
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Padding top",
+      "label": "Padding top (Désactivé)",
       "default": 0
     },
     {
@@ -259,8 +264,8 @@ LIQUID
       "max": 100,
       "step": 5,
       "unit": "px",
-      "label": "Padding bottom",
-      "default": 20
+      "label": "Padding bottom (Désactivé)",
+      "default": 0
     },
     {
       "type": "range",
