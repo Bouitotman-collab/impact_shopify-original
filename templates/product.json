@@ -517,6 +517,19 @@
         "text_gradient": ""
       }
     },
+    "custom_liquid_Vxain7": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid",
+      "settings": {
+        "full_width": true,
+        "remove_vertical_spacing": true,
+        "remove_horizontal_spacing": true,
+        "liquid": "<style>\n#shopify-section-template--27446692249947__scrolling_text_HP4XBy {\n  margin-bottom: 20px !important;\n}\n\n#shopify-section-template--27446692249947__custom_liquid_Vxain7 {\n  margin: 0 !important;\n  padding: 0 !important;\n  height: 0 !important;\n  overflow: visible !important;\n}\n</style>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "featured_product_f4D3Uk": {
       "type": "featured-product",
       "blocks": {
@@ -1009,6 +1022,7 @@
     "multi_column_n83Ttc",
     "avis_clients_pHEDgk",
     "scrolling_text_HP4XBy",
+    "custom_liquid_Vxain7",
     "featured_product_f4D3Uk",
     "17679279221b3f0cbd",
     "main",
