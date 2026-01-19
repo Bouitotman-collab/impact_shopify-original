@@ -40,9 +40,9 @@
 
   /* ===== PERSONNALISATION MINIATURES - VERSION SÛRE ===== */
   
-  /* Afficher seulement 3 miniatures */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail:nth-child(n+4) {
-    display: none !important;
+  /* Conteneur avec overflow hidden pour le défilement */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
+    overflow: hidden !important;
   }
 
   /* Miniatures carrées plus grandes sans bordure par défaut */
@@ -201,31 +201,47 @@ document.addEventListener('DOMContentLoaded', function() {
   wrapper.appendChild(nextArrow);
   
   const thumbnails = Array.from(thumbList.querySelectorAll('.product-gallery__thumbnail'));
-  let currentIndex = 0;
   
-  function updateVisibility() {
-    thumbnails.forEach((thumb, i) => {
-      thumb.style.display = (i >= currentIndex && i < currentIndex + 3) ? 'block' : 'none';
-    });
-    prevArrow.style.opacity = currentIndex === 0 ? '0.3' : '1';
-    nextArrow.style.opacity = currentIndex >= thumbnails.length - 3 ? '0.3' : '1';
+  // Ne rien faire si 3 miniatures ou moins
+  if (thumbnails.length <= 3) {
+    prevArrow.style.display = 'none';
+    nextArrow.style.display = 'none';
+    return;
   }
   
-  prevArrow.addEventListener('click', function() {
+  let currentIndex = 0;
+  const thumbWidth = 135; // Largeur de base d'une miniature
+  const gap = 16; // Gap entre miniatures
+  
+  function scrollThumbnails() {
+    const scrollAmount = currentIndex * (thumbWidth + gap);
+    thumbList.style.transform = `translateX(-${scrollAmount}px)`;
+    thumbList.style.transition = 'transform 0.3s ease';
+    
+    // Gérer l'opacité des flèches
+    prevArrow.style.opacity = currentIndex === 0 ? '0.3' : '1';
+    prevArrow.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+    nextArrow.style.opacity = currentIndex >= thumbnails.length - 3 ? '0.3' : '1';
+    nextArrow.style.cursor = currentIndex >= thumbnails.length - 3 ? 'not-allowed' : 'pointer';
+  }
+  
+  prevArrow.addEventListener('click', function(e) {
+    e.preventDefault();
     if (currentIndex > 0) {
       currentIndex--;
-      updateVisibility();
+      scrollThumbnails();
     }
   });
   
-  nextArrow.addEventListener('click', function() {
+  nextArrow.addEventListener('click', function(e) {
+    e.preventDefault();
     if (currentIndex < thumbnails.length - 3) {
       currentIndex++;
-      updateVisibility();
+      scrollThumbnails();
     }
   });
   
-  if (thumbnails.length > 3) updateVisibility();
+  scrollThumbnails();
 });
 </script>
 
