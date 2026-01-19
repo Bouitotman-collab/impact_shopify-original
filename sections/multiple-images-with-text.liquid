@@ -19,6 +19,14 @@ CSS
       padding-bottom: {{ section.settings.padding_bottom }}px !important;
       margin-bottom: 0 !important;
     {%- endif -%}
+    
+    /* GESTION PADDING GAUCHE ET DROITE AJOUTÉE ICI */
+    {%- if section.settings.padding_left != blank -%}
+      padding-left: {{ section.settings.padding_left }}px !important;
+    {%- endif -%}
+    {%- if section.settings.padding_right != blank -%}
+      padding-right: {{ section.settings.padding_right }}px !important;
+    {%- endif -%}
   }
 
   /* Forcer le padding sur tous les éléments enfants */
@@ -252,6 +260,16 @@ LIQUID
     },
     {
       "type": "range",
+      "id": "padding_left",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding left",
+      "default": 0
+    },
+    {
+      "type": "range",
       "id": "padding_right",
       "min": 0,
       "max": 100,
@@ -259,16 +277,6 @@ LIQUID
       "unit": "px",
       "label": "Padding right",
       "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding_left",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "px",
-      "label": "Padding left",
-      "default": 20
     },
     {
       "type": "header",
