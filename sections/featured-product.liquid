@@ -74,10 +74,20 @@
     box-shadow: none !important;
   }
 
-  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE VISIBLE */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected {
+  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE VISIBLE - TOUTES LES VARIANTES */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected,
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-active,
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail[aria-current="true"],
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail:first-child,
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.active,
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail.thumbnail-active-custom {
     border: 3px solid #000 !important;
     box-shadow: none !important;
+  }
+  
+  /* Forcer AUCUNE bordure sur les miniatures NON sélectionnées */
+  #shopify-section-{{ section.id }} .product-gallery__thumbnail:not(.is-selected):not(.is-active):not([aria-current="true"]):not(:first-child):not(.active):not(.thumbnail-active-custom) {
+    border: none !important;
   }
 
   /* Image à l'intérieur de la miniature */
@@ -175,12 +185,37 @@
     // Fonction pour appliquer la bordure noire sur la miniature active
     function updateActiveThumbnail() {
       const thumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
-      thumbnails.forEach(function(thumb) {
+      
+      // Trouver la miniature actuellement visible dans la grande image
+      const mainImage = document.querySelector('#shopify-section-{{ section.id }} .product-gallery__media:not([hidden]) img');
+      let activeSrc = null;
+      
+      if (mainImage) {
+        activeSrc = mainImage.src.split('?')[0]; // Enlever les paramètres d'URL
+      }
+      
+      thumbnails.forEach(function(thumb, index) {
+        const thumbImg = thumb.querySelector('img');
+        let thumbSrc = null;
+        
+        if (thumbImg) {
+          thumbSrc = thumbImg.src.split('?')[0];
+        }
+        
         // Vérifier si c'est la miniature active
-        if (thumb.classList.contains('is-selected') || thumb.classList.contains('is-active') || thumb.hasAttribute('aria-current')) {
+        const isActive = thumb.classList.contains('is-selected') || 
+                        thumb.classList.contains('is-active') || 
+                        thumb.hasAttribute('aria-current') ||
+                        (activeSrc && thumbSrc && activeSrc.includes(thumbSrc.split('/').pop().split('.')[0])) ||
+                        index === 0; // Par défaut la première
+        
+        if (isActive) {
           thumb.style.border = '3px solid #000';
+          thumb.style.borderRadius = '16px';
+          thumb.classList.add('thumbnail-active-custom');
         } else {
           thumb.style.border = 'none';
+          thumb.classList.remove('thumbnail-active-custom');
         }
       });
     }
@@ -190,19 +225,37 @@
       updateActiveThumbnail();
     });
     
-    // Observer tous les thumbnails
+    // Observer tous les thumbnails et la galerie principale
+    const mainGallery = document.querySelector('#shopify-section-{{ section.id }} .product-gallery__media-list');
+    if (mainGallery) {
+      observer.observe(mainGallery, { childList: true, subtree: true, attributes: true });
+    }
+    
     const allThumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
     allThumbnails.forEach(function(thumb) {
       observer.observe(thumb, { attributes: true, attributeFilter: ['class', 'aria-current'] });
       
       // Ajouter un event listener au clic
       thumb.addEventListener('click', function() {
-        setTimeout(updateActiveThumbnail, 50);
+        // Enlever la bordure de toutes les miniatures
+        allThumbnails.forEach(t => {
+          t.style.border = 'none';
+          t.classList.remove('thumbnail-active-custom');
+        });
+        
+        // Ajouter la bordure à celle cliquée
+        this.style.border = '3px solid #000';
+        this.style.borderRadius = '16px';
+        this.classList.add('thumbnail-active-custom');
+        
+        setTimeout(updateActiveThumbnail, 100);
       });
     });
     
-    // Initialiser
+    // Initialiser immédiatement et après un court délai
     updateActiveThumbnail();
+    setTimeout(updateActiveThumbnail, 500);
+    setTimeout(updateActiveThumbnail, 1000);
     
     const thumbnailLists = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail-list');
     
