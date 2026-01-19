@@ -13,6 +13,7 @@
   "sections": {
     "barre_annonce_rotation_ed9tkM": {
       "type": "Barre-annonce-rotation",
+      "custom_css": [],
       "name": "Barre Annonce Fixe (Pro)",
       "settings": {
         "background_color": "#74d0f1",
