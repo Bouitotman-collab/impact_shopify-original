@@ -9,7 +9,7 @@ CSS
 {%- endcomment -%}
 
 <style>
-  /* Padding personnalisé depuis les paramètres */
+  /* 1. APPLIQUER VOS RÉGLAGES SUR LE CONTENEUR PRINCIPAL */
   #shopify-section-{{ section.id }} {
     {%- if section.settings.padding_top != blank -%}
       padding-top: {{ section.settings.padding_top }}px !important;
@@ -19,8 +19,6 @@ CSS
       padding-bottom: {{ section.settings.padding_bottom }}px !important;
       margin-bottom: 0 !important;
     {%- endif -%}
-    
-    /* GESTION PADDING GAUCHE ET DROITE */
     {%- if section.settings.padding_left != blank -%}
       padding-left: {{ section.settings.padding_left }}px !important;
     {%- endif -%}
@@ -29,20 +27,17 @@ CSS
     {%- endif -%}
   }
 
-  /* Forcer le padding sur tous les éléments enfants */
-  #shopify-section-{{ section.id }} > *,
-  #shopify-section-{{ section.id }} .section-stack,
+  /* 2. FORCER LA SUPPRESSION DU PADDING INTERNE (GUTTERS) DU THÈME */
+  /* C'est souvent ici que le thème impose ses 20px ou 40px par défaut */
+  #shopify-section-{{ section.id }} > div,
   #shopify-section-{{ section.id }} .section,
-  #shopify-section-{{ section.id }} > div {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  /* Forcer aussi le padding bottom sur les enfants */
-  #shopify-section-{{ section.id }} > *:last-child,
-  #shopify-section-{{ section.id }} .multiple-images-with-text {
-    padding-bottom: 0 !important;
-    margin-bottom: 0 !important;
+  #shopify-section-{{ section.id }} .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* Supprimer l'espacement de la section suivante */
@@ -51,19 +46,22 @@ CSS
     padding-top: 0 !important;
   }
 
+  /* Gestion de la largeur et grille */
   #shopify-section-{{ section.id }} {
-    /* MODIFICATION ICI: Si Full Width est coché, on force 100%, sinon on garde le comportement par défaut */
+    /* Si Full Width, on force 100%, sinon on garde le comportement par défaut */
     --multiple-images-with-text-max-width: {% if section.settings.full_width %}100%{% else %}580px{% endif %};
     
     --multiple-images-with-text-images-grid-template: {% if section.settings.images_layout != 'stacked' and visible_images_count > 1 %}repeat({% if visible_images_count == 2 %}1{% else %}2{% endif %}, auto) / minmax(0, 0.75fr) minmax(0, 1fr){% else %}none{% endif %};
     --multiple-images-with-text-images-alignment: {% if section.settings.images_layout == 'collage' and section.settings.collage_images_alignment == 'top' or section.settings.collage_images_alignment == 'shifted' %}start{% else %}center{% endif %};
     --multiple-images-with-text-main-image-offset: {% if section.settings.images_layout == 'collage' and section.settings.collage_images_alignment == 'shifted' and visible_images_count > 1 %}{% if visible_images_count == 2 %}40px{% else %}min(145px, 14vw){% endif %}{% else %}0px{% endif %};
+    
+    /* On écrase la variable de gouttière du thème au cas où */
+    --container-gutter: 0px; 
   }
 
   {%- if section.settings.images_layout == 'stacked' or visible_images_count == 1 -%}
     @media screen and (min-width: 1000px) {
       #shopify-section-{{ section.id }} {
-        /* MODIFICATION ICI POUR DESKTOP */
         --multiple-images-with-text-max-width: {% if section.settings.full_width %}100%{% else %}none{% endif %};
         --multiple-images-with-text-grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
         --multiple-images-with-text-column-gap: var(--spacing-20);
@@ -80,7 +78,6 @@ CSS
 
   @media screen and (min-width: 1150px) {
     #shopify-section-{{ section.id }} {
-      /* MODIFICATION ICI AUSSI */
       --multiple-images-with-text-max-width: {% if section.settings.full_width %}100%{% else %}none{% endif %};
       --multiple-images-with-text-grid-template-columns: {% if section.settings.images_layout == 'stacked' %}minmax(0, 0.8fr) minmax(0, 1fr){% else %}minmax(0, {% if visible_images_count == 1 %}max-content{% else %}1fr{% endif %}) minmax(0, 0.7fr){% endif %};
       --multiple-images-with-text-column-gap: var(--spacing-24);
@@ -103,7 +100,10 @@ LIQUID
 
 {%- assign is_narrow = false -%}
 
-{%- comment -%} MODIFICATION IMPORTANTE : On ne force 'narrow' que si Full Width n'est PAS coché {%- endcomment -%}
+{%- comment -%} 
+  FORCE NARROW A FALSE si Full Width est coché. 
+  Cela empêche le thème d'ajouter la classe 'container--narrow' qui limite la largeur.
+{%- endcomment -%}
 {%- if section.settings.images_layout == 'stacked' and section.settings.full_width == false -%}
   {%- assign is_narrow = true -%}
 {%- endif -%}
@@ -114,7 +114,6 @@ LIQUID
       {%- if visible_images_count == 0 -%}
         {{- 'collection-1' | placeholder_svg_tag: 'placeholder' -}}
       {%- else -%}
-        {%- comment -%}We have to reverse the images when they are stacked so that the image of the first block appears at the top of the stack{%- endcomment -%}
         {%- if section.settings.images_layout == 'stacked' -%}
           {%- assign section_blocks = section.blocks | reverse -%}
         {%- else -%}
