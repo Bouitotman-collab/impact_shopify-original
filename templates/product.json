@@ -662,6 +662,65 @@
         "input_text_color": ""
       }
     },
+    "accordion_content_MqzLKm": {
+      "type": "accordion-content",
+      "blocks": {
+        "item_HF9kDq": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Question 1",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>",
+            "page": ""
+          }
+        },
+        "item_Xqiycn": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Question 2",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>",
+            "page": ""
+          }
+        },
+        "item_QfYegX": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "title": "Question 3",
+            "content": "<p>Write content to help your customers to better understand your products or policies.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_HF9kDq",
+        "item_Xqiycn",
+        "item_QfYegX"
+      ],
+      "name": "Accordion content",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "start",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
     "17679279221b3f0cbd": {
       "type": "apps",
       "blocks": {
@@ -1079,6 +1138,7 @@
     "multi_column_n83Ttc",
     "avis_clients_pHEDgk",
     "featured_product_f4D3Uk",
+    "accordion_content_MqzLKm",
     "17679279221b3f0cbd",
     "main",
     "multi_column_4HV87L",
