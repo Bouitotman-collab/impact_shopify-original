@@ -63,7 +63,7 @@
         "title_color": "#333333",
         "background_color": "#ffffff",
         "padding_top": 10,
-        "padding_bottom": 10,
+        "padding_bottom": 15,
         "speed": 30,
         "speed_mobile": 30
       }
@@ -137,6 +137,8 @@
         "collage_images_alignment": "middle",
         "padding_top": 0,
         "padding_bottom": 0,
+        "padding_left": 0,
+        "padding_right": 0,
         "background": "",
         "background_gradient": "",
         "text_color": "",
@@ -223,7 +225,7 @@
         "full_width": true,
         "subheading": "",
         "title": "",
-        "content": "<h3>Résultats dès la première utilisation</h3><h3>Avant/Après</h3>",
+        "content": "<h3>Retrouvez l'éclat de votre machine dès le 1er cycle</h3>",
         "before_image": "shopify://shop_images/5.jpg",
         "before_image_mobile": "shopify://shop_images/5.jpg",
         "after_image": "shopify://shop_images/new-enhance-photo-base-7.jpg",
