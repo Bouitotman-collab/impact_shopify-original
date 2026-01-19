@@ -164,14 +164,6 @@
     }
   },
   "platform_customizations": {
-    "custom_css": [
-      "/* 3 miniatures carrées avec bordure noire sur sélection */.product-gallery__thumbnail:nth-child(n+4){display:none!important}",
-      ".product-gallery__thumbnail{width:125px!important;height:125px!important;min-width:125px!important;border:none!important;border-radius:16px!important}",
-      ".product-gallery__thumbnail[aria-current=\"true\"],.product-gallery__thumbnail.is-selected,.product-gallery__thumbnail.is-active{border:3px solid #000!important}",
-      ".product-gallery__thumbnail img{width:100%!important;height:100%!important;object-fit:cover!important}",
-      ".product-gallery__thumbnail-list{display:flex!important;gap:16px!important;padding:20px!important;justify-content:center!important}",
-      "@media(max-width:999px){.product-gallery__thumbnail{width:100px!important;height:100px!important}}",
-      "@media(min-width:1000px){.product-gallery__thumbnail{width:145px!important;height:145px!important}}"
-    ]
+    "custom_css": []
   }
 }
