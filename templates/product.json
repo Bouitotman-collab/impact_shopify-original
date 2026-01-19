@@ -501,7 +501,7 @@
     "scrolling_text_HP4XBy": {
       "type": "scrolling-text",
       "custom_css": [
-        ".scrolling-text {padding-top: 7px !important; padding-bottom: 7px !important;}"
+        ".scrolling-text {padding-top: 6px !important; padding-bottom: 6px !important;}"
       ],
       "name": "Scrolling text",
       "settings": {
