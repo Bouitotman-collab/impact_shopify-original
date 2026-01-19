@@ -58,13 +58,13 @@
       "name": "Logo Carousel",
       "settings": {
         "show_title": false,
-        "title_text": "Ils parlent de nous",
-        "title_size": 16,
+        "title_text": "",
+        "title_size": 12,
         "title_color": "#333333",
         "background_color": "#ffffff",
         "padding_top": 10,
         "padding_bottom": 10,
-        "speed": 20,
+        "speed": 30,
         "speed_mobile": 30
       }
     },
