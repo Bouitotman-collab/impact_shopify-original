@@ -53,11 +53,11 @@
     display: none !important;
   }
 
-  /* Style des miniatures - COINS ARRONDIS */
+  /* Style des miniatures - CARRÉES AVEC COINS ARRONDIS */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-    width: 120px !important;
-    height: 150px !important;
-    min-width: 120px !important;
+    width: 110px !important;
+    height: 110px !important;
+    min-width: 110px !important;
     flex-shrink: 0 !important;
     border: 2.5px solid #d0d0d0 !important;
     border-radius: 16px !important; /* COINS ARRONDIS */
@@ -133,12 +133,12 @@
     stroke-width: 2.5px !important;
   }
 
-  /* Sur mobile : miniatures un peu plus petites */
+  /* Sur mobile : miniatures carrées un peu plus petites */
   @media (max-width: 999px) {
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 95px !important;
-      height: 120px !important;
-      min-width: 95px !important;
+      width: 90px !important;
+      height: 90px !important;
+      min-width: 90px !important;
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
@@ -157,15 +157,139 @@
     }
   }
 
-  /* Sur desktop : miniatures encore plus grandes */
+  /* Sur desktop : miniatures carrées encore plus grandes */
   @media (min-width: 1000px) {
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
       gap: 20px !important;
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 140px !important;
-      height: 175px !important;
+      width: 130px !important;
+      height: 130px !important;
+    }
+  }
+</style>
+
+<script>
+  // Script pour ajouter les flèches de navigation aux miniatures
+  document.addEventListener('DOMContentLoaded', function() {
+    const thumbnailLists = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail-list');
+    
+    thumbnailLists.forEach(function(list) {
+      // Vérifier si les flèches n'existent pas déjà
+      if (list.parentElement.querySelector('.thumbnail-nav-prev')) return;
+      
+      // Créer la flèche gauche
+      const prevButton = document.createElement('button');
+      prevButton.className = 'thumbnail-nav-prev';
+      prevButton.setAttribute('aria-label', 'Image précédente');
+      prevButton.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+      
+      // Créer la flèche droite
+      const nextButton = document.createElement('button');
+      nextButton.className = 'thumbnail-nav-next';
+      nextButton.setAttribute('aria-label', 'Image suivante');
+      nextButton.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+      
+      // Ajouter les flèches au parent
+      list.parentElement.style.position = 'relative';
+      list.parentElement.appendChild(prevButton);
+      list.parentElement.appendChild(nextButton);
+      
+      // Fonction pour gérer le clic sur les flèches
+      let currentIndex = 0;
+      const thumbnails = list.querySelectorAll('.product-gallery__thumbnail');
+      const totalThumbnails = thumbnails.length;
+      
+      function updateVisibility() {
+        thumbnails.forEach((thumb, index) => {
+          if (index >= currentIndex && index < currentIndex + 3) {
+            thumb.style.display = 'block';
+          } else {
+            thumb.style.display = 'none';
+          }
+        });
+        
+        // Désactiver les boutons si nécessaire
+        prevButton.style.opacity = currentIndex === 0 ? '0.3' : '1';
+        prevButton.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+        nextButton.style.opacity = currentIndex >= totalThumbnails - 3 ? '0.3' : '1';
+        nextButton.style.cursor = currentIndex >= totalThumbnails - 3 ? 'not-allowed' : 'pointer';
+      }
+      
+      prevButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateVisibility();
+        }
+      });
+      
+      nextButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (currentIndex < totalThumbnails - 3) {
+          currentIndex++;
+          updateVisibility();
+        }
+      });
+      
+      // Initialiser
+      if (totalThumbnails > 3) {
+        updateVisibility();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Style des boutons flèches personnalisés */
+  #shopify-section-{{ section.id }} .thumbnail-nav-prev,
+  #shopify-section-{{ section.id }} .thumbnail-nav-next {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 2px solid #e0e0e0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    padding: 0 !important;
+  }
+
+  #shopify-section-{{ section.id }} .thumbnail-nav-prev:hover,
+  #shopify-section-{{ section.id }} .thumbnail-nav-next:hover {
+    background: #fff !important;
+    border-color: #000 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+  }
+
+  #shopify-section-{{ section.id }} .thumbnail-nav-prev {
+    left: 0px !important;
+  }
+
+  #shopify-section-{{ section.id }} .thumbnail-nav-next {
+    right: 0px !important;
+  }
+
+  #shopify-section-{{ section.id }} .thumbnail-nav-prev svg,
+  #shopify-section-{{ section.id }} .thumbnail-nav-next svg {
+    color: #333 !important;
+  }
+
+  /* Cache les flèches sur mobile */
+  @media (max-width: 999px) {
+    #shopify-section-{{ section.id }} .thumbnail-nav-prev,
+    #shopify-section-{{ section.id }} .thumbnail-nav-next {
+      width: 32px !important;
+      height: 32px !important;
     }
   }
 </style>
