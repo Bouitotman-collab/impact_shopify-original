@@ -709,6 +709,7 @@
     },
     "multi_column_4HV87L": {
       "type": "multi-column",
+      "disabled": true,
       "name": "Multi-column",
       "settings": {
         "full_width": true,
@@ -725,6 +726,7 @@
     },
     "slideshow_U4qMYm": {
       "type": "slideshow",
+      "disabled": true,
       "name": "Slideshow",
       "settings": {
         "full_width": true,
@@ -741,6 +743,7 @@
     },
     "1766807845a2bc0a9e": {
       "type": "apps",
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": true,
@@ -963,6 +966,7 @@
       "block_order": [
         "trustwill_trustoo_review_widget_g9tWqK"
       ],
+      "disabled": true,
       "settings": {
         "full_width": true,
         "remove_vertical_spacing": false,
