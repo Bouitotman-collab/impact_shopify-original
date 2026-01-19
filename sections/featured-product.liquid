@@ -47,20 +47,20 @@
 
   /* Miniatures carrées plus grandes sans bordure par défaut */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-    width: 125px !important;
-    height: 125px !important;
-    min-width: 125px !important;
+    width: 135px !important; /* Augmenté de 125px à 135px */
+    height: 135px !important;
+    min-width: 135px !important;
     border: none !important;
     border-radius: 16px !important;
     overflow: hidden !important;
   }
 
-  /* Bordure noire UNIQUEMENT sur miniature sélectionnée avec espace interne */
+  /* Bordure noire UNIQUEMENT sur miniature sélectionnée avec espace interne réduit */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail[aria-current="true"],
   #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected,
   #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-active {
-    border: 3px solid #000 !important;
-    padding: 4px !important; /* Espace entre bordure et image */
+    border: 2px solid #000 !important; /* Réduit de 3px à 2px */
+    padding: 2px !important; /* Réduit de 4px à 2px */
   }
 
   /* Image dans miniature */
@@ -71,11 +71,11 @@
     border-radius: 13px !important;
   }
 
-  /* Conteneur des miniatures - padding réduit */
+  /* Conteneur des miniatures - padding très réduit */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
     display: flex !important;
     gap: 16px !important;
-    padding: 10px 50px !important; /* Réduit de 20px à 10px */
+    padding: 5px 50px !important; /* Réduit de 10px à 5px */
     justify-content: center !important;
   }
 
@@ -115,13 +115,13 @@
   /* Responsive - Mobile */
   @media screen and (max-width: 999px) {
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 100px !important;
-      height: 100px !important;
-      min-width: 100px !important;
+      width: 105px !important; /* Augmenté de 100px à 105px */
+      height: 105px !important;
+      min-width: 105px !important;
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-      padding: 8px 40px !important; /* Réduit également sur mobile */
+      padding: 3px 40px !important; /* Réduit également sur mobile */
       gap: 12px !important;
     }
   }
@@ -129,15 +129,105 @@
   /* Responsive - Desktop */
   @media screen and (min-width: 1000px) {
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 145px !important;
-      height: 145px !important;
+      width: 155px !important; /* Augmenté de 145px à 155px */
+      height: 155px !important;
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
       gap: 20px !important;
     }
   }
+
+  /* Style pour les flèches personnalisées */
+  #shopify-section-{{ section.id }} .custom-arrow {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  #shopify-section-{{ section.id }} .custom-arrow-prev {
+    left: 5px !important;
+  }
+
+  #shopify-section-{{ section.id }} .custom-arrow-next {
+    right: 5px !important;
+  }
+
+  #shopify-section-{{ section.id }} .custom-arrow svg {
+    width: 24px !important;
+    height: 24px !important;
+    stroke: #000 !important;
+    stroke-width: 2.5px !important;
+  }
+
+  #shopify-section-{{ section.id }} .custom-arrow:hover {
+    transform: translateY(-50%) scale(1.2) !important;
+  }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('#shopify-section-{{ section.id }}');
+  if (!section) return;
+  
+  const thumbList = section.querySelector('.product-gallery__thumbnail-list');
+  if (!thumbList || thumbList.querySelector('.custom-arrow')) return;
+  
+  const wrapper = thumbList.parentElement;
+  wrapper.style.position = 'relative';
+  
+  // Créer flèche gauche
+  const prevArrow = document.createElement('button');
+  prevArrow.className = 'custom-arrow custom-arrow-prev';
+  prevArrow.innerHTML = '<svg viewBox="0 0 24 24" fill="none"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+  prevArrow.setAttribute('aria-label', 'Image précédente');
+  
+  // Créer flèche droite
+  const nextArrow = document.createElement('button');
+  nextArrow.className = 'custom-arrow custom-arrow-next';
+  nextArrow.innerHTML = '<svg viewBox="0 0 24 24" fill="none"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+  nextArrow.setAttribute('aria-label', 'Image suivante');
+  
+  wrapper.appendChild(prevArrow);
+  wrapper.appendChild(nextArrow);
+  
+  const thumbnails = Array.from(thumbList.querySelectorAll('.product-gallery__thumbnail'));
+  let currentIndex = 0;
+  
+  function updateVisibility() {
+    thumbnails.forEach((thumb, i) => {
+      thumb.style.display = (i >= currentIndex && i < currentIndex + 3) ? 'block' : 'none';
+    });
+    prevArrow.style.opacity = currentIndex === 0 ? '0.3' : '1';
+    nextArrow.style.opacity = currentIndex >= thumbnails.length - 3 ? '0.3' : '1';
+  }
+  
+  prevArrow.addEventListener('click', function() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateVisibility();
+    }
+  });
+  
+  nextArrow.addEventListener('click', function() {
+    if (currentIndex < thumbnails.length - 3) {
+      currentIndex++;
+      updateVisibility();
+    }
+  });
+  
+  if (thumbnails.length > 3) updateVisibility();
+});
+</script>
 
 <div {% render 'section-properties', tight: true %}>
   {%- capture product_form_id -%}featured-product-form-{{ section.id }}{%- endcapture -%}
