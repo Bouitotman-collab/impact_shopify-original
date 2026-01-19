@@ -37,343 +37,6 @@
       --product-gallery-media-list-gap: var(--grid-gutter);
     }
   }
-
-  /* PERSONNALISATION DES MINIATURES - 3 VISIBLES AVEC COINS ARRONDIS */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-    display: flex !important;
-    gap: 16px !important;
-    padding: 20px 50px !important;
-    overflow: hidden !important;
-    position: relative !important;
-    justify-content: center !important;
-  }
-
-  /* Afficher seulement 3 miniatures */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail:nth-child(n+4) {
-    display: none !important;
-  }
-
-  /* Style des miniatures - CARRÉES AVEC COINS ARRONDIS - SANS BORDURE */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-    width: 125px !important;
-    height: 125px !important;
-    min-width: 125px !important;
-    flex-shrink: 0 !important;
-    border: none !important;
-    border-radius: 16px !important; /* COINS ARRONDIS */
-    overflow: hidden !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    background: #fff !important;
-  }
-
-  /* Hover sur miniature - AUCUN EFFET */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail:hover {
-    border: none !important;
-    transform: none !important;
-    box-shadow: none !important;
-  }
-
-  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE VISIBLE - TOUTES LES VARIANTES */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected,
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-active,
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail[aria-current="true"],
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail:first-child,
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail.active,
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail.thumbnail-active-custom {
-    border: 3px solid #000 !important;
-    box-shadow: none !important;
-  }
-  
-  /* Forcer AUCUNE bordure sur les miniatures NON sélectionnées */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail:not(.is-selected):not(.is-active):not([aria-current="true"]):not(:first-child):not(.active):not(.thumbnail-active-custom) {
-    border: none !important;
-  }
-
-  /* Image à l'intérieur de la miniature */
-  #shopify-section-{{ section.id }} .product-gallery__thumbnail img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 13px !important; /* COINS ARRONDIS POUR L'IMAGE */
-  }
-
-  /* Flèches de navigation */
-  #shopify-section-{{ section.id }} .product-gallery__carousel-button {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 42px !important;
-    height: 42px !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 2px solid #e0e0e0 !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    transition: all 0.25s ease !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
-  }
-
-  /* Hover sur flèches */
-  #shopify-section-{{ section.id }} .product-gallery__carousel-button:hover {
-    background: #fff !important;
-    border-color: #000 !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    transform: translateY(-50%) scale(1.1) !important;
-  }
-
-  /* Position des flèches */
-  #shopify-section-{{ section.id }} .product-gallery__carousel-button--prev {
-    left: 5px !important;
-  }
-
-  #shopify-section-{{ section.id }} .product-gallery__carousel-button--next {
-    right: 5px !important;
-  }
-
-  /* Icônes des flèches */
-  #shopify-section-{{ section.id }} .product-gallery__carousel-button svg {
-    width: 18px !important;
-    height: 18px !important;
-    stroke: #333 !important;
-    stroke-width: 2.5px !important;
-  }
-
-  /* Sur mobile : miniatures carrées un peu plus petites */
-  @media (max-width: 999px) {
-    #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 100px !important;
-      height: 100px !important;
-      min-width: 100px !important;
-    }
-    
-    #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-      padding: 16px 40px !important;
-      gap: 12px !important;
-    }
-    
-    #shopify-section-{{ section.id }} .product-gallery__carousel-button {
-      width: 36px !important;
-      height: 36px !important;
-    }
-    
-    #shopify-section-{{ section.id }} .product-gallery__carousel-button svg {
-      width: 16px !important;
-      height: 16px !important;
-    }
-  }
-
-  /* Sur desktop : miniatures carrées encore plus grandes */
-  @media (min-width: 1000px) {
-    #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
-      gap: 20px !important;
-    }
-    
-    #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 145px !important;
-      height: 145px !important;
-    }
-  }
-</style>
-
-<script>
-  // Script pour ajouter les flèches de navigation aux miniatures ET gérer la bordure noire
-  document.addEventListener('DOMContentLoaded', function() {
-    // Fonction pour appliquer la bordure noire sur la miniature active
-    function updateActiveThumbnail() {
-      const thumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
-      
-      // Trouver la miniature actuellement visible dans la grande image
-      const mainImage = document.querySelector('#shopify-section-{{ section.id }} .product-gallery__media:not([hidden]) img');
-      let activeSrc = null;
-      
-      if (mainImage) {
-        activeSrc = mainImage.src.split('?')[0]; // Enlever les paramètres d'URL
-      }
-      
-      thumbnails.forEach(function(thumb, index) {
-        const thumbImg = thumb.querySelector('img');
-        let thumbSrc = null;
-        
-        if (thumbImg) {
-          thumbSrc = thumbImg.src.split('?')[0];
-        }
-        
-        // Vérifier si c'est la miniature active
-        const isActive = thumb.classList.contains('is-selected') || 
-                        thumb.classList.contains('is-active') || 
-                        thumb.hasAttribute('aria-current') ||
-                        (activeSrc && thumbSrc && activeSrc.includes(thumbSrc.split('/').pop().split('.')[0])) ||
-                        index === 0; // Par défaut la première
-        
-        if (isActive) {
-          thumb.style.border = '3px solid #000';
-          thumb.style.borderRadius = '16px';
-          thumb.classList.add('thumbnail-active-custom');
-        } else {
-          thumb.style.border = 'none';
-          thumb.classList.remove('thumbnail-active-custom');
-        }
-      });
-    }
-    
-    // Observer les changements sur les miniatures
-    const observer = new MutationObserver(function(mutations) {
-      updateActiveThumbnail();
-    });
-    
-    // Observer tous les thumbnails et la galerie principale
-    const mainGallery = document.querySelector('#shopify-section-{{ section.id }} .product-gallery__media-list');
-    if (mainGallery) {
-      observer.observe(mainGallery, { childList: true, subtree: true, attributes: true });
-    }
-    
-    const allThumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
-    allThumbnails.forEach(function(thumb) {
-      observer.observe(thumb, { attributes: true, attributeFilter: ['class', 'aria-current'] });
-      
-      // Ajouter un event listener au clic
-      thumb.addEventListener('click', function() {
-        // Enlever la bordure de toutes les miniatures
-        allThumbnails.forEach(t => {
-          t.style.border = 'none';
-          t.classList.remove('thumbnail-active-custom');
-        });
-        
-        // Ajouter la bordure à celle cliquée
-        this.style.border = '3px solid #000';
-        this.style.borderRadius = '16px';
-        this.classList.add('thumbnail-active-custom');
-        
-        setTimeout(updateActiveThumbnail, 100);
-      });
-    });
-    
-    // Initialiser immédiatement et après un court délai
-    updateActiveThumbnail();
-    setTimeout(updateActiveThumbnail, 500);
-    setTimeout(updateActiveThumbnail, 1000);
-    
-    const thumbnailLists = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail-list');
-    
-    thumbnailLists.forEach(function(list) {
-      // Vérifier si les flèches n'existent pas déjà
-      if (list.parentElement.querySelector('.thumbnail-nav-prev')) return;
-      
-      // Créer la flèche gauche
-      const prevButton = document.createElement('button');
-      prevButton.className = 'thumbnail-nav-prev';
-      prevButton.setAttribute('aria-label', 'Image précédente');
-      prevButton.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
-      
-      // Créer la flèche droite
-      const nextButton = document.createElement('button');
-      nextButton.className = 'thumbnail-nav-next';
-      nextButton.setAttribute('aria-label', 'Image suivante');
-      nextButton.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
-      
-      // Ajouter les flèches au parent
-      list.parentElement.style.position = 'relative';
-      list.parentElement.appendChild(prevButton);
-      list.parentElement.appendChild(nextButton);
-      
-      // Fonction pour gérer le clic sur les flèches
-      let currentIndex = 0;
-      const thumbnails = list.querySelectorAll('.product-gallery__thumbnail');
-      const totalThumbnails = thumbnails.length;
-      
-      function updateVisibility() {
-        thumbnails.forEach((thumb, index) => {
-          if (index >= currentIndex && index < currentIndex + 3) {
-            thumb.style.display = 'block';
-          } else {
-            thumb.style.display = 'none';
-          }
-        });
-        
-        // Désactiver les boutons si nécessaire
-        prevButton.style.opacity = currentIndex === 0 ? '0.3' : '1';
-        prevButton.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
-        nextButton.style.opacity = currentIndex >= totalThumbnails - 3 ? '0.3' : '1';
-        nextButton.style.cursor = currentIndex >= totalThumbnails - 3 ? 'not-allowed' : 'pointer';
-      }
-      
-      prevButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateVisibility();
-        }
-      });
-      
-      nextButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        if (currentIndex < totalThumbnails - 3) {
-          currentIndex++;
-          updateVisibility();
-        }
-      });
-      
-      // Initialiser
-      if (totalThumbnails > 3) {
-        updateVisibility();
-      }
-    });
-  });
-</script>
-
-<style>
-  /* Style des boutons flèches personnalisés - SANS CERCLE */
-  #shopify-section-{{ section.id }} .thumbnail-nav-prev,
-  #shopify-section-{{ section.id }} .thumbnail-nav-next {
-    position: absolute !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    width: 30px !important;
-    height: 30px !important;
-    background: transparent !important;
-    border: none !important;
-    border-radius: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    transition: all 0.25s ease !important;
-    padding: 0 !important;
-  }
-
-  #shopify-section-{{ section.id }} .thumbnail-nav-prev:hover,
-  #shopify-section-{{ section.id }} .thumbnail-nav-next:hover {
-    background: transparent !important;
-    transform: translateY(-50%) scale(1.2) !important;
-  }
-
-  #shopify-section-{{ section.id }} .thumbnail-nav-prev {
-    left: -15px !important;
-  }
-
-  #shopify-section-{{ section.id }} .thumbnail-nav-next {
-    right: -15px !important;
-  }
-
-  #shopify-section-{{ section.id }} .thumbnail-nav-prev svg,
-  #shopify-section-{{ section.id }} .thumbnail-nav-next svg {
-    color: #000 !important;
-    stroke-width: 3px !important;
-  }
-
-  /* Cache les flèches sur mobile */
-  @media (max-width: 999px) {
-    #shopify-section-{{ section.id }} .thumbnail-nav-prev,
-    #shopify-section-{{ section.id }} .thumbnail-nav-next {
-      width: 24px !important;
-      height: 24px !important;
-    }
-  }
 </style>
 
 <div {% render 'section-properties', tight: true %}>
@@ -1193,9 +856,259 @@
               "label": "None"
             },
             {
+              "value": "picto-coupon",
+              "label": "Coupon",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-percent",
+              "label": "Percent",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-gift",
+              "label": "Gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-star",
+              "label": "Star",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-like",
+              "label": "Like",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-building",
+              "label": "Building",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-love",
+              "label": "Love",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-award-gift",
+              "label": "Award gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-happy",
+              "label": "Happy",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-box",
+              "label": "Box",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-pin",
+              "label": "Pin",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-timer",
+              "label": "Timer",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-validation",
+              "label": "Validation",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-truck",
+              "label": "Truck",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-return",
+              "label": "Return",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-earth",
+              "label": "Earth",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-plane",
+              "label": "Plane",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-credit-card",
+              "label": "Credit card",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-lock",
+              "label": "Lock",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-shield",
+              "label": "Shield",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-secure-profile",
+              "label": "Secure profile",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-money",
+              "label": "Money",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-recycle",
+              "label": "Recycle",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-leaf",
+              "label": "Leaf",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-tree",
+              "label": "Tree",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-mobile-phone",
+              "label": "Mobile phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-phone",
+              "label": "Phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-chat",
+              "label": "Chat",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-customer-support",
+              "label": "Customer support",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-operator",
+              "label": "Operator",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-mailbox",
+              "label": "Mailbox",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-envelope",
+              "label": "Envelope",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-comment",
+              "label": "Comment",
+              "group": "Communication"
+            },
+            {
               "value": "picto-question",
               "label": "Question",
               "group": "Communication"
+            },
+            {
+              "value": "picto-send",
+              "label": "Send",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-at-sign",
+              "label": "At sign",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-camera",
+              "label": "Camera",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-wifi",
+              "label": "WiFi",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-bluetooth",
+              "label": "Bluetooth",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-printer",
+              "label": "Printer",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-smart-watch",
+              "label": "Smart watch",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-coffee",
+              "label": "Coffee",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-burger",
+              "label": "Burger",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-beer",
+              "label": "Beer",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-target",
+              "label": "Target",
+              "group": "Other"
+            },
+            {
+              "value": "picto-document",
+              "label": "Document",
+              "group": "Other"
+            },
+            {
+              "value": "picto-jewelry",
+              "label": "Jewelry",
+              "group": "Other"
+            },
+            {
+              "value": "picto-music",
+              "label": "Music",
+              "group": "Other"
+            },
+            {
+              "value": "picto-file",
+              "label": "File",
+              "group": "Other"
+            },
+            {
+              "value": "picto-mask",
+              "label": "Mask",
+              "group": "Other"
+            },
+            {
+              "value": "picto-stop",
+              "label": "Stop",
+              "group": "Other"
             }
           ],
           "default": "none"
@@ -1463,14 +1376,254 @@
               "group": "Shop"
             },
             {
-              "value": "picto-truck",
-              "label": "Truck",
-              "group": "Shipping"
+              "value": "picto-percent",
+              "label": "Percent",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-gift",
+              "label": "Gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-star",
+              "label": "Star",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-like",
+              "label": "Like",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-building",
+              "label": "Building",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-love",
+              "label": "Love",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-award-gift",
+              "label": "Award gift",
+              "group": "Shop"
+            },
+            {
+              "value": "picto-happy",
+              "label": "Happy",
+              "group": "Shop"
             },
             {
               "value": "picto-box",
               "label": "Box",
               "group": "Shipping"
+            },
+            {
+              "value": "picto-pin",
+              "label": "Pin",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-timer",
+              "label": "Timer",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-validation",
+              "label": "Validation",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-truck",
+              "label": "Truck",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-return",
+              "label": "Return",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-earth",
+              "label": "Earth",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-plane",
+              "label": "Plane",
+              "group": "Shipping"
+            },
+            {
+              "value": "picto-credit-card",
+              "label": "Credit card",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-lock",
+              "label": "Lock",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-shield",
+              "label": "Shield",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-secure-profile",
+              "label": "Secure profile",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-money",
+              "label": "Money",
+              "group": "Payment & Security"
+            },
+            {
+              "value": "picto-recycle",
+              "label": "Recycle",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-leaf",
+              "label": "Leaf",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-tree",
+              "label": "Tree",
+              "group": "Ecology"
+            },
+            {
+              "value": "picto-mobile-phone",
+              "label": "Mobile phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-phone",
+              "label": "Phone",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-chat",
+              "label": "Chat",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-customer-support",
+              "label": "Customer support",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-operator",
+              "label": "Operator",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-mailbox",
+              "label": "Mailbox",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-envelope",
+              "label": "Envelope",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-comment",
+              "label": "Comment",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-question",
+              "label": "Question",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-send",
+              "label": "Send",
+              "group": "Communication"
+            },
+            {
+              "value": "picto-at-sign",
+              "label": "At sign",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-camera",
+              "label": "Camera",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-wifi",
+              "label": "WiFi",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-bluetooth",
+              "label": "Bluetooth",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-printer",
+              "label": "Printer",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-smart-watch",
+              "label": "Smart watch",
+              "group": "Tech"
+            },
+            {
+              "value": "picto-coffee",
+              "label": "Coffee",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-burger",
+              "label": "Burger",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-beer",
+              "label": "Beer",
+              "group": "Food & Drink"
+            },
+            {
+              "value": "picto-target",
+              "label": "Target",
+              "group": "Other"
+            },
+            {
+              "value": "picto-document",
+              "label": "Document",
+              "group": "Other"
+            },
+            {
+              "value": "picto-jewelry",
+              "label": "Jewelry",
+              "group": "Other"
+            },
+            {
+              "value": "picto-music",
+              "label": "Music",
+              "group": "Other"
+            },
+            {
+              "value": "picto-file",
+              "label": "File",
+              "group": "Other"
+            },
+            {
+              "value": "picto-mask",
+              "label": "Mask",
+              "group": "Other"
+            },
+            {
+              "value": "picto-stop",
+              "label": "Stop",
+              "group": "Other"
             }
           ],
           "default": "picto-coupon"
@@ -1604,7 +1757,7 @@
           "label": "Thumbnails bottom (carousel)"
         }
       ],
-      "default": "carousel_thumbnails_bottom"
+      "default": "carousel_thumbnails_left"
     },
     {
       "type":"select",
@@ -1620,7 +1773,7 @@
           "label": "Contained"
         }
       ],
-      "default": "contained"
+      "default": "expanded"
     },
     {
       "type": "select",
@@ -1644,7 +1797,7 @@
           "label": "Free scroll"
         }
       ],
-      "default": "thumbnails"
+      "default": "floating_dots"
     },
     {
       "type": "checkbox",
