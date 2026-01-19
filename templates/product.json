@@ -64,8 +64,8 @@
         "background_color": "#ffffff",
         "padding_top": 10,
         "padding_bottom": 10,
-        "speed": 15,
-        "speed_mobile": 12
+        "speed": 16,
+        "speed_mobile": 14
       }
     },
     "rich_text_ane766": {
