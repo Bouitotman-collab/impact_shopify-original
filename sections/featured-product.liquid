@@ -53,13 +53,13 @@
     display: none !important;
   }
 
-  /* Style des miniatures - CARRÉES AVEC COINS ARRONDIS */
+  /* Style des miniatures - CARRÉES AVEC COINS ARRONDIS - SANS BORDURE */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail {
     width: 125px !important;
     height: 125px !important;
     min-width: 125px !important;
     flex-shrink: 0 !important;
-    border: 2.5px solid #d0d0d0 !important;
+    border: none !important;
     border-radius: 16px !important; /* COINS ARRONDIS */
     overflow: hidden !important;
     cursor: pointer !important;
@@ -67,17 +67,16 @@
     background: #fff !important;
   }
 
-  /* Hover sur miniature */
+  /* Hover sur miniature - AUCUN EFFET */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail:hover {
-    border-color: #666 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
+    border: none !important;
+    transform: none !important;
+    box-shadow: none !important;
   }
 
-  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE */
+  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE VISIBLE */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected {
-    border-color: #000 !important;
-    border-width: 3.5px !important;
+    border: 3px solid #000 !important;
     box-shadow: none !important;
   }
 
@@ -269,11 +268,11 @@
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-prev {
-    left: 5px !important;
+    left: -15px !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-next {
-    right: 5px !important;
+    right: -15px !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-prev svg,
