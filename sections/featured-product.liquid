@@ -55,9 +55,9 @@
 
   /* Style des miniatures - CARRÉES AVEC COINS ARRONDIS */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-    width: 110px !important;
-    height: 110px !important;
-    min-width: 110px !important;
+    width: 125px !important;
+    height: 125px !important;
+    min-width: 125px !important;
     flex-shrink: 0 !important;
     border: 2.5px solid #d0d0d0 !important;
     border-radius: 16px !important; /* COINS ARRONDIS */
@@ -74,11 +74,11 @@
     box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
   }
 
-  /* Miniature sélectionnée */
+  /* Miniature sélectionnée - BORDURE NOIRE ÉPAISSE */
   #shopify-section-{{ section.id }} .product-gallery__thumbnail.is-selected {
     border-color: #000 !important;
-    border-width: 3px !important;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2) !important;
+    border-width: 3.5px !important;
+    box-shadow: none !important;
   }
 
   /* Image à l'intérieur de la miniature */
@@ -136,9 +136,9 @@
   /* Sur mobile : miniatures carrées un peu plus petites */
   @media (max-width: 999px) {
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 90px !important;
-      height: 90px !important;
-      min-width: 90px !important;
+      width: 100px !important;
+      height: 100px !important;
+      min-width: 100px !important;
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail-list {
@@ -164,8 +164,8 @@
     }
     
     #shopify-section-{{ section.id }} .product-gallery__thumbnail {
-      width: 130px !important;
-      height: 130px !important;
+      width: 145px !important;
+      height: 145px !important;
     }
   }
 </style>
@@ -242,54 +242,52 @@
 </script>
 
 <style>
-  /* Style des boutons flèches personnalisés */
+  /* Style des boutons flèches personnalisés - SANS CERCLE */
   #shopify-section-{{ section.id }} .thumbnail-nav-prev,
   #shopify-section-{{ section.id }} .thumbnail-nav-next {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    width: 40px !important;
-    height: 40px !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    border: 2px solid #e0e0e0 !important;
-    border-radius: 50% !important;
+    width: 30px !important;
+    height: 30px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     cursor: pointer !important;
     z-index: 10 !important;
     transition: all 0.25s ease !important;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
     padding: 0 !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-prev:hover,
   #shopify-section-{{ section.id }} .thumbnail-nav-next:hover {
-    background: #fff !important;
-    border-color: #000 !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    transform: translateY(-50%) scale(1.1) !important;
+    background: transparent !important;
+    transform: translateY(-50%) scale(1.2) !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-prev {
-    left: 0px !important;
+    left: 5px !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-next {
-    right: 0px !important;
+    right: 5px !important;
   }
 
   #shopify-section-{{ section.id }} .thumbnail-nav-prev svg,
   #shopify-section-{{ section.id }} .thumbnail-nav-next svg {
-    color: #333 !important;
+    color: #000 !important;
+    stroke-width: 3px !important;
   }
 
   /* Cache les flèches sur mobile */
   @media (max-width: 999px) {
     #shopify-section-{{ section.id }} .thumbnail-nav-prev,
     #shopify-section-{{ section.id }} .thumbnail-nav-next {
-      width: 32px !important;
-      height: 32px !important;
+      width: 24px !important;
+      height: 24px !important;
     }
   }
 </style>
