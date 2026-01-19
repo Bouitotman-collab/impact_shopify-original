@@ -170,8 +170,40 @@
 </style>
 
 <script>
-  // Script pour ajouter les flèches de navigation aux miniatures
+  // Script pour ajouter les flèches de navigation aux miniatures ET gérer la bordure noire
   document.addEventListener('DOMContentLoaded', function() {
+    // Fonction pour appliquer la bordure noire sur la miniature active
+    function updateActiveThumbnail() {
+      const thumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
+      thumbnails.forEach(function(thumb) {
+        // Vérifier si c'est la miniature active
+        if (thumb.classList.contains('is-selected') || thumb.classList.contains('is-active') || thumb.hasAttribute('aria-current')) {
+          thumb.style.border = '3px solid #000';
+        } else {
+          thumb.style.border = 'none';
+        }
+      });
+    }
+    
+    // Observer les changements sur les miniatures
+    const observer = new MutationObserver(function(mutations) {
+      updateActiveThumbnail();
+    });
+    
+    // Observer tous les thumbnails
+    const allThumbnails = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail');
+    allThumbnails.forEach(function(thumb) {
+      observer.observe(thumb, { attributes: true, attributeFilter: ['class', 'aria-current'] });
+      
+      // Ajouter un event listener au clic
+      thumb.addEventListener('click', function() {
+        setTimeout(updateActiveThumbnail, 50);
+      });
+    });
+    
+    // Initialiser
+    updateActiveThumbnail();
+    
     const thumbnailLists = document.querySelectorAll('#shopify-section-{{ section.id }} .product-gallery__thumbnail-list');
     
     thumbnailLists.forEach(function(list) {
