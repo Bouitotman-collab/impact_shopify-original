@@ -16,7 +16,7 @@
       "custom_css": [],
       "name": "Barre Annonce Fixe (Pro)",
       "settings": {
-        "background_color": "#050170",
+        "background_color": "#073a69",
         "text_color": "#ffffff",
         "message_text": "-10% supplémentaire dans le panier avec le code",
         "promo_code": "BIENVENUE10",
