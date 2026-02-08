@@ -611,7 +611,7 @@
       "type": "apps",
       "blocks": {
         "rapi_rapi_bundle_cr67AB": {
-          "type": "shopify://apps/rapi-bundles/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
           "settings": {
             "product": "pack-solo-24-tablettes"
           }
@@ -889,7 +889,6 @@
     },
     "avis_clients_tous_PMJxcT": {
       "type": "avis-clients-tous",
-      "disabled": true,
       "custom_css": [],
       "name": "Tous les avis clients",
       "settings": {
